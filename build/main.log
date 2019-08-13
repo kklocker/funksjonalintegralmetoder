@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  13 AUG 2019 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  13 AUG 2019 21:41
 entering extended mode
 **./main.tex
 (main.tex
@@ -979,9 +979,9 @@ Overfull \hbox (21.30634pt too wide) in paragraph at lines 42--44
 (tex/kort_rekapitulering.tex
 \c@theorem=\count306
 
-Overfull \hbox (38.11298pt too wide) in paragraph at lines 19--21
-\OT1/cmr/m/n/10 tik-kel-til-stan-der er byg-get opp av en-partikkel til-stan-d
-er, men hvor en-partikkeltilstandene
+Overfull \hbox (26.16849pt too wide) in paragraph at lines 19--21
+\OT1/cmr/m/n/10 kel-til-stan-der er byg-get opp av en-partikkel til-stan-der, 
+men hvor en-partikkeltilstandene
  []
 
 
@@ -992,13 +992,7 @@ This may cause the page layout to be inconsistent, however.
 
 [2
 
-]
-Overfull \hbox (5.21768pt too wide) in paragraph at lines 112--113
-[]\OT1/cmr/bx/n/10 Matrise-elementer av to-partikkel ope-ra-to-rer er be-stemt 
-av matrise-
- []
-
-[3]
+] [3]
 
 LaTeX Warning: Reference `eq:hamiltonian' on page 4 undefined on input line 120
 .
@@ -1049,18 +1043,16 @@ pe1/public/amsfonts/cm/cmmi5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
 2.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb>
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
 rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (7 
-pages, 193836 bytes).
+pages, 179144 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

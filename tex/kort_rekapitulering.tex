@@ -1,6 +1,6 @@
 \section{Kort rekapitulering av 2. kvantisering for fermioner og bosoner}
 
-Notasjon: $ \lambda = $ sett av kvantetall som bestemmer en én-partikkel tilstand.
+Notasjon: $ \mu = $ sett av kvantetall som bestemmer en én-partikkel tilstand.
 
 
 \subsection{Mangepartikkelbasis}
@@ -9,40 +9,40 @@ Notasjon: $ \lambda = $ sett av kvantetall som bestemmer en én-partikkel tilsta
 
 
 \begin{align*}
-\lambda &= (\vec{k}, \sigma):\text{Bølgetall, spinn} \\
-\lambda &= (i, \sigma) : \text{Gitterpunkt, spinn} \\
-\lambda &= (n, i) : \text{Orbital, gitterpunkt} \\
+\mu &= (\vec{k}, \sigma):\text{Bølgetall, spinn} \\
+\mu &= (i, \sigma) : \text{Gitterpunkt, spinn} \\
+\mu &= (n, i) : \text{Orbital, gitterpunkt} \\
 \end{align*}
 
 \end{theorem}
 
-En mange-partikkel basis kan skrives $\ket{\phi} = \ket{n_{\lambda_1}, n_{\lambda_2}, \dots, n_{\lambda_N}}$. Mangepartikkeltilstander er bygget opp av én-partikkel tilstander, men hvor én-partikkeltilstandene ikke nødvendighvis er uavhengige. Dersom \underline{ett} av kvantetall-settene, $\lambda_i$, endres, får denne \underline{spredningen} generelt konsekvenser for fordelingen av kvantetall i de øvrige kvantetallene $\{\lambda_j\}_{j\ne i}$.
+En mange-partikkel basis kan skrives $\ket{\phi} = \ket{n_{\mu}, n_{\nu}, \dots, n_{\mu_N}}$. Mangepartikkeltilstander er bygget opp av én-partikkel tilstander, men hvor én-partikkeltilstandene ikke nødvendighvis er uavhengige. Dersom \underline{ett} av kvantetall-settene, $\mu_i$, endres, får denne \underline{spredningen} generelt konsekvenser for fordelingen av kvantetall i de øvrige kvantetallene $\{\mu_j\}_{j\ne i}$.
 Vi tenker oss at en generell mange-partikkeltilstand kan bygges opp som en lineærkombinasjon av $\ket{\phi}$-er;
 \begin{equation}
-\ket{\Psi} = \sum_{n_{\lambda_1},\dots, n_{\lambda_N}}\phi_{{\lambda_1},\dots, n_{\lambda_N}}\ket{{\lambda_1},\dots, n_{\lambda_N}}.
+\ket{\Psi} = \sum_{n_{\mu},\dots, n_{\mu_N}}\phi_{{\mu},\dots, n_{\mu_N}}\ket{{\mu},\dots, n_{\mu_N}}.
 \end{equation}
-Én-bestemt tilstandsvektor $\ket{n_{\lambda_1},\dots, n_{\lambda_N}}$ kan kreves fra en \underline{vakuum}-tilstand $\ket{0}$ (ingen kvant i noen av de mulige én-partikkeltilstandene) via kreasjons-operatorer.
+Én-bestemt tilstandsvektor $\ket{n_{\mu},\dots, n_{\mu_N}}$ kan kreves fra en \underline{vakuum}-tilstand $\ket{0}$ (ingen kvant i noen av de mulige én-partikkeltilstandene) via kreasjons-operatorer.
 \begin{align*}
-&\textbf{bosoner}: &a^\dagger\lambda \\ 
-&\textbf{fermioner}: &c^\dagger\lambda
+&\textbf{bosoner}: &a_\mu^\dagger \\ 
+&\textbf{fermioner}: &c_\mu^\dagger
 \end{align*}
 
 
 Et kvant i en én-partikkeltilstand kan destrueres  v.h.a annihilasjonsoperatorene
 
 \begin{align*}
-&\textbf{bosoner}: &a\lambda \\ 
-&\textbf{fermioner}: &c\lambda
+&\textbf{bosoner}: &a_\mu \\ 
+&\textbf{fermioner}: &c_\mu
 \end{align*}
 
 
 Disse operatorene oppfyller diverse kommutasjonsrelasjoner
 \begin{align}
-&[a\lambda, a\lambda'] & = [a^\dagger\lambda, a^\dagger\lambda'] = 0 \\
-&[a\lambda, a^\dagger\lambda'] & = \delta_{\lambda\,\lambda'} \\
+&[a_\mu, a_{\nu}] & = [a_\mu^\dagger, a_{\nu}^\dagger] = 0 \\
+&[a_\mu, a_{\nu}^\dagger] & = \delta_{\mu\,\nu} \\
 &[A,B] &= AB-BA \\
-&\{c^\dagger\lambda, c^\dagger\lambda'\} & = \{c\lambda, c\lambda'\} = 0 \\
-&\{c\lambda, c^\dagger\lambda'\} & = \delta_{\lambda\,\lambda'} 
+&\{c_\mu^\dagger, c_{\nu}^\dagger\} & = \{c_\mu, c_{\nu\}} = 0 \\
+&\{c_\mu, c_{\nu}^\dagger\} & = \delta_{\mu\,\nu} 
 \end{align}
 I tillegg kommer Pauli-prinsippet, som gir symmetriske/antisymmetriske kommutatorer ved ombytte, avhengig om det er fermion eller boson. 
 
@@ -76,11 +76,11 @@ T = \sum_i \sum_j v_{\text{cryst}} \left( \vec{r}_i, \vec{R}_j \right)
 
 2. kvantisering av en slik operator kan skrives
 \begin{equation}
-T = \sum_{\lambda, \lambda'} T_{\lambda\,\lambda'}c_\lambda^\dagger c_{\lambda'},
+T = \sum_{\mu, \nu} T_{\mu\nu}c_\mu^\dagger c_{\nu},
 \end{equation}
 hvor 
 \begin{equation}
-T_{\lambda\,\lambda'} = \mel{\lambda}{T\left(\vec{r}, \vec{p}\right)}{\lambda'}.	
+T_{\mu\,\nu} = \mel{\mu}{T\left(\vec{r}, \vec{p}\right)}{\nu}.	
 \end{equation}
 
 \textbf{NB: Matriseelementet av én-partikkel operatorer er bestemt av matrise-elementer i Hilbertrommet av én-partikkel tilstander}
@@ -102,14 +102,14 @@ V = \frac{e^2}{2}\sum_{i\ne j} \frac{1}{|\vec{r}_i - \vec{r}_j|}
 2. kvantisert versjon er
 
 \begin{equation}
-V = \sum_{\lambda_1, \dots, \lambda_4} V_{\lambda_1\lambda_2\lambda_3\lambda_4}c_{\lambda_1}^\dagger c_{\lambda_2}^\dagger c_{\lambda_3}c_{\lambda_4},
+V = \sum_{\mu, \dots, \beta} V_{\mu\nu\alpha\beta}c_{\mu}^\dagger c_{\nu}^\dagger c_{\alpha}c_{\beta},
 \end{equation}
 hvor igjen
 \begin{equation}
-V_{\lambda_1\lambda_2\lambda_3\lambda_4} = \mel{\lambda_1\,\lambda_2}{V\left(\vec{r}_i, \vec{r}_j\right)}{\lambda_4\,\lambda_3}
+V_{\mu\nu\alpha\beta} = \mel{\mu\nu}{V\left(\vec{r}_i, \vec{r}_j\right)}{\beta\alpha}
 \end{equation}
 
-\textbf{Matrise-elementer av to-partikkel operatorer er bestemt av matrise-elementer i Hilbert-rommet av to-partikkel tilstander.}
+\textbf{NB: Matrise-elementer av to-partikkel operatorer er bestemt av matrise-elementer i Hilbert-rommet av to-partikkel tilstander.}
 
 Hamilton-operatoren:
 \begin{align}
@@ -117,13 +117,13 @@ H &= T + V \label{eq:hamiltonian} \\
 T &= -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
 \end{align}
 
-Så langt er dette bare gjort for fermione-operatorer, men helt tilsvarende utsagn gjelder selvsagt for bosoner. 2. kvantisert versjon av Hamilton-operatoren for et vekselvirkende, materielt, boson-system har identisk samme form som \ref{eq:hamiltonian}. Legg merke til at hvert ledd i $H$ har like mange $c_\lambda^\dagger$ som $c_{\lambda'}$.
+Så langt er dette bare gjort for fermione-operatorer, men helt tilsvarende utsagn gjelder selvsagt for bosoner. 2. kvantisert versjon av Hamilton-operatoren for et vekselvirkende, materielt, boson-system har identisk samme form som \ref{eq:hamiltonian}. Legg merke til at hvert ledd i $H$ har like mange $c_\mu^\dagger$ som $c_{\nu}$.
 
 
 \begin{figure}
 \centering
 \input{tex/img/simple_scatter}
-\caption{Spredning fra eksternt potensial $v_{\lambda_1\lambda_2}c_{\lambda_1}^\dagger c_{\lambda_2}$}
+\caption{Spredning fra eksternt potensial $v_{\mu\nu}c_{\mu}^\dagger c_{\nu}$}
 \end{figure}
 
 
