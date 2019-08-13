@@ -74,4 +74,61 @@ T = \sum_i \sum_j v_{\text{cryst}} \left( \vec{r}_i, \vec{R}_j \right)
 \end{equation}
 \end{theorem}
 
-2. kvantisering av en slik operator
+2. kvantisering av en slik operator kan skrives
+\begin{equation}
+T = \sum_{\lambda, \lambda'} T_{\lambda\,\lambda'}c_\lambda^\dagger c_{\lambda'},
+\end{equation}
+hvor 
+\begin{equation}
+T_{\lambda\,\lambda'} = \mel{\lambda}{T\left(\vec{r}, \vec{p}\right)}{\lambda'}.	
+\end{equation}
+
+\textbf{NB: Matriseelementet av én-partikkel operatorer er bestemt av matrise-elementer i Hilbertrommet av én-partikkel tilstander}
+
+\subsection{Fra klassisk til 2. kvantisering av to-partikkel operator}
+
+Vi ser typisk på par-potensialer 
+\begin{equation}
+V = \sum_{i, j} V\left(\vec{r}_i, \vec{r}_j\right).
+\end{equation}
+
+\begin{theorem}
+Vekselvirkning mellom to ladninger
+\begin{equation}
+V = \frac{e^2}{2}\sum_{i\ne j} \frac{1}{|\vec{r}_i - \vec{r}_j|}
+\end{equation}
+\end{theorem}
+
+2. kvantisert versjon er
+
+\begin{equation}
+V = \sum_{\lambda_1, \dots, \lambda_4} V_{\lambda_1\lambda_2\lambda_3\lambda_4}c_{\lambda_1}^\dagger c_{\lambda_2}^\dagger c_{\lambda_3}c_{\lambda_4},
+\end{equation}
+hvor igjen
+\begin{equation}
+V_{\lambda_1\lambda_2\lambda_3\lambda_4} = \mel{\lambda_1\,\lambda_2}{V\left(\vec{r}_i, \vec{r}_j\right)}{\lambda_4\,\lambda_3}
+\end{equation}
+
+\textbf{Matrise-elementer av to-partikkel operatorer er bestemt av matrise-elementer i Hilbert-rommet av to-partikkel tilstander.}
+
+Hamilton-operatoren:
+\begin{align}
+H &= T + V \label{eq:hamiltonian} \\
+T &= -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
+\end{align}
+
+Så langt er dette bare gjort for fermione-operatorer, men helt tilsvarende utsagn gjelder selvsagt for bosoner. 2. kvantisert versjon av Hamilton-operatoren for et vekselvirkende, materielt, boson-system har identisk samme form som \ref{eq:hamiltonian}. Legg merke til at hvert ledd i $H$ har like mange $c_\lambda^\dagger$ som $c_{\lambda'}$.
+
+
+\begin{figure}
+\centering
+\input{tex/img/simple_scatter}
+\caption{Spredning fra eksternt potensial $v_{\lambda_1\lambda_2}c_{\lambda_1}^\dagger c_{\lambda_2}$}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\input{tex/img/simple_interaction}
+\caption{Vekselvirkning mellom to partikler.}
+\end{figure}

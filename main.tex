@@ -1,19 +1,21 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage[norsk]{babel}
 \usepackage{amssymb}
 \usepackage{tikz}
+\usetikzlibrary{decorations.markings}
 \usepackage{empheq}
 \usepackage{amsthm}
 \usepackage{pgfplots}
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{calc}
 \usepackage{xcolor}
-\usepackage{braket}
+\usepackage{physics}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{esdiff}
-
+\usepackage{tikz-feynman}
 
 
 \title{Lecture notes FY8305}
@@ -27,8 +29,12 @@
 
 
 \newcommand{\e}{\mathrm{e}}
-\newcommand{\dd}{\mathrm{d}}
+%\newcommand{\dd}{\mathrm{d}}
 
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
 
 \begin{document}
 
