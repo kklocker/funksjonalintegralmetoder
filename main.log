@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  13 AUG 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  13 AUG 2019 18:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -581,8 +581,8 @@ File: pgflibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 ("D:\Program Files\MiKTeX 2.9\tex/generic/pgf/frontendlayer/tikz/libraries\tikz
 librarycalc.code.tex"
 File: tikzlibrarycalc.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-)
-("D:\Program Files\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.sty"
+) ("D:\Program Files\MiKTeX 2.9\tex/latex/braket\braket.sty") ("D:\Program File
+s\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip53
@@ -595,23 +595,27 @@ s
 \f@nch@O@olf=\skip60
 \f@nch@O@orf=\skip61
 )
+("D:\Program Files\MiKTeX 2.9\tex/latex/esdiff\esdiff.sty"
+Package: esdiff 
+)
 \c@exmp=\count136
  (main.aux
-(tex/kort_rekapitulering.aux) (tex/koherente_tilstander_bosoner.aux))
+(tex/kort_rekapitulering.aux) (tex/koherente_tilstander_bosoner.aux)
+(tex/grassman_variable.aux) (tex/koherente_tilstander_fermioner.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 ABD: EveryShipout initializing macros
 ("D:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
@@ -680,13 +684,13 @@ G,.JBIG2,.JB2,.eps]
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 31.
+ on input line 33.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -695,7 +699,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \author given.
 
 
-Overfull \hbox (21.30634pt too wide) in paragraph at lines 34--36
+Overfull \hbox (21.30634pt too wide) in paragraph at lines 36--38
 \OT1/cmr/m/n/10 per 2019 som fore-lesningsno-tater til selvs-tudium for faget F
 Y8305 -Funksjonalintegral
  []
@@ -715,7 +719,13 @@ Overfull \hbox (37.77289pt too wide) in paragraph at lines 1--1
 r
  []
 
-)
+\c@theorem=\count144
+
+Overfull \hbox (38.33409pt too wide) in paragraph at lines 19--21
+\OT1/cmr/m/n/10 tikkeltil-stander er bygget opp av en-partikkel til-stander, m
+en hvor en-partikkeltilstandene
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 22.43335pt.
@@ -724,39 +734,54 @@ This may cause the page layout to be inconsistent, however.
 
 [2
 
-]
+]) [3]
 \openout2 = `tex/koherente_tilstander_bosoner.aux'.
 
- (tex/koherente_tilstander_bosoner.tex) [3
+ (tex/koherente_tilstander_bosoner.tex) [4
 
 
 ]
 \openout2 = `tex/grassman_variable.aux'.
 
- (tex/grassman_variable.tex)
-[4
+ (tex/grassman_variable.tex) [5
 
 
-] (main.aux (tex/kort_rekapitulering.aux)
-(tex/koherente_tilstander_bosoner.aux) (tex/grassman_variable.aux)) ) 
+]
+\openout2 = `tex/koherente_tilstander_fermioner.aux'.
+
+ (tex/koherente_tilstander_fermioner.tex) [6
+
+
+] (main.aux
+(tex/kort_rekapitulering.aux) (tex/koherente_tilstander_bosoner.aux)
+(tex/grassman_variable.aux) (tex/koherente_tilstander_fermioner.aux)) ) 
 Here is how much of TeX's memory you used:
- 23445 strings out of 492895
- 599674 string characters out of 3133458
- 796887 words of memory out of 3000000
- 26936 multiletter control sequences out of 15000+200000
- 9850 words of font info for 37 fonts, out of 3000000 for 9000
+ 23548 strings out of 492895
+ 601658 string characters out of 3133458
+ 804887 words of memory out of 3000000
+ 27018 multiletter control sequences out of 15000+200000
+ 12475 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,11n,96p,745b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsl10.pfb>
-Output written on main.pdf (4 pages, 81622 bytes).
+ 62i,12n,96p,745b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmmi5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.p
+fb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on main.pdf (6 pages, 178984 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

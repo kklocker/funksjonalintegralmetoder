@@ -1,1 +1,77 @@
 \section{Kort rekapitulering av 2. kvantisering for fermioner og bosoner}
+
+Notasjon: $ \lambda = $ sett av kvantetall som bestemmer en én-partikkel tilstand.
+
+
+\subsection{Mangepartikkelbasis}
+\newtheorem{theorem}{Eks}
+\begin{theorem}
+
+
+\begin{align*}
+\lambda &= (\vec{k}, \sigma):\text{Bølgetall, spinn} \\
+\lambda &= (i, \sigma) : \text{Gitterpunkt, spinn} \\
+\lambda &= (n, i) : \text{Orbital, gitterpunkt} \\
+\end{align*}
+
+\end{theorem}
+
+En mange-partikkel basis kan skrives $\ket{\phi} = \ket{n_{\lambda_1}, n_{\lambda_2}, \dots, n_{\lambda_N}}$. Mangepartikkeltilstander er bygget opp av én-partikkel tilstander, men hvor én-partikkeltilstandene ikke nødvendighvis er uavhengige. Dersom \underline{ett} av kvantetall-settene, $\lambda_i$, endres, får denne \underline{spredningen} generelt konsekvenser for fordelingen av kvantetall i de øvrige kvantetallene $\{\lambda_j\}_{j\ne i}$.
+Vi tenker oss at en generell mange-partikkeltilstand kan bygges opp som en lineærkombinasjon av $\ket{\phi}$-er;
+\begin{equation}
+\ket{\Psi} = \sum_{n_{\lambda_1},\dots, n_{\lambda_N}}\phi_{{\lambda_1},\dots, n_{\lambda_N}}\ket{{\lambda_1},\dots, n_{\lambda_N}}.
+\end{equation}
+Én-bestemt tilstandsvektor $\ket{n_{\lambda_1},\dots, n_{\lambda_N}}$ kan kreves fra en \underline{vakuum}-tilstand $\ket{0}$ (ingen kvant i noen av de mulige én-partikkeltilstandene) via kreasjons-operatorer.
+\begin{align*}
+&\textbf{bosoner}: &a^\dagger\lambda \\ 
+&\textbf{fermioner}: &c^\dagger\lambda
+\end{align*}
+
+
+Et kvant i en én-partikkeltilstand kan destrueres  v.h.a annihilasjonsoperatorene
+
+\begin{align*}
+&\textbf{bosoner}: &a\lambda \\ 
+&\textbf{fermioner}: &c\lambda
+\end{align*}
+
+
+Disse operatorene oppfyller diverse kommutasjonsrelasjoner
+\begin{align}
+&[a\lambda, a\lambda'] & = [a^\dagger\lambda, a^\dagger\lambda'] = 0 \\
+&[a\lambda, a^\dagger\lambda'] & = \delta_{\lambda\,\lambda'} \\
+&[A,B] &= AB-BA \\
+&\{c^\dagger\lambda, c^\dagger\lambda'\} & = \{c\lambda, c\lambda'\} = 0 \\
+&\{c\lambda, c^\dagger\lambda'\} & = \delta_{\lambda\,\lambda'} 
+\end{align}
+I tillegg kommer Pauli-prinsippet, som gir symmetriske/antisymmetriske kommutatorer ved ombytte, avhengig om det er fermion eller boson. 
+
+\subsection{Fra klassisk til 2.kvantisering av én-partikkel operatorer}
+
+For én-partikkel operatorer har vi som regel for den kinetiske energien
+\begin{equation}
+T = \sum_i T\left(\vec{r}_i, \vec{p}_i\right) = \sum_i T\left(\vec{r}_i, \diffp{}{r}\right)
+\end{equation}
+\begin{theorem}
+Eksternt elektrostatisk potensial:
+\begin{equation}
+T = \sum_i V_{\text{ext}}\left(\vec{r}_i\right)
+\end{equation}
+\end{theorem}
+\begin{theorem}
+
+Kinetisk energi:
+
+\begin{equation}
+T = \sum_i \frac{p^2}{2m} = -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
+\end{equation}
+\end{theorem}
+
+\begin{theorem}
+Krystall-potensial:
+\begin{equation}
+T = \sum_i \sum_j v_{\text{cryst}} \left( \vec{r}_i, \vec{R}_j \right)
+\end{equation}
+\end{theorem}
+
+2. kvantisering av en slik operator

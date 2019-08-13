@@ -1,3 +1,6 @@
 \contentsline {section}{\numberline {1}Kort rekapitulering av 2. kvantisering for fermioner og bosoner}{2}% 
-\contentsline {section}{\numberline {2}Koherente tilstander for bosoner}{3}% 
-\contentsline {section}{\numberline {3}Grassman variable}{4}% 
+\contentsline {subsection}{\numberline {1.1}Mangepartikkelbasis}{2}% 
+\contentsline {subsection}{\numberline {1.2}Fra klassisk til 2.kvantisering av \IeC {\'e}n-partikkel operatorer}{3}% 
+\contentsline {section}{\numberline {2}Koherente tilstander for bosoner}{4}% 
+\contentsline {section}{\numberline {3}Grassman variable}{5}% 
+\contentsline {section}{\numberline {4}Koherente tilstander for fermioner}{6}% 
