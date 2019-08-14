@@ -1,0 +1,5 @@
+## Ignore these
+*.toc
+*.aux
+*.log
+*.synctex.gz
