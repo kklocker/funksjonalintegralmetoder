@@ -1,66 +1,69 @@
-\section{Kort rekapitulering av 2. kvantisering for fermioner og bosoner}
+\section{Short recap of second quantization for fermions and bosons}
 
-Notasjon: $ \mu = $ sett av kvantetall som bestemmer en én-partikkel tilstand.
+Notation: $ \mu = $ set of quantum numbers that define a one-particle state.
 
 
-\subsection{Mangepartikkelbasis}
-\newtheorem{theorem}{Eks}
+\subsection{Many particle basis}
+\newtheorem{theorem}{Ex}
 \begin{theorem}
 
 
 \begin{align*}
-\mu &= (\vec{k}, \sigma):\text{Bølgetall, spinn} \\
-\mu &= (i, \sigma) : \text{Gitterpunkt, spinn} \\
-\mu &= (n, i) : \text{Orbital, gitterpunkt} \\
+\mu &= (\vec{k}, \sigma):\text{Wave number, spin} \\
+\mu &= (i, \sigma) : \text{Lattice point, spin} \\
+\mu &= (n, i) : \text{Orbital, lattice point} \\
 \end{align*}
 
 \end{theorem}
 
-En mange-partikkel basis kan skrives $\ket{\phi} = \ket{n_{\mu}, n_{\nu}, \dots, n_{\mu_N}}$. Mangepartikkeltilstander er bygget opp av én-partikkel tilstander, men hvor én-partikkeltilstandene ikke nødvendighvis er uavhengige. Dersom \underline{ett} av kvantetall-settene, $\mu_i$, endres, får denne \underline{spredningen} generelt konsekvenser for fordelingen av kvantetall i de øvrige kvantetallene $\{\mu_j\}_{j\ne i}$.
-Vi tenker oss at en generell mange-partikkeltilstand kan bygges opp som en lineærkombinasjon av $\ket{\phi}$-er;
+A many-particle basis can be written $\ket{\phi} = \ket{n_{\mu}, n_{\nu}, \dots, n_{\mu_N}}$. Many particle states are built by combining many one-particle states, but where the one-particle states are not necessarily independent. If  \underline{one} of the set of quantum numbers, $\mu_i$, are changed, this \underline{scattering} will generally have consequences for the distribution of quantum numbers for the remaining sets $\{\mu_j\}_{j\ne i}$.
+We generally imagine that many-particle states can be built as a linear combination of
+$\ket{\phi}$'s;
 \begin{equation}
 \ket{\Psi} = \sum_{n_{\mu},\dots, n_{\mu_N}}\phi_{{\mu},\dots, n_{\mu_N}}\ket{{\mu},\dots, n_{\mu_N}}.
 \end{equation}
-Én-bestemt tilstandsvektor $\ket{n_{\mu},\dots, n_{\mu_N}}$ kan kreves fra en \underline{vakuum}-tilstand $\ket{0}$ (ingen kvant i noen av de mulige én-partikkeltilstandene) via kreasjons-operatorer.
+A definite one-state vector $\ket{n_{\mu},\dots, n_{\mu_N}}$ can be demanded from a vacuum state (where there is no filled one-particle states) $\ket{0}$ via creation operators.
 \begin{align*}
-&\textbf{bosoner}: &a_\mu^\dagger \\ 
-&\textbf{fermioner}: &c_\mu^\dagger
+&\textbf{bosons}: &a_\mu^\dagger \\ 
+&\textbf{fermions}: &c_\mu^\dagger
 \end{align*}
 
 
-Et kvant i en én-partikkeltilstand kan destrueres  v.h.a annihilasjonsoperatorene
+A quanta in a one-particle state can be destroyed by the annihilation operators.
 
 \begin{align*}
-&\textbf{bosoner}: &a_\mu \\ 
-&\textbf{fermioner}: &c_\mu
+&\textbf{bosons}: &a_\mu \\ 
+&\textbf{fermions}: &c_\mu
 \end{align*}
 
 
-Disse operatorene oppfyller diverse kommutasjonsrelasjoner
+These operators satisfy some commutation relations:
 \begin{align}
 &[a_\mu, a_{\nu}] & = [a_\mu^\dagger, a_{\nu}^\dagger] = 0 \\
 &[a_\mu, a_{\nu}^\dagger] & = \delta_{\mu\,\nu} \\
 &[A,B] &= AB-BA \\
 &\{c_\mu^\dagger, c_{\nu}^\dagger\} & = \{c_\mu, c_{\nu}\} = 0 \\
-&\{c_\mu, c_{\nu}^\dagger\} & = \delta_{\mu\,\nu} 
+&\{c_\mu, c_{\nu}^\dagger\} & = \delta_{\mu\,\nu} \\
+&\{A,B\} &= AB + BA
 \end{align}
-I tillegg kommer Pauli-prinsippet, som gir symmetriske/antisymmetriske kommutatorer ved ombytte, avhengig om det er fermion eller boson. 
+These will automatically satisfy the Pauli principle as well, which gives \emph{symmetri/ \emph{antisymmetric}} solutions by exchange, dependent if the particles are bosons/fermions. 
 
-\subsection{Fra klassisk til 2.kvantisering av én-partikkel operatorer}
 
-For én-partikkel operatorer har vi som regel for den kinetiske energien
+\subsection{From classical formulation to second quantization of one-particle operators}
+
+For one-particle operators we usually have a kinetic energy function on a form like
 \begin{equation}
 T = \sum_i T\left(\vec{r}_i, \vec{p}_i\right) = \sum_i T\left(\vec{r}_i, \diffp{}{r}\right)
 \end{equation}
 \begin{theorem}
-Eksternt elektrostatisk potensial:
+External electrostatic potential:
 \begin{equation}
 T = \sum_i V_{\text{ext}}\left(\vec{r}_i\right)
 \end{equation}
 \end{theorem}
 \begin{theorem}
 
-Kinetisk energi:
+Kinetic energy:
 
 \begin{equation}
 T = \sum_i \frac{p^2}{2m} = -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
@@ -68,67 +71,66 @@ T = \sum_i \frac{p^2}{2m} = -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
 \end{theorem}
 
 \begin{theorem}
-Krystall-potensial:
+Crystal-potential:
 \begin{equation}
 T = \sum_i \sum_j v_{\text{cryst}} \left( \vec{r}_i, \vec{R}_j \right)
 \end{equation}
 \end{theorem}
 
-2. kvantisering av en slik operator kan skrives
+Second quantization by an operator on this form can be written 
 \begin{equation}
 T = \sum_{\mu, \nu} T_{\mu\nu}c_\mu^\dagger c_{\nu},
 \end{equation}
-hvor 
+where
 \begin{equation}
 T_{\mu\,\nu} = \mel{\mu}{T\left(\vec{r}, \vec{p}\right)}{\nu}.	
 \end{equation}
 
-\textbf{NB: Matriseelementet av én-partikkel operatorer er bestemt av matrise-elementer i Hilbertrommet av én-partikkel tilstander}
+\textbf{Note: The matrix element of one-particle operators are determined by matrix elements in the Hilbert space of one-particle states.}
 
-\subsection{Fra klassisk til 2. kvantisering av to-partikkel operator}
+\subsection{From classical formulation to second quantization of two-particle operators}
 
-Vi ser typisk på par-potensialer 
+Typically, we consider pair-potentials 
 \begin{equation}
 V = \sum_{i, j} V\left(\vec{r}_i, \vec{r}_j\right).
 \end{equation}
 
 \begin{theorem}
-Vekselvirkning mellom to ladninger
+Exchange interaction of two charges
 \begin{equation}
 V = \frac{e^2}{2}\sum_{i\ne j} \frac{1}{|\vec{r}_i - \vec{r}_j|}
 \end{equation}
 \end{theorem}
 
-2. kvantisert versjon er
+The second quantization versions of these are
 
 \begin{equation}
 V = \sum_{\mu, \dots, \beta} V_{\mu\nu\alpha\beta}c_{\mu}^\dagger c_{\nu}^\dagger c_{\alpha}c_{\beta},
 \end{equation}
-hvor igjen
+where again
 \begin{equation}
 V_{\mu\nu\alpha\beta} = \mel{\mu\nu}{V\left(\vec{r}_i, \vec{r}_j\right)}{\beta\alpha}
 \end{equation}
 
-\textbf{NB: Matrise-elementer av to-partikkel operatorer er bestemt av matrise-elementer i Hilbert-rommet av to-partikkel tilstander.}
+\textbf{Note: The matrix element of two-particle operators are determined by matrix elements in the Hilbert room of two-particle states.}
 
-Hamilton-operatoren:
+The Hamiltonian:
 \begin{align}
 H &= T + V \label{eq:hamiltonian} \\
 T &= -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
 \end{align}
-
-Så langt er dette bare gjort for fermione-operatorer, men helt tilsvarende utsagn gjelder selvsagt for bosoner. 2. kvantisert versjon av Hamilton-operatoren for et vekselvirkende, materielt, boson-system har identisk samme form som \ref{eq:hamiltonian}. Legg merke til at hvert ledd i $H$ har like mange $c_\mu^\dagger$ som $c_{\nu}$.
+So far, we have just presented second quantization for fermion operators, but an equivalent statement will of course hold for the second quantization version of the Hamiltonian for an interacting, material, bosonic system, which has the same identical form as \ref{eq:hamiltonian}. Notice that each term in $H$ has just as many $c_\mu^\dagger$ as $c_{\nu}$.
 
 
 \begin{figure}
 \centering
 \input{tex/img/simple_scatter}
-\caption{Spredning fra eksternt potensial $v_{\mu\nu}c_{\mu}^\dagger c_{\nu}$}
+\caption{Scattering from an external potential $v_{\mu\nu}c_{\mu}^\dagger c_{\nu}$}
 \end{figure}
 
 
 \begin{figure}
 \centering
 \input{tex/img/simple_interaction}
-\caption{Vekselvirkning mellom to partikler.}
+\caption{Exchange interaction between two particles.}
 \end{figure}
