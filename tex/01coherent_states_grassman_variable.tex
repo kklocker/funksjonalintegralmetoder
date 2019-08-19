@@ -1,0 +1,63 @@
+\section{Coherent states and Grassman variables}
+Pages 10-17 in lecture notes.
+
+\subsection{Coherent states}
+A coherent state (both for fermions and bosons) is defined as an eigenstate to an annihilation operator
+
+\begin{align}
+	a_\mu \ket{\phi} &= \varphi_\mu \ket{\phi} & \textbf{Bosons}\\
+	c_\mu \ket{\psi} &= \xi_\mu\ket{\psi} & \textbf{Fermions}
+\end{align}
+
+Both $\ket{\psi}$ and $\ket{\phi}$ must contain a component with the least ($\ge 0$) quantum number (quant), but it is clear that neither $\ket{\psi}$ nor $\ket{\phi}$ can be states with a sharply defined number of particles. They are therefore also ``hard to destroy''. This also explains why we chose to define them as eigenstates of the annihilation operators, not the creation operators. We will get back to the creation of these coherent states. 
+
+We will first look at the bosonic case:
+\subsubsection{Bosonic case}
+
+\begin{equation}
+a_\mu\ket{\phi} = \varphi_\mu\ket{\phi}
+\end{equation}
+
+\begin{align}
+[a_\mu, a_{\nu}] = 0& &\nonumber \\
+ &\Rightarrow \left(a_\mu a_{\nu} -a_{\nu}a_\mu\right)\ket{\phi} = 0 & \nonumber \\
+&= \left(\varphi_\mu\varphi_{\nu} - \varphi_{\nu}\varphi_\mu\right)\ket{\phi} &\nonumber\\
+&&\Rightarrow [\varphi_\mu, \varphi_\nu] = 0. \label{eq:coherent_commutator} 
+\end{align}
+
+Equation \eqref{eq:coherent_commutator} will always be satisfied if $\varphi_\mu \in \mathbb{C}$. \textbf{The eigenvalues to coherent boson states can be chosen as complex numbers. This is something we can state without knowing anything about how these states are constructed. }
+
+\subsubsection{Fermionic case}
+\begin{align}
+\{c_\mu, c_\nu\} = 0 && \nonumber \\
+&\left(c_\mu c_\nu + c_\nu c_\mu\right)\ket{\psi} = 0 &\nonumber \\
+&=\left(\xi_\mu\xi_\nu + \xi_\nu\xi_\mu\right)\ket{\psi} &\nonumber \\
+&&\Rightarrow \{\xi_\mu,\xi_\nu\} = 0.\label{eq:coherent_anticommutator}
+\end{align}
+
+If $\xi_\mu\in\mathbb{C}$, \eqref{eq:coherent_anticommutator} will only be satisfied if $\{\xi_\mu\} = 0$, trivial eigenvalues. \textbf{The eigenvalues for coherent fermion states must be chosen as anti-commuting numbers, Grassmann-variables.}
+
+\subsection{Grassmann variables}
+\subsubsection{Fundamentals}
+
+Equation \eqref{eq:coherent_anticommutator} states the fundamental property of Grassmann variables, and it immediately follows that 
+\begin{equation}
+\xi_\mu^2 = 0,
+\end{equation}
+the squares of the Grassmann variables vanish!
+Similarly we have that $\xi^n = \xi^2\xi^{n-2} = 0, n \ge 2$.
+An arbitrary series expansion in Grassmann variables
+\begin{align}
+f(\xi) &= \sum_nc_n\xi^n \nonumber \\
+&=c_0 + c_1\xi + \dots \nonumber\\
+&= x_0 + c_1\xi
+\end{align}
+is linear.
+An arbitrary function of $\xi, \xi^*$ can be written on the forms
+\begin{align*}
+A\left(\xi, \xi^*\right) &= c_0 + c_1\xi + c_2\xi^*+c_3\xi\xi^* \\
+&= c_0 + c_1\xi + c_2\xi^*+d_3\xi^*\xi
+\end{align*}
+
+\subsubsection{Grassmann algebra}
+We will now look into some of the propreties of functions of Grassmann variable. 

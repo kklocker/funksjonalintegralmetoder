@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  19 AUG 2019 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  19 AUG 2019 21:37
 entering extended mode
 **./main.tex
 (main.tex
@@ -928,13 +928,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/00kort_rekapitulering.aux"
 )
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/01koherente_tilstander_bos
-oner.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/01coherent_states_grassman
+_variable.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/02grassman_variable.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/02coherent_states_bosons.a
+ux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/03koherente_tilstander_fer
-mioner.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/03coherent_states_fermions
+.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/04gaussian_integrals.aux")
 
@@ -1056,7 +1057,7 @@ LaTeX Warning: No \author given.
 
  [1
 
-{C:/Users/KarlKristian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/KarlKristian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 \openout2 = `tex/00kort_rekapitulering.aux'.
 
 
@@ -1066,78 +1067,83 @@ Overfull \hbox (5.99632pt too wide) in paragraph at lines 1--1
  []
 
 \c@theorem=\count314
-[2
+[3
 
-] [3] (tex/img/simple_scatter.tex) (tex/img/simple_interaction.tex) [4]
-[5]) [6]
-\openout2 = `tex/01koherente_tilstander_bosoner.aux'.
+] [4] (tex/img/simple_scatter.tex) (tex/img/simple_interaction.tex) [5]
+[6]) [7]
+\openout2 = `tex/01coherent_states_grassman_variable.aux'.
 
- (tex/01koherente_tilstander_bosoner.tex) [7
+ (tex/01coherent_states_grassman_variable.tex
+Overfull \hbox (17.30495pt too wide) in paragraph at lines 38--39
+\OT1/cmr/bx/n/10 eigen-val-ues for co-her-ent fermion states must be cho-sen as
+ anti-commuting
+ []
+
+[8
+
+
+]) [9]
+\openout2 = `tex/02coherent_states_bosons.aux'.
+
+ (tex/02coherent_states_bosons.tex) [10
 
 
 ]
-\openout2 = `tex/02grassman_variable.aux'.
+\openout2 = `tex/03coherent_states_fermions.aux'.
 
 
-(tex/02grassman_variable.tex) [8
-
-
-]
-\openout2 = `tex/03koherente_tilstander_fermioner.aux'.
-
- (tex/03koherente_tilstander_fermioner.tex)
-[9
+(tex/03coherent_states_fermions.tex) [11
 
 
 ]
 \openout2 = `tex/04gaussian_integrals.aux'.
 
- (tex/04gaussian_integrals.tex) [10
+ (tex/04gaussian_integrals.tex)
+[12
 
 
 ]
 \openout2 = `tex/05matsubara_contour.aux'.
 
- (tex/05matsubara_contour.tex) [11
+ (tex/05matsubara_contour.tex) [13
 
 
 ]
 \openout2 = `tex/06feynman_path_integrals.aux'.
 
-
-(tex/06feynman_path_integrals.tex) [12
+ (tex/06feynman_path_integrals.tex)
+[14
 
 
 ]
 \openout2 = `tex/07imaginary_time_path.aux'.
 
- (tex/07imaginary_time_path.tex)
-[13
+ (tex/07imaginary_time_path.tex) [15
 
 
 ]
 \openout2 = `tex/08partition_free_electron.aux'.
 
- (tex/08partition_free_electron.tex) [14
+ (tex/08partition_free_electron.tex)
+[16
 
 
 ]
 \openout2 = `tex/09functional_integrals_quantum_fields.aux'.
 
-
-(tex/09functional_integrals_quantum_fields.tex) [15
+ (tex/09functional_integrals_quantum_fields.tex) [17
 
 
 ]
 \openout2 = `tex/10coherent_states_path_integral.aux'.
 
 
-(tex/10coherent_states_path_integral.tex) [16
+(tex/10coherent_states_path_integral.tex) [18
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 65.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.aux"
@@ -1145,13 +1151,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 65.
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/00kort_rekapitulering.aux"
 )
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/01koherente_tilstander_bos
-oner.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/01coherent_states_grassman
+_variable.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/02grassman_variable.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/02coherent_states_bosons.a
+ux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/03koherente_tilstander_fer
-mioner.aux")
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/03coherent_states_fermions
+.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/04gaussian_integrals.aux")
 
@@ -1172,17 +1179,24 @@ ntum_fields.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/10coherent_states_path_int
 egral.aux"))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 65.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 65.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D8E28F89422854A182AFE0256EFDFF15;1170.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 65.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 4D4972F167BE147B18785D65CA8CD036;1475
+(rerunfilecheck)             After:  BFD70E3B271E107A7134689E23CD2998;1626.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 39844 strings out of 492895
- 933129 string characters out of 3133458
- 1093988 words of memory out of 3000000
- 43100 multiletter control sequences out of 15000+200000
+ 39865 strings out of 492895
+ 933496 string characters out of 3133458
+ 1094076 words of memory out of 3000000
+ 43106 multiletter control sequences out of 15000+200000
  542996 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,96p,1506b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1203,10 +1217,10 @@ nts/type1/public/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (16
- pages, 231034 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (18
+ pages, 242541 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
