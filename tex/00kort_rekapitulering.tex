@@ -20,7 +20,7 @@ A many-particle basis can be written $\ket{\phi} = \ket{n_{\mu}, n_{\nu}, \dots,
 We generally imagine that many-particle states can be built as a linear combination of
 $\ket{\phi}$'s;
 \begin{equation}
-\ket{\Psi} = \sum_{n_{\mu},\dots, n_{\mu_N}}\phi_{{\mu},\dots, n_{\mu_N}}\ket{{\mu},\dots, n_{\mu_N}}.
+\ket{\Psi} = \sum_{n_{\mu_1},\dots, n_{\mu_N}}\phi_{{\mu_1},\dots, n_{\mu_N}}\ket{{\mu_1},\dots, n_{\mu_N}}.
 \end{equation}
 A definite one-state vector $\ket{n_{\mu},\dots, n_{\mu_N}}$ can be demanded from a vacuum state (where there is no filled one-particle states) $\ket{0}$ via creation operators.
 \begin{align*}
@@ -134,3 +134,94 @@ So far, we have just presented second quantization for fermion operators, but an
 \input{tex/img/simple_interaction}
 \caption{Exchange interaction between two particles.}
 \end{figure}
+
+
+\subsection{Statistical mechanics}
+
+Assume that we know the spectrum $E_N^n$ for an interacting many-particle system, defined by a state $\ket{\psi_N}_n$, where $N$ is the number of particles in the system and $n$ is an index that indicates what excited state $\ket{\psi_N}_n$ the system is in. 
+$\ket{\psi_N}$ is also assumed to be known, such that the matrix product of observables can be calculated: 
+\begin{equation}
+H\ket{\psi}_n = E_N\ket{\psi}_n.
+\end{equation}
+
+To do statistical mechanics, we need to introduce temperature. We do this by using the canonical partition function
+\begin{equation}
+\label{eq:partition_function}
+Z_N = \sum_n\e^{-\beta E_N^n}.
+\end{equation}
+
+Note, in \eqref{eq:partition_function} we sum over states, \underline{not} the energy levels $E_N^n$.
+
+\begin{align}
+Z &= \sum_n {}_n\mel{\psi_N}{\e^{-\beta H}}{\psi_N}_n \nonumber \\
+ &= \Tr\left(\e^{-\beta H}\right) = \Tr\left(S^{-1}S\e^{-\beta H}\right) \nonumber\\
+ &= \Tr\left(S\e^{-\beta H}S^{-1}\right) \nonumber \\
+ &= \sum_{n'}{}_{n'}\mel{\phi_N}{\e^{-\beta H}}{\phi_N}_{n'}. \label{eq:basis_invariant}
+\end{align}
+
+We see in \eqref{eq:basis_invariant} that we can use an \underline{arbitrary} basis to calculate the partition function. The most convenient basis is often a basis where the Hamiltonian is diagonal, but not always.
+
+We write the statistical mean value of an operator as
+\begin{align}
+\expval{\hat{O}} &\equiv \frac{1}{Z}\Tr\left(\hat{O}\e^{-\beta H}\right) \nonumber\\
+&= \frac{1}{Z} \sum_n {}_n\mel{\psi_N}{\hat{O}\e^{-\beta H}}{\psi_N}_n \nonumber \\
+&= \frac{1}{Z} \sum_{n, n'} {}_n\expval{\hat{O}}{\psi_N}_{n'}\underbrace{{}_{n'}\expval{\e^{-\beta H}}{\psi_N}_n}_{\delta_{nn'}\e^{-\beta E_{n'}}}.
+\end{align}
+Thus, we have 
+\begin{equation}
+\label{eq:expval}
+\expval{\hat{O}} = \frac{1}{Z}\sum_n \underbrace{{}_n\expval{\hat{O}}{\psi_N}_n}_{\text{QM matrix element}}\e^{-\beta E_N^n}.
+\end{equation}
+Notice how the temperature, $T$ only appears in the last factor in \eqref{eq:expval}.
+Let us now consider the ground state ($n = 0$) in the low temperature limit with energy $E_0$ corresponding to the state $\ket{\psi_N}_0$.
+\begin{align*}
+\expval{\hat{O}} &\simeq \frac{1}{Z_{\beta = \infty}}\e^{-\beta E_0} {}_0\expval{\hat{O}}{\psi_N}_0 \\
+&= \frac{\e^{-\beta E_0}}{\e^{-\beta E_0}}{}_0\expval{\hat{O}}{\psi_N}_0, 
+\end{align*}
+
+such that 
+\begin{equation}
+\expval{\hat{O}} \stackrel{\beta \rightarrow \infty}{=} {}_0\expval{\hat{O}}{\psi_N}_0.
+\end{equation}
+
+We now have a way to calculate the statistical mean value in the ground state at zero temperature. Let us now now assume that the energy spectrum is such that the ground state is separated from excited states by a  \underline{gap} (band insulators, semiconductors, superconductors). This way, we can express the excited state energies as 
+
+\begin{equation}
+E_N^1 = E_N^0 + \Delta_N
+\end{equation}
+
+such that 
+\begin{equation}
+E_N^2, E_N^3, \dots \ge E_N^1. 
+\end{equation}
+
+This way, we get from \eqref{eq:expval}
+
+\begin{align}
+\expval{\hat{O}} &= \frac{1}{Z}\sum_n {}_n\expval{\hat{O}}{\psi_N}_n\e^{-\beta E_N^n} \nonumber\\
+&= \frac{\sum_n {}_n\expval{\hat{O}}{\psi_N}_n\e^{-\beta E_N^n}}{\sum_n\e^{-\beta E_N^n}} \nonumber\\
+&= \cdots \nonumber\\
+% Something fishy right here
+&= \frac{{}_0\expval{\hat{O}}{\psi_N}_0\e^{-\beta E_N^0\left(1+\e^{-\beta\Delta}\dots\right)}}{\e^{-\beta E_N^0}\left(1+\e^{-\beta\Delta}\dots\right)}
+\end{align}
+and we find that as $\beta\Delta >> 1$, $\hat{O} \simeq {}_0\expval{\hat{O}}{\psi_N}_0$.
+In semiconductors we find $\Delta \sim 10\mathrm{mev} \sim 1000\mathrm{K}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
