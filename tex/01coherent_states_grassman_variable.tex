@@ -28,9 +28,14 @@ a_\mu\ket{\phi} = \varphi_\mu\ket{\phi}
 Equation \eqref{eq:coherent_commutator} will always be satisfied if $\varphi_\mu \in \mathbb{C}$. \textbf{The eigenvalues to coherent boson states can be chosen as complex numbers. This is something we can state without knowing anything about how these states are constructed. }
 
 \subsubsection{Fermionic case}
+
+\begin{equation}
+c_\mu \ket{\psi} = \xi_\mu\ket{\psi}
+\end{equation}
+
 \begin{align}
 \{c_\mu, c_\nu\} = 0 && \nonumber \\
-&\left(c_\mu c_\nu + c_\nu c_\mu\right)\ket{\psi} = 0 &\nonumber \\
+&\Rightarrow\left(c_\mu c_\nu + c_\nu c_\mu\right)\ket{\psi} = 0 &\nonumber \\
 &=\left(\xi_\mu\xi_\nu + \xi_\nu\xi_\mu\right)\ket{\psi} &\nonumber \\
 &&\Rightarrow \{\xi_\mu,\xi_\nu\} = 0.\label{eq:coherent_anticommutator}
 \end{align}
@@ -52,18 +57,87 @@ f(\xi) &= \sum_nc_n\xi^n \nonumber \\
 &=c_0 + c_1\xi + \dots \nonumber\\
 &= c_0 + c_1\xi
 \end{align}
-is linear.
+is linear. We can also consider $f(\xi^*) = c_0 + c_1\xi^*$, where $\left(\xi^*\right)^* = \xi$.
 An arbitrary function of $\xi, \xi^*$ can be written on the forms
-\begin{align*}
+\begin{align}
+\label{eq:grassmann_function}
 A\left(\xi, \xi^*\right) &= c_0 + c_1\xi + c_2\xi^*+c_3\xi\xi^* \\
 &= c_0 + c_1\xi + c_2\xi^*+d_3\xi^*\xi
-\end{align*}
+\end{align}
 
 We will now look into some of the properties of functions of Grassmann variables.
-\subsubsection{Differentiation with respect to Grassman variable takes}
+\subsubsection{Differentiation}
 
+Differentiation with respect to Grassman variables follows
+\begin{align}
+&\frac{\partial \xi}{\partial \xi} = 1 & \frac{\partial \xi}{\partial \xi^*} = 0   \\[2ex]
+&\frac{\partial \xi^*}{\partial\xi} = 0 & \frac{\partial \xi^*}{\partial \xi^*} = 1  \\[2ex]
+&\pdv{\left(\xi\xi^*\right)}{\xi} = \xi^* &  \\[2ex]
+&\pdv{\left(\xi\xi^*\right)}{\xi^*} = -\pdv{\left(\xi^*\xi\right)}{\xi^*} = -\xi  \\[2ex]
+&\pdv{f\left(\xi\right)}{\xi^*} = 0 &\\[2ex]
+&\pdv{f\left(\xi\right)}{\xi} = c_1 = \pdv{f\left(\xi^*\right)}{\xi^*}, &
+\end{align}
+and for functions defined as in \eqref{eq:grassmann_function}, we have
 
 \begin{align}
-&\frac{\partial \xi}{\partial \xi} = 1 & \frac{\partial \xi}{\partial \xi^*} = 0 & \\
-&\frac{\partial \xi^*}{\partial\xi} = 0 & \frac{\partial \xi^*}{\partial \xi^*} = 1 &
+\label{eq:grassmann_derivation}
+\pdv{\xi}A\left(\xi, \xi^*\right) &= c_1 + c_3\xi^* = c_1 - d_3\xi^* \\
+\pdv{\xi^*}A\left(\xi, \xi^*\right) &= c_2 - c_3\xi = c_2 + d_3\xi.
 \end{align}
+
+\subsubsection{Integration}
+Integrating with respect to Grassmann variables are motivated from the properties of ``normal'' Riemann integrals, that if $f\left(x = \pm \infty\right)$, then
+\begin{equation}
+\int_{-\infty}^{\infty}\dx \dv{f}{x} = 0.
+\end{equation}
+
+Equivalently we define
+\begin{align}
+&\int\dxi\cdot 1 =\int\dxi\dv{\xi}{\xi} = 0 \\
+&\int\dxi^* = 0,
+\end{align}
+
+in other words, the integral of a total differential is zero.
+
+\begin{equation}
+\int\dxi\xi = \int\dxis\xi^* = 1
+\end{equation}
+is a ``normalization'' criteria. These relations define what we mean by Grassmann-integration.
+
+Now, we have 
+\begin{align}
+\int\dxi f\left(\xi\right) &= c_1 \\
+\pdv{f}{\xi} &= c_1 \\
+\int\dxi A\left(\xi, \xi^*\right) &= \int\dxi \left(x_0+c_1\xi+c_2\xi^*+c_3\xi\xi^*\right)\nonumber \\
+&=c_1 + c_3\xi^*. \label{eq:grassmann_integral}
+\end{align}
+As we can see by comparing \eqref{eq:grassmann_integral} with \eqref{eq:grassmann_derivation}, ``integration'' $=$ ``derivation''. The somewhat hand wavy definition of integration is motivated by the fact that it gives results that reminds us about results from the theory for complex functions. 
+
+\subsubsection{The number operator}
+Generally, we have that 
+
+\begin{align}
+&a_\mu^\dagger\ket{\phi} \ne \ket{\phi} & c_\mu^\dagger\ket{\xi} \ne \ket{\xi}, 
+\end{align}
+
+and so
+
+\begin{align}
+a_\mu^\dagger a_\mu\ket{\phi} &\ne N_\mu^\phi\ket{\phi} \\ 
+c_\mu^\dagger c_\mu\ket{\xi} &\ne N_\mu^\xi\ket{\xi}.
+\end{align}
+\textbf{The coherent states are \underline{not} eigenstates of the counting operator. $\ket{\phi}, \ket{\xi}$ are not states with a fixed number of ``quants''.}
+
+\subsubsection{Algebra}
+
+Consider a vector space with the following additional properties:
+
+\begin{align*}
+&1) & (xy)z =x(yz) \\
+&2) & x(y+z) = xy+xz \\
+&3)  & (x+y)z =xz+yz \\
+&4) & \alpha xy = x\alpha y.
+\end{align*}
+
+In Abelian algebra, $xy = yx$, while in Grassmann algebra $xy = -yx$. \underline{Complex numbers} are generators for the Abelian algebra over the field $\mathbb{G}$ of commuting numbers. \underline{Grassmann numbers} are generators for the algebra over the field $\mathbb{G}$ of anticommuting numbers. 
+
