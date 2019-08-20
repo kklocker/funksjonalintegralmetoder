@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  19 AUG 2019 21:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  20 AUG 2019 16:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -1051,13 +1051,13 @@ LaTeX Warning: No \author given.
 
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\main.toc")
+05 Funksjonalintegralmetoder\Lecture notes\build\main.toc" [1
+
+{C:/Users/KarlKristian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [1
-
-{C:/Users/KarlKristian/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+ [2]
 \openout2 = `tex/00kort_rekapitulering.aux'.
 
 
@@ -1181,22 +1181,15 @@ ntum_fields.aux")
 egral.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 4D4972F167BE147B18785D65CA8CD036;1475
-(rerunfilecheck)             After:  BFD70E3B271E107A7134689E23CD2998;1626.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4FC5AA30CFC5353CCDFEE6A739FD3458;1664.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 39865 strings out of 492895
- 933496 string characters out of 3133458
+ 39867 strings out of 492895
+ 933538 string characters out of 3133458
  1094076 words of memory out of 3000000
- 43106 multiletter control sequences out of 15000+200000
+ 43108 multiletter control sequences out of 15000+200000
  542996 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,96p,1506b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1218,9 +1211,9 @@ msfonts/cm/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
 rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (18
- pages, 242541 bytes).
+ pages, 244090 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
+ 330 PDF objects out of 1000 (max. 8388607)
  83 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
