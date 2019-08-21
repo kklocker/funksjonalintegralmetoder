@@ -1,24 +1,25 @@
-\BOOKMARK [1][-]{section.1}{Short recap of second quantization for fermions and bosons}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Many particle basis}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{From classical formulation to second quantization of one-particle operators}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{From classical formulation to second quantization of two-particle operators}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Statistical mechanics}{section.1}% 5
-\BOOKMARK [1][-]{section.2}{Coherent states and Grassman variables}{}% 6
-\BOOKMARK [2][-]{subsection.2.1}{Coherent states}{section.2}% 7
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Bosonic case}{subsection.2.1}% 8
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Fermionic case}{subsection.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.2}{Grassmann variables}{section.2}% 10
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Fundamentals}{subsection.2.2}% 11
-\BOOKMARK [3][-]{subsubsection.2.2.2}{Differentiation}{subsection.2.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.2.3}{Integration}{subsection.2.2}% 13
-\BOOKMARK [3][-]{subsubsection.2.2.4}{The number operator}{subsection.2.2}% 14
-\BOOKMARK [3][-]{subsubsection.2.2.5}{Algebra}{subsection.2.2}% 15
-\BOOKMARK [1][-]{section.3}{Coherent states for bosons}{}% 16
-\BOOKMARK [1][-]{section.4}{Coherent states for fermions}{}% 17
-\BOOKMARK [1][-]{section.5}{Gaussian integrals}{}% 18
-\BOOKMARK [1][-]{section.6}{Matsubara sums and contour integrals}{}% 19
-\BOOKMARK [1][-]{section.7}{Feynman path integrals}{}% 20
-\BOOKMARK [1][-]{section.8}{Imaginary time path integrals and the partition function}{}% 21
-\BOOKMARK [1][-]{section.9}{The partition function for a free electron gas}{}% 22
-\BOOKMARK [1][-]{section.10}{Functional integrals over quantum fields}{}% 23
-\BOOKMARK [1][-]{section.11}{Coherent states path integral}{}% 24
+\BOOKMARK [1][-]{section.1}{Uncertainties/mistakes}{}% 1
+\BOOKMARK [1][-]{section.2}{Short recap of second quantization for fermions and bosons}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Many particle basis}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{From classical formulation to second quantization of one-particle operators}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{From classical formulation to second quantization of two-particle operators}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Statistical mechanics}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Coherent states and Grassman variables}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Coherent states}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Bosonic case}{subsection.3.1}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Fermionic case}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Grassmann variables}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Fundamentals}{subsection.3.2}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Differentiation}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Integration}{subsection.3.2}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.4}{The number operator}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Algebra}{subsection.3.2}% 16
+\BOOKMARK [1][-]{section.4}{Construction of coherent states for bosons, and its properties}{}% 17
+\BOOKMARK [1][-]{section.5}{Coherent states for fermions}{}% 18
+\BOOKMARK [1][-]{section.6}{Gaussian integrals}{}% 19
+\BOOKMARK [1][-]{section.7}{Matsubara sums and contour integrals}{}% 20
+\BOOKMARK [1][-]{section.8}{Feynman path integrals}{}% 21
+\BOOKMARK [1][-]{section.9}{Imaginary time path integrals and the partition function}{}% 22
+\BOOKMARK [1][-]{section.10}{The partition function for a free electron gas}{}% 23
+\BOOKMARK [1][-]{section.11}{Functional integrals over quantum fields}{}% 24
+\BOOKMARK [1][-]{section.12}{Coherent states path integral}{}% 25

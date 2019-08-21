@@ -1,1 +1,64 @@
-\section{Coherent states for bosons}
+\section{Construction of coherent states for bosons, and its properties}
+
+Pages 18-26 in lecture notes.
+
+The definition of a coherent boson state $\ket{\phi}$ is stated in \eqref{eq:def_boson_coherent_state}. We make an ansatz -- a qualified guess -- that $\ket{\phi}$ can be created as
+\begin{equation}
+\label{eq:construction_coherent_boson}
+\ket{\phi} = \e^{\sum_\mu\varphi_\mu a_\mu^\dagger}\ket{0}.
+\end{equation}
+
+We claim that 
+\begin{equation}
+\label{unc:indices}
+a_\mu\e^{\sum_\nu\varphi_\nu a_\nu^\dagger}\ket{0} = \varphi_\nu\e^{\sum_\nu\phi_\nu a_\nu^\dagger}\ket{0}
+\end{equation} % TODO: CHECK THIS
+
+\begin{proof}
+\label{unc:proof}
+\begin{equation*}
+a\sum_{n=0}\frac{\left(\varphi a^\dagger\right)^n}{n!}\ket{0} = a\sum_{n=1} \frac{\varphi^n}{n!}\left(a^\dagger\right)^n\ket{0}.
+\end{equation*}
+Note that $\left(a^\dagger\right)^na\ket{0} = 0$, and so we wish to ``commute $a$ through''.
+
+\begin{align*}
+\comm{a}{f\left(a^\dagger\right)} &= \sum_{n=1}c_n\comm{a}{\left(a^\dagger\right)^n} \\
+&= \sum_{n=1}nc_n\left(a^\dagger\right)^{n-1}\\
+f\left(a^\dagger\right) &= \sum_{n=0}^\infty c_n\left(a^\dagger\right)^n \\
+&\Rightarrow \comm{a}{f\left(a^\dagger\right)} = \pdv{a^\dagger}f\left(a^\dagger\right).
+\end{align*}
+
+More generally:
+
+\begin{align*}
+\comm{g(a)}{f(a^\dagger)} &= g\left(\pdv{a^\dagger}\right)f\left(a^\dagger\right)\\
+\comm{a}{\left(a^\dagger\right)^n} &= n\left(a^\dagger\right)^{n-1} \\
+\comm{\left(a\right)^m}{\left(a^\dagger\right)^n} &= \frac{n!}{(n-m)!}\left(a^\dagger\right)^{n-m} \\
+\acomm{c}{f\left(c^\dagger\right)} &= \pdv{c^\dagger}f\left(c^\dagger\right) \\
+\acomm{g(c)}{g(c^\dagger)} &= g\left(\pdv{c^\dagger}\right)f\left(c^\dagger\right)
+\end{align*}
+
+To find out what the commutator $\comm{a}{\left(a^\dagger\right)^n}$ is, we use that 
+\begin{equation}
+\comm{A}{BC} = \comm{A}{B}C + B\comm{A}{C}, 
+\end{equation}
+with $A =a, B = a^\dagger, C = \left(a^\dagger\right)^{n-1}$ to get
+
+\begin{align*}
+\comm{a}{\left(a^\dagger\right)^n} &= \left(a^\dagger\right)^{n-1} + a^\dagger\comm{a}{\left(a^\dagger\right)^{n-1}} \\
+&= a\left(a^\dagger\right)^{n-1} \\
+\Rightarrow a\left(a^\dagger\right)^{n}\ket{0} &= n\left(a^\dagger\right)^{n-1}\ket{0}\\
+\Rightarrow a\e^{\varphi a^\dagger}\ket{0} &= \sum_{n=1}^\infty\frac{\varphi^nn\left(a^\dagger\right)^{n-1}}{n!}\ket{0} \\
+&= \varphi\sum_{n=1}^\infty\frac{\left(\varphi a^\dagger\right)^{n-1}}{(n-1)!}\ket{0}\\ &= \varphi\e^{\varphi a^\dagger}\ket{0}.
+\end{align*}
+\end{proof}
+
+Then, for more modes (quantum numbers), we get
+\begin{equation}
+\ket{\phi} = \e^{\sum_\mu\varphi_\mu a_\mu^\dagger}\ket{0}
+\end{equation}
+with the $\varphi_\mu$'s satisfying
+\begin{equation}
+a_\mu\ket{\phi} = \varphi_\mu\ket{\phi}.
+\end{equation}
+Coherent states: ``difficult to destroy''.
