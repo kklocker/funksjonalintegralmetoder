@@ -2,6 +2,7 @@
 
 Pages 18-26 in lecture notes.
 
+\subsubsection{Construction}
 The definition of a coherent boson state $\ket{\phi}$ is stated in \eqref{eq:def_boson_coherent_state}. We make an ansatz -- a qualified guess -- that $\ket{\phi}$ can be created as
 \begin{equation}
 \label{eq:construction_coherent_boson}
@@ -11,7 +12,7 @@ The definition of a coherent boson state $\ket{\phi}$ is stated in \eqref{eq:def
 We claim that 
 \begin{equation}
 \label{unc:indices}
-a_\mu\e^{\sum_\nu\varphi_\nu a_\nu^\dagger}\ket{0} = \varphi_\nu\e^{\sum_\nu\phi_\nu a_\nu^\dagger}\ket{0}
+a_\mu\e^{\sum_\nu\varphi_\nu a_\nu^\dagger}\ket{0} = \varphi_\mu\e^{\sum_\nu\varphi_\nu a_\nu^\dagger}\ket{0}
 \end{equation} % TODO: CHECK THIS
 
 \begin{proof}
@@ -25,7 +26,7 @@ Note that $\left(a^\dagger\right)^na\ket{0} = 0$, and so we wish to ``commute $a
 \comm{a}{f\left(a^\dagger\right)} &= \sum_{n=1}c_n\comm{a}{\left(a^\dagger\right)^n} \\
 &= \sum_{n=1}nc_n\left(a^\dagger\right)^{n-1}\\
 f\left(a^\dagger\right) &= \sum_{n=0}^\infty c_n\left(a^\dagger\right)^n \\
-&\Rightarrow \comm{a}{f\left(a^\dagger\right)} = \pdv{a^\dagger}f\left(a^\dagger\right).
+&\implies \comm{a}{f\left(a^\dagger\right)} = \pdv{a^\dagger}f\left(a^\dagger\right).
 \end{align*}
 
 More generally:
@@ -47,8 +48,8 @@ with $A =a, B = a^\dagger, C = \left(a^\dagger\right)^{n-1}$ to get
 \begin{align*}
 \comm{a}{\left(a^\dagger\right)^n} &= \left(a^\dagger\right)^{n-1} + a^\dagger\comm{a}{\left(a^\dagger\right)^{n-1}} \\
 &= a\left(a^\dagger\right)^{n-1} \\
-\Rightarrow a\left(a^\dagger\right)^{n}\ket{0} &= n\left(a^\dagger\right)^{n-1}\ket{0}\\
-\Rightarrow a\e^{\varphi a^\dagger}\ket{0} &= \sum_{n=1}^\infty\frac{\varphi^nn\left(a^\dagger\right)^{n-1}}{n!}\ket{0} \\
+\implies a\left(a^\dagger\right)^{n}\ket{0} &= n\left(a^\dagger\right)^{n-1}\ket{0}\\
+\implies a\e^{\varphi a^\dagger}\ket{0} &= \sum_{n=1}^\infty\frac{\varphi^nn\left(a^\dagger\right)^{n-1}}{n!}\ket{0} \\
 &= \varphi\sum_{n=1}^\infty\frac{\left(\varphi a^\dagger\right)^{n-1}}{(n-1)!}\ket{0}\\ &= \varphi\e^{\varphi a^\dagger}\ket{0}.
 \end{align*}
 \end{proof}
@@ -62,3 +63,61 @@ with the $\varphi_\mu$'s satisfying
 a_\mu\ket{\phi} = \varphi_\mu\ket{\phi}.
 \end{equation}
 Coherent states: ``difficult to destroy''.
+
+We also could have done this in a more direct way:
+Assume
+\begin{equation}
+\ket{\phi} = \prod_\mu f_\mu\left(\varphi, a_\mu^\dagger\right)\ket{0}
+\end{equation}
+with 
+\begin{equation}
+a_\mu =\varphi_\mu\ket{\phi}.
+\end{equation}
+
+Then, we need that 
+\begin{equation}
+a_\mu f_\mu\left(\varphi, a_\mu^\dagger\right)\ket{0} = \varphi_\mu f_\mu\left(\varphi, a_\mu^\dagger\right)\ket{0},
+\end{equation}
+
+but
+
+\begin{align}
+a_\mu f_\mu \ket{0} &= \comm{a_\mu}{f_\mu}\ket{0}\\
+&\implies \pdv{a_\mu^\dagger} f_\mu = \varphi_\mu f_\mu \\
+\implies \frac{\dd{f_\mu}}{{f_\mu}} &= \varphi_\mu \dd{a_\mu^\dagger} \\
+\ln f_\mu &= \varphi_\mu a_\mu^\dagger \\
+f_\mu &= \e^{\varphi_\mu a_\mu^\dagger}.
+\end{align}
+
+\subsubsection{Properties}
+We will now look at some of the properties of coherent bosonic states. 
+\begin{align}
+a_\mu^\dagger\ket{\phi} &= a_\mu^\dagger\e^{\sum_\mu\varphi_\nu a_\nu^\dagger}\ket{0}\\
+&= \pdv{\varphi_\mu}\ket{\phi}
+\end{align}
+
+\begin{align}
+\bra{\phi} &= \bra{0}\e^{\sum_\mu \varphi_\mu^*a_\mu} \implies\\
+\bra{\phi}a_\mu &= \pdv{\varphi_\mu^*}\bra{\phi}
+\end{align}
+
+The overlap of two coherent bosonic states are
+\begin{equation}
+\braket{\phi}{\sigma} = \mel{0}{\e^{\sum_\mu\varphi_\mu^*a_\mu}\e^{\sum_\nu\sigma_\nu a_\nu^\dagger}}{0}.
+\end{equation}
+
+Now define 
+\begin{align*}
+\Xi &= \sum_\mu\varphi_\mu^*a_\mu \\
+\Omega &= \sum_\nu\sigma_\nu a_\nu
+\end{align*}
+
+such that 
+\begin{equation}
+\braket{\phi}{\sigma} = \mel{0}{\e^{\Xi}\e^{\Omega}}{0}.
+\end{equation}
+
+We see that 
+\begin{equation}
+\mel{0}{\e^{\Omega}\e^{\Xi}}{0} = 1.
+\end{equation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  21 AUG 2019 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  22 AUG 2019 16:49
 entering extended mode
 **./main.tex
 (main.tex
@@ -1106,60 +1106,65 @@ Overfull \hbox (4.83853pt too wide) in paragraph at lines 104--106
 [11]) [12]
 \openout2 = `tex/02coherent_states_bosons.aux'.
 
- (tex/02coherent_states_bosons.tex [13
+ (tex/02coherent_states_bosons.tex
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 5.
+
+[13
 
 
-]) [14]
+] [14]) [15]
 \openout2 = `tex/03coherent_states_fermions.aux'.
 
-
-(tex/03coherent_states_fermions.tex) [15
+ (tex/03coherent_states_fermions.tex) [16
 
 
 ]
 \openout2 = `tex/04gaussian_integrals.aux'.
 
- (tex/04gaussian_integrals.tex)
-[16
+
+(tex/04gaussian_integrals.tex) [17
 
 
 ]
 \openout2 = `tex/05matsubara_contour.aux'.
 
- (tex/05matsubara_contour.tex) [17
+ (tex/05matsubara_contour.tex) [18
 
 
 ]
 \openout2 = `tex/06feynman_path_integrals.aux'.
 
- (tex/06feynman_path_integrals.tex)
-[18
+
+(tex/06feynman_path_integrals.tex) [19
 
 
 ]
 \openout2 = `tex/07imaginary_time_path.aux'.
 
- (tex/07imaginary_time_path.tex) [19
+ (tex/07imaginary_time_path.tex)
+[20
 
 
 ]
 \openout2 = `tex/08partition_free_electron.aux'.
 
- (tex/08partition_free_electron.tex)
-[20
+ (tex/08partition_free_electron.tex) [21
 
 
 ]
 \openout2 = `tex/09functional_integrals_quantum_fields.aux'.
 
- (tex/09functional_integrals_quantum_fields.tex) [21
+
+(tex/09functional_integrals_quantum_fields.tex) [22
 
 
 ]
 \openout2 = `tex/10coherent_states_path_integral.aux'.
 
 
-(tex/10coherent_states_path_integral.tex) [22
+(tex/10coherent_states_path_integral.tex) [23
 
 
 ]
@@ -1205,14 +1210,14 @@ egral.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 333089B7D8EF9A1FC25FA6ED779E8F0E;1940.
+(rerunfilecheck)             Checksum: 86B7033A3D87EC5E93644B0B0384396C;2084.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 39941 strings out of 492895
- 935329 string characters out of 3133458
- 1094920 words of memory out of 3000000
- 43138 multiletter control sequences out of 15000+200000
+ 39962 strings out of 492895
+ 935625 string characters out of 3133458
+ 1094823 words of memory out of 3000000
+ 43141 multiletter control sequences out of 15000+200000
  542996 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,96p,1506b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1234,10 +1239,10 @@ lic/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (22
- pages, 276986 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (23
+ pages, 284910 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 443 PDF objects out of 1000 (max. 8388607)
+ 135 named destinations out of 1000 (max. 500000)
+ 229 words of extra memory for PDF output out of 10000 (max. 10000000)
 
