@@ -2,7 +2,7 @@
 
 Pages 18-26 in lecture notes.
 
-\subsubsection{Construction}
+\subsection{Construction}
 The definition of a coherent boson state $\ket{\phi}$ is stated in \eqref{eq:def_boson_coherent_state}. We make an ansatz -- a qualified guess -- that $\ket{\phi}$ can be created as
 \begin{equation}
 \label{eq:construction_coherent_boson}
@@ -89,7 +89,7 @@ a_\mu f_\mu \ket{0} &= \comm{a_\mu}{f_\mu}\ket{0}\\
 f_\mu &= \e^{\varphi_\mu a_\mu^\dagger}.
 \end{align}
 
-\subsubsection{Properties}
+\subsection{Properties}
 We will now look at some of the properties of coherent bosonic states. 
 \begin{align}
 a_\mu^\dagger\ket{\phi} &= a_\mu^\dagger\e^{\sum_\mu\varphi_\nu a_\nu^\dagger}\ket{0}\\
@@ -158,3 +158,34 @@ For the normalization of \(\ket{\phi}\) we have
 &= \sum_\mu\varphi_\mu^*\varphi_\mu = N.
 \end{align}
 
+\subsection{Coherent states for a one-bosonic oscillator}
+
+Following the construction from \eqref{eq:construction_coherent_boson}, we have
+\begin{align}
+\ket{z} &= \e^{za^\dagger}\ket 0 \\
+&= \sum_{n=0}^\infty \frac{z^n\left(a^\dagger\right)^n}{n!}\ket{0} = \sum_n \frac{z^n}{\sqrt{n!}}\frac{\left(a^\dagger\right)}{\sqrt{n!}}\ket 0 \\
+&= \sum_n\frac{z^n}{\sqrt{n!}}\ket n
+\end{align}
+
+\begin{align}
+\label{eq:completeness_coherent_boson}
+&\frac{1}{2\pi i}\int\dd z \dd{z^*}\e^{-z^*z}\dyad z \\
+&= \frac{1}{2\pi i}\int \dd z \dd{z^*}\e^{-zz^*}\sum_{n,m}\frac{z^n}{\sqrt{n!}}\frac{\left(z^*\right)^m}{\sqrt{m!}}\dyad m \\
+&= \frac{1}{2\pi i}\sum_{n, m}\frac{1}{\sqrt{n!m!}}\dyad{n}{m}\int\dd z \dd{z^*}\e^{-zz^*}z^n\left(z^*\right)^m \\
+&= \frac{1}{\pi}\sum_{n, m}\frac{1}{\sqrt{n!m!}}\dyad{n}{m}\int \dd{x}\dd{y} \e^{-\left(x^2 + y^2\right)}\left(x+iy\right)^n)\left(x-iy\right)^m. \label{eq:coherent_state_integral}
+\end{align}
+Now, the integral in \eqref{eq:coherent_state_integral} is
+\begin{align}
+&\frac{1}{\pi}\int\dx\dy\e^{-\left(x^2 + y^2\right)}\left(x+iy\right)^n)\left(x-iy\right)^m \nonumber \\
+&= \frac{1}{\pi} \int \dd{\rho}\rho\dd{\theta}\e^{-\rho^2}\left(\rho\e^{i\theta}\right)^n\left(\rho\e^{-i\theta}\right)^m\nonumber \\
+&= \frac{1}{\pi}\underbrace{\int\dd{\theta}\e^{i\theta(n-m)}}_{2\pi\delta_{nm}}\int\dd{\rho}\rho^{n+m+1}\e^{-\rho^2}\nonumber \\
+&= 2\delta_{nm}\int\dd{\rho}\rho^{2n+1}\e^{-\rho^2}\nonumber\\ 
+&= \delta_{nm}\int_0^\infty\dd{r}r^{-\frac{1}{2}}r^{\frac{2n+1}{2}}e^{-r} = \int_0^\infty\dd{r}r^n\e^{-r} \nonumber\\
+&= \delta_{nm}n!,
+\end{align}
+such that \eqref{eq:completeness_coherent_boson} becomes
+
+\begin{align*}
+\frac{1}{2\pi i}\int\dd z \dd{z^*}\e^{-z^*z}\dyad z &= \sum_{n, m}\frac{1}{\sqrt{n!m!}}\dyad{n}{m}\cdot \delta_{nm}n! \\
+&= \sum_{n}\dyad{n} = 1.
+\end{align*}
