@@ -108,16 +108,53 @@ The overlap of two coherent bosonic states are
 
 Now define 
 \begin{align*}
-\Xi &= \sum_\mu\varphi_\mu^*a_\mu \\
-\Omega &= \sum_\nu\sigma_\nu a_\nu
+A &= \sum_\mu\varphi_\mu^*a_\mu \\
+B &= \sum_\nu\sigma_\nu a_\nu
 \end{align*}
 
 such that 
 \begin{equation}
-\braket{\phi}{\sigma} = \mel{0}{\e^{\Xi}\e^{\Omega}}{0}.
+\braket{\phi}{\sigma} = \mel{0}{\e^{A}\e^{B}}{0}.
 \end{equation}
 
 We see that 
 \begin{equation}
-\mel{0}{\e^{\Omega}\e^{\Xi}}{0} = 1.
+\mel{0}{\e^{B}\e^{A}}{0} = 1.
 \end{equation}
+
+Baker-Hausdorff:
+\begin{align}
+e^{A+B} &=\e^{A}\e^{B}\e^{-\frac{1}{2}\comm{A}{B}} \\
+		&= \e^{B}\e^{A}\e^{-\frac{1}{2}\comm{B}{A}},
+\end{align}
+
+where $\comm{A}{B}$ commutes with $A, B$.
+\begin{align}
+\implies \e^A\e^B &= \e^B\e^A\e^{\comm{A}{B}} \\
+\comm{A}{B} &= \sum_{\mu,\nu}\varphi_\mu^*\sigma_\nu\underbrace{\comm{a_\mu}{a_\nu^\dagger}}_{\delta_{\mu\nu}} \\
+	&= \sum_\mu\varphi_\mu^*\sigma_\mu \\
+	\implies& \\
+	 \braket{\phi}{\sigma} &= \e^{\sum_\mu\varphi_\mu^*\sigma_\mu}\underbrace{\mel{0}{\e^B\e^A}{0}}_{=1}\\
+	 &= \e^{\sum_\mu\varphi_\mu^*\sigma_\mu},
+\end{align}
+the states are not orthogonal!
+
+For the normalization of \(\ket{\phi}\) we have
+\begin{align}
+\braket{\phi} &= \e^{\sum_\mu\varphi_\mu^*\varphi_\mu} \\
+	&= \e^{\ev{N}}.
+\end{align}
+\(\ev{N}\) is the average number of particles in the state \(\ket{\phi}\)
+
+\begin{align}\label{unc:expvalN}
+\frac{\ev{\sum_\mu a_\mu^\dagger a_\mu}{\phi}}{\braket{\phi}} &= \ev{N} \\
+&= \sum_\mu \varphi_\mu^*\varphi_\mu
+\end{align}
+
+\begin{align}
+\ev{\left(\Delta N \right)^2} &= \frac{1}{\braket{\phi}}\left[ \ev{\hat{N}^2}{\phi} - \left( \ev{\hat{N}}{\phi}\right)^2\right] \\
+&= \frac{1}{\braket{\phi}}\left[\ev{\sum_{\mu, \nu}a_\mu^\dagger a_\mu a_\nu^\dagger a_\nu}{\phi} - \left(\sum_\mu\varphi_\mu^*\varphi_\mu\right)^2\right]\\
+\label{unc:expvalN2}
+&= \sum_\mu\varphi_\mu^*\varphi_\mu = N.
+\end{align}
+
