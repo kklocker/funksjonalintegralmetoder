@@ -1,4 +1,4 @@
-\section{Construction of coherent states for bosons, and its properties}
+\section{Construction of coherent states for bosons, and its properties}\label{unc:order_boson}
 
 Pages 18-26 in lecture notes.
 
@@ -36,7 +36,7 @@ More generally:
 \comm{a}{\left(a^\dagger\right)^n} &= n\left(a^\dagger\right)^{n-1} \\
 \comm{\left(a\right)^m}{\left(a^\dagger\right)^n} &= \frac{n!}{(n-m)!}\left(a^\dagger\right)^{n-m} \\
 \acomm{c}{f\left(c^\dagger\right)} &= \pdv{c^\dagger}f\left(c^\dagger\right) \\
-\acomm{g(c)}{g(c^\dagger)} &= g\left(\pdv{c^\dagger}\right)f\left(c^\dagger\right)
+\acomm{g(c)}{f(c^\dagger)} &= g\left(\pdv{c^\dagger}\right)f\left(c^\dagger\right)
 \end{align*}
 
 To find out what the commutator $\comm{a}{\left(a^\dagger\right)^n}$ is, we use that 
@@ -189,3 +189,32 @@ such that \eqref{eq:completeness_coherent_boson} becomes
 \frac{1}{2\pi i}\int\dd z \dd{z^*}\e^{-z^*z}\dyad z &= \sum_{n, m}\frac{1}{\sqrt{n!m!}}\dyad{n}{m}\cdot \delta_{nm}n! \\
 &= \sum_{n}\dyad{n} = 1.
 \end{align*}
+
+Coherent states stays coherent under the propagation of time, but with a different label:
+
+\begin{align*}
+\e^{\frac{-iHt}{\hbar}}\ket z &= \e^{\frac{-i\hbar\omega a^\dagger at}{\hbar}}\ket z = \e^{-i\omega ta^\dagger a}\ket z \\
+&= \e^{-i\omega ta^\dagger a}\sum_n\frac{z^n}{\sqrt{n!}}\ket n = \sum_n\frac{z^n}{\sqrt{n!}}\e^{-i\omega ta^\dagger a}\ket n \\
+&=  \sum_n\frac{z^n}{\sqrt{n!}}\e^{-i\omega tn}\ket n = \sum_n\frac{\left(z\e^{-i\omega t}\right)^n}{\sqrt{n!}}\ket n \\
+&= \ket{z\e^{-i\omega t}}
+\end{align*}
+
+The propagator in this basis is thus very simple:
+\begin{align}
+\mel{z_n}{\e^{\frac{-iHt}{\hbar}}}{z_0} &= \braket{z_n}{z_0\e^{-i\omega t}} \\
+&= \e^{z_n^*z_0\e^{-i\omega t}}
+\end{align}
+
+\subsubsection{The completeness relation for coherent boson states}
+
+\begin{align*}
+&\int\left(\prod_\mu\frac{\dd{\varphi_\mu^*}\dd{\varphi_\mu}}{2\pi i}\right)\e^{-\sum_\mu\varphi_\mu^*\varphi_\mu}\dyad{\phi}  \\
+&= \int\left(\prod_\mu\frac{\dd{\varphi_\mu^*}\dd{\varphi_\mu}}{2\pi i}\right)\e^{-\sum_\mu\varphi_\mu^*\varphi_\mu}\e^{\sum_\mu\varphi_\mu a_\mu^\dagger}\dyad 0 \e^{-\sum_\mu a_\mu\varphi_\mu^*} \\
+&=\int\left(\prod_\mu\frac{\dd{\varphi_\mu^*}\dd{\varphi_\mu}}{2\pi i}\right)\e^{-\sum_\mu\varphi_\mu^*\varphi_\mu} \\
+&\cdot \sum_{n_{\mu}=0}^\infty\frac{\varphi_\mu^{n_\mu}}{\sqrt{n_\mu!}}\sum_{n_{\nu}=0}^\infty\frac{\varphi_\nu^{n_\nu}}{\sqrt{n_\nu!}}\cdots\ket{n_\mu, n_\nu, \dots}\\
+&\cdot \sum_{m_{\mu}=0}^\infty\frac{\left(\varphi_\mu^*\right)^{m_\mu}}{\sqrt{m_\mu!}}\sum_{m_{\nu}=0}^\infty\frac{\left(\varphi_\nu^*\right)^{m_\nu}}{\sqrt{m_\nu!}}\cdots \bra{m_mu, m_\nu, \dots} \\
+&= \underbrace{\sum_{n_\mu = 0}^\infty\sum_{n_\nu = 0}^\infty\cdots}_{\sum_{\{n_\mu\}}} \dyad{n_\mu, n_\nu, \dots} \\
+&= I
+\end{align*}
+
+

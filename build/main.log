@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  23 AUG 2019 19:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  24 AUG 2019 16:19
 entering extended mode
 **./main.tex
 (main.tex
@@ -1123,57 +1123,57 @@ Overfull \hbox (4.83853pt too wide) in paragraph at lines 104--106
  (tex/02coherent_states_bosons.tex [13
 
 
-] [14] [15] [16]) [17]
+] [14] [15] [16] [17]) [18]
 \openout2 = `tex/03coherent_states_fermions.aux'.
 
 
-(tex/03coherent_states_fermions.tex) [18
+(tex/03coherent_states_fermions.tex) [19
 
 
 ]
 \openout2 = `tex/04gaussian_integrals.aux'.
 
  (tex/04gaussian_integrals.tex)
-[19
+[20
 
 
 ]
 \openout2 = `tex/05matsubara_contour.aux'.
 
- (tex/05matsubara_contour.tex) [20
+ (tex/05matsubara_contour.tex) [21
 
 
 ]
 \openout2 = `tex/06feynman_path_integrals.aux'.
 
  (tex/06feynman_path_integrals.tex)
-[21
+[22
 
 
 ]
 \openout2 = `tex/07imaginary_time_path.aux'.
 
- (tex/07imaginary_time_path.tex) [22
+ (tex/07imaginary_time_path.tex) [23
 
 
 ]
 \openout2 = `tex/08partition_free_electron.aux'.
 
  (tex/08partition_free_electron.tex)
-[23
+[24
 
 
 ]
 \openout2 = `tex/09functional_integrals_quantum_fields.aux'.
 
- (tex/09functional_integrals_quantum_fields.tex) [24
+ (tex/09functional_integrals_quantum_fields.tex) [25
 
 
 ]
 \openout2 = `tex/10coherent_states_path_integral.aux'.
 
 
-(tex/10coherent_states_path_integral.tex) [25
+(tex/10coherent_states_path_integral.tex) [26
 
 
 ]
@@ -1219,14 +1219,18 @@ egral.aux"))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E775605FEEC4DE7C572C08247F132D6C;2159.
+(rerunfilecheck)             Checksum: C14217B679FBD0145886071BF34C88A4;2271.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 41632 strings out of 492895
- 973861 string characters out of 3133458
+ 41639 strings out of 492895
+ 973975 string characters out of 3133458
  1151538 words of memory out of 3000000
- 44781 multiletter control sequences out of 15000+200000
+ 44784 multiletter control sequences out of 15000+200000
  542996 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,96p,1506b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1246,12 +1250,13 @@ gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/Program Files
 type1/public/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
+ols/msbm10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
+/msbm5.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (25
- pages, 300493 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (26
+ pages, 311061 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 161 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 165 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
