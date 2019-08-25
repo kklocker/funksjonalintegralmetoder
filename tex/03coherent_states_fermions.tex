@@ -1,1 +1,51 @@
 \section{Coherent states for fermions}
+
+\subsection{Construction}
+
+We will also in the fermionic case make an ansatz on the construction of coherent fermionic states, somewhat similar to \eqref{eq:construction_coherent_boson}:
+\begin{align}
+\ket \psi &= \e^{-\sum_\mu\xi_\mu c_\mu^\dagger}\ket 0 \\
+&= \prod_\mu \left(1-\xi_\mu c_\mu^\dagger\right)\ket 0
+\end{align}
+
+It is simpler to show that the ansatz satisfies the definition \eqref{eq:def_fermion_coherent_state} ( \( c_\mu \ket{\psi} = \xi_\mu\ket{\psi}\) ) for fermions than it was for bosons. Use the fact that \(\xi_\mu^2 = 0\) to express the expansion of the exponential function. 
+\begin{equation}
+c_\mu\prod_\nu\left(1-\xi_\nu c_\nu^\dagger\right)\ket 0 = c_\mu \ket \psi
+\end{equation}
+affects one of the products:
+\begin{align}
+c_\mu\left(1-\xi_\mu c_\mu^\dagger\right)\ket 0 &= +\xi_\mu \underbrace{c_\mu c_\mu^\dagger}_{1-c_\mu\dagger c_\mu}\ket 0 \\
+&= +\xi_\mu \ket 0  \\
+&= \xi_\mu\left(1-\xi_\mu c_\mu^\dagger\right)\ket 0 \\
+&\implies \nonumber\\
+ &c_\mu\ket \psi = \xi_\mu\ket\psi,
+\end{align} 
+
+where we used the anticommutation relations \(\acomm{\xi_\mu}{c_\mu} = \acomm{\xi_\mu}{c_\mu^\dagger} =0\).
+
+\subsection{Properties}
+
+Acting with the creation operator on a coherent fermion state:
+\begin{align*}
+c_\mu^\dagger\ket\psi &= c_\mu^\dagger\left(1-\xi_\mu c_\mu^\dagger\right)\prod_{\nu \ne \mu}\left(1-\xi_\nu c_\nu^\dagger\right)\ket 0\\
+&= -\pdv{\xi_\mu}\left(1-\xi_\mu c_\mu^\dagger\right)\prod_{\nu \ne \mu}\left(1-\xi_\nu c_\nu^\dagger\right)\ket 0 \\
+&= -\pdv{\xi_\mu}\ket \psi.
+\end{align*}
+
+Similarly, on the ``bra'' vectors:
+\begin{align*}
+\bra\psi c_\mu &= \prod_{\mu}\bra 0 \left(1+\xi_\mu^*c_\mu\right)c_\mu \\
+&=\pdv{\xi_\mu^*}\prod_{\mu}\bra 0 \left(1+\xi_\mu^*c_\mu\right)\\
+&= \pdv{\xi_\mu^*}\bra\psi
+\end{align*}
+NB: Note the plus sign in the product.
+
+The overlap between two coherent fermion states:
+
+\begin{align*}
+\braket{\psi}{\psi'} &= \mel{0}{\prod_{\mu, \nu}\left(1+\xi_{\nu}^*c_{\nu}\right)\left(1-\xi_\mu c_\mu^\dagger\right)}{0} \\
+&= \prod_{\mu, \nu}\mel{0}{\left(1+\xi_{\nu}^*c_{\nu}\xi_\mu c_\mu^\dagger\right)}{0}\\
+&=\prod_{\nu \ne \mu}\cdot 1 \prod_{\mu}\left(1+\xi_\mu^*\xi_\mu\right) \\
+&= \prod_{\mu}\left(1+\xi_\mu^*\xi_\mu\right) \\
+\text{Re-exponentiation} \implies \braket{\psi}{\psi'} &= \e^{\sum_\mu\xi_\mu^*\xi_\mu}
+\end{align*}
