@@ -24,7 +24,7 @@ c_\mu\left(1-\xi_\mu c_\mu^\dagger\right)\ket 0 &= +\xi_\mu \underbrace{c_\mu c_
 where we used the anticommutation relations \(\acomm{\xi_\mu}{c_\mu} = \acomm{\xi_\mu}{c_\mu^\dagger} =0\).
 
 \subsection{Properties}
-
+\subsubsection{Creation operator}
 Acting with the creation operator on a coherent fermion state:
 \begin{align*}
 c_\mu^\dagger\ket\psi &= c_\mu^\dagger\left(1-\xi_\mu c_\mu^\dagger\right)\prod_{\nu \ne \mu}\left(1-\xi_\nu c_\nu^\dagger\right)\ket 0\\
@@ -40,6 +40,7 @@ Similarly, on the ``bra'' vectors:
 \end{align*}
 NB: Note the plus sign in the product.
 
+\subsubsection{Overlap}
 The overlap between two coherent fermion states:
 
 \begin{align*}
@@ -47,5 +48,83 @@ The overlap between two coherent fermion states:
 &= \prod_{\mu, \nu}\mel{0}{\left(1+\xi_{\nu}^*c_{\nu}\xi_\mu c_\mu^\dagger\right)}{0}\\
 &=\prod_{\nu \ne \mu}\cdot 1 \prod_{\mu}\left(1+\xi_\mu^*\xi_\mu\right) \\
 &= \prod_{\mu}\left(1+\xi_\mu^*\xi_\mu\right) \\
-\text{Re-exponentiation} \implies \braket{\psi}{\psi'} &= \e^{\sum_\mu\xi_\mu^*\xi_\mu}
+\text{Re-exponentiation} \implies \braket{\psi}{\psi'} &= \e^{\sum_\mu\xi_\mu^*\xi_\mu}.
 \end{align*}
+We have used \(\acomm{c_\mu}{\xi_\mu}=0\).
+
+\subsubsection{Completeness relation}
+
+The completeness relation for fermion coherent states is
+\begin{equation}
+\int \prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu \e^{-\sum_\mu\xi_\mu^*\xi_\mu}}\dyad{\xi} = 1.
+\end{equation}
+
+\begin{proof}
+\underline{\textbf{For one mode:}}
+\begin{align*}
+&\int \dxi\dxis\e^{-\xi^*\xi}\e^{-\xi c^\dagger}\dyad 0\e^{-c\xi^*}& \\
+&=\int \dxi\dxis \left(1-\xi^*\xi\right)\left(1-\xi c^\dagger\right)\dyad 0 \left(1-c\xi^*\right)\\
+&=\int \dxi\dxis \left[1-\xi^*\xi -\xi ^\dagger\right]\dyad 0 \left(1+\xi^* c\right)\\
+&=\int \dxi\dxis\left[\left(1-\xi^*\xi\right)\ket 0 - \xi c^\dagger \ket 0\right]\left[\bra 0 + \xi^*\bra 0 c\right] \\
+&= \int \dxi\dxis \left[\left( 1-\xi^*\xi\right)\dyad 0 -\xi c^\dagger \dyad 0 \right. \\
+&\qquad\qquad\quad +\left.\left(1-\xi^*\xi\right)\ket 0\xi^*\bra 0 c - \xi c^\dagger\ket 0\xi^*\bra 0 c\right] \\
+&=\int \dxi\dxis \left[\left(1-\xi^*\xi\right)\dyad 0 -\xi \dyad{1}{0} \right.\\
+&\qquad\qquad\quad +\left.\left(1-\xi^*\xi\right)\xi^*\dyad{0}{1} + \xi\xi^* \dyad 1\right]\\
+&= \dyad 0 + \dyad 1 = 1
+\end{align*}
+
+\underline{\textbf{For multiple modes:}}
+
+\begin{align*}
+&\int \prod_\mu \dxi_\mu \dxis_\mu \e^{-\sum_\mu \xi_\mu^* \xi_\mu}\dyad \xi \\
+&=\int \prod_\mu\dxi_\mu\dxis\mu\e^{-\sum_\mu\xi_\mu^*\xi_\mu}\e^{-\sum_\mu\xi_\mu c_\mu^\dagger}\dyad 0\e^{-\sum_\mu c_\mu\xi_\mu^*}\\
+&= \int \left(\prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu}\right)\left(\prod_\mu\left(1-\xi_\mu^*\xi_\mu\right)\right)\left(\prod_\mu\left(1-\xi_\mu c_\mu^\dagger\right)\right) \\
+&\qquad\qquad\quad \cdot \dyad 0 \left(\prod_\mu\left(1+\xi_\mu^* c_\mu\right)\right)
+\end{align*}
+We can treat \(\xi_\mu^*\xi_\mu, \xi_\mu c_\mu^\dagger\) etc. as ordinary numbers when we change places, since they commute.
+
+\end{proof}
+
+The trace of an operator:
+\begin{align}
+\label{eq:Trace_fermion_coherent}
+\Tr A =&\sum_n\ev{A}{n} \nonumber \\
+&= \int \prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu \e^{-\sum_\mu\xi_\mu^*\xi_\mu}}\sum_n\braket{n}{\xi}\mel{\xi}{A}{n}\nonumber \\
+&=\int \prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu \e^{-\sum_\mu\xi_\mu^*\xi_\mu}}\underbrace{\sum_n \mel{-\xi}{A}{n}\braket{n}{\xi}}_{\mel{-\xi}{A}{\xi}} \nonumber\\
+&=\int \prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu \e^{-\sum_\mu\xi_\mu^*\xi_\mu}}\mel{-\xi}{A}{\xi} 
+\end{align}
+
+\(\hat{N} = \sum_\mu c_\mu^\dagger c_\mu\)is the number operator, as usual. What is the mean value of this operator in a fermion coherent state?
+
+\begin{align}
+\frac{\ev{\hat{N}}{\xi}}{\braket{\xi}} &= \sum_\mu \frac{\ev{c_\mu^\dagger c_\mu }{\xi}}{\braket \xi} \\
+&= \sum_\mu \xi_\mu^* \xi_\mu 
+\end{align}
+This is neither a real nor complex number! It is therefore meaningless to talk about the mean value of number of fermions in a coherent state. 
+
+In \eqref{eq:Trace_fermion_coherent} we used a property that is not true in general, but is under the integral.
+\begin{align*}
+\braket{\psi}{\xi} &= c_0 + c_1\xi \\
+\braket{\xi}{\psi} &= d_0 + d_1\xi^*
+\end{align*}
+Terms linear in \(\xi, \xi^*\) is zero under Grassmann integration
+\begin{align*}
+\ket \xi &\equiv \e^{\xi c^\dagger}\ket 0\\
+\ket{-\xi} &= \e^{-\xi c^\dagger}\ket 0 \\
+&\ne -\ket \xi
+\end{align*}
+Such that 
+\begin{equation}
+\braket{\psi}{\xi}\braket{\xi}{\psi} \ne \braket{-\xi}{\psi}\braket{\psi}{\xi},
+\end{equation}
+
+but it comes out correct in the integral. We used this as
+
+\begin{equation}
+\int\dd{\xi}\dd{\xi^*}\braket{\psi}{\xi}\braket{\xi}{\psi} = \int\dd{\xi}\dd{\xi^*}\braket{-\xi}{\psi}\braket{\psi}{\xi}
+\end{equation}
+
+The reason for this fundamental difference between Bosonic and fermionic coherent states lies in the Pauli exclusion principle and the definition of coherent states.
+
+With a \underline{given set} of one-particle states, together with the Pauli princliple, a physical state must have a fixed, determinable number of particles, and cannot be an eigenstate of a annihilation operator. The fermionic coherent states therefore lay outside the Hilbert space of physical states, and need not represent observable states. For bosons, the symmetric property means that even with a \underline{given set} of quantum numbers, physical states can be an eigenstate of the annihilation operator. This is because each one particle state can assume an arbitrary number of quants. Boson coherent states are thus \underline{physical}. They are in fact physical states naturally occurring when taking the classical limit of a quantum field theory. Also in lasers. 
+
