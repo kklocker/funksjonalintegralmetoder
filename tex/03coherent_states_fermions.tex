@@ -79,7 +79,7 @@ The completeness relation for fermion coherent states is
 &\int \prod_\mu \dxi_\mu \dxis_\mu \e^{-\sum_\mu \xi_\mu^* \xi_\mu}\dyad \xi \\
 &=\int \prod_\mu\dxi_\mu\dxis\mu\e^{-\sum_\mu\xi_\mu^*\xi_\mu}\e^{-\sum_\mu\xi_\mu c_\mu^\dagger}\dyad 0\e^{-\sum_\mu c_\mu\xi_\mu^*}\\
 &= \int \left(\prod_{\mu}\dd{\xi_\mu^*}\dd{\xi_\mu}\right)\left(\prod_\mu\left(1-\xi_\mu^*\xi_\mu\right)\right)\left(\prod_\mu\left(1-\xi_\mu c_\mu^\dagger\right)\right) \\
-&\qquad\qquad\quad \cdot \dyad 0 \left(\prod_\mu\left(1+\xi_\mu^* c_\mu\right)\right)
+&\qquad\qquad\quad \times \dyad 0 \left(\prod_\mu\left(1+\xi_\mu^* c_\mu\right)\right)
 \end{align*}
 We can treat \(\xi_\mu^*\xi_\mu, \xi_\mu c_\mu^\dagger\) etc. as ordinary numbers when we change places, since they commute.
 
@@ -128,3 +128,29 @@ The reason for this fundamental difference between Bosonic and fermionic coheren
 
 With a \underline{given set} of one-particle states, together with the Pauli princliple, a physical state must have a fixed, determinable number of particles, and cannot be an eigenstate of a annihilation operator. The fermionic coherent states therefore lay outside the Hilbert space of physical states, and need not represent observable states. For bosons, the symmetric property means that even with a \underline{given set} of quantum numbers, physical states can be an eigenstate of the annihilation operator. This is because each one particle state can assume an arbitrary number of quants. Boson coherent states are thus \underline{physical}. They are in fact physical states naturally occurring when taking the classical limit of a quantum field theory. Also in lasers. 
 
+When we considered the trace (eq \eqref{eq:Trace_fermion_coherent} ) of an operator \(A\) for both for both fermionic and bosonic coherent states, we had to consider the matrix elements
+
+\begin{align*}
+	\mel{\phi}{A}{\phi} && \textbf{(Bosons)}\\
+	\mel{-\psi}{A}{\psi} && \textbf{(Fermions)} 
+\end{align*}
+
+For bosons: Assume that \(A(a_\mu^\dagger, a_\mu)\) are normal ordinals \label{unc:ordinals}; all \(a_\mu\) are placed to the right of \(a_\mu^\dagger\)-
+
+\begin{align}
+a_\mu\ket\phi &= \varphi_\mu\ket\phi \\
+\left(a_\mu\right)^n\ket\phi &= \left(\varphi_\mu\right)^n\ket\phi \\
+A\left(a_\mu\right)\ket\phi &= A\left(\varphi_\mu\right)\ket\phi,
+\end{align}
+thus
+
+\begin{align}
+\mel{\phi}{A\left( a_\mu^\dagger, a_\mu\right)}{\phi'}
+&= A\left(\varphi_\mu^*, \varphi_{\mu'}\right)\braket{\phi}{\phi'} \\
+&= A\left(\varphi_\mu^*, \varphi_{\mu'}\right)\e^{\sum_\mu\varphi_\mu^*\varphi_{\mu'}}. 
+\end{align}
+Similarly, 
+
+\begin{equation}
+\mel{\psi}{A\left( c_\mu^\dagger,c_\mu\right)}{\psi'} = A\left(\xi_\mu^*,\xi_\mu'\right)\e^{\sum_\mu\xi_\mu^*\xi_\mu'}
+\end{equation}
