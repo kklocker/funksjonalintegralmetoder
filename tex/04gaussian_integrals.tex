@@ -1,3 +1,123 @@
+
 \section{Gaussian integrals}
 
-In the functional integral formulation
+In a functional integral formalism of quantum field theory, a free non-interacting theory will have the form of a multiple gaussian integral. These integrals are therefore very important. We have also seen that the trace of a operator can be expressed as a integral over c-numbers or Grassmann-numbers with gaussian weight. This motivates the study of such integrals. We look at the following scenarios: 
+
+\begin{itemize}
+    \item real variables
+    \item complex variables
+    \item Grassmann-variables
+\end{itemize}
+
+The basic formula that we need is
+
+\begin{equation}
+    \int_{-\infty}^{\infty} \dx \e^{-ax^{2}} = \sqrt{\frac{\pi}{a}} \implies \int_{-\infty}^{\infty} \frac{\dx}{\sqrt{2\pi}} \e^{-\frac{a}{2} x^{2}} = \frac{1}{a}. 
+\end{equation}
+
+Mutiple gaussian integrals over real variables 
+
+\begin{equation}
+    I = \int \frac{\dx_{1}}{\sqrt{2\pi}} ... \frac{\dx_{n}}{\sqrt{2\pi}}   \e^{-\frac{1}{2}x_{i} A_{ij} x_{j}  + x_{i} J_{i}}
+\end{equation}
+
+where we use Einstein convention in the exponent, $J_{i}$ is a real number and $A_{ij}$ is a positive-definite, symmetric matrix. \\ 
+
+Look at the exponent: 
+
+\begin{align*}
+    -\frac{1}{2}x_{i} A_{ij} x_{j}  + x_{i} J_{i} = -\frac{1}{2}x_{i} A_{ij} x_{j}  + \frac{1}{2}( x_{i} J_{i} + x_{j} J_{j}) \\ = -\frac{1}{2}(x_{i} - A_{ij}^{-1}J_{j})A_{ij}(x_{j} - A_{ij}^{-1}J_{i}) + \frac{1}{2}J_{i}A_{ij}^{-1}J_{j}
+\end{align*}
+
+and by $y_{i} = x_{i} - A_{ij}^{-1}J_{j} \quad (i \leftrightarrow j)$ change of variables, we end up with 
+
+\begin{equation}
+    Z(J) = \e^{\frac{1}{2}J_{i}A_{ij}^{-1}J_{j}} \int \frac{\mathrm{d}y_{1}}{\sqrt{2\pi}} ... \frac{\mathrm{d}y_{n}}{\sqrt{2\pi}}   \e^{-\frac{1}{2}y_{i} A_{ij} y_{j}}
+\end{equation}
+
+And by doing an orthogonal transformation and thereby diagonalizing $A_{ij}$
+
+\begin{align*}
+    y_{i}A_{ij}y_{j} = \vb{y}^{T}\vb{
+    A}\vb{y} = \vb{z}^{T}\vb{D}\vb{z} = \lambda_{n}z_{n}^{2}.
+\end{align*}
+
+Inserting this into the formula for $Z(J)$, we end up with
+
+\begin{align*}
+    Z(J) = \e^{\frac{1}{2}J_{i}A_{ij}^{-1}J_{j}} \int \frac{\mathrm{d}z_{1}}{\sqrt{2\pi}} ... \frac{\mathrm{d}z_{n}}{\sqrt{2\pi}}   \e^{-\frac{1}{2}\lambda_{n}z_{n}^{2}} = \e^{\frac{1}{2}J_{i}A_{ij}^{-1}J_{j}} \prod_{n} \frac{1}{\sqrt{2\pi}} \sqrt{\frac{2\pi}{\lambda_{n}}} = \\ \e^{\frac{1}{2}J_{i}A_{ij}^{-1}J_{j}} \frac{1}{\sqrt{\det(\vb{A})}} = Z(\{J\}).
+\end{align*}
+
+Note that if we define the expectation value of a quantity that depends on $x_{i}$, we end up with the nice result 
+
+\begin{align*}
+    \expval{A(x_{i})} = \frac{1}{Z(0)}\int \frac{\dx_{1}}{\sqrt{2\pi}} ... \frac{\dx_{n}}{\sqrt{2\pi}} A(x_{i})  \e^{-\frac{1}{2}x_{i} A_{ij} x_{j}  + x_{i} J_{i}} = \frac{1}{Z(0)} \int \frac{\dx_{1}}{\sqrt{2\pi}} ... \frac{\dx_{n}}{\sqrt{2\pi}} A\Big(\fdv{J_{i}}\Big)  \e^{-\frac{1}{2}x_{i} A_{ij} x_{j}  + x_{i} J_{i}} \\ = \frac{1}{Z(0)} A\Big(\fdv{J_{i}}\Big) \int \frac{\dx_{1}}{\sqrt{2\pi}} ... \frac{\dx_{n}}{\sqrt{2\pi}}  \e^{-\frac{1}{2}x_{i} A_{ij} x_{j}  + x_{i} J_{i}} = \frac{1}{Z(0)} A\Big(\fdv{J_{i}}\Big) \eval{Z(\{J\})}_{J = 0}.
+\end{align*}
+
+In particular,
+
+\begin{equation*}
+    \expval{x_i} = 0
+\end{equation*}
+
+since the derivative gives terms linear in $J$, which we set to $0$. 
+
+\begin{align*}
+    \expval{x_{i}x_{j}} = \eval{\fdv{J_{i}}\fdv{J_{j}} \e^{\frac{1}{2}J_{i'}A_{i'j'}^{-1}J_{j'}}}_{J = 0} = \eval{\fdv{J_{i}}(\frac{1}{2}J_{i'}A_{i'j'}^{-1}\delta_{j', j} + \frac{1}{2}\delta_{i', j}A_{i'j'}^{-1}J_{j'})\e^{\frac{1}{2}J_{i'}A_{i'j'}^{-1}J_{j'}}}_{J = 0} = \\ \eval{(\frac{1}{2}\delta_{i', i}A_{i'j'}^{-1}\delta_{j', j} + \frac{1}{2}\delta_{i', j}A_{i'j'}^{-1}\delta_{j', i} \delta_{i', j} + ... )\e^{\frac{1}{2}J_{i'}A_{i'j'}^{-1}J_{j'}}}_{J = 0} = A_{ij}^{-1} 
+\end{align*}
+
+Where we have excluded terms which evidently become $0$ when we set $J = 0$. We have also added a mark on the indicies in the exponent to explicitly show that they are different from the indicies in the expenctation value. We call $Z(\{J\})$ a generating functional. We will see that it's suitable for calculation of physical observables. \\
+
+Next we look at multible gaussian integrals over complex variables (which corresponds to the boson-case for traces over coherent states). 
+
+\begin{align*}
+    \prod_{i} \int \frac{\dd x_{i}^{*}\dd x_{i}}{2\pi i}\e^{-x_{i}^{*}A_{ij}x_{j} + x_{i}J_{i}^{*} + h.c.} = \prod_{i} \int \frac{\dd z_{i}^{*}\dd z_{i}}{2\pi i}\e^{-z_{i}^{*}A_{ij}z_{j} + J_{i}^{*}A_{ij}^{-1}J_{j}} \\ = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{i} \int \frac{\dd \Tilde{z}_{i}^{*}\dd z_{i}}{2\pi i} \e^{-\lambda_{n} \Tilde{z}_{n}^{*}z_{n}}
+\end{align*}
+where we treat $\Tilde{z}$ and $z$ as separate fields.
+\begin{align*}
+    \Tilde{z} = r \e^{i\theta} = \sqrt{u^{2} + v^{2}}\e^{i\theta} \\ \dd z \dd \Tilde{z}^{*} = 2i\dd u \dd v \quad \Tilde{z}^{*} z = u^{2} + v^{2} 
+\end{align*}
+
+which implies 
+
+\begin{align}
+    \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{i} \int \frac{\dd \Tilde{z}_{i}^{*}\dd z_{i}}{2\pi i} \e^{-\lambda_{n} \Tilde{z}_{n}^{*}z_{n}} = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \int \prod_{n} \frac{\dd u \dd v}{\pi} \e^{-\lambda_{n} (u^{2} + v^{2})} \nonumber \\ = \frac{1}{\det(\vb{A})} \e^{J_{i}^{*}A_{ij}^{-1}J_{j}}
+\end{align}
+
+Note that the determinant is located in the numerator. \\ 
+
+The last case we look at is integration over Grassmann-variables, which is relevant when we are calculating the trace of fermionic coherent states
+
+\begin{align*}
+    \prod_{i} \int \dd \xi_{i}^{*} \dd \xi_{i} \e^{-\xi_{i}^{*}A{ij} \xi_{j} + \xi_{i}J_{i}^{*} + \xi_{i}^{*}J_{i}}.
+\end{align*}
+
+Note that the $J$'s are also Grassmann variables. 
+\begin{align}
+    \prod_{i} \int \dd \Tilde{\xi}_{i}^{*} \dd \Tilde{\xi}_{i} \e^{-\Tilde{\xi}_{i}^{*}A{ij} \Tilde{\xi}_{j} + J_{i}^{*}A_{ij}^{-1}J_{j}} = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{i} \int \dd \Tilde{\xi}_{i}^{*} \dd \Tilde{\xi}_{i} \e^{-\Tilde{\xi}_{i}^{*}A{ij} \Tilde{\xi}_{j}} \nonumber \\ = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{i} \int \dd \Tilde{\eta}_{i}^{*} \dd \eta_{i} \e^{-\lambda_{n}\eta_{n}^{*}\eta_{n}} = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{i} \int \dd \Tilde{\eta}_{i}^{*} \dd \eta_{i} (1 -\lambda_{n}\eta_{n}^{*}\eta_{n}) = \nonumber \\ \e^{J_{i}^{*}A_{ij}^{-1}J_{j}} \prod_{n} \lambda_{n} =  \det(\vb{A}) \e^{J_{i}^{*}A_{ij}^{-1}J_{j}}. 
+\end{align}
+
+Here we have used the usual expansion-, anticommutation- and integration rules for Grassmann-variables. Note that for the fermionic integral, the determinant is in the numerator, as oppose to the bosonic case where it is in the denominator. This formally results from the linear expantion of Grassmanian functions. This ultimately reflects the Pauli principle. 
+
+\begin{align*}
+    \det(\vb{A})^{-\xi} = \e^{-\xi \ln(\det(\vb{A}))} = \e^{-\xi  \tr(\ln(\vb{A}))}
+\end{align*}
+
+Thus we can combine the result for bosons and fermions: 
+
+Bosons ($\xi = 1$):
+
+\begin{equation}
+    I = \e^{J_{i}^{*}A_{ij}^{-1}J_{j}}\e^{- \tr(\ln(\vb{A}))}
+\end{equation}
+
+Where the $J$'s are complex variables. 
+
+Fermions ($\xi = -1$): 
+
+\begin{equation}
+    \e^{J_{i}^{*}A_{ij}^{-1}J_{j}}\e^{\tr(\ln(\vb{A}))}
+\end{equation}
+
+Where the $J$'s are Grassmann-variables. 
+

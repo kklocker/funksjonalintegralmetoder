@@ -1,1 +1,446 @@
-\section{Feynman path integrals}
+\section*{Functional integral formulation of many-particle physics}
+
+A functional $f$ is a mathematical map from a vector-space onto a field of scalars, usually the real- or complex numbers. Let this mapping be defined with some domain $\mathrm{D}(f)$: 
+
+\begin{equation*}
+    f: \mathrm{D}(f) \to K, \quad K \in \{\mathbb{R}, \mathbb{C} \}
+\end{equation*}
+
+We will eventually write the partition function $Z$ of a many-particle system as a function like the one defined above. In that case, the domain is the Hilbert space or the phase space and the co-domain is the real numbers. $mathrm{D}$ is then an integral or a sum over configurations of states a system can be in, namely a functional integral. \\
+
+This functional integral formulation will reduce computations of physical observables to a type of product which we can treat systematically using different approximation schemes. \\ 
+
+In order to build up such a functional integral formulation of many-particle physics, we first look at a quantum mechanical system of a single particle which does not depend explicitly on time. 
+
+The Hamiltonian is given by 
+
+\begin{equation*}
+    \hat{H} = \frac{\hat{p}^{2}}{2m} + V(\hat{x})
+\end{equation*}
+
+such that the particle moves in a external potential $V(x)$ (e.g. band-structure problem). The evolution operator for the corresponding one-particle state in the Schrodinger picture is given by 
+
+\begin{equation*}
+    \ket{\psi(t_{f})} = U(t_{f}, t_{i})\ket{\psi(t_{i})} = \e^{-iH(t_{f} - t_{i})}\ket{\psi(t_{i})}
+\end{equation*}
+
+where $i$ and $f$ stands for initial and final, respectively. Now define the matrix element of $U(t_{f},t_{i})$ between initial and final eigenstates of the position operator, $\ket{x_{i}}$ and $\ket{x_{f}}$ \\ 
+
+\begin{equation*}
+    U(x_{f}, t_{f} ; x_{i}, t_{i}) = \bra{x_{f}}\e^{-iH(t_{f} - t_{i})}\ket{x_{i}}.
+\end{equation*}
+
+This matrix element can in general not be calculated exactly. We wish to approximate it in a controlled fashion: there should exist a "smallness" parameter which control the approximation. \\
+
+Split up the interval $t_{f} - t_{i}$ into discrete pieces: 
+
+\begin{equation*}
+    \varepsilon = \frac{t_{f} - t_{i}}{M} \implies U(x_{f}, t_{f} ; x_{i}, t_{i}) = \bra{x_{f}}\left( \e^{-iH\varepsilon}\right)^{M}\ket{x_{i}},
+\end{equation*}
+
+since $H$ doesn't explicitly depend on time and commute with itself. Now, write out the $M$ exponential factors out and insert completeness relations, 
+
+\begin{equation*}
+    \int \dd x_{n} \ket{x_{n}}\bra{x_{n}}
+\end{equation*}
+
+\begin{equation*}
+    U = \int \prod_{k = 1}^{M-1} \dd x_{k} \bra{x_{f}}\e^{-iH\varepsilon} \ket{x_{M-1}}\bra{x_{M-1}}\e^{-iH\varepsilon} \ket{x_{M-2}} \cdots \bra{x_{1}}\e^{-iH\varepsilon}\ket{x_{i}}.
+\end{equation*}
+
+So far this is an exact result. The next step is to find a "good" approximation for the matrix element of $\e^{-iH\varepsilon}$. First we rewrite $x_{f} = x_{M}$ and $x_{i} = x_{0}$, so that we have the starting- and ending points $(x_{0}, t_{0})$ and $(x_{M}, t_{M})$. Each integral is then over all the possible positions $x_{n}$ you can have at time $t_{n}$, one integral for each time-step. This product of integrals is therefore a summation of all the possible paths a particle can travel between the starting and ending points. That is to say: A path integral. \\
+
+We first start with the calculation of 
+
+\begin{equation*}
+    \bra{x_{n}}\e^{-iH\varepsilon}\ket{x_{n-1}} = \int \dd p_{n} \bra{x_{n}}\ket{p_{n}}\bra{p_{n}}\e^{-i\varepsilon H(x, p)}\ket{x_{n-1}}
+\end{equation*}
+
+where 
+
+\begin{align*}
+    \bra{x_{n}}\ket{p_{n}} = \frac{1}{\sqrt{2\pi}} \e^{ip_{n}x_{n}} \quad \bra{p_{n}}\ket{x_{n-1}} = \frac{1}{\sqrt{2\pi}} \e^{-ip_{n}x_{n-1}}.
+\end{align*}
+
+To proceed any further with this new matrix element 
+
+\begin{equation*}
+    \bra{p_{n}}\e^{-i\varepsilon H(x, p)}\ket{x_{n-1}},
+\end{equation*}
+
+we first observe that if we can write 
+
+\begin{equation*}
+    \e^{-i\varepsilon H} = \sum_{m, m'} C_{mm'} A_{m}(p) B_{m'}(x)
+\end{equation*}
+
+we can have $A_{m}(p)$ act to the left and $B_{m'}(x)$ act to the right such that 
+
+\begin{equation*}
+    \sum_{m, m'} C_{mm'} A_{m}(p_{n}) B_{m'}(x_{n-1})\e^{-ip_{n}x_{n-1}} = \e^{-i \varepsilon H(p_{n}, x_{n-1})} \e^{-ip_{n}x_{n-1}}. 
+\end{equation*}
+
+However, its not that easy. The $p_{n}$'s and $x_{n}$'s doesn't commute and $\e^{-i\varepsilon H(p,x)}$ doesn't have an expansion with that kind of ordering in each term. To obtain such an expansion, we defined the normal ordering: 
+
+\begin{equation}
+    N\left(\e^{-i\varepsilon H(p,x)} \right) = \normord{\e^{-i\varepsilon H(p,x)}} = \sum_{m = 0}^{\infty} \frac{(-i\varepsilon)^{m}}{m!} \normord{\left( \frac{p^{2}}{2m} + V(x)\right)^{m}}
+\end{equation}
+
+such that the operators respect the binomial formula: 
+
+\begin{equation*}
+    (a + b)^{m} = \sum_{k = 0}^{n} \frac{n!}{k!(n-k)!}a^{n - k}b^{k}
+\end{equation*}
+
+\begin{equation*}
+    \normord{\left( \frac{p^{2}}{2m} + V(x)\right)^{m}} = \sum_{k = 0}^{m} \frac{m!}{k! (m - k)!} \left(\frac{p^{2}}{2m}\right)^{m - k} \left(V(x)\right)^{k}.
+\end{equation*}
+
+In that way, we get all the $p_{n}$'s to the left of all the $x_{n}$'s. 
+
+\begin{equation*}
+    \normord{\e^{-i\varepsilon H(p,x)}} = \sum_{m = 0}^{\infty} \frac{(-i\varepsilon)^{m}}{m!} \sum_{k = 0}^{m} \frac{m!}{k! (m - k)!} \left(\frac{p^{2}}{2m}\right)^{m - k} \left(V(x)\right)^{k}.
+\end{equation*}
+
+Note that the first two terms in the expansion are already normal ordered! We therefor get the relation 
+
+\begin{equation*}
+    \e^{-i\varepsilon H(p,x)} = \normord{\e^{-i\varepsilon H(p,x)}} + \order{\varepsilon^{2}}. 
+\end{equation*}
+
+$M \to \infty \implies \varepsilon \to 0$. We can therefor treat the exponent as normal ordered in the limit of continuous time-steps. As we already have seen, this simplifies the problem drastically. 
+
+\begin{align*}
+    \bra{x_{n}}\e^{-i\varepsilon H(p,x)}\ket{x_{n-1}} = \bra{x_{n}}\normord{\e^{-i\varepsilon H(p,x)}}\ket{x_{n-1}} + \order{\varepsilon^{2}} \\ = \int \dd p_{n} \frac{1}{\sqrt{2\pi}}\e^{ip_{n}x_{n}}  \e^{-i \varepsilon H(p_{n}, x_{n-1})} \frac{1}{\sqrt{2\pi}} \e^{-ip_{n}x_{n-1}} + \order{\varepsilon^{2}} \\ = \int \frac{\dd p_{n}}{2\pi}  \e^{ip_{n}(x_{n} - x_{n-1}) -i \varepsilon \frac{p_{n}^{2}}{2m} - i\varepsilon V(x_{n-1})} + \order{\varepsilon^{2}} \\ = \sqrt{\frac{m}{2\pi i \varepsilon}}\e^{i\varepsilon \left[\frac{m}{2 \varepsilon^{2}} (x_{n} - x_{n-1})^{2} - V(x_{n-1})\right]} + \order{\varepsilon^{2}}.
+\end{align*}
+
+And from this, we get a controlled approximation of our path integral: 
+
+\begin{equation*}
+    U = \lim_{M \to \infty} \int \left( \prod_{k = 1}^{M-1} \dd x_{k} \sqrt{\frac{m}{2\pi i \varepsilon}} \right) \e^{i\varepsilon \left[\sum_{k = 1}^{M-1} \frac{m}{2 \varepsilon^{2}} (x_{n} - x_{n-1})^{2} - V(x_{n-1})\right]}. 
+\end{equation*}
+
+In the limit of $\varepsilon \to 0$, we write 
+
+\begin{align*}
+    \frac{x_{k} - x_{k-1}}{\varepsilon} \to \dv{x}{t} \quad \quad  \varepsilon \sum_{k = 1}^{M-1} \to  \int_{t_{i}}^{t_{f}} \dd t \\ \lim_{M \to \infty} \int \left( \prod_{k = 1}^{M-1} \dd x_{k} \sqrt{\frac{m}{2\pi i \varepsilon}} \right) \to \int_{x_{i}, t_{i}}^{x_{f},t{_f}} \D[x(t)]. 
+\end{align*}
+
+And we get our final result 
+
+\begin{equation}
+    U = \int_{x_{i}, t_{i}}^{x_{f},t{_f}} \D[x(t)] \e^{i\int_{t_{i}}^{t_{f}} \dd t \left[ \frac{m}{2}\left(\dv{x}{t}\right)^{2} - V(x) \right]} = \int_{x_{i}, t_{i}}^{x_{f},t{_f}} \D[x(t)] \e^{iS\left[x(t)\right]}. 
+\end{equation}
+
+$S$ is a functional and $U$ is a functional integral, the sum over all possible paths the action describes. \\ 
+
+\begin{align*}
+    L\left[x(t)\right] = \left[ \frac{m}{2}\left(\dv{x}{t}\right)^{2} - V(x) \right] \\ 
+    S\left[x(t)\right] = \int_{t_{i}}^{t_{f}} \dd t L\left[x(t)\right]
+\end{align*}
+
+Which paths contributes the most to $U(x_{f}, t_{f} ; x_{i}, t_{i})$? To make an example out of this, we reinsert $\hbar$. From the Schodinger equation, we get 
+
+\begin{align*}
+    i\hbar \partial_{t} \ket{\psi(t)} = H\ket{\psi(t)}
+\end{align*}
+
+which has the formal solution 
+
+\begin{align*}
+    \ket{\psi(t)} = \e^{-i\frac{Ht}{\hbar}}\ket{\psi(0)}.
+\end{align*}
+
+Thus, we have to insert $\frac{\varepsilon}{\hbar}$ for every time $\varepsilon$ appeared in the previous calculation. We end up with 
+
+\begin{align*}
+    U = \int_{x_{i}, t_{i}}^{x_{f},t{_f}} \D[x(t)] \e^{i\frac{S\left[x(t)\right]}{\hbar}}.
+\end{align*}
+
+We look at a free particle in order to get a proper intuition of which paths that are most "important". When $\frac{L}{\hbar}$ get big, the integrand in the exponent oscillates fast and yields zero or little contribution to the path integral. 
+\begin{equation*}
+    \frac{m}{2}\left(\dv{x}{t}\right)^{2} < 1 \implies \abs{x_{k} - x_{k-1}} < \sqrt{\frac{2\varepsilon \hbar}{m}}.
+\end{equation*}
+
+That is: in the case of a free particle, the most important contributions are the smoothest paths. Another way of looking at it is that the dominant paths are the once that make $S$ stationary, $\delta S = 0$, which are the classically allowed paths. In the case of a free particle, this corresponds to the particle travelling in a straight line, which indeed is quite smooth. 
+
+\section{Statistical mechanics for a single quantum mechanical particle}
+
+From what we have done so far, we can almost immediately do statistical mechanics. Remeber the partition function 
+
+\begin{equation*}
+    Z = \Tr \left( \e^{-\beta H} \right). 
+\end{equation*}
+
+Look at the partition function of one particle. After the derivation of the path integral, it's a natural choice to start with a coordinate basis to evaluate the trace
+
+\begin{equation*}
+    Z = \int \dd x \bra{x} \e^{-\beta H} \ket{x}. 
+\end{equation*}
+
+Now the integrand has the same form as the one used for calculating $U(x_{f}, t_{f} ; x_{i}, t_{i})$, with 
+
+\begin{align*}
+    x_{i} = x(0) = x_{f} = x(\beta) = x \\ 
+    \beta = i(t_{f} - t_{i}) = \tau \quad \quad \dd t = -i \dd \tau \\ 
+    \dv{}{t} = i \dv{}{\tau} \quad \quad x(t) \to x(\tau) 
+\end{align*}
+
+Hence we use directly the result for $U(x_{f}, t_{f} ; x_{i}, t_{i})$ and end up with
+
+\begin{align}
+    \bra{x} \e^{-\beta H} \ket{x} = \int_{x(0) = x(\beta) = x} \D \left[x(\tau)\right]\e^{-i \frac{i}{\hbar} \int_{0}^{\beta} \dd \tau \left[ -\frac{m}{2}\left(\dv{x}{\tau}\right)^{2} - V(x(\tau)) \right]} \nonumber \\ 
+    Z = \int \dd x \bra{x} \e^{-\beta H} \ket{x} = \int_{x(0) = x(\beta)} \D \left[x(\tau)\right] \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[x(\tau)\right]}
+\end{align}
+
+where we have identified the Hamiltonian of the system. Note that the change from Lagrangian to Hamiltonian results from the introduction of $\tau$, being the imaginary time. Again we see that (consider free particle) that the most important paths are 
+
+\begin{equation*}
+    \varepsilon \frac{m}{2} \frac{(x_{k} - x_{k-1})^{2}}{\varepsilon^{2} \hbar} < 1 \implies \abs{x_{k} - x_{k-1}} < \sqrt{\frac{2\varepsilon \hbar}{m}}
+\end{equation*}
+
+and $x_{k} = x_{k-1}$ (independent of $\tau$) in the classical limit $\hbar \to 0$. Then we get 
+
+\begin{equation*}
+    Z = \sqrt{\frac{m}{2\pi \beta}} \int \dd x \e^{-\beta V(x)}
+\end{equation*}
+
+which is the well known configuration integral, where the measure in the path integral differential $\D \left[x(\tau)\right]$ corresponds to the momentum integral in phase space. 
+
+The partition function
+
+\begin{align*}
+    Z = \int \dd x  \int_{x(0) = x(\beta) = x} \D \left[x(\tau)\right] \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[x(\tau)\right]} \\ = \int_{x(0) = x(\beta)} \D \left[x(\tau)\right] \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[x(\tau)\right]}
+\end{align*}
+
+is in fact, in this formulation, an imaginary-time path integral, or rather functional integral, with the aforementioned periodicity $x(0) = x(\beta)$.  \\ 
+
+This is the most central formulation when it comes to calculating quantum-statistics. Classically one can use e.g. Monte-Carlo simulations, 
+
+\begin{equation*}
+    Z = \sum_{\{n_{i}\}}e^{-\beta H \left[ \{n_{i}\}\right]}
+\end{equation*}
+
+where $\{n_{i}\}$ represents some sum over phase space configurations for which the classical system can be in. The expression above generalizes to the quantum case. We see that effectively, the classical Boltzmann factor has been replaced by an integral 
+
+\begin{equation*}
+    \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[x(\tau)\right]}
+\end{equation*}
+
+which effectively gives the system another dimension. We therefore get the correspondence. A quantum mechanical d-dimensional system is therefore equivalent to a classical d+1-dimensional system, in this sense. The statistical mechanics we have done for a one-particle system generalizes directly to a many-particle system. Since we in the latter case deal with more than one particle, statistics become more important, in particular the symmetries involved by interchanging particle-states. 
+
+\begin{equation*}
+    Z = \Tr \left( \e^{-\beta H} \right) = \frac{1}{N!}\sum_{P} \xi^{P} \int \prod_{i} \dd x_{i} \bra{x_{P_{N}}, \cdots x_{P_{1}}} \e^{-\beta H} \ket{x_{1}, \cdots x_{N}}
+\end{equation*}
+
+where $\xi = -1$ for fermions and $\xi = 1$ for bosons. \\ 
+
+The sum in this equation is over all permutations of the set $(1, \cdots ,N)$, where the permutations are obtained by transpositions, i.e. pair-interchanging. \\
+
+Example: \\
+
+\begin{align*}
+    (1,2,3) \\ 
+    (2,1,3) = -(1,2,3) \\
+    (2,3,1) = -(2,1,3) = (1,2,3) \\ 
+\end{align*}
+
+We need 
+
+\begin{equation*}
+    \bra{x_{P_{N}}, \cdots x_{P_{1}}} \e^{-\beta H} \ket{x_{1}, \cdots x_{N}}
+\end{equation*}
+
+and remember 
+
+\begin{equation*}
+    \bra{x} \e^{-\beta H} \ket{x} = \int_{x(0) = x(\beta) = x} \D \left[x(\tau)\right] \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[x(\tau)\right]}.
+\end{equation*}
+
+And thus the generalization is obvious
+
+\begin{equation}
+    \bra{x_{P_{N}}, \cdots x_{P_{1}}} \e^{-\beta H} \ket{x_{1}, \cdots x_{N}} = \prod_{i=1}^{N}\int \D \left[x_{i}(\tau)\right] \e^{-\frac{1}{\hbar}\int_{0}^{\beta} \dd \tau H\left[\{x_{i}(\tau)\}\right]}
+\end{equation}
+
+where we have 
+
+\begin{align*}
+    x_{i}(0) = x_{P_{i}}(\beta) \\
+    i = 1,2,\cdots, N. 
+\end{align*}
+
+Again periodicity, because 
+
+\begin{equation*}
+    Z = \Tr \left( \e^{-\beta H} \right)
+\end{equation*}
+
+is such that only diagonal matrix elements contribute. \\ 
+
+Many-free particles in external potential: 
+
+\begin{equation*}
+    H\left[\{x_{i}(\tau)\}\right] = \sum_{i=1}^{N} \left[ \frac{m}{2} \left(\dv{x_{i}}{\tau}\right)^{2} + V\left[x_{i}(\tau)\right] \right]
+\end{equation*}
+
+Interacting electrons in external potential: 
+
+\begin{equation*}
+    H\left[\{x_{i}(\tau)\}\right] = \sum_{i=1}^{N} \left[ \frac{m}{2} \left(\dv{x_{i}}{\tau}\right)^{2} + V_{ext}\left[x_{i}(\tau)\right] + \frac{1}{2}\sum_{i\neq j} V\left[x_{i}(\tau) - x_{j}(\tau)\right] \right].
+\end{equation*}
+
+So far, we have calculated $Z = \Tr \left( \e^{-\beta H} \right)$ in the basis of eigenstates of the position operator. We know that we can use any basis. Now we are going to use the results above to write down and calculate the partition function with coherent states as basis. An important result which makes it easy for us to use the formalism with coherent states, is that in the path integral approach we have, to $\order{\varepsilon^{2}}$, been able to use operators which we didn't have to normal order. 
+
+\section{Functional integrals over coherent states}
+
+Now we define a many-particle evolution operator $U(\phi_{\alpha f}, t_{f}; \phi_{\alpha i}, t_{i})$ using 
+
+\begin{equation*}
+    \bra{\phi_{f}} \e^{-iH(t_{f} - t_{i})} \ket{\phi_{i}}
+\end{equation*}
+
+$\ket{\phi_{f}}$: coherent final-state at time $t_{f}$, with components labeled by $\lambda$, $\ket{\phi_{\lambda f}}$. \\
+
+And similar for coherent initial-state at time $t_{i}$ (notation $\phi$ for bosons). Again we split the time interval into $M$ intervals. 
+
+\begin{align*}
+    t_{i} = t_{0} \quad \ket{\phi_{\lambda i}} = \ket{\phi_{\lambda 0}} \\ 
+    t_{M} = t_{f} \quad \ket{\phi_{\lambda M}} = \ket{\phi_{\lambda f}}
+\end{align*}
+
+where $t_{k} = t_{0} + k\varepsilon$, as usual. Between each time-step, we define coherent states $\ket{\phi_{k}}$, with components $\ket{\phi_{\lambda k}}$ and insert the completeness relation
+
+\begin{equation*}
+    \int \prod_{\lambda} \frac{\dd \phi_{\lambda k}^{*} \dd \phi_{\lambda k}}{2\pi i} \e^{-\sum_{\lambda} \phi_{\lambda k}^{*} \phi_{\lambda k}} \ket{\phi_{\lambda k}} \bra{\phi_{\lambda k}} = 1.
+\end{equation*}
+
+\begin{equation*}
+    \e^{-i\varepsilon H(a^{\dagger}, a)} = \normord{\e^{-i\varepsilon H(a^{\dagger}, a)}} + \order{\varepsilon^{2}}
+\end{equation*}
+
+where normal ordering in this case means placing all creation operators to the left of all annihilation operators. 
+
+We get: 
+
+\begin{equation*}
+    \bra{\phi_{f}} \e^{-iH(t_{f} - t_{i})} \ket{\phi_{i}} = \bra{\phi_{f}} \e^{-\frac{i}{\hbar} H \varepsilon} \cdots  \e^{-\frac{i}{\hbar} H \varepsilon} \ket{\phi_{i}}
+\end{equation*}
+
+Now insert the completeness relation for coherent states $M-1$ times between each exponential factor, and take the limit $M \to \infty$. 
+
+\begin{align*}
+    \lim_{M \to \infty} \int \prod_{k = 1, \lambda}^{M-1} \frac{\dd \phi_{\lambda k}^{*} \dd \phi_{\lambda k}}{2\pi i} \e^{-\sum_{\lambda} \sum_{k = 1}^{M-1}\phi_{\lambda k}^{*} \phi_{\lambda k}}  \\ \bra{\phi_{\lambda M}} \e^{-\frac{i}{\hbar} H \varepsilon}\ket{\phi_{\lambda M-1}} \cdots \bra{\phi_{\lambda 1}} \e^{-\frac{i}{\hbar} H \varepsilon}\ket{\phi_{\lambda 0}} \\ 
+    = \lim_{M \to \infty} \int \prod_{k = 1, \lambda}^{M-1} \frac{\dd \phi_{\lambda k}^{*} \dd \phi_{\lambda k}}{2\pi i} \e^{-\sum_{\lambda} \sum_{k = 1}^{M-1}\phi_{\lambda k}^{*} \phi_{\lambda k}}\\ \bra{\phi_{\lambda M}} \normord{\e^{-\frac{i}{\hbar} H \varepsilon}}\ket{\phi_{\lambda M-1}} \cdots \bra{\phi_{\lambda 1}} \normord{\e^{-\frac{i}{\hbar} H \varepsilon}}\ket{\phi_{\lambda 0}} + \order{M\varepsilon^{2}}
+\end{align*}
+
+We know already how to treat these matrix elements
+
+\begin{align*}
+    \bra{\phi_{\lambda n}} \normord{\e^{-\frac{i}{\hbar} H \varepsilon}}\ket{\phi_{\lambda n-1}} \\ = \e^{-\frac{i}{\hbar} H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\}) \varepsilon } \e^{\phi_{\lambda k}^{*}\phi_{\lambda k-1}} \\ 
+    \implies \bra{\phi_{n}} \normord{\e^{-\frac{i}{\hbar} H \varepsilon}}\ket{\phi_{n-1}} \\ = \e^{-\frac{i}{\hbar} H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\} ) \varepsilon} \e^{\sum_{\lambda} \phi_{\lambda k}^{*}\phi_{\lambda k-1}}.
+\end{align*}
+
+Note that we get new exponentials due to differences in the completeness relation for coherent and eigenstate basis. Now we insert this result into the expression above, and get
+
+\begin{align*}
+    \lim_{M \to \infty} \int \prod_{k = 1, \lambda}^{M-1} \frac{\dd \phi_{\lambda k}^{*} \dd \phi_{\lambda k}}{2\pi i} \e^{-\sum_{\lambda} \sum_{k = 1}^{M-1}\left(\phi_{\lambda k}^{*} \phi_{\lambda k} - \phi_{\lambda k}^{*} \phi_{\lambda k - 1}\right)} \e^{-\frac{i}{\hbar} \sum_{\lambda} \sum_{k = 1}^{M-1} H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\} ) \varepsilon}
+\end{align*}
+
+Where the factors in the first exponential comes from the completeness relation and the inner-product in the matrix element, respectively. Instead of the k-index, define a time variable $t$, similar to what we did before. 
+
+\begin{align*}
+    \varepsilon \sum_{k = 1}^{M-1}  \to \int_{t_{i}}^{t_{f}} \dd t \\ 
+    H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\} ) \to H(\{\phi_{\lambda}^{*}(t), \phi_{\lambda} (t)\} ) \\ 
+    \frac{\left(\phi_{\lambda k}^{*} \phi_{\lambda k} - \phi_{\lambda k}^{*} \phi_{\lambda k - 1}\right)}{\varepsilon} \to \phi_{\lambda}^{*}(t) \pdv{\phi_{\lambda}(t)}{t} \\
+    \lim_{M \to \infty} \int \prod_{k = 1, \lambda}^{M-1} \frac{\dd \phi_{\lambda k}^{*} \dd \phi_{\lambda k}}{2\pi i} \to \int_{\phi_{\lambda}(t_{i}) = \phi_{\lambda 0}}^{\phi_{\lambda}(t_{f}) = \phi_{\lambda M}} \D \left[\phi_{\lambda}^{*}(t), \phi_{\lambda} (t)\right]
+\end{align*}
+ where the limits in the last integral are fixed. Using these relations, he exponents translates to 
+ 
+ \begin{align*}
+     -\sum_{\lambda} \sum_{k = 1}^{M-1}\left(\phi_{\lambda k}^{*} \phi_{\lambda k} - \phi_{\lambda k}^{*} \phi_{\lambda k - 1}\right) -\frac{i}{\hbar} \sum_{\lambda} \sum_{k = 1}^{M-1} H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\} ) \varepsilon \\ 
+     = i\varepsilon \sum_{k\lambda} i\left(\frac{\phi_{\lambda k}^{*}\left(\phi_{\lambda k} - \phi_{\lambda k - 1}\right)}{\varepsilon}\right)- \frac{1}{\hbar}H(\{\phi_{\lambda n}^{*}, \phi_{\lambda n-1}\} ) \\ \to i \sum_{\lambda} \int_{t_{i}}^{t_{f}} \dd t \left[ i \phi_{\lambda}^{*}(t) \pdv{\phi_{\lambda}(t)}{t} - \frac{1}{\hbar}H(\{\phi_{\lambda}^{*}(t), \phi_{\lambda} (t)\} )  \right] = i\int_{t_{i}}^{t_{f}} \dd t L(t).
+ \end{align*}
+ 
+ It is now clear how we do a functional integral formulation: 
+ 
+ \begin{equation*}
+     H(a^{\dagger}, a) \to H(\phi_{\lambda}^{*}, \phi_{\lambda})
+ \end{equation*}
+ 
+ For each type of field operator in Fock space, in the second quantization formalism, we get a term 
+ 
+ \begin{equation*}
+     \phi_{\lambda}^{*}(t) \pdv{\phi_{\lambda}(t)}{t} \quad \quad (a^{\dagger}, a) \to (\phi_{\lambda}^{*}, \phi_{\lambda})
+ \end{equation*}
+ 
+ The new fields entering in the functional integral must respect the algebra of the operators. In particular, for bosons $(\phi_{\lambda}^{*}, \phi_{\lambda})$ are c-numbers, while they are Grassmann numbers in the fermionic case. 
+ 
+Therefor: 
+
+\begin{align*}
+    U(\phi_{M} ,t_{M} ; \phi_{0}, t_{0}) = \int_{\phi_{\lambda}(t_{i}) = \phi_{\lambda 0}}^{\phi_{\lambda}(t_{f}) = \phi_{\lambda M}} \D \left[\phi_{\lambda}^{*}(t)\right] \D \left[ \phi_{\lambda} (t)\right] \e^{iS(t_{f}, t_{i})} \\
+    S(t_{f}, t_{i}) = \int_{t_{i}}^{t_{f}} \dd t L(t). 
+\end{align*}
+
+Completely analogous to the path integral formulation in position-space. Note that $\frac{1}{\hbar}$ is not a common factor in the whole exponent. It only enters in the Hamiltonian $H$ part of $L$. The classical limit is therefor very altered, compared to the case in position space $U(x_{f}, t_{f} ; x_{i}, t_{i})$, where the dominant paths were the smoothest once. It is less obvious what kind of paths that dominates in the coherent states case. \\
+
+In the fermionic case, we write $\xi_{\lambda}(t)$ instead of $\phi_{\lambda}(t)$ to explicitly clarify the algebra of the fields. 
+
+\begin{align*}
+    U(\xi_{M} ,t_{M} ; \xi_{0}, t_{0}) = \int_{\xi_{\lambda}(t_{i}) = \xi_{\lambda 0}}^{\xi_{\lambda}(t_{f}) = \xi_{\lambda M}} \D \left[\xi_{\lambda}^{*}(t)\right] \D \left[ \xi_{\lambda} (t)\right] \e^{iS(t_{f}, t_{i})} \\
+    S(t_{f}, t_{i}) = \int_{t_{i}}^{t_{f}} \dd t L(t) = \int_{t_{i}}^{t_{f}} \dd t \sum_{\lambda} \left[ i \xi_{\lambda}^{*}(t) \pdv{\xi_{\lambda}(t)}{t} - \frac{1}{\hbar}H(\{\xi_{\lambda}^{*}(t), \xi_{\lambda} (t)\} )  \right].
+\end{align*}
+
+Exactly the same form as in the bosonic case, only now the fields are Grassmann numbers instead of ordinary c-numbers. The partition function $Z = \Tr \left( \e^{-\beta H} \right): 
+$
+Bosons: 
+
+\begin{equation*}
+    \Tr \left( A \right) = \int \prod_{\lambda}  \frac{\dd \phi_{\lambda }^{*} \dd \phi_{\lambda }}{2\pi i} \e^{-\sum_{\lambda} \phi_{\lambda}^{*}\phi_{\lambda}} \bra{\phi}A \ket{\phi}
+\end{equation*}
+
+Fermions: 
+
+\begin{equation*}
+    \Tr \left( A \right) = \int \prod_{\lambda} \frac{\dd \xi_{\lambda }^{*} \dd \xi_{\lambda }}{2\pi i} \e^{-\sum_{\lambda} \xi_{\lambda}^{*}\xi_{\lambda}} \bra{-\xi}A \ket{\xi}
+\end{equation*}
+
+Common notation: 
+
+\begin{align*}
+    \Tr \left( A \right) = \int \prod_{\lambda}  \frac{\dd \phi_{\lambda }^{*} \dd \phi_{\lambda }}{N} \e^{-\sum_{\lambda} \phi_{\lambda}^{*}\phi_{\lambda}} \bra{\xi \phi}A \ket{\phi}
+\end{align*}
+
+where $N = 1$ and $\xi = -1$ in the fermionic case and $N = 2\pi i$ and $\xi = 1$ in the bosonic case. The element $\ket{\phi}$ has components $\ket{\phi_{\lambda i}} = \ket{\phi_{\lambda 0}}$ and $\ket{\xi \phi}$ has components $\ket{\xi \phi_{\lambda f}} = \ket{\xi \phi_{\lambda M}}$. 
+
+\begin{equation*}
+    Z = \int_{\phi_{\lambda 0} = \xi \phi_{\lambda M}} \prod_{\lambda}  \frac{\dd \phi_{\lambda M}^{*}  \cdots \dd \phi_{\lambda 0}}{N} \e^{-\sum_{\lambda} \phi_{\lambda M}^{*}\phi_{\lambda M}} \bra{\xi \phi} \e^{-\beta H} \ket{\phi}. 
+\end{equation*}
+
+In order to find $\bra{\xi \phi} \e^{-\beta H} \ket{\phi}$, we introduce imaginary time, as in the case of a single-paricle: 
+
+\begin{align*}
+    \beta = \tau \quad \quad \dd t = -i \dd \tau \quad \quad 
+    \dv{}{t} = i \dv{}{\tau} 
+\end{align*}
+
+Inserting this into the expression for the action $S$: 
+
+\begin{align*}
+    S = i \sum_{\lambda} \int_{t_{i}}^{t_{f}} \dd t \left[ i \phi_{\lambda}^{*}(t) \pdv{\phi_{\lambda}(t)}{t} - \frac{1}{\hbar}H(\{\phi_{\lambda}^{*}(t), \phi_{\lambda} (t)\} )  \right] \\ = - i^{2} \sum_{\lambda} \int_{0}^{\beta} \dd \tau \left[ \frac{i}{-i} \phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau} - \frac{1}{\hbar}H(\{\phi_{\lambda}^{*}(\tau), \phi_{\lambda} (\tau)\} )  \right] \\ = - \sum_{\lambda} \int_{0}^{\beta} \dd \tau \left[\phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau} + \frac{1}{\hbar}H(\{\phi_{\lambda}^{*}(\tau), \phi_{\lambda} (\tau)\} )  \right]. 
+\end{align*} 
+
+Then the partition function becomes 
+
+\begin{align}
+    Z = \int_{\phi_{\lambda}(0) = \xi\phi_{\lambda}(\beta)} \D \left[\phi_{\lambda}^{*}(\tau)\right] \D \left[ \phi_{\lambda} (\tau)\right] \e^{S} \\
+    S = - \sum_{\lambda} \int_{0}^{\beta} \dd \tau \left[\phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau} + H(\{\phi_{\lambda}^{*}(\tau), \phi_{\lambda} (\tau)\} )  \right] \nonumber
+\end{align}
+
+Where the $\xi$'s refere to the same values as above, and we have reinstated $\hbar = 1$. We see that the formalism differentiate between fermions and bosons in that the fields $\phi_{\lambda}(\tau)$ have different periodicity on the interval $ \tau \in [0, \beta]$. \\
+
+During the calculation, we dropped the terms $\e^{-\sum_{\lambda} \phi_{\lambda m}^{*}\phi_{\lambda m}}$. We can treat these as "surface-terms", negligible compared to $\int_{0}^{\beta} \dd \tau \phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau}$. We did something like this in earlier calculations for $U(x_{f}, t_{f}; x_{i}, t_{i})$. We could have kept them in both cases, and they would have canceled in $Z$! 
+\footnote{Proof of some relations regarding the trace before moving on to free electron gas: $M = ABC \implies \Tr(M) = M_{ii} = A_{il}B_{ln}C_{ni} = C_{ni}A_{il}B_{ln} = K_{nn} = \Tr(K) 
+    \Tr(B) = \Tr(BSS^{-1}) = \Tr(S^{-1}BS) = \Tr(D) = \sum_{n} \lambda_{n}$}
+
