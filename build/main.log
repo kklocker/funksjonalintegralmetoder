@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  3 SEP 2019 16:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  9 SEP 2019 22:07
 entering extended mode
 **./main.tex
 (main.tex
@@ -965,7 +965,31 @@ Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
 )
-\c@exmp=\count307
+("D:\Program Files\MiKTeX 2.9\tex/latex/caption\subcaption.sty"
+Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
+
+("D:\Program Files\MiKTeX 2.9\tex/latex/caption\caption.sty"
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
+
+("D:\Program Files\MiKTeX 2.9\tex/latex/caption\caption3.sty"
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen295
+\captionmargin@=\dimen296
+\captionwidth=\dimen297
+\caption@tempdima=\dimen298
+\caption@indent=\dimen299
+\caption@parindent=\dimen300
+\caption@hangindent=\dimen301
+)
+\c@caption@flags=\count307
+\c@ContinuedFloat=\count308
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count309
+\c@subtable=\count310
+)
+\c@exmp=\count311
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.aux"
@@ -993,33 +1017,33 @@ ux")
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/08free_electron_gas.aux"))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 ABD: EveryShipout initializing macros
 ("D:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
-\scratchdimen=\dimen295
+\scratchcounter=\count312
+\scratchdimen=\dimen302
 \scratchbox=\box65
-\nofMPsegments=\count309
-\nofMParguments=\count310
+\nofMPsegments=\count313
+\nofMParguments=\count314
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count311
-\MPscratchDim=\dimen296
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
+\MPscratchCnt=\count315
+\MPscratchDim=\dimen303
+\MPnumerator=\count316
+\makeMPintoPDFobject=\count317
 \everyMPtoPDFconversion=\toks48
 ) ("D:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1038,31 +1062,31 @@ G,.JBIG2,.JB2,.eps]
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 68.
+ on input line 70.
 
 
 Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
 utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 68.
+luatex=false on input line 70.
 
 
 Package tikz-feynman Warning: Consider loading TikZ-Feynman with \usepackage[co
 mpat=1.1.0]{tikz-feynman} so that you can be warned if TikZ-Feynman changes. on
- input line 68.
+ input line 70.
 
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 68.
+Package hyperref Info: Link coloring OFF on input line 70.
 ("D:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 ("D:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count314
+\c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.out")
@@ -1071,12 +1095,14 @@ LaTeX Info: Redefining \nameref on input line 68.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 71.
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1084,12 +1110,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
 ("D:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.toc" [1
@@ -1112,7 +1138,7 @@ Overfull \hbox (5.99632pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Short re-cap of sec-ond quan-ti-za-tion for fermions
  []
 
-\c@theorem=\count315
+\c@theorem=\count319
 
 Overfull \hbox (3.80615pt too wide) in paragraph at lines 49--51
 \OT1/cmr/m/n/10 These will au-to-mat-i-cally sat-isfy the Pauli prin-ci-ple as 
@@ -1300,9 +1326,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--442
  (tex/08free_electron_gas.tex [38
 
 
-]) [39]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+] [39] [40] (tex/img/fermi_poles1.tex)
+(tex/img/fermi_poles2.tex) (tex/img/fermi_poles3.tex)) [41]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.aux"
@@ -1328,20 +1355,20 @@ ux")
 ux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/08free_electron_gas.aux"))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E2229ACF3CAE2F5C98039DD93ED84FFF;2428.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
  ) 
 Here is how much of TeX's memory you used:
- 41907 strings out of 492895
- 973901 string characters out of 3133458
+ 43113 strings out of 492895
+ 996085 string characters out of 3133458
  1154636 words of memory out of 3000000
- 45001 multiletter control sequences out of 15000+200000
+ 46169 multiletter control sequences out of 15000+200000
  544076 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,20n,96p,1506b,1028s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,20n,96p,1521b,1048s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiK
@@ -1370,10 +1397,10 @@ mbols/msbm10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
 ls/msbm5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm7.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (39
- pages, 493016 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (41
+ pages, 503871 bytes).
 PDF statistics:
- 682 PDF objects out of 1000 (max. 8388607)
- 228 named destinations out of 1000 (max. 500000)
+ 715 PDF objects out of 1000 (max. 8388607)
+ 248 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
