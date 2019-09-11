@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  9 SEP 2019 22:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  11 SEP 2019 23:22
 entering extended mode
 **./main.tex
 (main.tex
@@ -1327,7 +1327,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--442
 
 
 ] [39] [40] (tex/img/fermi_poles1.tex)
-(tex/img/fermi_poles2.tex) (tex/img/fermi_poles3.tex)) [41]
+(tex/img/fermi_poles2.tex)
+Overfull \hbox (2.46455pt too wide) in paragraph at lines 18--135
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--135
+
+ []
+
+(tex/img/fermi_poles3.tex)
+Overfull \hbox (2.46455pt too wide) in paragraph at lines 20--139
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--139
+
+ []
+
+[41] [42]) [43]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
 
@@ -1362,10 +1382,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 101.
  ) 
 Here is how much of TeX's memory you used:
- 43113 strings out of 492895
- 996085 string characters out of 3133458
+ 43132 strings out of 492895
+ 996389 string characters out of 3133458
  1154636 words of memory out of 3000000
- 46169 multiletter control sequences out of 15000+200000
+ 46177 multiletter control sequences out of 15000+200000
  544076 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,20n,96p,1521b,1048s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1397,10 +1417,10 @@ mbols/msbm10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
 ls/msbm5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm7.pfb>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (41
- pages, 503871 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (43
+ pages, 518708 bytes).
 PDF statistics:
- 715 PDF objects out of 1000 (max. 8388607)
- 248 named destinations out of 1000 (max. 500000)
+ 749 PDF objects out of 1000 (max. 8388607)
+ 259 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
