@@ -368,7 +368,7 @@ Where the factors in the first exponential comes from the completeness relation 
      H(a^{\dagger}, a) \to H(\phi_{\lambda}^{*}, \phi_{\lambda})
  \end{equation*}
  
- For each type of field operator in Fock space, in the second quantization formalism, we get a term 
+ For each type of field operator in Fock space \(\mathcal{F}\), in the second quantization formalism, we get a term 
  
  \begin{equation*}
      \phi_{\lambda}^{*}(t) \pdv{\phi_{\lambda}(t)}{t} \quad \quad (a^{\dagger}, a) \to (\phi_{\lambda}^{*}, \phi_{\lambda})
@@ -376,14 +376,14 @@ Where the factors in the first exponential comes from the completeness relation 
  
  The new fields entering in the functional integral must respect the algebra of the operators. In particular, for bosons $(\phi_{\lambda}^{*}, \phi_{\lambda})$ are c-numbers, while they are Grassmann numbers in the fermionic case. 
  
-Therefor: 
+Therefore: 
 
 \begin{align*}
     U(\phi_{M} ,t_{M} ; \phi_{0}, t_{0}) = \int_{\phi_{\lambda}(t_{i}) = \phi_{\lambda 0}}^{\phi_{\lambda}(t_{f}) = \phi_{\lambda M}} \D \left[\phi_{\lambda}^{*}(t)\right] \D \left[ \phi_{\lambda} (t)\right] \e^{iS(t_{f}, t_{i})} \\
     S(t_{f}, t_{i}) = \int_{t_{i}}^{t_{f}} \dd t L(t). 
 \end{align*}
 
-Completely analogous to the path integral formulation in position-space. Note that $\frac{1}{\hbar}$ is not a common factor in the whole exponent. It only enters in the Hamiltonian $H$ part of $L$. The classical limit is therefor very altered, compared to the case in position space $U(x_{f}, t_{f} ; x_{i}, t_{i})$, where the dominant paths were the smoothest once. It is less obvious what kind of paths that dominates in the coherent states case. \\
+Completely analogous to the path integral formulation in position-space. Note that $\frac{1}{\hbar}$ is not a common factor in the whole exponent. It only enters in the Hamiltonian $H$ part of $L$. The classical limit is therefore very altered, compared to the case in position space $U(x_{f}, t_{f} ; x_{i}, t_{i})$, where the dominant paths were the smoothest once. It is less obvious what kind of paths that dominates in the coherent states case. \\
 
 In the fermionic case, we write $\xi_{\lambda}(t)$ instead of $\phi_{\lambda}(t)$ to explicitly clarify the algebra of the fields. 
 
@@ -418,7 +418,7 @@ where $N = 1$ and $\xi = -1$ in the fermionic case and $N = 2\pi i$ and $\xi = 1
     Z = \int_{\phi_{\lambda 0} = \xi \phi_{\lambda M}} \prod_{\lambda}  \frac{\dd \phi_{\lambda M}^{*}  \cdots \dd \phi_{\lambda 0}}{N} \e^{-\sum_{\lambda} \phi_{\lambda M}^{*}\phi_{\lambda M}} \bra{\xi \phi} \e^{-\beta H} \ket{\phi}. 
 \end{equation*}
 
-In order to find $\bra{\xi \phi} \e^{-\beta H} \ket{\phi}$, we introduce imaginary time, as in the case of a single-paricle: 
+In order to find $\bra{\xi \phi} \e^{-\beta H} \ket{\phi}$, we introduce imaginary time, as in the case of a single-particle: 
 
 \begin{align*}
     \beta = \tau \quad \quad \dd t = -i \dd \tau \quad \quad 
@@ -438,9 +438,9 @@ Then the partition function becomes
     S = - \sum_{\lambda} \int_{0}^{\beta} \dd \tau \left[\phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau} + H(\{\phi_{\lambda}^{*}(\tau), \phi_{\lambda} (\tau)\} )  \right] \nonumber
 \end{align}
 
-Where the $\xi$'s refere to the same values as above, and we have reinstated $\hbar = 1$. We see that the formalism differentiate between fermions and bosons in that the fields $\phi_{\lambda}(\tau)$ have different periodicity on the interval $ \tau \in [0, \beta]$. \\
+Where the $\xi$'s refer to the same values as above, and we have reinstated $\hbar = 1$. We see that the formalism differentiate between fermions and bosons in that the fields $\phi_{\lambda}(\tau)$ have different periodicity on the interval $ \tau \in [0, \beta]$. \\
 
-During the calculation, we dropped the terms $\e^{-\sum_{\lambda} \phi_{\lambda m}^{*}\phi_{\lambda m}}$. We can treat these as "surface-terms", negligible compared to $\int_{0}^{\beta} \dd \tau \phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau}$. We did something like this in earlier calculations for $U(x_{f}, t_{f}; x_{i}, t_{i})$. We could have kept them in both cases, and they would have canceled in $Z$! 
+During the calculation, we dropped the terms $\e^{-\sum_{\lambda} \phi_{\lambda m}^{*}\phi_{\lambda m}}$. We can treat these as "surface-terms", negligible compared to $\int_{0}^{\beta} \dd \tau \phi_{\lambda}^{*}(\tau) \pdv{\phi_{\lambda}(\tau)}{\tau}$. We did something like this in earlier calculations for $U(x_{f}, t_{f}; x_{i}, t_{i})$. We could have kept them in both cases, and they would have cancelled in $Z$! 
 \footnote{Proof of some relations regarding the trace before moving on to free electron gas: $M = ABC \implies \Tr(M) = M_{ii} = A_{il}B_{ln}C_{ni} = C_{ni}A_{il}B_{ln} = K_{nn} = \Tr(K) 
     \Tr(B) = \Tr(BSS^{-1}) = \Tr(S^{-1}BS) = \Tr(D) = \sum_{n} \lambda_{n}$}
 
