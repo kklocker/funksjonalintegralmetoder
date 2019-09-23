@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  17 SEP 2019 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.13)  23 SEP 2019 21:13
 entering extended mode
 **./main.tex
 (main.tex
@@ -1016,23 +1016,27 @@ ux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/08free_electron_gas.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxfree_boson_gas.aux"))
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxfree_boson_gas.aux")
+("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxFluctuations.aux")
+("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxHubbard_model.aux"))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
 
 ABD: EveryShipout initializing macros
 ("D:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
@@ -1065,20 +1069,20 @@ G,.JBIG2,.JB2,.eps]
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.16} into 
 your preamble.
- on input line 73.
+ on input line 74.
 
 
 Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
 utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 73.
+luatex=false on input line 74.
 
 
 Package tikz-feynman Warning: Consider loading TikZ-Feynman with \usepackage[co
 mpat=1.1.0]{tikz-feynman} so that you can be warned if TikZ-Feynman changes. on
- input line 73.
+ input line 74.
 
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 73.
+Package hyperref Info: Link coloring OFF on input line 74.
 ("D:\Program Files\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1087,9 +1091,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count318
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.out")
@@ -1100,12 +1104,12 @@ LaTeX Info: Redefining \nameref on input line 73.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 76.
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 76.
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1113,12 +1117,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
 ("D:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.toc" [1
@@ -1309,7 +1313,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--304
  []
 
 [34]
-Overfull \hbox (11.07259pt too wide) detected at line 348
+Overfull \hbox (14.94774pt too wide) detected at line 348
 []
  []
 
@@ -1366,9 +1370,35 @@ Overfull \hbox (14.30429pt too wide) in paragraph at lines 56--64
  [][] 
  []
 
-[45]) [46]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+[45] (tex/img/green_feynman.tex)) [46]
+\openout2 = `tex/xxFluctuations.aux'.
+
+ (tex/xxFluctuations.tex) [47
+
+
+]
+\openout2 = `tex/xxHubbard_model.aux'.
+
+
+(tex/xxHubbard_model.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\infty' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+[48
+
+
+] [49] [50] [51]) [52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
 
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\main.aux"
@@ -1395,21 +1425,25 @@ ux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
 05 Funksjonalintegralmetoder\Lecture notes\build\tex/08free_electron_gas.aux")
 ("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
-05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxfree_boson_gas.aux"))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxfree_boson_gas.aux")
+("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxFluctuations.aux")
+("D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse artikler, o.l\FY83
+05 Funksjonalintegralmetoder\Lecture notes\build\tex/xxHubbard_model.aux"))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6D4AE95E771F18F7940BCFC81BC43AF7;2480.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
+(rerunfilecheck)             Checksum: F3C4A39CAF0FEE074F3817A74B9A2D26;2741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
  ) 
 Here is how much of TeX's memory you used:
- 43223 strings out of 492895
- 999110 string characters out of 3133458
- 1157955 words of memory out of 3000000
- 46239 multiletter control sequences out of 15000+200000
- 544076 words of font info for 68 fonts, out of 3000000 for 9000
+ 43316 strings out of 492895
+ 1002078 string characters out of 3133458
+ 1159806 words of memory out of 3000000
+ 46273 multiletter control sequences out of 15000+200000
+ 545323 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,20n,96p,1521b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,22n,96p,1521b,1182s stack positions out of 5000i,500n,10000p,200000b,50000s
 <D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><D:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Program Files/MiK
@@ -1418,30 +1452,31 @@ onts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cmextra/cmex7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cmextra/cmex8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb
-><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
-ls/msbm5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
-sbm7.pfb>
+ts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
+fb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><D:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmti10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm5
+.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb
+>
 Output written on "D:\Karl Kristian\OneDrive - NTNU\NTNU\Fysikkemner, diverse a
-rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (46
- pages, 533740 bytes).
+rtikler, o.l\FY8305 Funksjonalintegralmetoder\Lecture notes\build\main.pdf" (52
+ pages, 580343 bytes).
 PDF statistics:
- 785 PDF objects out of 1000 (max. 8388607)
- 275 named destinations out of 1000 (max. 500000)
- 269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 317 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 
