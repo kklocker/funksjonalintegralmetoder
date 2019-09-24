@@ -1,0 +1,97 @@
+\section{Free Boson gas}
+
+Page 85 in the pdf (63 in notes).
+
+We are now considering free, spin less bosons without any inner structure. For example phonons, magnons, solitons in one-dimensional conductors, etc..)
+
+The Hamiltonian is 
+\begin{equation}
+\Ha = \sum_q \omega_qa_q^\dagger a_q
+\end{equation}
+
+As for free electron gas, we are to compute the partition function in \eqref{eq:partition_integral}, repeated here as 
+
+\begin{equation}
+\Z = \int \mathcal{D}\left[\varphi^*(\tau)\right]\mathcal{D}\left[\varphi(\tau)\right]\e^{\mathcal{S}}.
+\end{equation}
+This time, however, $\varphi_\lambda(0) = \varphi_\lambda(\beta)$, periodic for bosons.
+
+\begin{equation}
+\mathcal{S} = -\sum_{q}\int_0^\beta\dd{\tau}\varphi_{q}^*(\tau)\left(\partial_{\tau} + \omega_q\right)\varphi_{q}(\tau)
+\end{equation}
+\(\Z\) now become a multiple Gaussian integral over complex variables, since the $\varphi$'s now are eigenvalues for coherent boson states. We calculated this before;
+\begin{align*}
+\Z &= \e^{-\Tr\ln(\partial_\tau + \omega)} \\
+\Tr &= \sum_q\int_0^\beta\dd{\tau}\tr
+\end{align*}
+We thus have to find a local expression for 
+\begin{equation}
+\ln(\partial_\tau + \omega_q).
+\end{equation}
+Since we are taking the trace over periodic states, \(\varphi_\lambda(\tau =0) = \varphi_\lambda(\tau =\beta)\), we introduce the plane wave basis
+\begin{align*}
+u_{\nu q} &= \frac{1}{\sqrt{\beta}}\e^{i(\vb q\cdot \vb{r} - \omega_\nu\tau)}\\
+\omega_\nu &= \frac{2\nu\pi}{\beta}
+\end{align*}
+The \(\omega_\nu\)'s are the Matsubara boson frequencies. These basis functions are periodic on the interval \( \tau \in [0,\beta) \).
+We have
+\begin{align*}
+\tr\ln(\partial_\tau + \omega) &= \sum_\nu \ev{\ln(\partial_\tau + \omega_q)}{\nu}\\
+&=\frac{1}{\beta}\sum_{\omega_\nu}\ln(-i\omega_\nu + \omega_q),
+\end{align*}
+which in turn implies that
+\begin{equation}
+\label{eq:boson_partition}
+\Z = \e^{-\sum_{q}\sum_{\omega_\nu}\ln(-i\omega_\nu+\omega_q)}
+\end{equation}
+
+To compute \eqref{eq:boson_partition}, we need a result for
+\begin{equation}
+\sum_{\omega_\nu}\ln(-i\omega_\nu +\omega_q).
+\end{equation}
+Using the same technique as we did in section \ref{sec:free_electron}, we observe that \(i\omega_\nu\) are poles in the Bose-Einstein distribution 
+\begin{equation}
+b(z) = \frac{1}{\e^{\beta z}-1},
+\end{equation}
+with \(\Res b(i\omega_\nu) = \flatfrac{1}{\beta} \).
+\begin{figure}
+\centering
+\input{tex/img/boson_poles1}
+\end{figure}
+\begin{figure}
+\centering
+\input{tex/img/boson_poles2}
+\end{figure}
+As seen in the figures, the contributions from the pole in the origin cancel. Using this and Cauchy's residue theorem gives, with \(g(i\omega_\nu)=\ln(-i\omega_\nu + \omega_q)\)
+
+
+\begin{align}
+\sum_{\omega_\nu}g(i\omega_\nu) &= +\frac{\beta}{2\pi i}\oint_\mathcal{C}\dd{z} g(z)b(z)\nonumber \\
+&= \frac{\beta}{2\pi i}\int_{-\infty}^{0^-}\dd{\varepsilon}b(\varepsilon)\left[\ln(-\varepsilon - i\delta +\omega_q)-\ln(-\varepsilon +i\delta + \omega_q)\right] \nonumber\\
+&+ \frac{\beta}{2\pi i}\int_{0^+}^{\omega_q}\dd{\varepsilon}b(\varepsilon)\left[\ln(-\varepsilon - i\delta +\omega_q)-\ln(-\varepsilon +i\delta + \omega_q)\right] \nonumber\\
+&= \beta\int_{\omega_q}^\infty \dd{\varepsilon}b(\varepsilon)\left[\ln(-\varepsilon - i\delta +\omega_q)-\ln(-\varepsilon +i\delta + \omega_q)\right]\label{unc:limits_integral}
+\end{align}
+The contribution from \(\varepsilon <\omega_q\) disappear from the exact same reason as in the case of fermions. The contribution from \(\varepsilon >\omega_q\) is easier, since the difference in the logarithms is \(-2\pi i\), so that 
+\begin{align*}
+-\beta\int_{\omega_q}^{\infty}\dd{\varepsilon}b(\varepsilon) &= -\beta\int_{\omega_q}^{\infty}\dd{\varepsilon}\frac{\e^{-\beta \varepsilon}}{1-\e^{-\beta \varepsilon}}\\
+&= -\frac{\beta}{\beta}\left[\ln\left(1-\e^{-\beta \varepsilon}\right)\right]_{\omega_q}^{\infty} \\
+&= \ln\left(1-\e^{-\beta\omega_q}\right).
+\end{align*}
+We then have
+\begin{align}
+\Z &= \e^{-\sum_{q}\sum_{\omega_\nu}\ln(-i\omega_\nu+\omega_q)} \nonumber\\
+&= \e^{-\sum_q\ln\left(1-\e^{-\beta\omega_q}\right)} \nonumber \\
+&= \prod_q \frac{1}{1-\e^{-\beta\omega_q}}\label{eq:Bose_Einstein_Partition}\\
+&= \e^{-\beta F}. \nonumber
+\end{align}
+We recognize \eqref{eq:Bose_Einstein_Partition} as the partition function for a free boson gas, with free energy 
+\begin{equation}
+F = \frac{1}{\beta}\sum_q\ln\left(1-\e^{-\beta\omega_q}\right).
+\end{equation}
+
+The answers we have gotten for both the free fermion gas and free boson gas could easily have been found by simple counting arguments. These calculations have however illustrated what hides behind exact expressions as for example \(\Tr A(\partial_\tau)\). In addition, the methods are familiar for interacting problems, which we will consider later.
+
+\begin{figure}
+	\centering
+\input{tex/img/green_feynman}
+\end{figure}

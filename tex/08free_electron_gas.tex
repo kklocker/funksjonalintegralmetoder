@@ -1,0 +1,208 @@
+\section{Free electron gas}
+\label{sec:free_electron}
+
+We start with the Hamiltonian
+\begin{align}
+\Ha &= \sum_{k,\sigma}\varepsilon_kc_{k\sigma}^\dagger c_{k\sigma}\nonumber \\
+& = \sum_\sigma \int \dx \psi_\sigma^\dagger(x)\varepsilon(\nabla)\psi_\sigma(x).
+\end{align}
+The partition function is 
+
+\begin{equation}
+\label{eq:partition_integral}
+\Z = \int \mathcal{D}\left[\varphi^*(\tau)\right]\mathcal{D}\left[\varphi(\tau)\right]\e^{\mathcal{S}}
+\end{equation}
+where \( \varphi_\lambda(0) = -\varphi_\lambda(\beta)\) (antiperiodic for fermions) and
+\begin{equation}
+\mathcal{S} = -\sum_\lambda\int_0^\beta\dd{\tau}\left[\varphi_\lambda^*\pdv{\varphi_\lambda}{\tau} + \Ha \left(\{\varphi_\lambda^*, \varphi_\lambda\}\right)\right]
+\end{equation}
+Now choose quantum numbers \(\lambda = \left(k,\sigma\right)\) because $\Ha$ is diagonal in the plane wave basis. Then,  
+\begin{equation}
+\mathcal{S} = -\sum_{k,\sigma}\int_0^\beta\dd{\tau}\varphi_{k\sigma}^*(\tau)\left(\pdv{\tau} + \varepsilon_k\right)\varphi_{k\sigma}(\tau)
+\end{equation}
+where $\{\varphi_{k\sigma}(\tau)\}$ are Grassman variables. $\Z$ now becomes a Gaussian integral over Grassmann variables, which we have seen earlier. By direct insertion of this result, we find 
+
+\begin{align}
+\Z &= \e^{\Tr \ln\left(\partial_\tau + \varepsilon_k\right)} \label{eq:partition_free_electron}\\
+&\stackrel{?}{=} \prod_{k,\sigma}\left(1+\e^{-\beta\varepsilon_k}\right)\nonumber
+\end{align} 
+with 
+\begin{equation}
+\label{eq:trace_}
+\Tr = \sum_{k,\sigma}\int_0^\beta\dd{\tau}\cdot \tr
+\end{equation}
+where ``tr'' here is the trace of the operator $\ln\left(\partial_\tau + \varepsilon_k\right)$
+\begin{equation}
+\tr\ln\left(\partial_\tau + \varepsilon_k\right) = \sum_n\ev{\ln\left(\partial_\tau + \varepsilon_k\right)}{n}.
+\end{equation}
+To be able to get a \underline{local} expression for $\ln\left(\partial_\tau + \varepsilon_k\right)$, the choice of a plane wave basis for $\ket n$ is convenient.
+
+\begin{equation}
+\ket n = u_{nk} = \frac{1}{\sqrt{\beta}}\e^{i\left(\textbf{k}\cdot\textbf{r} - \omega_n\tau \right)}
+\end{equation}
+where
+\begin{equation}
+\omega_n = \frac{\left(2n+1\right)\pi}{\beta}.
+\end{equation}
+The reason for this choice of $\omega_n$ is that we see that this ensures $u_{nk}(\tau)$ to have the same \underline{antiperiodic} properties as $\varphi_\lambda(\beta)$
+When we take the trace only over such states, the requirement \( \varphi_\lambda(0) = -\varphi_\lambda(\beta)\) is automatically satisfied.
+
+\begin{align}
+&\sum_n \ev{\ln\left(\partial_\tau + \varepsilon_k\right)}{n} & \nonumber \\
+& = \frac{1}{\beta}\sum_{\omega_n}\e^{-i\left(\textbf{k}\cdot \textbf{r} - \omega_n\tau\right)}\ln\left(\partial_\tau + \varepsilon_k\right)\e^{i\left(\textbf{k}\cdot \textbf{r} - \omega_n\tau\right)}. \label{eq:trace_free_electron}&
+\end{align}
+
+Before we continue, we investigate the trace of an arbitrary operator
+\begin{equation}
+\tr\ln A = \sum_n\ev{A}{n}.
+\end{equation}
+
+$\ln A$ is defined by its series expansion
+
+\begin{align}
+\ln A &= \ln (1+A-1) \nonumber \\
+&= \sum_{k=1}^\infty\frac{(-1)^{k+1}}{k}\left(A-1\right)^k,
+\end{align}
+such that 
+\begin{equation}
+\tr\ln A = \sum_{k=1}^\infty\frac{(-1)^{k+1}}{k}\tr\left[\left(A-1\right)^k\right].
+\end{equation}
+Define $B = A-1$. Now choose $S$ such that $S^{-1}BS = S^{-1}AS -1 = D-1$, i.e. such that $A$ is diagonalized. 
+
+\begin{align}
+\tr(B^k) &= \tr\left[\left(D-1\right)^k\right] \nonumber\\
+ &= \sum_m \left(\lambda_m -1\right)^k
+ \implies\nonumber \\
+ \tr\ln A &= \sum_m\sum_k\frac{(-1)^{k+1}}{k}(\lambda_m-1)^k\nonumber \\
+ &= \sum_m\ln(1+\lambda_m -1)\nonumber \\
+ &= \sum_m \ln\lambda_m = \ln \left(\prod_m\lambda_m\right)\nonumber \\
+\implies & \tr\ln A = \ln\det A. \label{eq:trace_op}
+\end{align}
+When we use \eqref{eq:trace_op} in \eqref{eq:trace_free_electron}, we get
+
+\begin{equation}
+\sum_n\ev{\ln\left(\partial_\tau + \varepsilon_k\right)}{n} = \frac{1}{\beta}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)
+\end{equation}
+
+\begin{align}
+\Z &= \e^{\sum_{k,\sigma}\frac{1}{\beta}\int_0^\beta\dd{\tau}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
+&= \e^{\sum_{k,\sigma}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
+&= \prod_{k,\sigma}\e^{\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)}.
+\end{align}
+To get any further, we need to execute the summation over the Matsubara frequencies $\omega_n$. To do this, observe that $i\omega_n$ are the poles of the Fermi distribution
+\begin{equation}
+\label{eq:fermi_dist}
+f(z) = \frac{1}{1+\e^{\beta z}}
+\end{equation}
+If a complex valued function $g(z)$ defined on $\mathbb{C}$ has a simple pole at $z = z_0$, Cauchy's residue theorem tells us that 
+\begin{align}
+\oint\dd{z}g(z) &= 2\pi i\Res\left[g(z_0)\right] \\
+\Res\left[g(z_0)\right]&= \lim_{z\rightarrow z_0}\left[(z-z_0)g(z)\right]
+\end{align}
+
+So for the Fermi distribution in \eqref{eq:fermi_dist}, we get
+
+\begin{align}
+\Res\left[f(i\omega_n)\right] &= \lim_{z\rightarrow i\omega_n}\left[(z-i\omega_n)f(z)\right] \nonumber \\
+\lim_{z\rightarrow i\omega_n} &= \lim_{z\rightarrow i\omega_n}\frac{1}{1+\e^{\beta(z-i\omega_n + i\omega_n)}} \nonumber \\
+&= \lim_{z\rightarrow i\omega_n} \frac{1}{1-\e^{\beta(z-i\omega_n)}} \nonumber \\
+&= \frac{1}{1-1-\beta(z-i\omega_n)+\dots} \nonumber \\
+&= -\frac{1}{\beta}\frac{1}{z-i\omega_n} \implies \nonumber \\
+\Res\left[f(i\omega_n)\right] &= -\frac{1}{\beta}
+\end{align}
+
+We then have
+
+\begin{align}
+\oint \dd{z}f(z) &= 2\pi i \Res f(z_0) \\ 
+&= -\frac{2\pi i}{\beta} \implies \\
+\sum_{\substack{i\omega_n \\ \omega_n \text{odd}}} g(i\omega_n) &= -\frac{\beta}{2\pi i}\oint \dd{z}g(z)f(z)\equiv I
+\end{align}
+where the path encloses \underline{all} simple poles of the Fermi distribution \eqref{eq:fermi_dist} and 
+\begin{equation}
+g(i\omega_n)=\ln(-i\omega_n + \varepsilon_k)
+\end{equation}
+
+
+\begin{figure}
+\centering
+\input{tex/img/fermi_poles1}
+\end{figure}
+
+\begin{figure}
+\centering
+\label{fig:path_deform}
+\begin{subfigure}{0.49\textwidth}
+\input{tex/img/fermi_poles2}
+
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\input{tex/img/fermi_poles3}
+
+\end{subfigure}
+\end{figure}
+
+Deform the path $C$ in a way that does not enclose new poles. We have to avoid the pole in $g(i\omega_n) = \ln(-i\omega_n + \varepsilon_k)$.
+
+Consider 
+\begin{align}
+\tilde{I} = \frac{\beta}{2\pi i}\int_{-\infty}^\infty\dd{\varepsilon}&\left[f(\varepsilon + i\delta)\ln\left(-\varepsilon -i\delta + \varepsilon_k\right) \right.\nonumber\\
+&\left.-f(\varepsilon-i\delta)\ln\left(-\varepsilon  + i\delta + \varepsilon_k\right) \right].
+\end{align}
+
+\footnote{I found no better placement as it stands on a separate page in the notes. The contribution from the pole is
+\begin{equation*}
+= -\frac{1}{2\pi i}\int_0^{2\pi}\dd{\theta}R\ln\left(R\e^{i\theta}\right) = -\frac{1}{2\pi i} R\left[2\pi\ln R + i\frac{4\pi^2}{2}\right]
+ \stackrel{R \rightarrow 0}{\rightarrow}  0,
+\end{equation*}
+so no contribution.
+}
+
+This is equal to 
+\begin{equation}
+\label{unc:is_it_really_equal}
+\tilde{I} = \frac{\beta}{2\pi i}\int_{-\infty}^\infty\dd{\varepsilon}f(\varepsilon)\left[\ln(-\varepsilon -i\delta + \varepsilon_k) - \ln(-\varepsilon + i\delta + \varepsilon_k)\right].
+\end{equation}
+We have to be careful, since the $\ln$-function has multiple values $\ln(z) = \ln(z) + i\varphi$, where $\varphi = 2\pi n$ for $n \in \mathbb{Z}$. We impose a branch cut off to separate the branches from one another on the Riemann surface. To eliminate the problem with a multivalued function, we define the function on specified Riemann-surfaces. The branch cut off separates one Riemann surface from another. Having multivalued functions means problems and meaninglessness when considering the computation of physical quantities. Moral of the story: \underline{Always} (properly)
+examine the analytic structure of a function $g(z)$ that is included in $\sum_{\omega_n}g(i\omega_n)$.
+
+For $\varepsilon < \varepsilon_k$, we have \(\Im(\ln z) = \pi^-\) over the real axis, and \(\Im(\ln z) = \pi^+\) under the real axis. 
+
+\begin{align}
+&\ln (-\varepsilon -i\delta + \varepsilon_k) - \ln(-\varepsilon + i\delta+\varepsilon_k) \nonumber \\
+&=\ln|-\varepsilon + \varepsilon_k| + i\pi^- - \ln|-\varepsilon + \varepsilon_k| - i\pi^+\nonumber \\
+&= i(\pi^- - \pi^+) = 0 \text{\footnotemark}
+\end{align}
+\footnotetext{According to the notes, this is not entirely correct but here the signs on $\pi$  is also swapped.}
+
+We thus have no contribution from $\varepsilon <\varepsilon_k$!
+
+For $\varepsilon>\varepsilon_k$, $\Im(\ln z) = 0$ over the real axis and $2\pi$ below. 
+
+\begin{align}
+&\ln (-\varepsilon -i\delta + \varepsilon_k) - \ln(-\varepsilon + i\delta+\varepsilon_k) \nonumber \\
+&= \ln|-\varepsilon+ \varepsilon_k| - \ln|-\varepsilon + \varepsilon_k| + i\cdot 0 - 2\pi i = -2\pi i
+\end{align}
+
+Now we can return to the integral
+\begin{align}
+\tilde{I} &= -\frac{2\pi i}{2\pi i}\beta\int_{\varepsilon_k}^\infty\dd{\varepsilon}f(\varepsilon) \\
+&= -\beta\int_{\varepsilon_k}^\infty\dd{\varepsilon}\frac{1}{\e^{\beta\varepsilon}+1} \\
+&= -\beta\int_{\varepsilon_k}^\infty \dd{\varepsilon}\frac{\e^{-\beta\varepsilon}}{1+\e^{-\beta\varepsilon}} \\
+&= \int_{\varepsilon_k}^\infty \dd{\varepsilon} \dv{\varepsilon}\ln\left( 1+\e^{-\beta\varepsilon}\right)\\
+&= -\ln\left(1+\e^{-\beta\varepsilon_k}\right).
+\end{align}
+
+Thus
+\begin{equation}
+I = \sum_{\omega_n}\ln(-i\omega_n+\varepsilon_k) = \ln\left(1+\e^{-\beta\varepsilon_k}\right).
+\end{equation}
+This lets us calculate the partition function in \eqref{eq:partition_free_electron} with the definition in \eqref{eq:trace_} as
+\begin{align}
+\Z &= \e^{\sum_{k\sigma}\sum_{\omega_n}\ln(-i\omega_n+\varepsilon_k)} = \e^{\sum_{k\sigma}\ln\left(1+\e^{-\beta\varepsilon_k}\right)}\nonumber \\
+&= \prod_{k,\sigma}\left(1+\e^{-\beta\varepsilon_k}\right).\label{eq:fermion_partition}
+\end{align}
+Equation \eqref{eq:fermion_partition} is a well known result for fermions. This is the partition function for a free fermion gas with Hamiltonian 
+\begin{equation}
+\Ha = \sum_{k,\sigma}\varepsilon_kc_{k\sigma}^\dagger c_{k\sigma}.
+\end{equation}

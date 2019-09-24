@@ -1,0 +1,234 @@
+\section{The Hubbard model $(U = \infty)$}
+
+Consider the Hamiltonian 
+\begin{equation}
+\label{eq:Hamilitonian_hubbard}
+\Ha = -\sum_{i,j}t_{ij}c_{i\sigma}^\dagger c_{j\sigma} + U\sum_{i}n_{i\uparrow}n_{i\downarrow} - \mu\sum_{i,\sigma}n_{i\sigma}.
+\end{equation}
+
+At \underline{$U = 0$}, the Hamiltonian \eqref{eq:Hamilitonian_hubbard} transforms to
+\begin{equation}
+\Ha = \sum_{k,\sigma}\left(\varepsilon_k - \mu\right)c_{k\sigma}^\dagger c_{k\sigma}
+\end{equation} with nearest neighbour hopping 
+\begin{equation*}
+\varepsilon_k = -2t\sum_{i = 1}^d\cos k_i \equiv -2t\gamma_k
+\end{equation*}
+
+For intermediate \underline{$0<U<\infty$} we have a very complicated problem with little or nothing known. 
+
+For \underline{$U = \infty$} the problem simplifies, but cannot be solved exact. The simplified Hamiltonian then reads 
+\begin{equation}
+\Ha = -\sum_{i,j,\sigma}t_{ij}c_{i\sigma}^\dagger c_{j\sigma}
+\end{equation}
+with an extra constraint on each lattice site; that there is a maximum of one fermion per lattice site at all times $t$.
+\begin{equation*}
+\sum_\sigma \hat{n}_{i\sigma}\ket{\psi} \sum_\sigma n_{i\sigma}\ket{\psi}
+\end{equation*}
+with
+\begin{equation*}
+\underline{\sum_\sigma n_{i\sigma} \le 1}
+\end{equation*}
+Constraints like these, i.e. constraints represented by inequalities are difficult to deal with. 
+
+\subsection{Hubbard operators}
+Before we continue,
+we introduce \underline{Hubbard operators}. Consider states \(\ket{\alpha, i}\) where \(\alpha \in 0, \sigma, 2\) and \(\sigma = \uparrow, \downarrow\). These are empty, simple, or doubly occupied states. 
+Next, define
+\begin{equation}
+\label{eq:Hubbard_operators}
+X_i^{\alpha\beta} = \dyad{\alpha, i}{\beta, i}.
+\end{equation}
+\begin{align}
+\hat{O} &= \sum_{\alpha, \beta}\ket{\alpha, i}\mel{\alpha, i}{\hat{O}}{\beta, i}\bra{\beta, i}\nonumber \\
+&= \sum_{\alpha, \beta}X_i^{\alpha\beta}\mel{\alpha, i}{\hat{O}}{\beta, i} \nonumber
+\end{align}
+
+%\newtheorem{theorem}{Ex}
+
+\begin{theorem}
+\begin{align*}
+c_{i\sigma} &= \sum_{\alpha, \beta}X_i^{\alpha\beta}\mel{\alpha, i}{c_{i\sigma}}{\beta, i} \\
+&= X_i^{0\sigma} + X_i^{-\sigma 2} \\
+c_{i\sigma}^\dagger &= X_i^{\sigma 0} + X_i^{2-\sigma}
+\end{align*}
+\end{theorem}
+
+If we let $U = \infty$, we see from \eqref{eq:Hamilitonian_hubbard} that we can drop the operators involving doubly occupied states \(X_i^{-\sigma 2},X_i^{2-\sigma}\) such that we can write\footnote{Comment in the notes: `` This is valid when the doubly occupied states gets projected out of the Hilbert space''} 
+\begin{align}
+\label{eq:hubbard_ops_ca}
+c_{i\sigma} &= X_i^{0\sigma} \\
+c_{j\sigma}^\dagger &= X_j^{\sigma 0}
+\end{align}
+This means that the Hamiltonian in the Hubbard model can be written 
+\begin{equation}
+\label{eq:hubbard_ham}
+\Ha = -t\sum_{i,j,\sigma}X_i^{\sigma 0}X_j^{0\sigma}
+\end{equation}
+Here we thus have hopping with no double-occupancy-constraint. We have restrictions on the creation and annihilation operators, but \underline{no} restriction on the Hubbard operators \(X_i^{\sigma 0}\). Unfortunately, the problem is more complicated then what it seems. The reason is that the Hubbard operators satisfy much more complicated commutation relations. By the definition \eqref{eq:Hubbard_operators}, these are
+
+\begin{align}
+\comm{X_i^{\alpha\beta}}{X_j^{\gamma\eta}}_\pm 
+&= \ket{\alpha i}\braket{\beta i}{\gamma j}\bra{\eta j} \pm \ket{\gamma j}\braket{\eta j}{\alpha i}\bra{\beta i} \nonumber \\
+&= \delta_{ij}\delta_{\beta\gamma}X_i^{\alpha\eta} \pm \delta_{ij}\delta_{\eta\alpha}X_j^{\gamma\beta} \nonumber\\
+&= \delta_{ij}\left[\delta_{\beta\gamma}X_i^{\alpha\eta} \pm \delta_{\eta\alpha}X_i^{\gamma\beta}\right]
+\end{align}
+
+Now, we introduce canonical boson-  and fermion operators to represent $X$ by these.
+\begin{align*}
+X_i^{00} &= \dyad{0i} \\
+&\Leftrightarrow b_i^\dagger b_i\\
+X_i^{\sigma 0} &= \dyad{\sigma i}{0i} \\
+&\Leftrightarrow f_{i\sigma}^\dagger b_i \\
+X_i^{0\sigma} &= \dyad{0i}{\sigma i} \\
+&\Leftrightarrow b_i^\dagger f_{i\sigma}\\
+X_i^{\sigma\sigma'} &= \dyad{\sigma i}{\sigma' i}\\
+&\Leftrightarrow f_{i\sigma}^\dagger f_{i\sigma'}
+\end{align*}
+Using these representations, we get the correct commutation relations for the Hubbard operators. 
+
+\begin{align}
+\label{eq:comm_rel_repr1}
+\begin{split}
+\comm{X_i^{0\sigma}}{X_i^{\sigma'0}}_+ &= X_i^{0\sigma}X_i^{\sigma'0} +X_i^{\sigma'0}X_i^{0\sigma}\\
+&= \delta_{\sigma\sigma'}X_i^{00} + X_i^{\sigma'\sigma} \\
+&= \delta_{\sigma\sigma'}b_i^\dagger b_i + f_{i\sigma}^\dagger f_{i\sigma'}
+\end{split}
+\end{align}
+Or,using the representations directly:
+\begin{align}
+\label{eq:comm_rel_repr2}
+\begin{split}
+\comm{b_i^\dagger f_{i\sigma}}{f_{i\sigma'}^\dagger b_i}_+ &= f_{i\sigma'}^\dagger f_{i\sigma}\left(1+b_i^\dagger b_i\right) + b_i^\dagger b_i \left(\delta_{\sigma\sigma'} - f_{i\sigma'}^\dagger f_{i\sigma}\right) \\
+&= \delta_{\sigma\sigma'}b_i^\dagger b_i + f_{i\sigma'}^\dagger f_{i\sigma} \\
+&= \delta_{\sigma\sigma'}X_i^{00} + X_i^{\sigma'\sigma}.
+\end{split}
+\end{align}
+We see that \eqref{eq:comm_rel_repr1} and \eqref{eq:comm_rel_repr2} are equal and thus this representation gives the correct commutation relations. We still have the completeness relation
+\begin{align}
+\begin{split}
+1 &= \sum_\alpha \dyad{\alpha i} \\
+&= X_i^{00} + \sum_\sigma X_i^{\sigma\sigma}\\
+&= b_i^\dagger b_i + \sum_\sigma f_{i\sigma}^\dagger f_{i\sigma}
+\end{split}
+\end{align}
+
+\subsection{Reformulating constraint}
+We now return to the general problem of constraint govern by an inequality. We wish to convert this constraint to an equality, and we develop methods for solving such problems. The trick is to introduce a boson, $b_i$, which keeps track of when a lattice site $i$ is \underline{unoccupied}.
+
+Using our previously defined Hubbard operators, we associate, using \eqref{eq:hubbard_ops_ca}, \(c_{i\sigma}^\dagger = X_i^{\sigma 0} \Leftrightarrow f_{i\sigma}^\dagger b_i\) and \(c_{i\sigma} = X_i^{0\sigma} \Leftrightarrow  b_i^\dagger f_{i\sigma}\). 
+
+$f_{i\sigma}^\dagger$: Creation operator for a fermion on the lattice site $i$ .
+$b_i$: Creation operator for an unoccupied lattice site. 
+$f_{i\sigma}^\dagger f_{i\sigma}$: The number of fermions on the lattice site $i$. 
+
+Either the site is occupied with one fermion, or the site is empty. This is expressed with the condition 
+\begin{equation}
+\label{eq:constraint_hubbard}
+b_i^\dagger b_i + \sum_\sigma f_{i\sigma}^\dagger f_{i\sigma} = 1,
+\end{equation}
+which is now a leading constraint expressed with an equality. 
+
+The Hamiltonian \eqref{eq:hubbard_ham}of the problem is written on the form 
+\begin{equation}
+\label{eq:hubbard_hamiltonian2}
+\Ha = -\sum_{i,j,\sigma}t_{ij}f_{i\sigma}^\dagger b_i b_j^\dagger f_{j\sigma}.
+\end{equation}
+Equations \eqref{eq:constraint_hubbard} and \eqref{eq:hubbard_hamiltonian2} define our problem, which we are to solve. Define
+\begin{equation}
+Q_i \equiv   \sum_\sigma f_{i\sigma}^\dagger f_{i\sigma} + b_i^\dagger b_i
+\end{equation}
+such that $Q_i = 1$ is our condition. 
+\underline{Abrikosovs' trick}: \footnote{Alexei Alexeyevich Abrikosov (1928-2017), awarded with the Nobel price in physics 2003}
+\begin{equation}
+\prod_{i,\tau}\int_{-\pi}^\pi \frac{\dd{\lambda_i}}{2\pi}\e^{-i\int_0^\beta\lambda_i(\tau)(Q_i -1)\dd{\tau}} = \prod_{i,\tau}\delta_{Q_i,1}
+\end{equation}
+The partition function is given by 
+\begin{equation}
+\Z  = \int \D\varphi^*\D\varphi\D b^*\D b \left(\prod_i\prod_\tau\delta_{Q_i,1}\right)\e^{\Sa}
+\end{equation}
+where the factor in parentheses ensures that the functional integral is limited to include states where the lattice sites are \underline{not} doubly occupied.
+
+\begin{align}
+\label{eq:action_hubbard}
+\begin{split}
+\Sa = &-\sum_{i,\sigma}\int_0^\beta \dd{\tau}\left[\underbrace{b_i^*\pdv{b_i}{\tau}}_{\text{NB!}} + \varphi_{i\sigma}^*\pdv{\varphi_{i\sigma}}{\tau} \right] \\
+&+ \sum_{i,j,\sigma}\int_0^\beta\dd{\tau}\varphi_{i\sigma}^*(\tau)b_i(\tau)t_{ij}b_j^*(\tau)\varphi_{j\sigma}(\tau)
+\end{split}
+\end{align}
+
+NB: Note that we now have to keep all the terms involving $b_i^*\pdv{b_i}{\tau}$. This is because the $b$-bosons also exist in the Hamilton formulation of the theory. This is an essential difference from what we had earlier because the $b$-bosons has their own intrinsic dynamics.
+We rewrite \eqref{eq:action_hubbard} as
+\begin{align}
+\begin{split}
+\Sa = &-\sum_i\int_0^\beta\dd{\tau}b_i^*\pdv{b_i}{\tau} \\
+&-\sum_{i,j,\sigma}\int_0^\beta\dd{\tau} \varphi_{i\sigma}^*\left(\partial_\tau\delta_{ij} - t_{ij}b_ib_j^*\right)\varphi_{j\sigma}.
+\end{split}
+\end{align} 
+Now introduce Abrikosov's trick
+\begin{equation}
+\Z  = \int \D\varphi^*\D\varphi\D b^*\D b \D \lambda\, \e^{\tilde{\Sa}}
+\end{equation}
+\begin{align*}
+\tilde{\Sa} = &-\sum_i\int_0^\beta\dd{\tau}b_i^*(\partial_\tau + i\lambda_i)b_i + i\sum_i\int_0^\beta\lambda_i\dd{\tau} \\
+&-\underbrace{\sum_{i,j,\sigma}\int_0^\beta\dd{\tau}\varphi_{i\sigma}^*\left[\delta_{ij}(\partial_\tau + i\lambda_i) - t_{ij}b_ib_j^*\right]\varphi_{j\sigma}}_{\text{Gaussian fermion sector}}
+\end{align*}
+Now we can integrate out the fermion sector in an exact manner!
+\begin{equation}
+\Z = \int\D b^\dagger\D b\D\lambda \e^{\Sa_{\text{eff}}[b^\dagger, b, \lambda]},
+\end{equation}
+with
+\begin{align}
+\begin{split}
+\Sa_{\text{eff}} &= -\sum_i\int_0^\beta\dd{\tau}b_i^\dagger\left(\partial_\tau + i\lambda\right)b_i + i\sum_i\int_0^\beta\dd{\tau}\lambda_i \\
+&+ \Tr\ln\mathcal{G}^{-1}
+\end{split}
+\end{align}
+
+\begin{equation}
+\mathcal{G}^{-1} = \left(\partial_\tau + i\lambda_i\right)\delta_{ij}-t_{ij}b_ib_i^\dagger
+\end{equation}
+We have thus converted a strongly correlated fermionic system to an interacting bosonic system. 
+The resulting boson-theory is again too complicated for direct calculation of $\Z$. We therefore resort to the stationary point approximation.  Let $b_i = b, i\lambda_i = \lambda$ (physical explanation will follow).
+\begin{equation}
+\label{eq:greens_hubbard}
+\mathcal{G}^{-1} = (\partial_\tau + \lambda)\delta_{ij}- |b|^2t_{ij}.
+\end{equation}
+To compute \eqref{eq:greens_hubbard}, we may resort to the Fourier transform of  $\mathcal{G}^{-1}$.
+\begin{align*}
+\mathcal{F}(\delta_{ij}) &\Rightarrow 1 \\
+\mathcal{F}(t_{ij}) &\Rightarrow \tilde{\gamma}_k = 2t\underbrace{\sum_{i}\cos(k_i)}_{\gamma_k} \\
+\partial_\tau &\Rightarrow -i\omega_n.
+\end{align*}
+Using these relations, we find 
+\begin{align}
+\Tr\ln\mathcal{G}^{-1} &= \frac{1}{\beta}\sum_{k,\omega_n}\ln(-i\omega_n + \varepsilon_k) \\
+&= \frac{1}{\beta}\sum_{k,\omega_n}\ln(i\omega_n - \varepsilon_k),
+\end{align}
+\begin{equation}
+\varepsilon_k = -2tb^2\sum_i\cos(k_i) + \lambda,
+\end{equation}
+or, if we had included the chemical potential all the way from the start,
+\begin{align*}
+\varepsilon_k &= -2tb^2\gamma_k-(\mu+\lambda) \\
+\Sa_{\text{eff}}^{\text{MF}} &= -N\beta b^2 \lambda + N\beta \lambda+\sum_k\ln\left(1+\e^{-\beta \varepsilon_k}\right) \\
+f^{\text{MF}} &= (b^2 + 1)\lambda - \frac{1}{N\beta}\sum_k\ln\left(1+\e^{-\beta\varepsilon_k}\right)
+\end{align*}
+
+\subsection{Mean-field}
+
+\begin{align}
+\mathcal{G}^{-1} &= -i\omega_n+\varepsilon_k \\
+\mathcal{G}_F(k ,i\omega) &= \frac{1}{i\omega - \varepsilon_k} = -\ev{\varphi\varphi^\dagger}
+\end{align}
+where 
+\begin{equation}
+\varepsilon_k = -2tb^2\gamma_k-(\mu+\lambda).
+\end{equation}
+
+\(\mathcal{G}_F(k, i\omega):\) Green's function for a free quasi particle with renormalized band structure (lower bandwidth, correlation effect) and renormalized chemical potential. Both of these types of renormalization originate in the ``no double occupancy constraint''.
+
+\subsection{Stationary point constraint}
+(page 140)
+
+
+

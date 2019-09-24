@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale = 3]
+\draw [-, thick] (0, 1) to (2, 1) ;
+
+\draw [-, thick] (1, 0.1) to (1,1.9) ;
+
+\foreach \y in {0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8}
+	\node at (1, \y) {$\cross$};
+
+\draw[red,thick,dashed,   ->] (1.2, 0.6) to [in = 0,out = 90] (1, 2) to [in = 90, out = 180] (0.8, 1.4);
+
+\draw[red,thick, dashed, ->] (0.8, 1.4) to [in = 180,out = 270] (1, 0) to [in = 270, out = 0] (1.2, 0.6);
+
+\node at (1.4, 1) (e){$\cross$};
+\draw[] (e) node[anchor = north west] {$\omega_q$};
+
+\node[anchor = west] at (1.2, 0.4) {$\sim C$};
+
+\node at (2.1,1) {$=$};
+
+%%%%%%%%%%%%%%%%%%%
+
+\draw [-, thick] (2.2, 1) to (4.2, 1) ;
+
+\draw [-, thick] (3.2, 0.1) to (3.2,1.9) ;
+
+\foreach \y in {0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8}
+	\node at (3.2, \y) {$\cross$};
+	
+\draw[decoration={markings, mark=at position 0.125 with {\arrow{>}}},
+        postaction={decorate}, red, dashed, thick] (3.2, 1) circle (0.08cm);
+        
+\draw[decoration={markings, mark=at position 0.125 with {\arrow{>}}},
+        postaction={decorate}, red, dashed, thick] (2.8, 1.9) parabola bend (3.2, 1.13) (3.6, 1.9);
+
+\draw[decoration={markings, mark=at position 0.125 with {\arrow{>}}},
+        postaction={decorate}, red, dashed, thick] (3.6, 0.1) parabola bend (3.2, 0.87) (2.8, 0.1);
+
+\end{tikzpicture}
