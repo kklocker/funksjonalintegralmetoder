@@ -1,0 +1,92 @@
+\section{Mean field Green's function}
+Physical interpretation if the saddle point. 
+
+\begin{equation}
+\psi = 
+\begin{pmatrix}
+\varphi_{\uparrow} \\
+\varphi_\downarrow^\dagger
+\end{pmatrix}\qquad 
+\psi^\dagger = 
+\begin{pmatrix}
+\varphi_{\uparrow}^\dagger &
+\varphi_\downarrow
+\end{pmatrix}
+\end{equation}
+
+Green's function 
+\begin{align*}
+\mathcal{G}_F &= -\ev{\psi\psi^\dagger} \\
+&= -\ev{\begin{pmatrix}
+	\varphi_{\uparrow} \\
+	\varphi_\downarrow^\dagger
+	\end{pmatrix}
+	\begin{pmatrix}
+	\varphi_{\uparrow}^\dagger &
+	\varphi_\downarrow
+	\end{pmatrix}}\\
+&= 
+\begin{pmatrix}
+-\ev{\varphi_\uparrow\varphi_\uparrow^\dagger} & -\ev{\varphi_\uparrow\varphi_\downarrow} \\
+-\ev{\varphi_\downarrow^\dagger\varphi_\uparrow^\dagger} & -\ev{\varphi_\downarrow^\dagger\varphi_\downarrow}
+\end{pmatrix} \\
+\mathcal{G}_F(k) &= 
+\begin{pmatrix}
+G_{11}(k) & F(k) \\
+F^\dagger(k)& G_{22}(k)
+\end{pmatrix} \\
+&= \frac{1}{(i\omega_n)^2-\varepsilon_k^2}\cdot\begin{pmatrix}
+i\omega_n + \varepsilon_k & a \\
+a^\dagger & i\omega_n - \varepsilon_k
+\end{pmatrix}
+\end{align*}
+The Green's function of the fermionic system in the presence of a static boson field that creates and annihilates electron pairs. 
+In absence ($a = a^\dagger = 0$):
+\begin{align}
+\mathcal{G}_F(\vb{k}, i\omega_n) &= 
+	\begin{pmatrix}
+	\frac{1}{i\omega_n - \varepsilon_k}  & 0 \\
+	0 & \frac{1}{i\omega_n + \varepsilon_k} 
+	\end{pmatrix}
+	\\
+	&=
+	\begin{pmatrix}
+	G_{11} & 0\\
+	0 & G_{22}
+	\end{pmatrix}
+\end{align}
+With the particle propagator $G_{11}$ and hole propagator $G_{22}$ which is as for a free electron gas. See Figure \ref{fig:propagators}.
+\begin{figure}
+	\centering
+	\input{tex/img/propagators}
+	\caption{Propagators of the system}
+	\label{fig:propagators}
+\end{figure}
+$F\sim a, F^\dagger \sim a^\dagger $.
+These two functions do not exist in the normal state, since $a = a^\dagger = 0$ in this state. Now, we are able to interpret what it means to have $a \ne 0, a^\dagger \ne 0$.
+Notice that 
+
+\begin{align}
+\label{eq:order_param}
+\begin{split}
+\ev{\varphi_\downarrow\varphi_\uparrow} &\sim a\\
+\ev{\varphi_\uparrow^\dagger\varphi_\downarrow^\dagger} &\sim a^\dagger
+\end{split}
+\end{align}
+NB! Remember: when we Hubbard-Stratonovich decoupled $S_I$, we used the terms $a^\dagger \varphi_\downarrow\varphi_\uparrow$ and $a\varphi_\uparrow^\dagger\varphi_\downarrow^\dagger$. $a,\, a^\dagger$ are pair field that are conjugated to the order parameters $\ev{\varphi_\downarrow\varphi_\uparrow}$ and $\ev{\varphi_\uparrow^\dagger\varphi_\downarrow^\dagger}$, analog to the case of a spin system in an external magnetic field. This field is a magnetic field that are conjugated to the order parameter of the spin system, which is the magnetization, $\vb{M} \sim \vb{H}$.
+The order parameters of a superconductor is as in \eqref{eq:order_param}. When these are nonzero, there is a spontaneously broken symmetry of the problem. 
+Returning to $\Ha$;
+\begin{equation}
+	\Ha = \sum_x\varphi^*\varepsilon(\grad)\varphi + V\sum_x\varphi^*\varphi\varphi^*\varphi
+\end{equation}
+This model has a continous symmetry
+\begin{align*}
+	\varphi(x) &\rightarrow \varphi(x)\e^{i\theta(x)} \\
+	\Ha &\rightarrow \Ha,
+\end{align*}
+ which is a $U(1)$-symmetry. However, in $\ev{\varphi_\downarrow\varphi_\uparrow}$, the phases do not cancel, but instead goes to $\ev{\varphi_\downarrow\varphi_\uparrow\e^{2i\theta}}$. If this phase is completely undetermined, this average will be zero. Thus, having $\ev{\varphi_\downarrow\varphi_\uparrow}\ne 0$ must mean that $\theta$ is a known quantity, i.e. the symmetry is spontaneously broken. 
+ More generally:
+ 
+ \textit{When we assume a saddle point in a functional integral, and also assume $\Sa_\text{eff}$ is a minimum for finite values of $\ev{a}, \ev{a^\dagger}$, this is quivalent to the assumption of some spontaneous breaking of symmetry (most often).}
+ 
+ Thus: To choose a suitable decoupling scheme, we have to chose the ``right type'' of bosons in the H-S transformations. This choice is decided by the physcis we expect. 
