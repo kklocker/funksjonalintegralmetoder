@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale = 2]
+
+
+%%% Upper left
+\draw [-, thick] (0, 1) to (2, 1) ;
+\draw [-, thick] (1, 0.1) to (1,1.9) ;
+\foreach \y in {0.1,0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9}
+	\node at (1, \y) {$\cross$};
+\draw[red,thick,dashed,   ->] (1.2, 0.6) to [in = 0,out = 90] (1, 2) to [in = 90, out = 180] (0.8, 1.4);
+\draw[red,thick, dashed, ->] (0.8, 1.4) to [in = 180,out = 270] (1, 0) to [in = 270, out = 0] (1.2, 0.6);
+\node at (1.4, 1) (e){$\cross$};
+\draw[] (e) node[anchor = north west] {$x$};
+\node[anchor = west] at (1.2, 0.4) {$\sim C$};
+\node[anchor = west] at (2,1) {$=$}; 
+
+\pgfmathsetmacro\offsetx{2.2}
+
+%%% Upper right
+\draw [-, thick] (0+\offsetx, 1) to (2 + \offsetx, 1) ;
+\draw [-, thick] (1+\offsetx, 0) to (1+\offsetx,2) ;
+\node at (1.4 + \offsetx, 1) (e){$\cross$};
+\draw[red, thick, dashed] (0+\offsetx,1.05) to (1.3+\offsetx, 1.05);
+\draw[red, thick, dashed, -] (1.3 + \offsetx, 1.05) to [in=90, out = 90] (1.5+\offsetx, 1.05);
+\draw[red, thick, dashed, ->] (1.5 + \offsetx, 1.05) to (2+\offsetx,1.05);
+\draw[red, thick,dashed] (2 + \offsetx, 0.95) to (1.5+\offsetx, 0.95);
+\draw[red, thick, dashed] (1.5 + \offsetx, 0.95) to [in = 270, out = 270] (1.3+\offsetx, 0.95);
+\draw[red, thick, dashed,->] (1.3 + \offsetx,0.95) to (0+\offsetx,0.95);
+
+\pgfmathsetmacro\offsety{-1.7}
+\pgfmathsetmacro\offsetx{1.1}
+
+%%% Lower picture
+
+\node[anchor = west] at (\offsetx - 0.2,1 + \offsety) {$=$};
+\draw [-, thick] (0+\offsetx, 1+\offsety) to (2 + \offsetx, 1+\offsety) ;
+\draw [-, thick] (1+\offsetx, 0+\offsety) to (1+\offsetx,2+\offsety) ;
+\node at (1.4 + \offsetx, 1+\offsety) (e){$\cross$};
+\draw[decoration={markings, mark=at position 0.125 with {\arrow{<}}},
+postaction={decorate}, red, dashed, thick] (1.4+\offsetx, 1+\offsety) circle (0.2cm);
+
+
+\end{tikzpicture}

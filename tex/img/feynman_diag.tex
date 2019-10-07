@@ -1,0 +1,13 @@
+\begin{tikzpicture}[thick, scale = 3]
+  	\path [draw = black,snake it]
+    (0,0) -- (1,0);
+   	\path[draw = black, snake it] (2,0) -- (3,0);
+   	\draw[black, ->-=0.5] (1, 0) parabola bend (1.5, 0.3) (2,0);
+   	\draw[black, ->-=0.5] (2, 0) parabola bend (1.5, -0.3) (1,0);
+   	\node[anchor = south] at (0.5, 0) {$q, i\omega_\nu$};
+   	\node[anchor = south] at (1.5, 0.3) {$ k + q, i\omega_n + i\omega_\nu$};
+	\node[anchor = north] at (1.5, -0.3) {$ k,i\omega_n$}; 
+    \node[anchor = south] at (2.5, 0) {$q, i\omega_\nu$};
+    
+    \node[anchor = west] at (3,0) {$\equiv P(q, i\omega_\nu)$};
+\end{tikzpicture}

@@ -1,0 +1,597 @@
+\section{Green's functions, $T > 0$}
+First we are going to look at the derivation of one-particle Green's functions for bosons and fermions. Recall the definition of a one-particle Green's function at $T = 0$: 
+
+\begin{equation*}
+    G_\lambda (x,t) = -i \mel{\psi}{T_t\left(c_\lambda(x,t)c_\lambda^{\dagger}(0,0)\right)}{\psi}
+\end{equation*}
+
+where $\ket{\psi}$ is the exact many-particle state of the Hamiltonian $H$, $T_t$ is the time ordering symbol defined as 
+\begin{align*}
+    T_t(A(t_1), B(t_2)) = A(t_1)B(t_2), \quad t_1 > t_2 \\ 
+    \pm B(t_2)A(t_1), \quad t_2 > t_1
+\end{align*}
+
+where the $+$ is for bosons and the $-$ is for fermions. $T_t$ thus (re-)arranges the elements in a time ordered way from right to left, respecting the commutation properties of the fields. We have the following interpretation of the Green's function: $G_\lambda (x,t)$ is the probability amplitude for a particle, initially in state $\lambda$ at the origin at time $t = 0$, to still be in state $\lambda$ at $(x,t)$. We generalize this to the case of $T > 0$. 
+
+\begin{equation*}
+    G_\lambda (x,\tau) = -\mel{\psi}{T_\tau \left(c_\lambda(x,\tau)c_\lambda^{\dagger}(0,0)\right)}{\psi}
+\end{equation*}
+
+where $T_\tau$ is the time ordering symbol, now for imaginary time $\tau$. $G_\lambda (x,\tau)$ has a similar interpretation as for the case of $T = 0$. Further, we write \\
+
+Fermions: 
+
+\begin{equation*}
+    G(k, \sigma, \tau) = -\mel{\psi}{T_\tau \left(c_{k\sigma}(x,\tau)c_{k\sigma}^{\dagger}(0,0)\right)}{\psi}
+\end{equation*}
+
+where the quantum numbers (k $\sigma$) have to be the same in both operators, since the corresponding states are orthonormal. \\
+
+Bosons: 
+
+\begin{equation*}
+    D(q, \tau) = -\mel{\psi}{T_\tau \left(a_q(x,\tau)a_q^{\dagger}(0,0)\right)}{\psi}
+\end{equation*}
+
+where q is a set of quantum numbers, which can include spin. Similarly, we can define the Fourier transformed Green's functions. \\ 
+
+Fermions: 
+
+\begin{equation*}
+    G(k, i\omega_n) = \int_{0}^{\beta} \dd \tau G(k, \tau) \e^{i\omega_n \tau}
+\end{equation*}
+
+Bosons: 
+
+\begin{equation*}
+    D(q, i\omega_\nu) = \int_{0}^{\beta} \dd \tau D(q, \tau) \e^{i\omega_\nu\tau}
+\end{equation*}
+
+where $\omega_n = \frac{(2n+1)\pi}{\beta}$ and $\omega_\nu = \frac{2\pi \nu}{\beta}$ for $n, \nu \in \mathbb{Z}$ are the Matsubara frequencies. The inverted expressions becomes sums, since the frequencies are discrete: 
+
+\begin{align*}
+    G(k, \tau) = \frac{1}{\beta}\sum_{\omega_n}G(k, i\omega_n)\e^{-i\omega_n \tau} \\ 
+    D(q,\tau) = \frac{1}{\beta}\sum_{\omega_\nu}G(k, i\omega_\nu)\e^{-i\omega_\nu \tau}. 
+\end{align*}
+
+In the functional integral formalism, we define the expectation value of an operator as
+
+
+    
+\begin{align*}
+    \expval{A} = \frac{1}{Z} \Tr \left( e^{-\beta H} A \right) \\
+    = \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^S. \\ 
+    S = - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* \pdv{\varphi_\lambda}{\tau} + H(\{\varphi_\lambda^*, \varphi_\lambda\})\right] = S_0 + S_I. \\
+    S_0 = - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda\right] \\ 
+    S_I = - \sum_\lambda \int_{0}^{\beta} \dd \tau H_I(\{\varphi_\lambda^*, \varphi_\lambda\}).
+\end{align*}
+
+where we have explicitly written the expressions for the interacting and non-interacting part of the exponent $S$. Further, we write 
+
+\begin{align*}
+    Z_0 = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_0} \\ 
+    \expval{A}_0 = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^{S_0} \\ 
+    Z = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_I}\e^{S_0} = Z_0 \expval{\e^{S_I}}_0 \\ 
+    \expval{A} = \frac{1}{Z_0 \expval{e^{S_I}}_0} \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\left( A\e^{S_I} \right)\e^{S_0} = \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0}
+\end{align*}
+
+In the last expression, the denominator cancels all non-connected diagrams in perturbation theory, to all orders in $S_I$. $\expval{\e^{S_I}}_0$ represents all vacuum-fluctuations, or rather the fluctuations the system exhibits without the precence of $A$. In $\expval{A}$, we are interested in finding the systems response to the operator $A$. The vacuum fluctuations are not of interested in this case, and the factor $\expval{\e^{S_I}}_0$ in the denominator makes sure that they don't contribute to $\expval{A}$. \\ 
+
+Now we define a generating functional for Green's functions: 
+
+\begin{align*}
+    W\left(\{\varphi_\lambda^*, \varphi_\lambda\}\right) = \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S + F} \\ 
+    F = \sum_\lambda \int_{0}^{\beta} \dd \tau \left( J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right)
+\end{align*}
+
+where the sources $J_\lambda(\tau)$ are c-numbers in the case of bosonic fields, and Grassmann-numbers in the case of fermionic fields. In the latter case, the order of the fields and sources is important. 
+
+\begin{align*}
+    \expval{W}= \frac{\expval{\e^F\e^{S_I}}_0}{\expval{\e^{S_I}}_0} \\ 
+    \expval{A} = \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0} = \frac{1}{\expval{\e^{S_I}}_0} A\left( \fdv{}{J_\lambda }, \fdv{}{J_\lambda ^*} \right) \eval{\expval{\e^{S_I} \e^F}}_{J = 0}
+\end{align*}
+
+where after putting the sources to zero, the expression becomes identical to the one defined above.
+
+\subsection{Non-interacting case}
+
+Now the functional integral becomes Gaussian, and we have looked at these kind of integrals before in detail. 
+
+\begin{align*}
+    \expval{\e^F}_0 = \frac{1}{Z_0}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S} \\ 
+    S = \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda + J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right].
+\end{align*}
+
+This has the same form as 
+
+\begin{align*}
+    \int \left(\prod_k \frac{\dd \varphi_k^* \dd \varphi_k}{N} \right) \e^{-\left( \varphi_i^*A_{ij}\varphi_j + J_i ^* \varphi_i + J_i \varphi_i ^* \right)} \\  
+    = \e^{J_i ^* A_{ij}^{-1} J_i} \e^{-\xi \Tr \ln{A}} = Z_0 \e^{J_i ^* A_{ij}^{-1} J_i}
+\end{align*}
+
+where again $\xi = +1$ corresponds to bosons, and $\xi = -1$ corresponds to fermions. Thus we get 
+
+\begin{equation*}
+    \expval{\e^F}_0  = \e^{\sum_\lambda \int_{0}^{\beta} \dd \tau J_\lambda ^*(\tau) (\partial_\tau + \varepsilon)^{-1}J_\lambda(\tau)}. 
+\end{equation*}
+
+We can use this result to calculate free-particle Green's functions at $T > 0$. 
+
+\begin{align*}
+    G(k, \sigma, \tau) = -\ev{T_\tau \left( c_{k\sigma}(\tau)c^{\dagger}_{k\sigma}(0)\right)}{\psi} \xrightarrow{} - \expval{T_\tau \left(\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)\right)}_0 \\ 
+    = -\left[ \theta(\tau) \expval{\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)}_0  - \theta(-\tau)\expval{\varphi^{*}_{k\sigma}(0) \varphi_{k\sigma}(\tau)}_0\right]
+\end{align*}
+
+where we have explicitly gone from second quantized form to functional integral form, by introducing the coherent eigenstates. Now consider the case $\tau_1 > \tau_2$ and define $\lambda_1 = k_1, \sigma_1$ and $\lambda_2 = k_2, \sigma_2$. 
+
+\begin{align*}
+    - \expval{\varphi_{\lambda_1}(\tau_1) \varphi^{*}_{\lambda_2}(\tau_2)} = - \fdv{}{J_{\lambda_1}^*(\tau_1)} \fdv{}{J_{\lambda_2}(\tau_2)} \eval{\expval{\e^F}}_{J = 0} \\ = (\partial_\tau + \varepsilon)^{-1}_{\tau_1, \tau_2} \delta_{\lambda_1, \lambda_2} = G_{0}(\lambda_1, \lambda_2, \tau_1, \tau_2) 
+\end{align*}
+
+where the resulting Green's function should be interpreted as a matrix with indicies $\tau_1, \tau_2$. This is the continuous/infinitesimal edition of an operator tanking the system from imaginary time $\tau_1$ to $\tau_2$ (Trotter slice). This matrix is therefore non-diagonal, and inverting it is therefore non-trivial. Now for the case of $\tau_2 > \tau_1$: 
+
+\begin{align*}
+    \expval{\varphi^{*}_{\lambda_2}(\tau_2)\varphi_{\lambda_1}(\tau_1) } =  \fdv{}{J_{\lambda_2}(\tau_2)} \fdv{}{J_{\lambda_1}^*(\tau_1)}\eval{\expval{\e^F}}_{J = 0} \\ = (\partial_\tau + \varepsilon)^{-1}_{\tau_2, \tau_1} \delta_{\lambda_1, \lambda_2} 
+\end{align*}
+
+we therefore see that we don't have to use time ordering explicitly, due to the definition of our statistical average. Now set $\lambda_1 = \lambda_2 = \lambda$ and $\tau = \tau_1 - \tau_2$. Then we get the equation for the Green's function: 
+
+\begin{align*}
+    (\partial_\tau + \varepsilon)G_0(\lambda, \tau) = \delta(\tau) \\ 
+    \int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau}(\partial_\tau + \varepsilon)G_0(\lambda, \tau) = 1 \\ 
+    \frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau} (\partial_\tau + \varepsilon) \sum_{\omega_m} \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
+    \sum_{\omega_m} \frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i(\omega_n - \omega_m)\tau} (-i\omega_m + \varepsilon) \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
+    G_0(\lambda, i\omega_n) = \frac{-1}{i\omega_n - \varepsilon} \quad \quad D_0(q, i\omega_\nu) = \frac{-1}{i\omega_\nu - \omega_q}
+\end{align*}
+
+for fermions and bosons, respectively. 
+
+\subsection{Examples on how to use these propagators}
+
+Say that you want to look at the leading order correction to a free boson-propagator. From $T = 0$ perturbation theory, we know that such corrections corresponds to Feynman diagrams like in Figure \ref{fig:feyn_diag} \\ 
+
+
+\begin{figure}
+	\centering
+	\input{tex/img/feynman_diag}
+	\caption{Feynman diagram}
+	\label{fig:feyn_diag}
+\end{figure}
+
+
+\begin{align*}
+    P(q, i\omega_\nu) \sim \frac{1}{\beta}\sum_{k, \omega_n}G_0(k, i\omega_n)G_0(k+q, i\omega_n + i\omega_\nu) \\ = \sum_{k} \frac{1}{\beta} \sum_{\omega_n} \frac{1}{i\omega_n - \varepsilon_k}\frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}}
+\end{align*}
+
+The frequency summation is easy: 
+
+\begin{align*}
+    \frac{1}{\beta} \sum_{\omega_n} \frac{1}{i\omega_n - \varepsilon_k}\frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \\ = \frac{1}{i\omega_\nu + \varepsilon_k - \varepsilon_{k+q}} \frac{1}{\beta}\sum_{\omega_n}\left(\frac{1}{i\omega_n - \varepsilon_k} - \frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \right)
+\end{align*}
+
+
+Now look at the general expression
+\begin{align*}
+    \frac{1}{\beta}\sum_{\omega_n} \frac{1}{i\omega_n - x} = -\frac{1}{2\pi i}\oint \dd z \frac{f(z)}{z - x} = \frac{-2\pi i}{-2\pi i} f(x) = f(x),
+\end{align*}
+
+making the path deformation like in Figure \ref{fig:poles}. This expression implies
+
+\begin{figure}
+	\centering
+	\input{tex/img/fermi_poles_4}
+	\caption{Path deformation}
+	\label{fig:poles}
+\end{figure}
+
+
+\begin{equation*}
+    P(q,i\omega_\nu)  \sim \frac{\left[ f(\varepsilon_k) - f(\varepsilon_{k+q})\right]}{i\omega_\nu + \varepsilon_k - \varepsilon_{k+q}}. 
+\end{equation*}
+
+The f-factors contain all T-effects. Now we can analytically continue: 
+
+\begin{equation*}
+    i\omega_\nu \to \omega \pm i\delta \quad \quad \delta = 0^{+}
+\end{equation*}
+
+where $+$ and $-$ correspond to retarded and advanced greens functions respectively. From this, we get a dynamical responsefunction for $\omega > 0$ at $T > 0$. 
+
+\section{Interacting fermion-systems and the Hubbard-Stratonovich de-coupling}
+
+\begin{equation*}
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right] \e^{S_0 + S_I}
+\end{equation*}
+
+where $S_I$ contain the interaction terms. These terms are typically of the form $\sim \varphi^*\varphi \varphi \varphi^*$, which makes it impossible to calculate the partition function exactly. If $S_I$ is sufficiently small, one uses perturbation theory, which is assumed to be good if $S_I$ doesn't cause qualitative changes in $Z$ relative to $Z_0$ (phase-changes). \\ 
+
+If $S_I$ on the other hand is sufficiently big, which means that it's strong enough to cause phase transitions, we wouldn't be able to detect such changes using perturbation theory at any order. Our strategy will therefore be to approximate $Z$ non-perturbatively around some known free theory. The trick that makes such a calculation possible is the Hubbard-Stratonovich de-coupling of the interacting part of $S$, making $S \to S_{eff}$ into some effective action of the theory. \\
+
+\begin{equation*}
+    \e^{S_I} = \e^{-\sum_\lambda \int_{0}^{\beta} \dd \tau H_I(\{ \varphi^*_\lambda, \varphi_\lambda\})}
+\end{equation*}
+
+In order to decouple something like this expression, we use the identity
+
+\begin{align*}
+    \e^{-\Tr \ln A}\e^{J^*A^{-1}J} = \int \D a^{\dagger} \D a \e^{-a^{\dagger}Aa + J^*a + J\ad}
+\end{align*}
+
+where $a,\ad$ are bosonic fields and the sources $J, J^*$ are c-numbers. Now we make the following substitutions 
+
+\begin{equation*}
+    J = \varphi \varphi \quad \quad  A^{-1} = V
+\end{equation*}
+
+and we get
+
+\begin{equation*}
+    e^{S_I}  = \e^{-\Tr \ln A} \int \D a^{\dagger} \D a \e^{-a^{\dagger}V^{-1}a + \varphi^* \varphi^*a + \varphi \varphi\ad}
+\end{equation*}
+
+where the first exponent is just a number we can set $=1$, since this only define the zero-point in the free energy. \\ 
+
+Inserting this substitution for $\e^{S_I}$ into the partition function, we end up with 
+
+\begin{equation*}
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{-\varphi^*(\partial_\tau + \varepsilon)\varphi + \varphi^*a\varphi^* + \varphi \ad \varphi - \ad V^{-1}a}. 
+\end{equation*}
+
+The point here is that now the fermion part ($\varphi$'s) of the theory is Gaussian, which means that we can integrate out the fermion part of the theory exactly! The interacting fermion theory is formally equivalent to a free fermion theory, coupled to some background bosonic fields. \\ 
+
+\begin{equation}
+    Z = \int \D a^{\dagger} \D a \e^{-\ad V^{-1} a} \e^{\frac{1}{2}\Tr \ln G^{-1}}
+\end{equation}
+
+where we have inserted the results from 
+
+\begin{align*}
+    -\varphi^*(\partial_\tau + \varepsilon)\varphi + \varphi^*a\varphi^* + \varphi \ad \varphi = \\  -\frac{1}{2}\begin{matrix}\begin{pmatrix}\varphi^* & \varphi\end{pmatrix}\mbox{}\end{matrix}
+  \begin{pmatrix} \partial_\tau + \varepsilon & -2a \\ -2\ad & \partial_\tau - \varepsilon \end{pmatrix} 
+  \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix} = -\frac{1}{2}\varphi^* G^{-1}\varphi
+\end{align*}
+
+where we have introduced fermion spinor notation $\varphi = \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix}$ and performed a partial integration in $S_I$, resulting in a sign change in the lower right cell of the matrix. 
+
+\begin{align*}
+    Z = \int \D a^{\dagger} \D a \e^{S_{eff}} \\ 
+    S_{eff}(\ad, a) = -\sum_\lambda \int_{0}^{\beta} \dd \tau \ad_\lambda(\tau) V^{-1} a_\lambda(\tau) + \frac{1}{2}\Tr \ln G^{-1} 
+\end{align*}
+
+Now we have converted our interacting fermion theory into an effective, interacting boson-theory, with effective action $S_eff(\ad, a)$. A priori, this seems like a much more complicated theory compared to the fermion theory we started out with. So what have we accomplished? \\ 
+
+The main point here is that the saddle-point approximation over c-numbers makes sense. A corresponding approximation with Grassmann-numbers doesn't exist. The reason for this is very simple. Say that you want to approximate the integral 
+
+\begin{equation*}
+    I = \int \dd x \e^{f(x)}.
+\end{equation*}
+
+Now if $f(x)$ has some stable minimum at $x = x_0$, the integral is dominated by the parts close to that minimal value
+
+\begin{align*}
+    f(x) = f(x_0) + \frac{1}{2}(x-x_0)f^{''}(x_0) + \cdots \\ 
+    I = \approx \e^{-f(x_0)}\int \dd x \e^{-\frac{1}{2}(x - x_0)^{2} f^{''}(x_0)} = \sqrt{\frac{2\pi}{f^{''}(x_0)}}\e^{-f(x_0)}
+\end{align*}
+
+Now, if $x$ is a Grassmann-variable, then the taylor expansion is linear $f(x) = c_1 + c_2 x$, and this integral approximation wouldn't have made any sense. We have avoided the problem of calculating the Grassmannian fermion integral approximately, because our Hubbard-Stratonovich de-coupling (HS) mapping made it possible to calculate it exactly! The boson part $\ad, a$ can we, however, try to calculate using our saddle-point approximation. Another way of interpreting this: boson-theories have classical counterparts, whereas fermions doesn't. 
+
+Some remarks: \\
+
+i) The partition function \\
+
+\begin{equation*}
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{J^* a + J \ad - \ad V^{-1}a + S_0(\{\varphi^*,\varphi \})}
+\end{equation*}
+
+can be interpreted as the partition function for a non-interacting fermion system which is coupled to a dynamical boson-field, where $S_{eff}(\ad, a)$ is the free energy to this system for a particular configuration of the external fields $\ad,a$. The total free energy is the sum of the free energies of each of the configurations. \\ 
+
+ii) It's important to notice that there is an ambiguity in choosing how to HS decouple the non-interacting part in the fermion sector. We could have just as well chosen to substitute 
+
+\begin{equation*}
+    J = \varphi^* \varphi \quad \quad J^* = \varphi^* \varphi
+\end{equation*}
+
+instead of our previous choice 
+
+\begin{equation*}
+    J = \varphi \varphi \quad \quad J = \varphi^* \varphi^*. 
+\end{equation*}
+
+The important thing to note here is that as long as we compute the boson functional integral exactly, it doesn't matter what choice we make. On the other hand, if we compute the boson functional integral approximately, then the choice does matter. Then the choice of decouple scheme is determined by what kind of physics we expect in the end. 
+
+Now we HS decouple $S_I$ in the following manner: 
+
+\begin{align*}
+    J = \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) \\
+    J^* = \pu^*(x,\tau) \pd^*(x,\tau) 
+\end{align*}
+
+where now $J, J^*$ is pair-fields and $a, \ad$ is their corresponding conjugated fields. Now recall that the trace-exponential, which corresponed to the zero-point energy, was put to zero. Then we get 
+
+\begin{align}
+    \e^{S_I} = \e^{VJ^*J} =  \int \D a^{\dagger} \D a \e^{-a^{\dagger} \frac{1}{V}a + J^*a + J\ad} \\ 
+    \implies \e^{S_{I}} =  \int \D a^{\dagger} \D a \e^{-\sum_x \left[\frac{1}{V} \abs{a(x)}^{2} - \pu^*(x,\tau) \pd^*(x,\tau)a(x) - \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau)\ad \right]} 
+\end{align}
+
+And we get the partition function 
+
+\begin{align*}
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a + A_z} \\ 
+    A_z = S_0 + \sum_x \left[ \ad \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) + a \pu^*(x,\tau) \pd^*(x,\tau) \right]
+\end{align*}
+
+Now we define the Nambu-formalism, which means writing the conjugate fields $\pu, \pd$ as a 2-component spinor in the following way 
+
+\begin{align*}
+    \Psi(x) = \begin{pmatrix}\pu(x) \\ \pd^*(x) \end{pmatrix} \quad \quad \Psi^{\dagger} = \begin{pmatrix}\pu^*(x) & \pd(x)\end{pmatrix}
+\end{align*}
+
+Now we see that 
+
+\begin{align*}
+    \sum_x \left[ \ad \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) + a \pu^*(x,\tau) \pd^*(x,\tau) \right] \\ 
+    = \sum_x \Psi^{\dagger} (x) \begin{pmatrix} 0 & a(x) \\ \ad(x) & 0 \end{pmatrix} \Psi(x) \\ 
+    S_0 = -\sum_{x,y} \left[ \pu^*(x)(\partial_\tau + \varepsilon - \mu)\pu(y) + \pd^*(x)(\partial_\tau +\varepsilon - \mu)\pd(x)\right] \\ 
+    = -\sum_{x,y} \begin{pmatrix}\pu^* & \pd\end{pmatrix} \begin{pmatrix}(\partial_\tau + \varepsilon - \mu)  & 0 \\ 0 & (\partial_\tau -(\varepsilon - \mu)) \end{pmatrix} \begin{pmatrix}\pu \\ \pd^* \end{pmatrix} \\ 
+    = -\sum_{x,y} \Psi^{\dagger}(x) \left[ -G_0 ^{-1}(x,y) \right] \Psi(y) 
+\end{align*}
+
+Combining all expressions, we get 
+
+\begin{align*}
+    A_z = -\sum_{x,y} \Psi^{\dagger}(x)\left[ -G ^{-1}(x,y) \right]\Psi(x) \\
+    -G ^{-1}(x,y) = -G_0 ^{-1}(x,y) - B(x)\delta_{x,y} \\ 
+    B(x) = \begin{pmatrix} 0 & a(x) \\ \ad(x) & 0 \end{pmatrix} 
+\end{align*}
+
+Note that here the fermion propagator $G \sim - \expval{\Psi \Psi^{\dagger}}$ is a 2x2-matrix acting in Nambu spinor-space. The partition function now becomes 
+
+\begin{align*}
+    Z = \int \D \left[ \Psi^{\dagger}\right] \D \left[\Psi\right]\D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a -\sum_{x,y} \Psi^{\dagger}(x)\left[ -G ^{-1}(x,y) \right]\Psi(x)} \\ 
+    = \int \D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a + \Tr \ln \left(-G ^{-1}\right)} \\ 
+    = \int \D a^{\dagger} \D a \e^{S_{eff}(\ad, a)} \\ 
+    S_{eff} = -\sum_x \frac{1}{V}\ad a + \Tr \ln \left(-G_0 ^{-1}(x,y) -B(x)\delta_{x,y}\right)
+\end{align*}
+
+This partition function has now been transformed into a pure bosonic problem. Saddle-point approximation to this integral gives mean field theory. Here the trace $\Tr = \sum_{x} \tr$, where $\tr$ is a 2x2-matrix trace. \\ 
+
+Mean field theory (MFT): $a(x) \to a$ constant. \\
+
+\begin{equation*}
+    \Tr \ln \left(-G ^{-1}(x,y)\right) = \sum_x \tr \ln \left(-G ^{-1}(x,y)\right) = \sum_k \tr \ln \left(-G ^{-1}(k)\right)
+\end{equation*}
+
+\subsection{BCS-theory}
+
+\begin{align*}
+    Z = \int \D \varphi^* \D \varphi \e^S \\ 
+    S = S_0 + S_I = -\sum_\lambda \varphi_\lambda^* \pdv{\varphi_\lambda}{\tau} + H\left(\varphi_\lambda^*, \varphi_\lambda \right) \\ 
+    S_0 = \sum_{x,y,\sigma} \varphi_\sigma ^* (x) \left( \partial_\tau + \varepsilon - \mu \right) \varphi_\sigma (y) \\ 
+    H_I = -V \sum_x \nuu(x) \nd(x) \quad \quad V > 0 \\ 
+    S_I = V\sum_x \nuu(x) \nd(x) \quad \quad V > 0
+\end{align*}
+
+Attractive interaction for electrons with opposite spin (Retarded). \\ 
+\begin{align*}
+    S_I = V \sum_x \pu^*(x) \pd^* (x) \pd(x) \pu(x) \\ 
+    \e^{S_I} = \int \D\ad \D a \e^{-\sum_x \left( \frac{\ad a}{V} - a \pu^* \pd^* - \ad \pd \pu \right)} \\ 
+    \varphi = \begin{pmatrix} \pu \\ \pd^* \end{pmatrix} \quad \quad \varphi^\dagger = \begin{pmatrix} \pu^* & \pd \end{pmatrix} \\ 
+    \e^{S_I} = \int \D\ad \D a \e^{-\sum_x \left( \frac{\ad a}{V} + \sum_x \varphi^\dagger (x) B(x) \varphi(x) \right)}
+\end{align*}
+
+Where $B(x)$ is the same matrix as in the last section. 
+
+\begin{align*}
+    S_0 = -\sum_{k, \sigma} \int_{0}^{\beta} \dd \tau \left[ \varphi_{k\sigma} ^* (\tau) \left( \partial_\tau + \varepsilon_k - \mu \right) \varphi_{k \sigma} (\tau) \right] 
+\end{align*}
+
+where we have done the following partial Fourier transformation 
+
+\begin{equation*}
+    \varphi_\sigma^*(x,\tau) \to \varphi^*_{k \sigma}(\tau).
+\end{equation*}
+
+Now we do the spin summation: 
+
+\begin{align*}
+    -\sum_k \int_{0}^{\beta} \dd \tau \left[ {\pu}_{k}^* (\tau) \left( \partial_\tau + \varepsilon_k - \mu \right) {\pu}_{k} (\tau) + {\pd}_{k}^* (\tau) \left( \partial_\tau + \varepsilon_k - \mu \right) {\pd}_{k} (\tau)\right].
+\end{align*}
+
+Look at the last term: 
+
+\begin{align*}
+    \sum_k \int_{0}^{\beta} \dd \tau \left[{\pd}_{k} ^* (\tau) \left( \partial_\tau + \varepsilon_k - \mu \right) {\pd}_{k} (\tau)\right] \\ 
+    = \sum_k \int_{0}^{\beta} \dd \tau \left[{\pd}^*(k) \pdv{{\pd}_k}{\tau} + {\pd}_{k} ^* (\tau) \left(\varepsilon_k - \mu \right) {\pd}_{k} (\tau)\right] \\ 
+    = \sum_k \eval{{\pd}_k^* {\pd}_k}_0 ^\beta + \int_{0}^{\beta} \dd \tau \left[{\pd}(k) \pdv{{\pd}^*_k}{\tau} - {\pd}_{k} (\tau) \left(\varepsilon_k - \mu \right) {\pd}_{k}^* (\tau)\right] \\ 
+    = \sum_k \int_{0}^{\beta} \dd \tau \left[{\pd}(k) \pdv{{\pd}^*_k}{\tau} - {\pd}_{k} (\tau) \left(\varepsilon_k - \mu \right) {\pd}_{k}^* (\tau)\right]
+\end{align*}
+
+where we have performed a partial integration, which effectively reduced to changing the derivative and sign since the fields are periodic on $[0, \beta]$. This change of sign is cancelled by the anti-commutation of the fermionic fields. The sign of the last term also changed due to interchange of the fields. Fourier transforming back into real space and combining this with the other part of $S_0$, we get 
+
+\begin{align*}
+    S_0 = -\sum_{x,y} \left[ \pu^*(x)(\partial_\tau + \varepsilon)\pu(y) + \pd(x) (\partial_\tau - \varepsilon)\pd^*(y) \right] \\ 
+    = -\sum_{x,y} \varphi^\dagger (x)\begin{pmatrix}(\partial_\tau + \varepsilon)  & 0 \\ 0 & (\partial_\tau -\varepsilon) \end{pmatrix} \varphi(y)
+\end{align*}
+
+\begin{align*}
+    Z = \int \D \varphi^\dagger \D \varphi \D \ad \D a \e^{-\sum_x \frac{\ad (x) a}{V}} \e^{-\sum_{x,y} \varphi(x)^\dagger G^{-1}(x,y)\varphi(y)} \\ 
+    G^{-1}(x,y) = G_0 ^{-1} (x,y) - B(x) \delta_{x,y} \\
+    G_0^{-1}(x,y) = \begin{pmatrix}(\partial_\tau + \varepsilon)  & 0 \\ 0 & (\partial_\tau -\varepsilon) \end{pmatrix}
+\end{align*}
+
+Now perform the $\varphi$ integrations: 
+
+\begin{align*}
+    \int \D \ad \D a \e^{S_{eff}[a, \ad]} \\ 
+    S_{eff}[a, \ad] = -\sum_x \frac{\ad(x) a(x)}{V} + \Tr \ln [G^{-1} ],
+\end{align*}
+
+which is an exact result! Now we move on to mean field approximation: $a(x) \to a$. 
+
+\begin{align*}
+    \Tr \ln [G^{-1}] = \frac{1}{\beta} \sum_k \sum_{\omega_n} \tr \ln G^{-1} (k, i\omega_n), \\ 
+    G^{-1}(k, i\omega_n) = \begin{pmatrix}-i\omega_n + \varepsilon_k  & -a \\ -\ad & -i\omega_n -\varepsilon_k \end{pmatrix}
+\end{align*}
+
+\begin{align*}
+    \tr \ln G^{-1} = \ln \det{G^{-1}} = \ln((i\omega_n)^2 - \e_k^{2} -\abs{a}^{2}) = \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k) \\ 
+    \implies S_{eff}^{MF} = -\frac{N\beta \abs{a}^2}{V} + \sum_k \ln \left[ (1+\e^{-\beta E_k})(1 + \e^{\beta E_k})\right] = -\beta F^{MF} \\ 
+    \implies f^{MF} = \frac{F^{MF}}{N} = \frac{\abs{a}^2}{V} +\frac{1}{\beta} \frac{1}{N}\sum_k \ln \left[ (1+\e^{-\beta E_k})(1 + \e^{\beta E_k})\right].
+\end{align*}
+
+Since $S_{eff}$ is exact, we automatically have a recipe for how we can correct mean-field theory, and also a recipe for how to check it's stability. 
+
+\begin{align*}
+    G^{-1}(k) = \begin{pmatrix}-i\omega_n + \varepsilon_k  & -a \\ -\ad & -i\omega_n -\varepsilon_k \end{pmatrix} \\ 
+    \implies G(k) = \frac{-1}{(i\omega_n)^2 - E_k^{2}} \begin{pmatrix}i\omega_n + \varepsilon_k  & a \\ \ad & i\omega_n - \varepsilon_k \end{pmatrix} = \expval{\Phi \Phi^\dagger} 
+\end{align*}
+
+where $E_k = \sqrt{\varepsilon_k ^2 + \abs{a}^2}$ and we compare with 
+
+\begin{align*}
+    G(k) \to -G_F(k) \implies G_F = - \expval{\Phi \varPhi^\dagger}
+\end{align*}
+
+\begin{align*}
+    \tr \ln \left[-G_f ^{-1} (k) \right] = \ln \det(-G_F {-1} (k)) = \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k)\\ 
+    \sum_k \tr \ln \left[-G_f ^{-1} (k) \right] = \sum_k \frac{1}{\beta} \sum_{\omega_n} \left[ \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k) \right]
+\end{align*}
+
+Earlier we showed that 
+
+\begin{align*}
+    \frac{1}{\beta}\sum_{\omega_n} \ln(i\omega_n - x) = \ln(1 + \e^{-\beta x}) \\ 
+    \implies \sum_x \tr \ln(-G_F ^{-1}(k)) = \sum_k \left[\ln(1 + \e^{-\beta E_k}) + \ln(1 + \e^{\beta E_k})\right] 
+\end{align*}
+
+\begin{align*}
+    \sum_x \frac{\abs{a(x)}^2}{V} = \beta N \frac{\abs{a}^2}{V} \\ 
+    Z_{MF} = \e^{-\beta F_{MF}} = \e^{-\beta N \frac{\abs{a}^2}{V}} \e^{\sum_k \left[\ln(1 + \e^{-\beta E_k}) + \ln(1 + \e^{\beta E_k})\right]} \\ 
+    \frac{F_{MF}}{N} = \frac{\abs{a}^2}{V} - \frac{1}{\beta} \frac{1}{N}\sum_k \left[\ln(1 + \e^{-\beta E_k}) + \ln(1 + \e^{\beta E_k})\right]
+\end{align*}
+
+where $a$ is determined by minimizing the free energy. 
+
+\begin{align*}
+    \pdv{}{a}f_{MF} = 0 \implies \frac{2a}{V} - \frac{1}{N}\sum_k \frac{2a}{2E_k}\left(\frac{e^{\beta E_k}}{1 + \e^{\beta e_k}} - \frac{e^{-\beta E_k}}{1 + \e^{-\beta e_k}} \right) = 0 \\
+    2a \left[\frac{1}{V} - \frac{1}{N}\sum_k \frac{1}{2E_k}\left(\frac{e^{\beta E_k}}{1 + \e^{\beta e_k}} - \frac{e^{-\beta E_k}}{1 + \e^{-\beta e_k}} \right) \right] = 0 \\ 
+    \frac{1}{V} = \frac{1}{N} \sum_k \frac{\tanh(\frac{\beta E_k}{2})}{2E_k}
+\end{align*}
+
+This is the gap-equation for BCS-theory! The advantage of solving it this way, is that now we know how to include fluctuations. \\ 
+
+To check that this is in fact a minimum, we check the curvature of the free energy at this value $a_0$
+
+\begin{align*}
+    \pdv{^2 f_{MF}}{a^2} = \pdv{}{a} 2a \left[\frac{1}{V} - \frac{1}{N}\sum_k \frac{1}{2E_k}\left(\frac{e^{\beta E_k}}{1 + \e^{\beta e_k}} - \frac{e^{-\beta E_k}}{1 + \e^{-\beta e_k}} \right) \right] \\ = 2\left[\frac{1}{V} - \frac{1}{N}\sum_k \frac{1}{2E_k}\left(\frac{e^{\beta E_k}}{1 + \e^{\beta e_k}} - \frac{e^{-\beta E_k}}{1 + \e^{-\beta e_k}} \right) \right] \\ - 2a \frac{1}{N} \sum_k \pdv{}{E_k}\left(\frac{1}{2E_k}\tanh(\frac{\beta E_k}{2})\right) \pdv{E}{a}.
+\end{align*}
+
+By the gap-equation, we see that the first term is $0$ at $a_0$. Taking the derivative of the last term, we end up with 
+
+\begin{align*}
+    \frac{a^2}{N}\sum_k \frac{1}{E_k ^3} \frac{1}{\cosh^2(\frac{\beta E_k}{2})} \left(\sinh(\beta E_k) - \beta E_k \right) > 0 \quad \forall \beta E_k.
+\end{align*}
+Thus the free energy has a global minimum at $a = a_0$, which means that the solution is unique in the case of contact-interactions. 
+
+\subsection{Stationary point condition} 
+
+\begin{align*}
+    \pdv{f^{MF}}{b^2} = 0 \implies -\lambda + \frac{1}{N}\sum_k \frac{\e^{-\beta \ep_k}}{1 + \e^{-\beta \ep_k}} \pdv{\ep_k}{b^2} = 0 \\
+    \pdv{f^{MF}}{\lambda} = 0 \implies -1 + b^2  + \frac{1}{N}\sum_k \frac{\e^{-\beta \ep_k}}{1 + \e^{-\beta \ep_k}} \pdv{\ep_k}{\lambda} = 0. 
+\end{align*}
+
+We also have the constraint 
+
+\begin{equation*}
+    n = - \pdv{f^{MF}}{\mu} = \frac{1}{N}\sum_k f(\ep_k),
+\end{equation*}
+
+which is the number of fermion constraint 
+
+\begin{equation*}
+    \implies n = 1 -b^2 \implies n + b^2 = 1.
+\end{equation*}
+
+Look at the spectrum compared to the free theory
+
+\begin{align*}
+    \ep_k^{MF} = -2tb^2 \gamma_k - (\lambda + \mu) \\
+    \ep_k ^{free} = -2t\gamma_k \mu 
+\end{align*}
+
+We see that $\lambda$ renormalizes the chemical potential $\mu$ in order for $\expval{Q_i} = 1$ to be fulfilled. We also see that $b^2$ renormalizes the gap-width, correlation effect, $Q_i = n +b^2 = 1$. \\
+
+Now look at the case $n = 1$, i.e. half-filled band. Thus $b^2 = 0$, and therefore 
+
+\begin{equation*}
+    \ep_k = -(\lambda + \mu) = \ep_k
+\end{equation*}
+
+The energy spectrum is independent of $k$! This means that we have localized fermions. No movement, no momentum exitations $k$. Thus, in mean-field theory, we have an insulator at $U = \infty$ half-filled band. Mean field theory also predict that $b^2 > 0 ; n < 1$, i.e. that when the system is doped away from half-filled band. In this case, still using mean field theory, we get a metal. Thus by doping the system away from half-filled bands, we go from an insulator to a metal. Near half-filled band, the gap is very small, i.e. that the quasiparticels are effectively very massive 
+
+\begin{equation*}
+    m^* \sim \frac{1}{b^2} \quad \quad b \to 0 \implies m^* \to \infty 
+\end{equation*}
+
+Preciely at half-filled band, the model is a very simple insulator. It reduces to the Heisenberg model 
+
+\begin{align*}
+    H = -J \sum_{\expval{i,j}} \Vec{S}_i \cdot \Vec{S}_j \quad \quad J \sim \frac{t^2}{U} \to 0 \quad  ; \quad U \to \infty 
+\end{align*}
+
+\begin{align*}
+    S_{eff} = -\sum_i \int_{0}{\beta} \dd \tau \bd_i (\partial_\tau + i\lambda_i)b_i + i\sum_i \int_{0}{\beta} \lambda_i(\tau) + \Tr \ln(G^{-1}) \\ 
+    S_{eff}^{MF} = - N\beta (b^2 - 1)\lambda \sum_k \ln (1 + \e^{-\beta \ep_k})  \\ 
+    \ep_k = -2tb^2\gamma_k - (\lambda + \mu) 
+\end{align*}
+
+Again, the exact expression makes it possible to do corrections to mean field theory. We may come back to this later. \\
+
+In this saddle point approximation, we have $\expval{b} \neq 0$. Look at the Hamiltonian 
+
+\begin{equation*}
+    H = - \sum_{i,j,\sigma} t_{ij} d^{\dagger}_{i \sigma} b_i \bd_j d_{j \sigma}.
+\end{equation*}
+
+We see that the following symmetry isn't broken 
+
+\begin{align*}
+    b_i \to b_i \e^{i\theta} \\ 
+    d_i \to d_i \e^{i\theta} 
+\end{align*}
+
+since the creation operators $\bd, d^{\dagger}$ cancel the phase-factor, which again keeps the Hamiltonian invariant. Thus the Hamiltonian is still invariant under global $U(1)$ transformations, even tho $\expval{b} \neq 0$. On the other hand, by introducing the bosons $\bd, b$, the symmetry has improved to a local $U(1)$ symmetry
+
+\begin{align*}
+    b_i \to b_i \e^{i\varphi_i} \\ 
+    d_i \to d_i \e^{i\varphi_i}. 
+\end{align*}
+
+It is this symmetry which is broken at the saddle-point, because then the boson-fields have acquired a finite expectation value $\expval{b} \neq 0$. If the local $U(1)$ symmetry had not been broken, the expectation value would have vanished due to the fluctuations associated with the symmetry. Again $\expval{b}$ can be interpreted as a order parameters, but for what? To answer this, we look at the spectrum, similar to what we did in the superconductor case
+
+\begin{equation*}
+    \ep_k = -2tb^2 \gamma_k - (\lambda + \mu). 
+\end{equation*}
+
+When $b \neq 0$, we have dispersion, but when $b = 0$, $\ep_k$ is independent of $k$. Localized quasiparticles in the system implies that the system is an insulator. $b$ is therefore an order parameter for metal. \\ 
+
+Equivalently: The local $U(1)$ invariance means that we have conservation of particle number at each site $i$. This means that the particles in the system are confined/localized. If we again look at the original Hamiltonian 
+
+\begin{equation*}
+    H = -t \sum_{\expval{i,j}}c_{i\sigma}^\dagger c_{j\sigma} - \mu \sum_{i, \sigma}c_{i\sigma}^\dagger c_{i\sigma},
+\end{equation*}
+
+we see that as long as we have hopping $t$, there are no local $U(1)$ invariance. As long as the fermions are moving, this symmetry is broken. If however the hopping isn't operative, which implies localized fermions, the system has local $U(1)$. Again we reach the conclusion that if the local $U(1)$ symmetry is broken, the number of localized fermions is not conserved, which means that they are mobile, i.e. metallic system. $\expval{b} \neq 0 \implies$ broken local $U(1)$ invariance $\implies \expval{b}$ order parameter for metal. \\
+
+Generally, the conductivity of a translationally invariant system is of the form 
+
+\begin{equation*}
+    \sigma (\omega) = D\delta (\omega) + \sigma_{reg}(\omega). 
+\end{equation*}
+
+Thus a translationally invariant system has infinite d.c. conductivity. $D$ is often called the rigid conductivity, or the Drude-weight. In our model, $D \sim b^2$. Many years ago, Walter Kohn suggested using $D$ as the order parameter for a metallic system (non-zero drude weight). Our example above show that this wasn't a bad suggestion. \\
+
+The problem of describing an insulator-metal phase transitions is a notoriously hard problem. The fact that we find this using this very simple approximation really show the potential of the functional integral formalism, especially in strongly correlated systems. Free theory with half-filled band is a good metal, not an insulator. It would have been hopeless to find this transitions using perturbation theory, similarly for the metal-superconductor phase transition. Note that this mean field theory predict that, even for $U \to \infty$, the Hubbard model is always a Fermi fluid away from half-filled band. In one dimention, we know this is wrong, since every interacting one-dimensional system is a Luttinger fluid. This is a quantum fluid without low-energy one-particle exitations. In one dimention, interactions are always effective, because of the restriction of the kinematics. Particles cannot pass each other without colliding in one-dimention, in contrast to higher dimensional systems, where Fermi fluids are possible. \\
+
+In three dimension, our mean field theory should be qualitatively correct. In two-dimension, there are indications that strongly correlated systems can have non-fermi fluid behaviour, so mean field theory is not the end of the story. We might later on look at what happens when we turn on fluctuations in this model. Then the quasiparticles starts interacting with the fermions we found using mean field theory. The result is: superconductivity! \\ 
+
