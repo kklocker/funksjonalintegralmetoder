@@ -85,9 +85,12 @@ When we use \eqref{eq:trace_op} in \eqref{eq:trace_free_electron}, we get
 \end{equation}
 
 \begin{align}
+\label{eq:partition_free_electron}
+\begin{split}
 \Z &= \e^{\sum_{k,\sigma}\frac{1}{\beta}\int_0^\beta\dd{\tau}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
 &= \e^{\sum_{k,\sigma}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
 &= \prod_{k,\sigma}\e^{\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)}.
+\end{split}
 \end{align}
 To get any further, we need to execute the summation over the Matsubara frequencies $\omega_n$. To do this, observe that $i\omega_n$ are the poles of the Fermi distribution
 \begin{equation}

@@ -7,3 +7,4 @@
 *.out
 *.dvi
 *.log
+*.gnuplot

@@ -1,5 +1,5 @@
 \section[Magnetic impurities]{\texorpdfstring{Magnetic impurities in metals - \\ \null\hfill The Anderson and Kondo models}}
-
+(page 183-> in pdf, 139-> in notes)
 
 Imagine that we have a system defined by free, itinerant electrons, described by a conduction band with dispersion relation $\varepsilon_k$ and, for the sake of simplicity, assume that the one-particle density of state has a simple form as shown in Figure \ref{fig:dos}. The bandwidth of this system is $2D$, and the system has a Hamiltonian
 \begin{equation}
@@ -17,6 +17,7 @@ Imagine that we have a system defined by free, itinerant electrons, described by
 We will study the effect of including a magnetic impurity in the problem, where the magnetic impurity couples to the charged electrons, but is localized in space. First we consider the system with exactly one impurity. The Hamiltonian for this impurity is given by
 
 \begin{equation}
+\label{eq:hf}
 	\Ha_f = E_0\sum_m f_m^\dagger f_m + U f_{\frac{1}{2}}^\dagger f_{-\frac{1}{2}}^\dagger f_{-\frac{1}{2}}f_{\frac{1}{2}},
 \end{equation}
 
@@ -44,3 +45,142 @@ $T_K$ is only a couple of Kelvin, but the Fermi-energy is of order $10^4\mathrm{
 What we will do, is to see how the energy scale $T_K$, The Kondo temperature, arises, as well as to give a consistent description of the lowæ-temperature physics in metals doped with magnetic impurities, in a saddle point approxiimation.
 Typical materials described by these theories are metals like aluminium and gold, doped with other rare materials. These materials are then the magnetic impurities in the problem. Rare materials: Lanthanides and actinides. Most studied: Cerium (Lanthanide) and Uranium (actinide). In the lanthanides the valence electrons are in the 4f-shell, and in actinides they are in the 5f-shell (hence $f_m^\dagger, f_m)$). Regularly studied materials are $\mathrm{CeAl_2}$ (lanthanide) and $\mathrm{UPt_3}$ (Actinide). $\mathrm{UPt_3}$ is a very odd superconductor with $T_C \sim 1\mathrm{mK}$ and a very complicated order parameter.  
 
+Let us simplify the Anderson model;
+
+\textbf{i)}: $U = \infty$.
+
+Doubly occupancy of the magnetic impurities are not allowed. If there already exist a spin on the lattice site of the impurity, a conducting electron can not enter this localized orbital.
+
+\textbf{ii)}: We assume that the coupling between $f$- and $c$-electrons are such that $m = \sigma$,  i.e. 
+\begin{equation}
+	V_{m\sigma}(k) =\delta_{m\sigma}V(k), 
+\end{equation}
+and that $V(k)$ is $k$-independent (completely localized coupling)
+\begin{equation}
+	V_{m\sigma}(k) = V\delta_{m\sigma}
+\end{equation}
+which implies
+\begin{equation}
+	\Ha_{cf} = V\sum_{\sigma k}\left(f_\sigma^\dagger c_{k\sigma} + h.c.\right).
+\end{equation}
+
+Thus, we have the model 
+\begin{align}
+	\begin{split}
+	\Ha &= E_0\sum_{\sigma}f_\sigma^\dagger f_\sigma + \sum_{k,\sigma}\varepsilon_k c_{k\sigma}^\dagger c_{ck}^\dagger \\
+	&= V\sum_{k,\sigma}\left[f_{\sigma}^\dagger c_{k\sigma} + h.c. \right],
+	\end{split}
+\end{align}
+
+with \(\sum_mf_m^\dagger f_m \leq 1 \). It is the restiriction on the occupation number on the impurities that makes this a hard problem.
+
+For later reference, we first solve the problem with $U = 0$.
+\subsection{$U = 0$}
+
+\begin{equation}
+\Z = \int \D c^\dagger \D c\D f^\dagger \D f\e^{\Sa}
+\end{equation}
+\begin{equation}
+\Sa = -\int\left(\sum_{k,\sigma}c_{k\sigma}^\dagger\pdv{c_{k\sigma}}{\tau} + \sum_mf_m^\dagger \pdv{f_m}{\tau} + \Ha \right)\dd{\tau}
+\end{equation}
+
+\begin{align}
+\begin{split}
+\Sa = &- \int_0^\beta\sum_{k,\sigma}c_{k\sigma}^\dagger\left(\partial_\tau + \varepsilon_k\right)c_{k\sigma} \dd{\tau} \\
+&-\int_0^\beta\sum_\sigma f_\sigma^\dagger\left(\partial_\tau + E_0\right)f_\sigma \dd{\tau}\\
+&-\int_0^\beta V\sum_{k, \sigma}\left(f_\sigma^\dagger c_{k\sigma} + h.c.\right)\dd{\tau}
+\end{split}
+\end{align}
+\(\Z\) can be computed exactly by a linear shift og the fermion operators \((c_{k\sigma}, c_{k\sigma}^\dagger)\). Introduce \(\Gre^{-1}= \partial_\tau + \varepsilon_k\). Consider now the quantity
+\begin{align*}
+	&\sum_{k, \sigma}\left[c_{k\sigma}^\dagger \Gre^{-1}c_{k\sigma}+ Vf_{\sigma}^\dagger c_{k\sigma} + Vc_{k\sigma}^\dagger f_\sigma\right] \\
+	&= \sum_{k\sigma}\left(c_{k\sigma}^\dagger + Vf_\sigma^\dagger \Gre\right)\Gre^{-1}\left(c_{k\sigma} + V\Gre f_\sigma\right) -\sum_{k,\sigma}V^2f_\sigma^\dagger \Gre f_\sigma \\
+	&=\sum_{k\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma} - \sum_\sigma f_\sigma^\dagger\left(\sum_k V^2\Gre\right)f_\sigma
+\end{align*}
+
+\begin{equation}
+\label{eq:action_magnetic}
+	S =-\sum_{k,\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma}-\sum_\sigma f_\sigma^\dagger\left(\partial_\tau + E_0 - V^2\sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)f_\sigma
+\end{equation}
+As we can see in \eqref{eq:action_magnetic}, the action is quadratic in the $c$- and $f$- sectors.
+
+\begin{equation}
+	\Z = \int\D\tilde{c}^\dagger\D\tilde{c}\D f^\dagger \D f\, \e^{\Sa}= \Z_c\cdot\Z_f,
+\end{equation}
+where 
+\begin{align*}
+	\Z_c &= \e^{\Tr\ln \left(\Gre^{-1}\right)} & \Z_f&= \e^{\Tr\ln\left(\mathcal{G}_f^{-1}\right)}\\
+	\Gre^{-1} &= \partial_\tau + \varepsilon_k &
+	\mathcal{G}_f^{-1} &= \partial_\tau + E_0 -V^2\sum_k \frac{1}{\partial_\tau + \varepsilon_k}.
+\end{align*}
+
+$\Z_c$ is the partition function for free electron gas, and $\Z_f$ is the partition function for the impurities, coupled to a free electron gas.
+
+we have already considered
+\begin{equation}
+\label{eq:free_energy_non_interacting}
+	\Tr\ln\Gre^{-1} = \sum_{k,\sigma}\ln\left(1 + \e^{-\beta\varepsilon_k}\right).
+\end{equation}
+\eqref{eq:free_energy_non_interacting} is the free energy for non-interacting electron gas, as we have seen earlier (see the derivation of \eqref{eq:partition_free_electron}).
+
+\begin{equation}
+\label{eq:trace_impurities}
+	\Tr\ln\left(\mathcal{G}_f^{-1}\right) = \sum_\sigma\sum_{\omega_n}\ln\left(-i\omega_n + E_0 +V^2\sum_k \frac{1}{i\omega_n - \varepsilon_k}\right)
+\end{equation}
+
+Consider now the last $k$-summation in \eqref{eq:trace_impurities}.
+\begin{align}
+\label{eq:k_sum}
+\begin{split}
+	\sum_k\frac{1}{i\omega_n - \varepsilon_k} &= \frac{1}{2D}\int_{-D}^D\dd{\varepsilon}\frac{1}{i\omega_n - \varepsilon} \\
+	&= \frac{1}{2D}\ln\left(\frac{D+i\omega_n}{-D + i\omega_n}\right)\\
+	&=-\frac{1}{2D}\ln\left(\frac{\omega_n+iD}{\omega_n-iD}\right)
+\end{split}
+\end{align}
+This is evaluated as
+\begin{equation}
+	\ln\left(\frac{z}{z^*}\right) = \ln\left(\frac{|z|e^{i\varphi}}{|z|\e^{-i\varphi}}\right) = 2i\varphi.
+\end{equation}
+Here, $\varphi = \tan[-1](\frac{D}{\omega_n}) \simeq \frac{\pi}{2}\mathrm{sgn}(\omega_n)$ as $T\rightarrow 0$.
+This implies that we can write the $k$-sum in \eqref{eq:k_sum} as
+\begin{align}
+	\sum_k\frac{1}{i\omega_n - \varepsilon_k} &\simeq -i\frac{\pi\cdot 2}{2\cdot 2D}\mathrm{sgn}(\omega_n)\\
+	&= -i\pi\rho_0\mathrm{sgn}(\omega_n)
+\end{align}
+where we introduced $\rho_0 = \flatfrac{1}{2D}$. Define $\Delta_0 \equiv \pi\rho_0 V^2$. Going back to \eqref{eq:trace_impurities}, we now have
+\begin{equation}
+	\sum_k\frac{1}{i\omega_n - \varepsilon_k} = \sum_\sigma\sum_{\omega_n}\ln\left(-i\omega + E_0 - i\Delta_0 \mathrm{sgn}(\omega_n)\right).
+\end{equation}
+Following the same methods as we have seen earlier, we have
+\begin{align}
+	\sum_{\omega_n}\dots &= \frac{-\beta}{2\pi i}\oint\dd{z}f(z)\ln(-z+E_0-i\Delta_0\mathrm{sgn}(\Im{z}))\nonumber\\
+	&= -\frac{\beta}{2\pi i }\int_{-D}^{D}\dd{\varepsilon}f(\varepsilon)\left[\ln(-\varepsilon + E_0- i\Delta_0) - \ln(-\varepsilon + E_0 + i\Delta_0)\right] \nonumber\\
+	&= \frac{\beta}{\pi}\int_{-D}^D\dd{\varepsilon}f(\varepsilon)\tan[-1](\frac{\Delta_0}{E_0 - \varepsilon}).
+\end{align}
+Thus, after the spin-summation, our total action is
+\begin{equation}
+\label{eq:action_impurities}
+	\Sa = -2\sum_k\ln\left(1 + \e^{-\beta\varepsilon_k}\right) + \frac{2\beta}{\pi}\int_{-D}^D\dd{\varepsilon}f(\varepsilon)\tan[-1](\frac{\Delta_0}{E_0 - \varepsilon}).
+\end{equation}
+$\Sa$ describes a free electron gas, plus a scattering resonance at the energy $E_0$ caused by the coupling between  $f$- and $c$-electrons. Notice that if $|E_0| >> D$ ,the second term in \eqref{eq:action_impurities} can be neglected. The impurities are far from the conduction band, and does not matter. When $U = \infty$, this will drastically change this result, as we shall now see.
+
+NB! The Green's functions:
+\begin{align*}
+	-\ev{ff^\dagger} &= -\left(\partial_\tau + E_0 - V^2 \sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)^{-1}\\
+	&\rightarrow \left(i\omega_n-E_0 + V^2\sum_k \frac{1}{i\omega_n - \varepsilon_k}\right)^{-1} \\
+	-\ev{\tilde{c}\tilde{c}^\dagger} &= -\frac{1}{\partial-\tau + \varepsilon_k} \\
+	&\rightarrow \frac{1}{i\omega_n-\varepsilon_k},
+\end{align*}
+but the $\tilde{c}$-``electrons'' are \underline{not} physical electrons. We defined them as $\tilde{c} = c+V\Gre f_\sigma \Rightarrow c = \tilde{c} - V\Gre f_\sigma$.
+Then, the conducting-electron-propagator is modified;
+\begin{align*}
+	-\ev{cc^\dagger} &= -\left[\ev{(\tilde{c}-V\Gre f_\sigma)(\tilde{c}^\dagger - V\Gre f_\sigma^\dagger)}\right]\\
+	&= -\Gre + V\Gre\ev{\tilde{c}f^\dagger} + V\Gre\ev{f\tilde{c}^\dagger} - V^2\Gre\ev{ff^\dagger}\Gre
+\end{align*}
+
+The propagator for the conducting electrons is then
+\begin{equation}
+	\mathcal{G}(\partial_\tau, \varepsilon_k) = -\left[\Gre(\partial_\tau, \varepsilon_k) + V^2\Gre(\partial_\tau, \varepsilon_k)\mathcal{G}_f(\partial_\tau)\Gre(\partial_\tau, \varepsilon_k)\right]
+\end{equation}
+\subsection{$U = \infty$}
+Remember that $U$ is the energy of the Coloumb interaction from double occupancy of the impurities defined in \eqref{eq:hf}.
