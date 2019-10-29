@@ -92,15 +92,16 @@ For later reference, we first solve the problem with $U = 0$.
 \end{split}
 \end{align}
 \(\Z\) can be computed exactly by a linear shift og the fermion operators \((c_{k\sigma}, c_{k\sigma}^\dagger)\). Introduce \(\Gre^{-1}= \partial_\tau + \varepsilon_k\). Consider now the quantity
-\begin{align*}
-	&\sum_{k, \sigma}\left[c_{k\sigma}^\dagger \Gre^{-1}c_{k\sigma}+ Vf_{\sigma}^\dagger c_{k\sigma} + Vc_{k\sigma}^\dagger f_\sigma\right] \\
-	&= \sum_{k\sigma}\left(c_{k\sigma}^\dagger + Vf_\sigma^\dagger \Gre\right)\Gre^{-1}\left(c_{k\sigma} + V\Gre f_\sigma\right) -\sum_{k,\sigma}V^2f_\sigma^\dagger \Gre f_\sigma \\
-	&=\sum_{k\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma} - \sum_\sigma f_\sigma^\dagger\left(\sum_k V^2\Gre\right)f_\sigma
-\end{align*}
-
+\begin{align}
+\label{eq:temp_derivation}
+	&\sum_{k, \sigma}\left[c_{k\sigma}^\dagger \Gre^{-1}c_{k\sigma}+ Vf_{\sigma}^\dagger c_{k\sigma} + Vc_{k\sigma}^\dagger f_\sigma\right] \nonumber\\
+	&= \sum_{k\sigma}\left(c_{k\sigma}^\dagger + Vf_\sigma^\dagger \Gre\right)\Gre^{-1}\left(c_{k\sigma} + V\Gre f_\sigma\right) -\sum_{k,\sigma}V^2f_\sigma^\dagger \Gre f_\sigma \nonumber\\
+	&=\sum_{k\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma} - \sum_\sigma f_\sigma^\dagger\left(\sum_k V^2\Gre\right)f_\sigma.
+\end{align}
+Inserting \eqref{eq:temp_derivation} into the action, we get
 \begin{equation}
 \label{eq:action_magnetic}
-	S =-\sum_{k,\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma}-\sum_\sigma f_\sigma^\dagger\left(\partial_\tau + E_0 - V^2\sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)f_\sigma
+	S =-\sum_{k,\sigma}\tilde{c}_{k\sigma}^\dagger \Gre^{-1}\tilde{c}_{k\sigma}-\sum_\sigma f_\sigma^\dagger\left(\partial_\tau + E_0 - V^2\sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)f_\sigma.
 \end{equation}
 As we can see in \eqref{eq:action_magnetic}, the action is quadratic in the $c$- and $f$- sectors.
 
@@ -184,3 +185,61 @@ The propagator for the conducting electrons is then
 \end{equation}
 \subsection{$U = \infty$}
 Remember that $U$ is the energy of the Coloumb interaction from double occupancy of the impurities defined in \eqref{eq:hf}.
+\begin{equation}
+	\Ha = E_0\sum_\sigma F_\sigma^\dagger F_\sigma + \sum_{k,\sigma}\varepsilon_k c_{k\sigma}^\dagger c_{k\sigma} + V\sum_{k,\sigma}\left(F_\sigma^\dagger c_{k\sigma} + c_{k\sigma}^\dagger F_\sigma\right)
+\end{equation}
+Our constraint reads
+\begin{equation}
+\sum_m F_m^\dagger F_m \le 1,
+\end{equation}
+i.e. we have \underline{no} double occupancy. As we did for the Hubbard model at $U = \infty$, wee introduce $b$-bosons.
+\begin{align*}
+	F_m^\dagger &= f_m^\dagger b \\
+	F_m &= f_mb^\dagger\\
+	\sum_m &f_m^\dagger f_m + b^\dagger b = 1
+\end{align*}
+$F_m, F_m^\dagger$ are Hubbard operators, and does not satisfy simple commutation relations. When this restriction is satisfied, we have
+\begin{equation}
+	\Ha = E_0\sum_m f_m^\dagger f_m + \sum_{k,\sigma}\varepsilon_k c_{k\sigma}^\dagger c_{k\sigma} + V\sum_{k,\sigma}\left(f_\sigma^\dagger bc_{k\sigma} + c_{k\sigma}^\dagger b^\dagger f_\sigma\right)
+\end{equation}
+with the restriction 
+\begin{equation}
+	\sum_m f_m^\dagger f_m + b^\dagger b = 1 \equiv Q.
+\end{equation}
+As we did for  $U=\infty$ Hubbard:
+\begin{align}
+	\Z &= \int\mathcal{D}c^\dagger\mathcal{D}c\mathcal{D}f^\dagger\mathcal{D}f\mathcal{D}b^\dagger\mathcal{D}b\,\e^{\Sa}\delta_{Q,1} \\
+	\begin{split}
+	\Sa &= -\sum_m\int_0^\beta \dd{\tau} f_m^\dagger\left(\partial_\tau + E_0\right)f_m - \sum_{k,\sigma}\int_0^\beta \dd{\tau} c_{k\sigma}\left(\partial_\tau + \varepsilon_k\right) c_{k\sigma}) \\
+	&\quad -\int_0^\beta \dd{\tau}b^\dagger\partial_\tau b - V\sum_{k, \sigma}\int_0^\beta \dd{\tau}\left(c_{k\sigma}^\dagger b^\dagger f_\sigma + f_\sigma^\dagger b c_{k\sigma}\right).
+	\end{split}
+\end{align}
+Again, we use Abrikosov's trick, that for each value of $\tau$ use that
+\begin{align}
+	\delta_{Q,1} &= \int_{-\pi}^\pi \frac{\dd{\lambda}}{2\pi}\e^{-i\lambda(Q-1)} \\
+	\Rightarrow \Z &= \int_{-\pi}^\pi \frac{\dd{\lambda}}{2\pi}\int\mathcal{D}c^\dagger\mathcal{D}c\mathcal{D}f^\dagger\mathcal{D}f\mathcal{D}b^\dagger\mathcal{D}b\,\e^{\tilde{\Sa}} \\
+	\begin{split}
+		\tilde{\Sa} &= -\sum_m\int_0^\beta \dd{\tau} f_m^\dagger\left(\partial_\tau + E_0 + i\lambda\right)f_m - \sum_{k,\sigma}\int_0^\beta \dd{\tau} c_{k\sigma}\left(\partial_\tau + \varepsilon_k\right) c_{k\sigma}) \\
+		&\quad -\int_0^\beta \dd{\tau}b^\dagger\left(\partial_\tau + i\lambda\right) b - V\sum_{k, \sigma}\int_0^\beta \dd{\tau}\left(c_{k\sigma}^\dagger b^\dagger f_\sigma + f_\sigma^\dagger b c_{k\sigma}\right) + i\int_{0}^\beta\dd{\tau}\lambda  
+	\end{split}
+\end{align}
+Again we introduce $\Gre = \partial_\tau + \varepsilon_k$, and make a shift of the $c$-fields:
+\begin{align*}
+	\sum_{k\sigma}&\left[c_{k\sigma}^\dagger \Gre^{-1}c_{k\sigma} + V\left(c_{k\sigma}^\dagger b^\dagger f_\sigma + f_\sigma^\dagger bc_{k\sigma}\right)\right]\\
+	&=\sum_{k,\sigma}\underbrace{\left(c_{k\sigma}^\dagger + Vf_{\sigma}^\dagger b\Gre\right)}_{\tilde{c}^\dagger}\Gre^{-1}\left(c_{k\sigma} + V\Gre b^\dagger f_\sigma\right) \\
+	&\quad - V^2\sum_\sigma f_\sigma^\dagger b\left(\sum_k\Gre\right)b^\dagger f_\sigma
+\end{align*}
+Now, do the functional integrals $\int\mathcal{D}\tilde{c}^\dagger\mathcal{D}\tilde{c}$ such that $\Z = \Z_0\cdot\tilde{\Z}$ with 
+\begin{equation*}
+\Z_0 = \e^{\Tr\ln\Gre^{-1}}
+\end{equation*}
+and
+\begin{equation*}
+	\tilde{\Z} = \int_{-\pi}^\pi \frac{\dd{\lambda}}{2\pi}\int\mathcal{D}f^\dagger\mathcal{D}f\mathcal{D}b^\dagger\mathcal{D}b\,\e^{\Sa_{\text{eff}}},
+\end{equation*}
+where 
+\begin{align*}
+\Sa_{\text{eff}} = \int_0^\beta\dd{\tau}[-b^\dagger\left(\partial_\tau + i\lambda\right)b &- \sum_m f_m^\dagger\left(\partial_\tau + E_0 + i\lambda\right)f_m\\
+&+ \sum_m f_m^\dagger V^2 b\left(\sum_k\Gre\right)b^\dagger f_m \\
+&+i\lambda]
+\end{align*}
