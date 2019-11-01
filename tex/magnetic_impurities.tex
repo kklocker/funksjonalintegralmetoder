@@ -109,11 +109,12 @@ As we can see in \eqref{eq:action_magnetic}, the action is quadratic in the $c$-
 	\Z = \int\D\tilde{c}^\dagger\D\tilde{c}\D f^\dagger \D f\, \e^{\Sa}= \Z_c\cdot\Z_f,
 \end{equation}
 where 
-\begin{align*}
+\begin{align}
 	\Z_c &= \e^{\Tr\ln \left(\Gre^{-1}\right)} & \Z_f&= \e^{\Tr\ln\left(\mathcal{G}_f^{-1}\right)}\\
+	\label{eq:fermi_propagator}
 	\Gre^{-1} &= \partial_\tau + \varepsilon_k &
 	\mathcal{G}_f^{-1} &= \partial_\tau + E_0 -V^2\sum_k \frac{1}{\partial_\tau + \varepsilon_k}.
-\end{align*}
+\end{align}
 
 $\Z_c$ is the partition function for free electron gas, and $\Z_f$ is the partition function for the impurities, coupled to a free electron gas.
 
@@ -156,6 +157,7 @@ Following the same methods as we have seen earlier, we have
 \begin{align}
 	\sum_{\omega_n}\dots &= \frac{-\beta}{2\pi i}\oint\dd{z}f(z)\ln(-z+E_0-i\Delta_0\mathrm{sgn}(\Im{z}))\nonumber\\
 	&= -\frac{\beta}{2\pi i }\int_{-D}^{D}\dd{\varepsilon}f(\varepsilon)\left[\ln(-\varepsilon + E_0- i\Delta_0) - \ln(-\varepsilon + E_0 + i\Delta_0)\right] \nonumber\\
+	\label{eq:action_derivation}
 	&= \frac{\beta}{\pi}\int_{-D}^D\dd{\varepsilon}f(\varepsilon)\tan[-1](\frac{\Delta_0}{E_0 - \varepsilon}).
 \end{align}
 Thus, after the spin-summation, our total action is
@@ -169,7 +171,7 @@ NB! The Green's functions:
 \begin{align*}
 	-\ev{ff^\dagger} &= -\left(\partial_\tau + E_0 - V^2 \sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)^{-1}\\
 	&\rightarrow \left(i\omega_n-E_0 + V^2\sum_k \frac{1}{i\omega_n - \varepsilon_k}\right)^{-1} \\
-	-\ev{\tilde{c}\tilde{c}^\dagger} &= -\frac{1}{\partial-\tau + \varepsilon_k} \\
+	-\ev{\tilde{c}\tilde{c}^\dagger} &= -\frac{1}{\partial_\tau + \varepsilon_k} \\
 	&\rightarrow \frac{1}{i\omega_n-\varepsilon_k},
 \end{align*}
 but the $\tilde{c}$-``electrons'' are \underline{not} physical electrons. We defined them as $\tilde{c} = c+V\Gre f_\sigma \Rightarrow c = \tilde{c} - V\Gre f_\sigma$.
@@ -243,3 +245,36 @@ where
 &+ \sum_m f_m^\dagger V^2 b\left(\sum_k\Gre\right)b^\dagger f_m \\
 &+i\lambda]
 \end{align*}
+We can now do the $\int\mathcal{D}f^\dagger\mathcal{D}f$-integration:
+\begin{equation}
+	\tilde{\Z} = \int_{-\pi}^\pi\frac{\dd{\lambda}}{2\pi}\int\mathcal{D}b^\dagger\mathcal{D}b\,\e^{\tilde{\Sa}_{\text{eff}}[b^\dagger, b, \lambda]}.
+\end{equation}
+The theory is now bosonized, with
+\begin{align}
+\tilde{\Sa}_{\text{eff}}[b^\dagger, b, \lambda] &= -\int_0^\beta \dd{\tau}\left(b^\dagger\left(\partial_\tau + i\lambda\right)b + i\lambda\right) + \Tr\ln(\mathcal{G}_f^{-1}[b^\dagger, b, \lambda]) \\
+\mathcal{G}_f^{-1} &= \partial_\tau + E_0 + i\lambda-V^2b^\dagger\left(\sum_k\frac{1}{\partial_\tau + \varepsilon_k}\right)b
+\end{align}
+Remembering the results \eqref{eq:fermi_propagator} for $U=0$, we see that $U=\infty$ has two effects:
+\begin{enumerate}[i]
+	\item Shift of $E_0$
+	\item Renormalized hybridisation
+\end{enumerate} 
+Again, the resulting effective action is to complicated to be calculated exactly. Let us therefore introduce a saddle point approximation by
+\begin{align*}
+b(\tau)&= b\\
+i\lambda &=\lambda.
+\end{align*}
+
+\begin{align}
+	\tilde{\Sa}_{\text{eff}} &= -\beta\lambda(b^2-1) + \Tr\ln\left(\partial_\tau + E_0 + \lambda-V^2b^2\sum_k\Gre\right)\nonumber \\
+	&=-\beta\lambda(b^2-1) + \sum_\sigma\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_f + s_0^2\sum_k\frac{1}{i\omega_n-\varepsilon_k}\right)\nonumber \\
+	&= -\beta\lambda(b^2-1) + 2\sum_{\omega_n}\ln\left(-\omega_n + \varepsilon_f -i\Delta\mathrm{sgn}(\omega_n)\right)\nonumber \\
+	\label{eq:effective_action}
+	&= -\beta\lambda(b^2-1) + 2\beta\int_{-D}^D \frac{\dd{\varepsilon}}{\pi}f(\varepsilon)\tan[-1](\frac{\Delta}{\varepsilon_f - \varepsilon}),
+\end{align}
+where we introduced $s_0 \equiv bV, \Delta \equiv \pi\rho_0s_0^2$ and followed the same derivation as \eqref{eq:action_derivation} with the appropriate changes.
+If we compare \eqref{eq:effective_action} with the effective action from the $U = 0$ -case,
+\begin{equation}
+	\Sa_{\text{eff}, U=0}  = 2\beta\int_{-D}^D\frac{\dd{\varepsilon}}{\pi}f(\varepsilon)\tan[-1](\frac{\Delta_0}{E_0 - \varepsilon}),
+\end{equation}
+we have for $U=\infty$ a shift in the scattering resonance at $\varepsilon_f = E_0 + \lambda$. As we will now see, $\varepsilon_f$ is ``nailed'' to the Fermi-level, such that even if $E_0$ is far outside the conduction band, $\varepsilon_f$ is practically on the Fermi level. Thus, impurities always affect the physics at the Fermi level. This permanent nailing is the origin of the Kondo-effect and heavy-fermion behaviour. \textbf{This is thus a correlation effect.}
