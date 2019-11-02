@@ -278,3 +278,93 @@ If we compare \eqref{eq:effective_action} with the effective action from the $U 
 	\Sa_{\text{eff}, U=0}  = 2\beta\int_{-D}^D\frac{\dd{\varepsilon}}{\pi}f(\varepsilon)\tan[-1](\frac{\Delta_0}{E_0 - \varepsilon}),
 \end{equation}
 we have for $U=\infty$ a shift in the scattering resonance at $\varepsilon_f = E_0 + \lambda$. As we will now see, $\varepsilon_f$ is ``nailed'' to the Fermi-level, such that even if $E_0$ is far outside the conduction band, $\varepsilon_f$ is practically on the Fermi level. Thus, impurities always affect the physics at the Fermi level. This permanent nailing is the origin of the Kondo-effect and heavy-fermion behaviour. \textbf{This is thus a correlation effect.}
+We will now minimize the effective action with respect to $b^2$ and $\lambda$. 
+$\varepsilon_f = E_0 + \lambda \Rightarrow \lambda = \varepsilon_f - E_0$, and $s_0 = bV \rightarrow b^2 = \flatfrac{s_0^2}(V^2)$. Then
+
+\begin{align}
+	\tilde{\Sa}_{\text{eff}} &=  -\beta\left(\varepsilon_f - E_0\right)\left(\frac{s_0^2}{V^2} - 1\right) \\
+	&+ 2\beta\int_{-D}^D\frac{\dd{\varepsilon}}{\pi}f(\varepsilon)\tan[-1](\frac{\Delta}{\varepsilon_f-\varepsilon})
+\end{align}
+
+\begin{align}
+	\label{eq:self_cons1}
+	\pdv{\tilde{\Sa}_{\text{eff}}}{\varepsilon_f} &= 0 \\
+	\label{eq:self_cons2}
+	\pdv{\tilde{\Sa_{\text{eff}}}}{s_0}&= 0
+\end{align}
+Eqs. \eqref{eq:self_cons1},\eqref{eq:self_cons2} are self consistent equations for deciding $\varepsilon_f, s_0$. 
+
+Notice also that for $T=0$, the effective action is well defined. The method therefore gives a well defined description of the low-$T$ physics.
+Consider the $T = 0$ case:
+\begin{align}
+	\tilde{\Sa}_{\text{eff}} &= -\beta\left(\varepsilon_f - E_0\right)\left(\frac{s_0^2}{V^2} -1\right) \\
+	&+ 2\beta\int_{-D}^{0}\frac{\dd{\varepsilon}}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f-\varepsilon}) \\
+	&\tan[-1](x) = \frac{-i}{2}\ln\left(\frac{1+ix}{1-ix}\right)
+\end{align}
+And the quantity 
+\begin{align*}
+	\int_{-D}^0\frac{\dd{\varepsilon}}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f-\varepsilon}) &= \int_{0}^D\frac{\dd{\varepsilon}}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f + \varepsilon}) \\
+	&= \int_{\varepsilon_f}^{D + \varepsilon_f}\frac{\dx}{\pi}\tan[-1](\frac{\Delta}{x}) \\
+	&= \frac{1}{\pi}\bigg|_{\varepsilon_f}^{D + \varepsilon_f}x\tan[-1](\frac{\Delta}{x}) - \frac{1}{\pi}\int_{\varepsilon_f}^{D + \varepsilon_f}\dx \frac{x}{1 +\frac{\Delta^2}{x^2}}\left(\frac{-\Delta}{x^2}\right) \\
+	&= \frac{1}{\pi}\left[\left(D+\varepsilon_f\right)\tan[-1](\frac{\Delta}{D+\varepsilon_f}) - \varepsilon_f\tan[-1](\frac{\Delta}{\varepsilon_f})\right] \\
+	&\qquad+ \frac{\Delta}{2\pi}\ln\left(\frac{\left(D+\varepsilon_f\right)^2 + \Delta^2}{\varepsilon_f^2 + \Delta^2}\right) \\
+	&\stackrel{D>>(\Delta, \varepsilon_f)}{\simeq} \frac{-\varepsilon_f}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) - \frac{\Delta}{2\pi}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right) \\
+	&\qquad +\frac{D+\varepsilon_f}{\pi}\tan[-1](\frac{\Delta}{D+\varepsilon_f})
+\end{align*}
+Now $\varepsilon_f + D >>(\Delta, \varepsilon_f) \Rightarrow \tan[-1](\flatfrac{\Delta}(D+\varepsilon)) \simeq \flatfrac{\Delta}(D+\varepsilon_f)$ which implies 
+\begin{align*}
+	&\frac{\Delta}{\pi} - \frac{\varepsilon_f}{\pi}\tan[-1](\flatfrac{\Delta}(\varepsilon_f)) - \frac{\Delta}{2\pi}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right) \\
+	&\simeq \int_{-D}^0\dd{\varepsilon}\tan[-1](\frac{\Delta}{\varepsilon_f - \varepsilon})
+\end{align*}
+
+\begin{align}
+\begin{split}
+	\tilde{\Sa}_{\text{eff}}&= -\beta(\varepsilon_f -E_0)\left(\frac{\Delta}{\Delta_0}-1\right) \\
+	\quad &+2\beta\left(\frac{\Delta}{\pi} - \frac{\varepsilon_f}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) - \frac{\Delta}{2\pi}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right)\right) =-\beta\tilde{U}_\text{eff},
+\end{split}
+\end{align}
+at $T = 0$. $\flatfrac{s_0^2}{V^2} = \flatfrac{\Delta}{\Delta_0}$ with $\Delta = \pi\rho_0 s_0^2, \Delta = \pi\rho_0 V^2$.
+The equations to evaluate are
+\begin{align*}
+	\pdv{\tilde{U}_\text{eff}}{\Delta} = 0 &&
+	\pdv{\tilde{U}_\text{eff}}{\varepsilon_f} = 0
+\end{align*}
+\begin{align*}
+\pdv{\tilde{U}_\text{eff}}{\Delta} &= 0 = \frac{1}{\Delta_0}(\varepsilon_f - E_0) - \frac{2}{\pi} + \frac{2\varepsilon_f}{\pi}\frac{1}{1+\frac{\Delta^2}{\varepsilon_f^2}}\frac{1}{\varepsilon_f} \\
+&\quad+ \frac{1}{\pi}\ln\left(\frac{\varepsilon_f^2 +\Delta^2}{D^2}\right) + \frac{\Delta}{\pi}\frac{2\Delta}{\varepsilon_f^2 + \Delta^2} \\
+&= \frac{1}{\Delta_0}(\varepsilon_f-E_0)-\frac{2}{\pi} + \frac{2}{\pi}\left(\frac{\varepsilon_f^2 + \Delta^2}{\varepsilon_f^2+\Delta^2}\right) + \frac{1}{\pi}\ln\left(\frac{\varepsilon_f^2 +\Delta^2}{D^2}\right) = 0  \\
+\Rightarrow &\frac{\Delta_0}{\pi}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right) = E_0 - \varepsilon_f \\
+\pdv{\tilde{\Sa}_{\text{eff}}}{\varepsilon_f} &= 0 = \frac{\Delta}{\Delta_0} -1 +\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) \\
+\Rightarrow &
+\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) = 1-\frac{\Delta}{\Delta_0} \equiv \sum_m\langle f_m^\dagger f_m\rangle = n_f
+\end{align*}
+\begin{align*}
+\pdv{\tilde{\Sa_{\text{eff}}}}{\varepsilon_f} &= 0 \\
+&=\frac{\Delta}{\Delta_0} - 1+\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) \\
+\quad &+ \frac{2\varepsilon_f}{\pi}\frac{1}{1+\frac{\Delta^2}{\varepsilon_f^2}}\left(\frac{-\Delta}{\varepsilon_f^2}\right) \\
+\quad &+ \frac{2\Delta}{2\pi}\frac{2\varepsilon_f}{\varepsilon_f^2 + \Delta^2} \\
+&= \frac{\Delta}{\Delta_0} -1 +\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) = 0
+\end{align*}
+Now assume $E_0$ is large and negative, $|E_0|>>D$, then $n_f \simeq 1$ which implies
+\begin{equation*}
+	\frac{\Delta_0}{\varepsilon_f}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right) \simeq E_0
+\end{equation*}
+Define 
+\begin{equation}
+	k_bT_a \equiv \sqrt{\varepsilon_f^2 + \Delta^2},
+\end{equation}
+a typical energy for resonance. Then
+\begin{align*}
+\frac{2\Delta_0}{\pi}\ln\left(\frac{k_BT_A}{D}\right) &= -|E_0| \\
+k_BT_A\simeq D\e^{\frac{-\pi|E_0|}{2\Delta_0}}
+\end{align*}
+$D: 10^4\mathrm{K}$ when $|E_0|$ is large. $\varepsilon\simeq k_BT_k$
+If $U=0$: 
+\begin{align}
+	U_\text{eff} &= -\frac{2\Delta_0}{\pi} + \frac{2E_0}{\pi}\tan[-1](\frac{\Delta_0}{E_0}) \\
+	&+\frac{2\Delta_0}{\pi}\ln\left(\frac{E_0^2 + \Delta_0^2}{D^2}\right)
+\end{align}
+$\Rightarrow$ $k_BT_k \sim E_0$. Thus, no small scale! When $|E_0|$ is moderate, $n_f = 1-\flatfrac{\Delta}\Delta_0<1$. This means that we have valence-fluctuations on the magnetic impurity. (Valence-fluctuations = charge- and spin-fluctuations) When $|E_0| >> D \Rightarrow n_f\Rightarrow1$, no longer any valence fluctuations.(Valence-fluctuations = charge fluctuations) What fluctuations are we left with in this limit? The answer is spin fluctuations. The physics is that a local impurity spin causes the spin of a passing conduction band electron to flip. A model that describes such a scattering is the Kondo model:
+\begin{equation}
+\Ha_k  = \sum_{k,\sigma}\varepsilon_kc_{k\sigma}^\dagger c_{k\sigma} + J\sum_{\substack{k,k' \\ \sigma,\sigma'}}\vb{S}\cdot c_{k\sigma}^\dagger \tau_{\sigma\sigma'}c_{k'\sigma'}
+\end{equation}
