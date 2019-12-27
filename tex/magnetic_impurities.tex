@@ -1,5 +1,7 @@
-\section[Magnetic impurities]{\texorpdfstring{Magnetic impurities in metals - \\ \null\hfill The Anderson and Kondo models}}
-(page 183-> in pdf, 139-> in notes)
+\section[Magnetic impurities]{The Anderson and Kondo models}
+
+%\texorpdfstring{Magnetic impurities in metals - \\ \null\hfill The Anderson and Kondo models}
+%(page 183-> in pdf, 139-> in notes)
 
 Imagine that we have a system defined by free, itinerant electrons, described by a conduction band with dispersion relation $\varepsilon_k$ and, for the sake of simplicity, assume that the one-particle density of state has a simple form as shown in Figure \ref{fig:dos}. The bandwidth of this system is $2D$, and the system has a Hamiltonian
 \begin{equation}
@@ -338,13 +340,15 @@ The equations to evaluate are
 \Rightarrow &
 \frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) = 1-\frac{\Delta}{\Delta_0} \equiv \sum_m\langle f_m^\dagger f_m\rangle = n_f
 \end{align*}
+
 \begin{align*}
-\pdv{\tilde{\Sa_{\text{eff}}}}{\varepsilon_f} &= 0 \\
+\pdv{\tilde{\Sa}_{\text{eff}}}{\varepsilon_f} &= 0 \\
 &=\frac{\Delta}{\Delta_0} - 1+\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) \\
 \quad &+ \frac{2\varepsilon_f}{\pi}\frac{1}{1+\frac{\Delta^2}{\varepsilon_f^2}}\left(\frac{-\Delta}{\varepsilon_f^2}\right) \\
 \quad &+ \frac{2\Delta}{2\pi}\frac{2\varepsilon_f}{\varepsilon_f^2 + \Delta^2} \\
 &= \frac{\Delta}{\Delta_0} -1 +\frac{2}{\pi}\tan[-1](\frac{\Delta}{\varepsilon_f}) = 0
 \end{align*}
+
 Now assume $E_0$ is large and negative, $|E_0|>>D$, then $n_f \simeq 1$ which implies
 \begin{equation*}
 	\frac{\Delta_0}{\varepsilon_f}\ln\left(\frac{\varepsilon_f^2 + \Delta^2}{D^2}\right) \simeq E_0
@@ -358,13 +362,35 @@ a typical energy for resonance. Then
 \frac{2\Delta_0}{\pi}\ln\left(\frac{k_BT_A}{D}\right) &= -|E_0| \\
 k_BT_A\simeq D\e^{\frac{-\pi|E_0|}{2\Delta_0}}
 \end{align*}
-$D: 10^4\mathrm{K}$ when $|E_0|$ is large. $\varepsilon\simeq k_BT_k$
+$D: 10^4\mathrm{K}$. $k_BT_A: 1\mathrm{K}$ when $|E_0|$ is large. $\varepsilon\simeq k_BT_K$.
+
 If $U=0$: 
 \begin{align}
 	U_\text{eff} &= -\frac{2\Delta_0}{\pi} + \frac{2E_0}{\pi}\tan[-1](\frac{\Delta_0}{E_0}) \\
 	&+\frac{2\Delta_0}{\pi}\ln\left(\frac{E_0^2 + \Delta_0^2}{D^2}\right)
 \end{align}
-$\Rightarrow$ $k_BT_k \sim E_0$. Thus, no small scale! When $|E_0|$ is moderate, $n_f = 1-\flatfrac{\Delta}\Delta_0<1$. This means that we have valence-fluctuations on the magnetic impurity. (Valence-fluctuations = charge- and spin-fluctuations) When $|E_0| >> D \Rightarrow n_f\Rightarrow1$, no longer any valence fluctuations.(Valence-fluctuations = charge fluctuations) What fluctuations are we left with in this limit? The answer is spin fluctuations. The physics is that a local impurity spin causes the spin of a passing conduction band electron to flip. A model that describes such a scattering is the Kondo model:
+$\Rightarrow$ $k_BT_k \sim E_0$. Thus, not a small scale. When $|E_0|$ is moderate, $n_f = 1-\flatfrac{\Delta}\Delta_0<1$. This means that we have valence-fluctuations on the magnetic impurity. (Valence-fluctuations = charge- and spin-fluctuations) When $|E_0| >> D \Rightarrow n_f\Rightarrow1$, no longer any valence fluctuations.(Valence-fluctuations = charge fluctuations) What fluctuations are we left with in this limit? The answer is spin fluctuations. The physics is that a local impurity spin causes the spin of a passing conduction band electron to flip. A model that describes such a scattering is the Kondo model:
 \begin{equation}
-\Ha_k  = \sum_{k,\sigma}\varepsilon_kc_{k\sigma}^\dagger c_{k\sigma} + J\sum_{\substack{k,k' \\ \sigma,\sigma'}}\vb{S}\cdot c_{k\sigma}^\dagger \tau_{\sigma\sigma'}c_{k'\sigma'}
+\Ha_K  = \sum_{k,\sigma}\varepsilon_kc_{k\sigma}^\dagger c_{k\sigma} + J\sum_{\substack{k,k' \\ \sigma,\sigma'}}\vb{S}\cdot c_{k\sigma}^\dagger \tau_{\sigma\sigma'}c_{k'\sigma'},
 \end{equation}
+where the \(\tau	_{\sigma\sigma'}\) are Pauli-matrices and \(\vb{S}\) is a localized impurity-spin. Since this modell described the physics of the Anderson-model in the limit \( |E_0| >> D \) (called the Kondo-limit), we should be able to derive \(\Ha_K\) from the Anderson-model in this limit. This is show as follows: 
+\(|E_0|>>D  \implies \) the magnetic impurity is virtually unoccupied.
+
+
+\begin{figure}[h]
+	\centering
+	\input{tex/img/band_anderson}
+	\caption{Effect of the coupling}
+	\label{fig:band_anderson}
+\end{figure}
+
+The effect of the coupling \(V\) can be taken to the second order in perturbation theory:
+
+\begin{align}
+\begin{split}
+\Ha &= \Ha_0  + \Ha_I \\
+\Ha_0 &= \sum_{k,\sigma}\varepsilon_k c_{k\sigma}^\dagger c_{k\sigma} + E_0\sum_\sigma F_\sigma^\dagger F_\sigma \\
+\Ha_I  &= V\sum_{k,\sigma}\left(F_\sigma^\dagger c_{k\sigma} +  h.c.\right)
+\end{split}
+\end{align}
+

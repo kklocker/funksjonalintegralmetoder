@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale = 1]
+	
+	\draw[thick, -] (0,-0.5) -- (0,4);
+	\draw[thick, -] (0,-0.5) -- (1,-0.5);
+
+	\draw[very thick, draw = black,fill = red!30!white, opacity = 0.4] (0,1) rectangle (1,2.5);
+	\draw[very thick, draw = black] (0,2.5) rectangle (1,4);	
+	\node[anchor = east] at (0,-0.5) {$E_0$};
+	\node[anchor = east] at (0,1) {$-D$};
+	\node[anchor = east] at(0,2.5) {$\varepsilon_F$};
+	\node[anchor = east] at (0,4){$D$};
+
+	\draw[thick, ->-=0.7] (1,-0.5) to [out = 55,in = -55](1,2.5);
+	\draw[thick, ->-=0.7] (1,2.5) to [out = -10, in = 10](1,-0.5);
+
+	\node[anchor = east] at (1.5,1) {$\sigma$};
+	\node[anchor = west] at (1.8,1) {$\sigma^{-1}$};
+
+
+\end{tikzpicture}
