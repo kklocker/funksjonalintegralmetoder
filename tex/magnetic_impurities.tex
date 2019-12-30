@@ -394,3 +394,79 @@ The effect of the coupling \(V\) can be taken to the second order in perturbatio
 \end{split}
 \end{align}
 
+The second order process in Figure \ref{fig:band_anderson} is described by
+
+\begin{align}
+\begin{split}
+	-\frac{V^2}{-E_0 + \varepsilon_F}&\sum_{k,\sigma}c_{k\sigma}^\dagger F_\sigma \sum_{k',\sigma'}F_{\sigma'}^\dagger c_{k'\sigma'} \\
+	&= +\frac{V^2}{|E_0|}\sum_{\substack{k,k' \\ \sigma,\sigma'}} F_{\sigma'}^\dagger F_\sigma c_{k\sigma}^\dagger c_{k'\sigma'} \\
+	 &= J\sum_{\substack{k,k' \\ \sigma,\sigma'}}F_{\sigma'}^\dagger F_\sigma c_{k\sigma}^\dagger c_{k'\sigma'} \\
+	 J &= \frac{V^2}{|E_0|}
+\end{split}
+\end{align}
+
+This will include the spin-flip-process in some way. We will explicitly show that for the $s = 1/2$ case, this has the same form as in the Kondo-model. 
+
+\begin{align*}
+\sum_{\sigma,\sigma'}F_{\sigma'}^\dagger F_\sigma c_{k\sigma}^\dagger c_{k'\sigma'} &= \underbrace{\uparrow\quad \uparrow} \cdot \underbrace{\uparrow\quad \uparrow}\\
+&+ \underbrace{\downarrow\quad \uparrow}\cdot\underbrace{\downarrow\quad \uparrow} \\
+&+ \underbrace{\uparrow\quad \downarrow}\cdot\underbrace{\uparrow\quad \downarrow} \\
+&+ \underbrace{\downarrow\quad \downarrow}_{F}\cdot\underbrace{\downarrow\quad \downarrow}_{c}
+\end{align*}
+
+Spin states: 
+\begin{equation*}
+	\ket{\uparrow} = \begin{pmatrix}
+	1 \\0
+	\end{pmatrix}\quad ;\quad 	\ket{\downarrow} = \begin{pmatrix}
+	0 \\1
+	\end{pmatrix}
+\end{equation*}
+The following expression holds, and also correspondingly for the $F$-sector: 
+\begin{align*}
+	c_\uparrow^\dagger c_\uparrow \ket{\uparrow} &= \ket{\uparrow} \\
+	c_\uparrow^\dagger c_\uparrow \ket{\downarrow} &= 0 \\
+	c_\downarrow^\dagger c_\downarrow \ket{\uparrow} &= 0 \\
+	c_\downarrow^\dagger c_\downarrow \ket{\downarrow} &= \ket{\downarrow} \\
+	c_\uparrow^\dagger c_\downarrow \ket{\uparrow} &= 0 \\
+	c_\uparrow^\dagger c_\downarrow \ket{\uparrow} &= \ket{\uparrow} \\
+	c_\downarrow^\dagger c_\uparrow \ket{\uparrow} &= \ket{\downarrow} \\
+	c_\downarrow^\dagger c_\uparrow \ket{\downarrow} &= 0 \\
+\end{align*}
+We can rewrite these expressions as 
+
+\begin{align*}
+c_\uparrow^\dagger c_\uparrow & = \begin{pmatrix}
+1 & 0 \\ 0&0
+\end{pmatrix}
+ = \frac{1}{2}(1+\tau_z) \\
+c_\downarrow^\dagger c_\downarrow & = \begin{pmatrix}
+0 & 0 \\ 0&1
+\end{pmatrix}
+= \frac{1}{2}(1-\tau_z) \\
+c_\uparrow^\dagger c_\downarrow & = \begin{pmatrix}
+0 & 1 \\ 0&0
+\end{pmatrix}
+= \frac{1}{2}(\tau_x+ i\tau_y) \\
+c_\downarrow^\dagger c_\uparrow & = \begin{pmatrix}
+0 & 0 \\ 1&0
+\end{pmatrix}
+= \frac{1}{2}(\tau_x- i\tau_y)
+\end{align*}
+\begin{align*}
+\implies  J\sum_{\substack{k,k' \\ \sigma,\sigma'}}&\left[ F_{\sigma'}^\dagger \frac{1}{2}\left(\delta_{\sigma'\sigma} + \tau_{\sigma'\sigma}^z\right)F_\sigma c_{k\sigma}^\dagger\frac{1}{2}\left(\delta_{\sigma\sigma'} + \tau_{\sigma\sigma'}^z\right)c_{k'\sigma'}\right. \\
+&+ F_{\sigma'}^\dagger \tau_{\sigma'\sigma}^- F_\sigma c_{k\sigma}^\dagger\tau_{\sigma\sigma'}^+ c_{k'\sigma'} + F_{\sigma'}^\dagger \tau_{\sigma'\sigma}^+ F_\sigma c_{k\sigma}^\dagger \tau_{\sigma\sigma'}^- c_{k'\sigma'} \\
+&+ \left.F_{\sigma'}^\dagger \frac{1}{2}\left(\delta_{\sigma'\sigma} - \tau_{\sigma'\sigma}^z\right)F_\sigma c_{k\sigma}^\dagger\frac{1}{2}\left(\delta_{\sigma\sigma'} - \tau_{\sigma\sigma'}^z\right)c_{k'\sigma'}\right]
+\end{align*}
+The terms with $\delta_{\sigma\sigma'}$ are potential scattering, we can ignore these terms.
+
+\begin{equation}
+	\implies J\sum_{\substack{k,k' \\ \sigma,\sigma'}} \underbrace{F_{\sigma'}^\dagger\vec{\tau}_{\sigma'\sigma}F_\sigma}_{\text{Impurity-spin}}\cdot \underbrace{c_{k\sigma}^\dagger\vec{\tau}_{\sigma\sigma'}c_{k'\sigma'}}_{\text{Electron spin}}
+\end{equation}
+$J\vb{S}\cdot\vb{s}; \underline{J>0}$. We have an antiferromagnetic coupling. Below $T_K$, the spin of the conducting electron binds in a singlet state with the impurity spin (in the Kondo-limit) and creates a scattering resonance on the Fermi level. The impurity spin is compensated by the spin in the conducting band. I.e. the conduction band electron screens the impurity spin. When there are few impurity spins relative to the number of electrons within an energy $\sim T_K$ from $\varepsilon_F$, all the impurity spins are screened.
+The ground state is \underline{not} magnetically ordered. We instead get a (renormalized) Fermi-liquid.
+To summarize:
+
+\underline{$T>T_K:$} The conduction band electrons are entirely decoupled from the impurity spins. Weak coupling regime. 
+
+\underline{$T<T_K:$} The electron spin and impurity spin coupled in a spin-singlet. Scattering resonance. Strong coupling regime. 

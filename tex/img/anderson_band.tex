@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+\begin{axis}[
+    legend style={at={(1,0.4)}},
+    ytick = {1},
+    yticklabels = {$\varepsilon_f$},
+    xtick = none,
+    xlabel = $k$,
+    axis lines = left,
+    %xlabel = $x$,
+    %sylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    thick,
+    domain=0:1.4, 
+    samples=100, 
+    color=red,
+]
+{1/2 * (1 + x^2 + sqrt((x^2 - 1)^2 + 0.1))};
+\addlegendentry{$E_k^+$}
+
+\addplot [
+    thick,
+    domain=0:1.4, 
+    samples=100, 
+    color=green!50!black,
+]
+{x^2};
+\addlegendentry{$\varepsilon_k$};
+%Here the blue parabloa is defined
+\addplot [
+    thick,
+    domain=0:1.4, 
+    samples=100, 
+    color=blue,
+    ]
+    {1/2 * (1 + x^2 - sqrt((x^2 - 1)^2 + 0.1))};
+\addlegendentry{$E_k^-$};
+
+\addplot[
+    thick,
+    domain = 0:1.4,
+    samples = 100,
+    dashed
+    ]{1};
+    
+%\addplot[
+%    thick,
+%    domain = 0:1.4,
+%    samples = 100,
+%    dashed
+%    ]{x^2};
+ 
+\end{axis}
+\end{tikzpicture}
