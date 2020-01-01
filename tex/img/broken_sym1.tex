@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=latex]
+	\begin{axis}[
+	ticks = none,
+	xlabel = $\omega$,
+	ylabel = $\s(\omega)$,
+	x label style={at={(axis description cs:1,0.1)}, anchor = west},
+	y label style={at={(axis description cs:0.15,1)},rotate=-90,anchor=south},
+	ymax = 1.7,	
+	axis lines = left]
+	
+	
+	
+	\addplot[thick,
+	domain=0:2, 
+	samples=100, 
+	color=blue]{(1 + x^2 )* exp(-x^2)};
+	
+	\end{axis}
+\end{tikzpicture}

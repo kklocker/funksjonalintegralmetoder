@@ -3,7 +3,8 @@
     legend style={at={(1,0.4)}},
     ytick = {1},
     yticklabels = {$\varepsilon_f$},
-    xtick = none,
+    xtick = {0},
+    xticklabels ={,,},
     xlabel = $k$,
     axis lines = left,
     %xlabel = $x$,
@@ -15,27 +16,24 @@
     domain=0:1.4, 
     samples=100, 
     color=red,
-]
-{1/2 * (1 + x^2 + sqrt((x^2 - 1)^2 + 0.1))};
-\addlegendentry{$E_k^+$}
+]{1/2 * (1 + x^2 + sqrt((x^2 - 1)^2 + 0.1))};
+
 
 \addplot [
     thick,
     domain=0:1.4, 
     samples=100, 
     color=green!50!black,
-]
-{x^2};
-\addlegendentry{$\varepsilon_k$};
+]{x^2};
+
 %Here the blue parabloa is defined
 \addplot [
     thick,
     domain=0:1.4, 
     samples=100, 
     color=blue,
-    ]
-    {1/2 * (1 + x^2 - sqrt((x^2 - 1)^2 + 0.1))};
-\addlegendentry{$E_k^-$};
+    ]{1/2 * (1 + x^2 - sqrt((x^2 - 1)^2 + 0.1))};
+
 
 \addplot[
     thick,
@@ -43,13 +41,9 @@
     samples = 100,
     dashed
     ]{1};
-    
-%\addplot[
-%    thick,
-%    domain = 0:1.4,
-%    samples = 100,
-%    dashed
-%    ]{x^2};
- 
+
+\addlegendentry{$\mathbf{E_k^+}$}
+\addlegendentry{$\mathbf{\varepsilon_k}$}
+\addlegendentry{$\mathbf{E_k^-}$}
 \end{axis}
 \end{tikzpicture}

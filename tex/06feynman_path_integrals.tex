@@ -108,7 +108,7 @@ Note that the first two terms in the expansion are already normal ordered! We th
     \e^{-i\varepsilon H(p,x)} = \normord{\e^{-i\varepsilon H(p,x)}} + \order{\varepsilon^{2}}. 
 \end{equation*}
 
-$M \to \infty \implies \varepsilon \to 0$. We can therefor treat the exponent as normal ordered in the limit of continuous time-steps. As we already have seen, this simplifies the problem drastically. 
+$M \to \infty \implies \varepsilon \to 0$. We can therefore treat the exponent as normal ordered in the limit of continuous time-steps. As we already have seen, this simplifies the problem drastically. 
 
 \begin{align*}
     \bra{x_{n}}\e^{-i\varepsilon H(p,x)}\ket{x_{n-1}} = \bra{x_{n}}\normord{\e^{-i\varepsilon H(p,x)}}\ket{x_{n-1}} + \order{\varepsilon^{2}} \\ = \int \dd p_{n} \frac{1}{\sqrt{2\pi}}\e^{ip_{n}x_{n}}  \e^{-i \varepsilon H(p_{n}, x_{n-1})} \frac{1}{\sqrt{2\pi}} \e^{-ip_{n}x_{n-1}} + \order{\varepsilon^{2}} \\ = \int \frac{\dd p_{n}}{2\pi}  \e^{ip_{n}(x_{n} - x_{n-1}) -i \varepsilon \frac{p_{n}^{2}}{2m} - i\varepsilon V(x_{n-1})} + \order{\varepsilon^{2}} \\ = \sqrt{\frac{m}{2\pi i \varepsilon}}\e^{i\varepsilon \left[\frac{m}{2 \varepsilon^{2}} (x_{n} - x_{n-1})^{2} - V(x_{n-1})\right]} + \order{\varepsilon^{2}}.

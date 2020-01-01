@@ -23,7 +23,7 @@ Now choose quantum numbers \(\lambda = \left(k,\sigma\right)\) because $\Ha$ is 
 where $\{\varphi_{k\sigma}(\tau)\}$ are Grassman variables. $\Z$ now becomes a Gaussian integral over Grassmann variables, which we have seen earlier. By direct insertion of this result, we find 
 
 \begin{align}
-\Z &= \e^{\Tr \ln\left(\partial_\tau + \varepsilon_k\right)} \label{eq:partition_free_electron}\\
+\Z &= \e^{\Tr \ln\left(\partial_\tau + \varepsilon_k\right)} \label{eq:partition_free_electron1}\\
 &\stackrel{?}{=} \prod_{k,\sigma}\left(1+\e^{-\beta\varepsilon_k}\right)\nonumber
 \end{align} 
 with 
@@ -85,7 +85,7 @@ When we use \eqref{eq:trace_op} in \eqref{eq:trace_free_electron}, we get
 \end{equation}
 
 \begin{align}
-\label{eq:partition_free_electron}
+\label{eq:_electron}
 \begin{split}
 \Z &= \e^{\sum_{k,\sigma}\frac{1}{\beta}\int_0^\beta\dd{\tau}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
 &= \e^{\sum_{k,\sigma}\sum_{\omega_n}\ln\left(-i\omega_n + \varepsilon_k\right)} \\
@@ -107,10 +107,10 @@ So for the Fermi distribution in \eqref{eq:fermi_dist}, we get
 
 \begin{align}
 \Res\left[f(i\omega_n)\right] &= \lim_{z\rightarrow i\omega_n}\left[(z-i\omega_n)f(z)\right] \nonumber \\
-\lim_{z\rightarrow i\omega_n} &= \lim_{z\rightarrow i\omega_n}\frac{1}{1+\e^{\beta(z-i\omega_n + i\omega_n)}} \nonumber \\
+ &= \lim_{z\rightarrow i\omega_n}\frac{1}{1+\e^{\beta(z-i\omega_n + i\omega_n)}} \nonumber \\
 &= \lim_{z\rightarrow i\omega_n} \frac{1}{1-\e^{\beta(z-i\omega_n)}} \nonumber \\
-&= \frac{1}{1-1-\beta(z-i\omega_n)+\dots} \nonumber \\
-&= -\frac{1}{\beta}\frac{1}{z-i\omega_n} \implies \nonumber \\
+&=\lim_{z\rightarrow i\omega_n} \frac{1}{1-1-\beta(z-i\omega_n)+\dots} \nonumber \\
+&=\lim_{z\rightarrow i\omega_n} -\frac{1}{\beta}\frac{1}{z-i\omega_n} \implies \nonumber \\
 \Res\left[f(i\omega_n)\right] &= -\frac{1}{\beta}
 \end{align}
 
@@ -200,7 +200,7 @@ Thus
 \begin{equation}
 I = \sum_{\omega_n}\ln(-i\omega_n+\varepsilon_k) = \ln\left(1+\e^{-\beta\varepsilon_k}\right).
 \end{equation}
-This lets us calculate the partition function in \eqref{eq:partition_free_electron} with the definition in \eqref{eq:trace_} as
+This lets us calculate the partition function in \eqref{eq:partition_free_electron1} with the definition in \eqref{eq:trace_} as
 \begin{align}
 \Z &= \e^{\sum_{k\sigma}\sum_{\omega_n}\ln(-i\omega_n+\varepsilon_k)} = \e^{\sum_{k\sigma}\ln\left(1+\e^{-\beta\varepsilon_k}\right)}\nonumber \\
 &= \prod_{k,\sigma}\left(1+\e^{-\beta\varepsilon_k}\right).\label{eq:fermion_partition}

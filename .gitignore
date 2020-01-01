@@ -8,3 +8,5 @@
 *.dvi
 *.log
 *.gnuplot
+*.fdb_latexmk
+*.fls
