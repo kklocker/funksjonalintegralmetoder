@@ -1,6 +1,6 @@
 \section{Broken continuous symmetries and Goldstone-modes}
 
-Both of the previous examples, the BCS- and Hubbard-model, have shown that a system where the Hamiltonian is invariant under a continuous symmetry group ($U(1)$ in both cases), the ground state, which the system chooses, doesn't need to respect the symmetry. This are examples of broken symmetries, and because the system "brakes it on its own", we say that the systems have spontaneously broken (continuous) symmetries. In the following, we will examine an important consequence of these broken symmetries. Note that this does not apply to discrete symmetries, like e.g. Ising-model. \\ 
+Both of the previous examples, the BCS- and Hubbard-model, have shown that a system where the Hamiltonian is invariant under a continuous symmetry group ($U(1)$ in both cases), the ground state, which the system chooses, doesn't need to respect the symmetry. This are examples of broken symmetries, and because the system "brakes it on its own", we say that the systems have spontaneously broken (continuous) symmetries. In the following, we will examine an important consequence of these broken symmetries. Note that this does not apply to discrete symmetries, like e.g. Ising-model.  
 
 BCS-model: 
 
@@ -28,7 +28,7 @@ $U = \infty$ Hubbard model:
       \draw[blue] plot[samples=200,domain=-2:2] function {- x**2 + 0.3*x**4 + 1};
 \end{tikzpicture}
 
-Here we see that there is two global minima of $f^{MF}$ for non-zero $\Delta$'s. These are both stable. \\
+Here we see that there is two global minima of $f^{MF}$ for non-zero $\Delta$'s. These are both stable. 
 
 \begin{equation*}
     \pdv{f^{MF}(\Delta^2)}{\Delta} = 2\Delta f^{'}(\Delta^2) 
@@ -44,7 +44,7 @@ Here we see that there is two global minima of $f^{MF}$ for non-zero $\Delta$'s.
       \draw[blue] plot[samples=200,domain=-2:2] function {0.7*x**2 + 0.5};
 \end{tikzpicture}
 
-Here we see that $f^{MF}$ has one global minima at $\Delta = 0$. This minima is also stable. \\
+Here we see that $f^{MF}$ has one global minima at $\Delta = 0$. This minima is also stable. 
 
 We have seen that generally $\expval{a}$ and $\expval{b}$ are complex order parameters. We can therefore treat $f^{MF}$ as a function of a complex variable, while it is independent of the phase of the complex number. In the case of $\abs{\Delta} = 0$, the phase is ill-defined at $f^{MF}_{min}$. In the case of $\abs{\Delta} \neq 0$, the situation is a little bit different. Then we can rotate the corresponding graph around the y-axis ($f^{MF}$), and we obtain the following kind of graph
 
@@ -71,15 +71,15 @@ We see that the minima of the free energy is infinetly degenerate, because it is
     \Delta = \abs{\Delta}\e^{i\varphi}. 
 \end{align*}
 
-This means that phase fluctuations cost no energy, but fluctuations in the radial $\abs{\Delta}$ direction does. \\ 
+This means that phase fluctuations cost no energy, but fluctuations in the radial $\abs{\Delta}$ direction does. \
 
-$\abs{\Delta}$-amplitude fluctuations: Longitudinal fluctuations. \\ 
+$\abs{\Delta}$-amplitude fluctuations: Longitudinal fluctuations. 
 
-$\varphi$-fluctuations: Transverse fluctuations. \\
+$\varphi$-fluctuations: Transverse fluctuations. 
 
-We say that the longitudinal fluctuations are "massive" and the traversal fluctuations are "massless". The massless fluctuations correspond to Goldstone-modes, which has a finite interaction range. We have seen that a broken symmetry ($\Delta \neq 0$) means that there exist Goldstone-modes. \\ 
+We say that the longitudinal fluctuations are "massive" and the traversal fluctuations are "massless". The massless fluctuations correspond to Goldstone-modes, which has a finite interaction range. We have seen that a broken symmetry ($\Delta \neq 0$) means that there exist Goldstone-modes. 
 
-In our case, the order parameter where comples, which means that it has two real components. Here we got one infinite degeneracy in the phase, which corresponded to one Goldstone mode. Generally in our study, if $\Delta$ has n components, we get $n-1$ Golstone-modes. \\ 
+In our case, the order parameter where comples, which means that it has two real components. Here we got one infinite degeneracy in the phase, which corresponded to one Goldstone mode. Generally in our study, if $\Delta$ has n components, we get $n-1$ Golstone-modes.  
 
 The existence of the Goldstone-modes makes it apparently problematic to define a fluctuation-calculation around the stationary point, since the Goldstone-modes corresponds to (at least one) zero eigenvalue of the fluctuation propagators. 
 \begin{align*}
@@ -88,9 +88,9 @@ The existence of the Goldstone-modes makes it apparently problematic to define a
     D^{-1} = \prod_i \lambda_i \quad \quad \exists j : \lambda_j = 0 
 \end{align*}
 
-In order to investigate small fluctuations around a mean-field theory, it is of course intolerable to have this problem. It turns out that this is an apparent problem which we can avoid, as we will see. \\ 
+In order to investigate small fluctuations around a mean-field theory, it is of course intolerable to have this problem. It turns out that this is an apparent problem which we can avoid, as we will see. 
 
-We will look at Gaussian fluctuations around a spontaneously broken continuous symmetry. The following effective action isn't approximated, but we will for the sake of the argument and simplicity look at a real field with real rotational invariance (e.g. XY-model, where the spins can point in any direction in the plane). I emphasise however that the discussion is general. \\ 
+We will look at Gaussian fluctuations around a spontaneously broken continuous symmetry. The following effective action isn't approximated, but we will for the sake of the argument and simplicity look at a real field with real rotational invariance (e.g. XY-model, where the spins can point in any direction in the plane). I emphasise however that the discussion is general. 
 
 \begin{align*}
     Z = \int \D \p \e^{S[\p]} \\ 
@@ -110,7 +110,7 @@ Naively, this will be something like
     Z = \e^{S^{MF}} \frac{1}{\sqrt{\det A}}
 \end{align*}
 
-but because of the Goldstone-modes, there is an apparent divergence in the fluctuations due to the zero eigenvalue. It seems like any attempt at doing mean-field theory when the symmetry is broken is doomed to fail. Nevertheless, we know that e.g. the mean-field theory of BCS-theory is a very good approximation without any divergences. There must be a reason for why this is the case. \\ 
+but because of the Goldstone-modes, there is an apparent divergence in the fluctuations due to the zero eigenvalue. It seems like any attempt at doing mean-field theory when the symmetry is broken is doomed to fail. Nevertheless, we know that e.g. the mean-field theory of BCS-theory is a very good approximation without any divergences. There must be a reason for why this is the case.  
 
 In order to avoid such divergences, the idea is to split the fluctuations into longitudinal- and transverse components. Recall that the longitudinal components are the "massless" components, which are associated to the degeneracy of the ground state, and the transverse are the "massive" components associated to the fluctuations in the radial, or amplidude, direction. The functional derivative 
 
@@ -118,7 +118,7 @@ In order to avoid such divergences, the idea is to split the fluctuations into l
     A = \fdv{^2S}{\p_0(x) \delta \p_0(y)}
 \end{equation*}
 
-must be diagonalized in order to find the fluctuation corrections. The problem is, however, that the presence of zero eigenvalues makes this impossible. The corresponding eigenvectors of these eigenvalues, namely the Goldstone-modes, are the components of the fluctuation vector $\p(x) - \p_0(x,\theta)$ with zero eigenvalue. \\ 
+must be diagonalized in order to find the fluctuation corrections. The problem is, however, that the presence of zero eigenvalues makes this impossible. The corresponding eigenvectors of these eigenvalues, namely the Goldstone-modes, are the components of the fluctuation vector $\p(x) - \p_0(x,\theta)$ with zero eigenvalue.  
 
 \begin{align*}
     A \cdot x = \lambda x \\ 
@@ -127,7 +127,7 @@ must be diagonalized in order to find the fluctuation corrections. The problem i
     x_{\perp} \cdot x_G = 0
 \end{align*}
 
-Define the "inner-probduct" \\
+Define the "inner-probduct" 
 
 \begin{align*}
     \int \dd x (\p(x) - \p_0(x))_{\perp} (\p(x) - \p_0(x))_G

@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{axis}[
+	legend style={at={(1,0.4)}},
+	ytick = {1},
+	ytick style={draw=none},
+	yticklabels = {},
+	xtick = {-3.14159,3.14159},
+	xticklabels ={$-\pi$,$\pi$},
+	xlabel = \large $k$,
+	ylabel = \large $\varepsilon_k$,
+	axis lines = center,
+	ymin = -1.5,
+	ymax = 1.5,
+	xmax = 4,
+	xmin = -4,
+	%x label style={at={(axis description cs:1,0.1)}, anchor = west},
+	%y label style={at={(axis description cs:0.15,1)},rotate=-90,anchor=south},
+	%xlabel = $x$,
+	%sylabel = {$f(x)$},
+	]
+	
+		
+		\addplot[name path = A,domain = -1.57:1.57, samples = 200, very thin, black]{(-cos(deg(x)))};
+		\addplot[domain = -3.14:3.14, samples = 200, thick, red]{(-cos(deg(x)))};
+		\addplot[name path = B, domain = -1.57:1.57] {0*x};
+		
+		\addplot[blue!10!white] fill between[of = A and B];
+		\draw[very thick, black, dashed] (axis cs:-1.57,0) -- node[anchor= north east]{\large $-k_F$}  (axis cs:-1.570,-0.7);
+		\draw[very thick, black, dashed] (axis cs:1.57,0) -- node[anchor= north west]{\large $k_F$}  (axis cs:1.570,-0.7);
+	\end{axis}
+\end{tikzpicture}

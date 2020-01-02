@@ -1,0 +1,80 @@
+\section{Interacting one-dimensional fermionic systems}
+%(page 233 pdf, 182 notes)
+%\subsection{Intro} % Snorre
+
+\subsection[Model]{1D interacting model}
+
+We model the system by $\Ha = H_0 + H_I$ as usual. Consider first $H_0$
+\begin{align*}
+	\Ha_0 &= \sum_{i,j,\sigma}t_{ij}\cd_{i\sigma}c_{j\sigma} \\
+	&\implies \sum_{k \sigma}\varepsilon_k\cd_{k\sigma}c_{k\sigma}
+\end{align*}
+
+\begin{figure}
+	\centering
+	\input{tex/img/free_dispersion}
+	\caption{Dispersion relation. The fermi surface consists of two points}
+	\label{fig:disp_rel}
+\end{figure}
+
+We are mainly interested in the low energy physics for this problem; We want to describe $\varepsilon_k$ in the vicinity of the Fermi level. In this case, it is especially simple as it only consists of two points, as seen in Figure \ref{fig:disp_rel}.
+
+Right-moving: $k>0$ and left-moving: $k<0$. For both of which we have  $\varepsilon_k\simeq V_F(|k| - k_F)$ and $|k-k_F|<<k_F$. $\varepsilon_k$ is here measured relative the Fermi level.
+For every electron spin $\sigma$ we have one type of righ-moving and one type of left-moving fermions, seen in Figure \ref{fig:lr_fermions}.
+
+\begin{figure}
+	\centering
+	\input{tex/img/rl_fermions}
+	\caption{The right- and left-moving fermions of interest.}
+	\label{fig:lr_fermions}
+\end{figure}
+
+\begin{align}
+\label{eq:h0_rl}
+\begin{split}
+\Ha_0 &\simeq \sum_{k,\sigma}V_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma} \\
+&+\sum_{k,\sigma}V_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma},
+\end{split}
+\end{align}
+where $\cd_{1k\sigma}$ creates a right-moving fermion and $\cd_{2k\sigma}$ creates a left-moving fermion etc.
+NB: \ref{eq:h0_rl} is defined only at $|\pm k-k_F|<<k_F$!
+We write this as
+\begin{align}
+\begin{split}
+\Ha=\sum_{k,\sigma}&\left[\e^{-\alpha|k-k_F|}V_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma}\right. \\
+&+\left.\e^{-\alpha|k-k_F|}V_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma}\right].
+\end{split}
+\end{align}
+Here, $\alpha>0$ is a cutoff-parameter to limit the $k$-summation to those who are close to Fermi level, but in such a way that we can sum over all $k$.
+Introduce the real space fermion operators
+\begin{align}
+\psi_{1\sigma}(x) & =\int\frac{\dd k}{2\pi}c_{1k\sigma}\e^{ikx}
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection[Free propagators]{Free fermion propagators} % pdf: 245 / notes: 192
+\subsection[Interacting propagator]{Propagators in  the interacting case} % pdf:248 / notes 196
+\subsection{The phase factor} % 258 / 203
+\subsection{The bosonic excitation spectrum} % 270 / 212a
+\subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?
+\subsection{``Summary''} % 279 / 213
