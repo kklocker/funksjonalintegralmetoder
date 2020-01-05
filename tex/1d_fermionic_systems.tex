@@ -48,29 +48,98 @@ We write this as
 Here, $\alpha>0$ is a cutoff-parameter to limit the $k$-summation to those who are close to Fermi level, but in such a way that we can sum over all $k$.
 Introduce the real space fermion operators
 \begin{align}
-\psi_{1\sigma}(x) & =\int\frac{\dd k}{2\pi}c_{1k\sigma}\e^{ikx}
+\psi_{1\sigma}(x) & =\int\frac{\dd k}{2\pi}c_{1k\sigma}\e^{ikx} \\
+\psi_{2\sigma}(x) & =\int\frac{\dd k}{2\pi}c_{1k\sigma}\e^{-ikx},
+\end{align}
+where the sums over $k$ is calculated close to Fermi-level.
+Consider now the free fermion propagators in real space at equal times $(\tau = \tau')$
+
+\begin{align*}
+\mathcal{G}_1(x) &= -i\ev{:\psi_{1\sigma}(x)\psi_{1\sigma}^\dagger(x'):}\\
+&= -i\int\frac{\dd k}{2\pi}\int\frac{\dd k'}{2\pi}\e^{ik(x-x')}\underbrace{\ev{:c_{1k\sigma}\cd_{1k\sigma}:}}_{=-\delta_{k,k'}n_k} \\
+&=i\int_{k<k_F}\frac{\dd k}{2\pi}\e^{-\alpha|k-k_F|}\e^{ik(x-x')} \\
+&= i\int_{q<0}\frac{\dd q}{2\pi}\e^{-\alpha|q|}\e^{i(q+k_F)(x-x')} \\
+&=i\e^{ik_F(x-x')}\int_{-\infty}^{0}\frac{\dd k}{2\pi}\e^{-\alpha|k| + ik(x-x')}\\
+&= i\frac{\e^{ik_F(x-x')}}{2\pi}\int_0^\infty\dd k\,\e^{-k(\alpha + i(x-x'))} \\
+&=i\frac{\e^{ik_F(x-x')}}{2\pi}\frac{1}{\alpha + i(x-x')},
+\end{align*}
+or, to summarize, as $\alpha \rightarrow 0$ (ignoring the short-range cutoff)
+\begin{align}
+\mathcal{G}_1 &= \frac{1}{2\pi}\frac{\e^{ik_F(x-x')}}{x-x'} \\
+\mathcal{G}_2 &= -\frac{1}{2\pi}\frac{\e^{-ik_F(x-x')}}{x-x'}.
+\end{align}
+Notice the simple poles in the Green's functions. Now, by the $\psi_{1\sigma}$ and $\psi_{2\sigma}$-operators, we have
+
+\begin{equation}
+\Ha_0 = V_F\int_{0}^{L}\dd x\left[\psi_{1\sigma}^\dagger\left(-i\partial_x -k_F\right)\psi_{1\sigma} + \psi_{2\sigma}^\dagger\left(i\partial_x - k_F\right)\psi_{2\sigma}\right].
+\end{equation}
+Defining $\psi_\sigma = \begin{psmallmatrix*} \psi_{1\sigma} & \psi_{2\sigma}
+\end{psmallmatrix*}^T$ lets us rewrite this as
+\begin{equation}
+\Ha_0 = V_F\sum_\sigma\int_{0}^{L}\dd x\,\psi_\sigma^\dagger
+\underbrace{\begin{pmatrix}
+-i\partial_x - k_F & 0 \\
+0 &  i\partial_x - k_F 
+\end{pmatrix}}_{A_0}\psi_\sigma
+\end{equation}
+
+We now add an interaction term to the theory, on the form
+\begin{align*}
+\Ha_I &= \sum_{\sigma,\sigma'}\int\dd x\int\dd y\underbrace{\psi_{1\sigma}^\dagger(x)\psi_{1\sigma}(x)}_{\rho_{1\sigma}(x)}v(x-y)\underbrace{\psi_{2\sigma}^\dagger(y)\psi_{2\sigma'}(y)}_{\rho_{2\sigma'}(y)} \\
+&= \int \dx\dy \rho_1(x)v(x-y)\rho_2(y).
+\end{align*}
+We do not consider terms of the types $\rho_1\rho_1, \rho_2\rho_2$; these only contributes to the renormalization of $V_F$. $\rho_1\rho2$ will, however, give rise to more intersting effects.
+
+Therefore, we want to study the theory of
+
+\begin{align}
+\begin{split}
+\Ha &= V_F \sum_\sigma \int\dx\psi_\sigma^\dagger A_0\psi_\sigma \\
+&+ \sum_{\sigma,\sigma'}\int \dx\dy \rho_{1\sigma}(x)v(x-y)\rho_{2\sigma'}(y).
+\end{split}
 \end{align}
 
+For simplicity, we will in the continuation consider spinless fermions. A spin treatment will be given later. 
 
+\begin{equation}
+\Ha = V_F \int\dx\psi^\dagger A_0\psi+ \int \dx\dy \rho_{1}(x)v(x-y)\rho_{2}(y).
+\end{equation}
+A spinless system is the same (or equivalent) to a completely spin-polarized problem. We can write down the partition function by applying our normal rules;
+\begin{align}
+\Z &= \int\D\psi_1^\dagger\D\psi_1\D\psi_2^\dagger\D\psi_2\e^{\Sa} \\
+\begin{split}
+\Sa &= -\int\dx \int_0^\beta\dd\tau\left(\psi^\dagger\partial_\tau\psi + V_F\psi^\dagger A_0\psi\right) \\
+&- \int\dx\int\dy \int_0^\beta\dd\tau\rho_{1}(x)v(x-y)\rho_{2}(y)
+\end{split}
+\end{align}
+Let us simplify the model some more by only considering constant \textit{contact}-interaction between fermions 
+\begin{equation}
+	v(x-y) = g\delta(x-y); \quad g>0.
+\end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\begin{align*}
+	\Sa &= \Sa_0 + \Sa_I \\
+	\Sa_0 &= -\int_0^L\dx\int_0^\beta\dd\tau\psi^\dagger\left(\partial_\tau+ V_FA_0\right)\psi \\
+	\Z_0 &= \e^{\Tr\ln(\partial_\tau + V_FA_0)} \\
+	&= \e^{\int_0^L\dx\int_0^\beta\dd\tau\tr\ln\left(\partial_\tau+ V_FA_0\right)} \\
+	\Sa_I &= -g\int\dx\int\dd\tau\rho_1(x)\rho_2(x)
+\end{align*}
+Now we perform a Hubbard-Stratonovich decoupling og the interaction term in the following way;
+\begin{align*}
+\int\D\pdag\D\p\,\e^{-(\pdag + g\rho_2)(\p + g\rho_1)g^{-1}} &= \text{const} \\
+&= \e^{-\Tr\ln(g^{-1})} = \e^{\ln g} = g.
+\end{align*}
+Correspondingly,we have
+\begin{align*}
+\int\D\pdag\D\p\,&\e^{-\int\dx\dd \tau\left(g^{-1}\p^*\p+i\p^*\rho_1 + i\p^*\rho_2\right)} \\
+&= \int\D\pdag\D\p\,\e^{-\int\dx\dd \tau\left[g^{-1}(\p^* + ig\rho_2)(\p + ig\rho_1) + g\rho_1\rho_2\right]} \\
+&= \e^{-\int\dx\dd \tau g\rho_1\rho_2}\cdot \text{const}.
+\end{align*}
+The constant is irrelevant and is safely ignored.
+\begin{align}
+\e^{\Sa_I} &= \int\D\p^*\D\p\e^{-\int\dx\int_0^\beta\left(g^{-1}\p^*\p+i\p^*\rho_1 + i\p\rho_2\right)} \\
+\Z &= \int\D\p^*\D\p\D\psi_1^\dagger\D\psi_1\D\psi_2^\dagger\D\psi_2\e^{\Sa[\psi^\dagger,\psi,\p^*\p]}
+\end{align}
 
 \subsection[Free propagators]{Free fermion propagators} % pdf: 245 / notes: 192
 \subsection[Interacting propagator]{Propagators in  the interacting case} % pdf:248 / notes 196

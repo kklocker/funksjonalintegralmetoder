@@ -25,7 +25,7 @@
 		\addplot[name path = B, domain = -1.57:1.57] {0*x};
 		
 		\addplot[blue!10!white] fill between[of = A and B];
-		\draw[very thick, black, dashed] (axis cs:-1.57,0) -- node[anchor= north east]{\large $-k_F$}  (axis cs:-1.570,-0.7);
-		\draw[very thick, black, dashed] (axis cs:1.57,0) -- node[anchor= north west]{\large $k_F$}  (axis cs:1.570,-0.7);
+		\draw[thick, black, dashed] (axis cs:-1.57,0) -- node[anchor= north east]{\large $-k_F$}  (axis cs:-1.570,-0.5);
+		\draw[thick, black, dashed] (axis cs:1.57,0) -- node[anchor= north west]{\large $k_F$}  (axis cs:1.570,-0.5);
 	\end{axis}
 \end{tikzpicture}
