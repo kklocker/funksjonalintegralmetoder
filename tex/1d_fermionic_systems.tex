@@ -140,6 +140,39 @@ The constant is irrelevant and is safely ignored.
 \e^{\Sa_I} &= \int\D\p^*\D\p\e^{-\int\dx\int_0^\beta\left(g^{-1}\p^*\p+i\p^*\rho_1 + i\p\rho_2\right)} \\
 \Z &= \int\D\p^*\D\p\D\psi_1^\dagger\D\psi_1\D\psi_2^\dagger\D\psi_2\e^{\Sa[\psi^\dagger,\psi,\p^*\p]}
 \end{align}
+\begin{equation}
+\label{eq:action_1d}
+\Sa= -\int_0^L\dx \int_0^\beta \dd\tau \left\{\frac{\p^*\p}{g} +  \psi^\dagger A\psi\right\},
+\end{equation}
+where\footnote{There is some ambiguity here. In the notes, $\vb{I}$ is denoted $\vec{T}$, so it should be checked that it is the identity operator. We should have a term with $\psi^\dagger\partial_\tau\psi$, so the identity makes sense.}
+\begin{equation}
+	A \equiv V_FA_0 + \vb{I}\partial_\tau + i
+	\begin{pmatrix}
+	\p^* & 0 \\
+	0 & \p
+	\end{pmatrix} = -\mathcal{G}^{-1}
+\end{equation}
+and
+\begin{equation}
+	\mathcal{G}(\partial_\tau, x) = -\ev{\psi\psi^\dagger}.
+\end{equation}
+
+Note that there is no terms $\sim \p^*\partial_\tau\p$ in \eqref{eq:action_1d}, because the $\p$-field is absent in the Hamiltonian, but is used to decouple the interaction first after the partition function is written down. If we use the spinor-components reduces to 
+\begin{equation}
+\mathcal{G}(\partial_\tau,x) = -\begin{pmatrix}
+\ev{\psi_1\psi_1^\dagger} & 0\\
+0 & \ev{\psi_2\psi_2^\dagger}
+\end{pmatrix}.
+\end{equation}
+Since the matrix is diagonal, we can immidiately write down 
+\begin{align}\label{eq:greeenss}
+\begin{split}
+\mathcal{G}_1 &= -(-iV_F\partial_x + \partial_\tau - V_Fk_F + i\p^*)^{-1} \\
+\mathcal{G}_2 &= -(iV_F\partial_x + \partial_\tau - V_Fk_F + i\p)^{-1}
+\end{split}
+\end{align}
+The Greens functions \eqref{eq:greeenss} are free Greens functions in \underline{fixed} bosonic background field.
+
 
 \subsection[Free propagators]{Free fermion propagators} % pdf: 245 / notes: 192
 \subsection[Interacting propagator]{Propagators in  the interacting case} % pdf:248 / notes 196
