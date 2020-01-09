@@ -19,7 +19,7 @@ We model the system by $\Ha = H_0 + H_I$ as usual. Consider first $H_0$
 
 We are mainly interested in the low energy physics for this problem; We want to describe $\varepsilon_k$ in the vicinity of the Fermi level. In this case, it is especially simple as it only consists of two points, as seen in Figure \ref{fig:disp_rel}.
 
-Right-moving: $k>0$ and left-moving: $k<0$. For both of which we have  $\varepsilon_k\simeq V_F(|k| - k_F)$ and $|k-k_F|<<k_F$. $\varepsilon_k$ is here measured relative the Fermi level.
+Right-moving: $k>0$ and left-moving: $k<0$. For both of which we have  $\varepsilon_k\simeq v_F(|k| - k_F)$ and $|k-k_F|<<k_F$. $\varepsilon_k$ is here measured relative the Fermi level.
 For every electron spin $\sigma$ we have one type of righ-moving and one type of left-moving fermions, seen in Figure \ref{fig:lr_fermions}.
 
 \begin{figure}
@@ -32,8 +32,8 @@ For every electron spin $\sigma$ we have one type of righ-moving and one type of
 \begin{align}
 \label{eq:h0_rl}
 \begin{split}
-\Ha_0 &\simeq \sum_{k,\sigma}V_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma} \\
-&+\sum_{k,\sigma}V_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma},
+\Ha_0 &\simeq \sum_{k,\sigma}v_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma} \\
+&+\sum_{k,\sigma}v_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma},
 \end{split}
 \end{align}
 where $\cd_{1k\sigma}$ creates a right-moving fermion and $\cd_{2k\sigma}$ creates a left-moving fermion etc.
@@ -41,8 +41,8 @@ NB: \ref{eq:h0_rl} is defined only at $|\pm k-k_F|<<k_F$!
 We write this as
 \begin{align}
 \begin{split}
-\Ha=\sum_{k,\sigma}&\left[\e^{-\alpha|k-k_F|}V_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma}\right. \\
-&+\left.\e^{-\alpha|k-k_F|}V_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma}\right].
+\Ha=\sum_{k,\sigma}&\left[\e^{-\alpha|k-k_F|}v_F(k-k_F)\cd_{1k\sigma}c_{1k\sigma}\right. \\
+&+\left.\e^{-\alpha|k-k_F|}v_F(-k-k_F)\cd_{2k\sigma}c_{2k\sigma}\right].
 \end{split}
 \end{align}
 Here, $\alpha>0$ is a cutoff-parameter to limit the $k$-summation to those who are close to Fermi level, but in such a way that we can sum over all $k$.
@@ -71,12 +71,12 @@ or, to summarize, as $\alpha \rightarrow 0$ (ignoring the short-range cutoff)
 Notice the simple poles in the Green's functions. Now, by the $\psi_{1\sigma}$ and $\psi_{2\sigma}$-operators, we have
 
 \begin{equation}
-\Ha_0 = V_F\int_{0}^{L}\dd x\left[\psi_{1\sigma}^\dagger\left(-i\partial_x -k_F\right)\psi_{1\sigma} + \psi_{2\sigma}^\dagger\left(i\partial_x - k_F\right)\psi_{2\sigma}\right].
+\Ha_0 = v_F\int_{0}^{L}\dd x\left[\psi_{1\sigma}^\dagger\left(-i\partial_x -k_F\right)\psi_{1\sigma} + \psi_{2\sigma}^\dagger\left(i\partial_x - k_F\right)\psi_{2\sigma}\right].
 \end{equation}
 Defining $\psi_\sigma = \begin{psmallmatrix*} \psi_{1\sigma} & \psi_{2\sigma}
 \end{psmallmatrix*}^T$ lets us rewrite this as
 \begin{equation}
-\Ha_0 = V_F\sum_\sigma\int_{0}^{L}\dd x\,\psi_\sigma^\dagger
+\Ha_0 = v_F\sum_\sigma\int_{0}^{L}\dd x\,\psi_\sigma^\dagger
 \underbrace{\begin{pmatrix}
 -i\partial_x - k_F & 0 \\
 0 &  i\partial_x - k_F 
@@ -88,13 +88,13 @@ We now add an interaction term to the theory, on the form
 \Ha_I &= \sum_{\sigma,\sigma'}\int\dd x\int\dd y\underbrace{\psi_{1\sigma}^\dagger(x)\psi_{1\sigma}(x)}_{\rho_{1\sigma}(x)}v(x-y)\underbrace{\psi_{2\sigma}^\dagger(y)\psi_{2\sigma'}(y)}_{\rho_{2\sigma'}(y)} \\
 &= \int \dx\dy \rho_1(x)v(x-y)\rho_2(y).
 \end{align*}
-We do not consider terms of the types $\rho_1\rho_1, \rho_2\rho_2$; these only contributes to the renormalization of $V_F$. $\rho_1\rho2$ will, however, give rise to more intersting effects.
+We do not consider terms of the types $\rho_1\rho_1, \rho_2\rho_2$; these only contributes to the renormalization of $v_F$. $\rho_1\rho2$ will, however, give rise to more intersting effects.
 
 Therefore, we want to study the theory of
 
 \begin{align}
 \begin{split}
-\Ha &= V_F \sum_\sigma \int\dx\psi_\sigma^\dagger A_0\psi_\sigma \\
+\Ha &= v_F \sum_\sigma \int\dx\psi_\sigma^\dagger A_0\psi_\sigma \\
 &+ \sum_{\sigma,\sigma'}\int \dx\dy \rho_{1\sigma}(x)v(x-y)\rho_{2\sigma'}(y).
 \end{split}
 \end{align}
@@ -102,13 +102,13 @@ Therefore, we want to study the theory of
 For simplicity, we will in the continuation consider spinless fermions. A spin treatment will be given later. 
 
 \begin{equation}
-\Ha = V_F \int\dx\psi^\dagger A_0\psi+ \int \dx\dy \rho_{1}(x)v(x-y)\rho_{2}(y).
+\Ha = v_F \int\dx\psi^\dagger A_0\psi+ \int \dx\dy \rho_{1}(x)v(x-y)\rho_{2}(y).
 \end{equation}
 A spinless system is the same (or equivalent) to a completely spin-polarized problem. We can write down the partition function by applying our normal rules;
 \begin{align}
 \Z &= \int\D\psi_1^\dagger\D\psi_1\D\psi_2^\dagger\D\psi_2\e^{\Sa} \\
 \begin{split}
-\Sa &= -\int\dx \int_0^\beta\dd\tau\left(\psi^\dagger\partial_\tau\psi + V_F\psi^\dagger A_0\psi\right) \\
+\Sa &= -\int\dx \int_0^\beta\dd\tau\left(\psi^\dagger\partial_\tau\psi + v_F\psi^\dagger A_0\psi\right) \\
 &- \int\dx\int\dy \int_0^\beta\dd\tau\rho_{1}(x)v(x-y)\rho_{2}(y)
 \end{split}
 \end{align}
@@ -119,9 +119,9 @@ Let us simplify the model some more by only considering constant \textit{contact
 
 \begin{align*}
 	\Sa &= \Sa_0 + \Sa_I \\
-	\Sa_0 &= -\int_0^L\dx\int_0^\beta\dd\tau\psi^\dagger\left(\partial_\tau+ V_FA_0\right)\psi \\
-	\Z_0 &= \e^{\Tr\ln(\partial_\tau + V_FA_0)} \\
-	&= \e^{\int_0^L\dx\int_0^\beta\dd\tau\tr\ln\left(\partial_\tau+ V_FA_0\right)} \\
+	\Sa_0 &= -\int_0^L\dx\int_0^\beta\dd\tau\psi^\dagger\left(\partial_\tau+ v_FA_0\right)\psi \\
+	\Z_0 &= \e^{\Tr\ln(\partial_\tau + v_FA_0)} \\
+	&= \e^{\int_0^L\dx\int_0^\beta\dd\tau\tr\ln\left(\partial_\tau+ v_FA_0\right)} \\
 	\Sa_I &= -g\int\dx\int\dd\tau\rho_1(x)\rho_2(x)
 \end{align*}
 Now we perform a Hubbard-Stratonovich decoupling og the interaction term in the following way;
@@ -146,7 +146,7 @@ The constant is irrelevant and is safely ignored.
 \end{equation}
 where\footnote{There is some ambiguity here. In the notes, $\vb{I}$ is denoted $\vec{T}$, so it should be checked that it is the identity operator. We should have a term with $\psi^\dagger\partial_\tau\psi$, so the identity makes sense.}
 \begin{equation}
-	A \equiv V_FA_0 + \vb{I}\partial_\tau + i
+	A \equiv v_FA_0 + \vb{I}\partial_\tau + i
 	\begin{pmatrix}
 	\p^* & 0 \\
 	0 & \p
@@ -167,14 +167,63 @@ Note that there is no terms $\sim \p^*\partial_\tau\p$ in \eqref{eq:action_1d}, 
 Since the matrix is diagonal, we can immidiately write down 
 \begin{align}\label{eq:greeenss}
 \begin{split}
-\mathcal{G}_1 &= -(-iV_F\partial_x + \partial_\tau - V_Fk_F + i\p^*)^{-1} \\
-\mathcal{G}_2 &= -(iV_F\partial_x + \partial_\tau - V_Fk_F + i\p)^{-1}
+\mathcal{G}_1 &= -(-iv_F\partial_x + \partial_\tau - v_Fk_F + i\p^*)^{-1} \\
+\mathcal{G}_2 &= -(iv_F\partial_x + \partial_\tau - v_Fk_F + i\p)^{-1}
 \end{split}
 \end{align}
 The Greens functions \eqref{eq:greeenss} are free Greens functions in \underline{fixed} bosonic background field.
-
+Rewriting these as differential equations, we get
+\begin{align}\label{eq:diff_eq_greens}
+\begin{split}
+(-iv_F\partial_x + \partial_\tau - v_Fk_F + i\p^*)\mathcal{G}_1 &= -\delta(x)\delta(\tau) \\
+ (iv_F\partial_x + \partial_\tau - v_Fk_F + i\p)\mathcal{G}_2 &= -\delta(x)\delta(\tau).
+\end{split}
+\end{align}
+NB! These are limited to the one-dimensional case, and are complicated because of the dynamics of $\p(x,\tau), \p^*(x, \tau)$.
 
 \subsection[Free propagators]{Free fermion propagators} % pdf: 245 / notes: 192
+
+The free fermion propagators for our problem is given by
+
+\begin{align}\label{eq:diff_eq_greens}
+\begin{split}
+(-iv_F\partial_x + \partial_\tau - v_Fk_F )\mathcal{G}_1^0 &= -\delta(x)\delta(\tau) \\
+(iv_F\partial_x + \partial_\tau - v_Fk_F)\mathcal{G}_2^0 &= -\delta(x)\delta(\tau).
+\end{split}
+\end{align}
+We want to compute $\mathcal{G}_1,\mathcal{G}_2$ because of all the information these provide to the low-energy physics for the one-dimensional interacting electron gas. Recall the usage as diagnostic tools in the Fermi-liquid case. Now we do a Fourier transform of the equations to obtain
+\begin{align}
+\nonumber
+(iv_Fk+ i\omega_n- v_Fk_F )\mathcal{G}_1^0&= -1 \\
+\implies \mathcal{G}_1^0(k,i\omega_n) = \frac{1}{i\omega_n - v_F(k-k_F)} &= \frac{1}{i\omega_n - \varepsilon_1(k)}\\
+\nonumber
+(-iv_Fk+ i\omega_n- v_Fk_F )\mathcal{G}_2^0&= -1 \\
+\implies \mathcal{G}_2^0(k,i\omega_n) = \frac{1}{i\omega_n - v_F(-k-k_F)} &= \frac{1}{i\omega_n - \varepsilon_2(k)},
+\end{align}
+
+which are free-form propagators. How does these look like in real space?
+Impose, again, a cutoff to make the integral convergent, and set the cutoff-parameter to zero at the end.
+\begin{align*}
+\mathcal{G}_1^0(x, \tau) &= \int_{-\infty}^\infty\frac{\dd k}{2\pi}\frac{1}{\beta}\sum_{\omega_n}\frac{\e^{ikx - i\omega_n\tau}}{i\omega_n-v_F(k-k_F)}\cdot\underbrace{\e^{-\alpha|k-k_F|}}_{\text{Cutoff-parameter}} \\
+&= \int_{-\infty}^\infty\frac{\dd k}{2\pi}\e^{-\alpha|k-k_F| + ikx}f(v_F(k-k_F))\e^{-v_F(k-k_F)\tau}\\
+&=\e^{ik-Fx}\int_{-\infty}^0\frac{\dd k}{2\pi}\e^{-\alpha|k| + ikx-v_Fk\tau} \\
+&=\frac{\e^{ik_Fx}}{2\pi}\int_0^\infty\dd k\,\e^{-k(\alpha + ix-v_F\tau)} \\
+&= \frac{\e^{ik_Fx}}{2\pi}\frac{1}{ix - v_F\tau + \alpha},
+\end{align*}
+$\alpha = 0^+$. Now let $\tau\rightarrow it$ such that $\mathcal{G}_1^0(x,\tau)\rightarrow i\mathcal{G}_1^0(x, t)$.
+\begin{align}
+\begin{split}
+	\mathcal{G}_1^0(x, t) &=  i\frac{\e^{ik_Fx}}{2\pi}\frac{1}{ix-iv_Ft+\alpha} \\
+	&=\frac{\e^{ik_Fx}}{2\pi}\frac{1}{x-v_Ft-i\alpha}
+\end{split}
+\end{align}
+We see that $\mathcal{G}_1^0$ has a pole at $x = v_Ft$. This is classicall linear motion (right-moving). A very similar approach\footnote{The only difference is in the substitution $k' = -k-k_F$ before integrating.} can be used to calculate $\mathcal{G}_2^0$, and leads to 
+\begin{equation}
+	\mathcal{G}_2^0=\frac{\e^{-ik_Fx}}{2\pi}\frac{1}{-x-v_Ft-i\alpha}, 
+\end{equation}
+with a pole at $x = -v_Ft$, classical linear motion towards the left.
+Therefore, Fermi-liquid propagators also have a simple pole-structure with a simple interpretation in real space. 
+
 \subsection[Interacting propagator]{Propagators in  the interacting case} % pdf:248 / notes 196
 \subsection{The phase factor} % 258 / 203
 \subsection{The bosonic excitation spectrum} % 270 / 212a
