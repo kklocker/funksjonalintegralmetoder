@@ -76,6 +76,7 @@ Notice the simple poles in the Green's functions. Now, by the $\psi_{1\sigma}$ a
 Defining $\psi_\sigma = \begin{psmallmatrix*} \psi_{1\sigma} & \psi_{2\sigma}
 \end{psmallmatrix*}^T$ lets us rewrite this as
 \begin{equation}
+\label{eq:imp_def_a0}
 \Ha_0 = v_F\sum_\sigma\int_{0}^{L}\dd x\,\psi_\sigma^\dagger
 \underbrace{\begin{pmatrix}
 -i\partial_x - k_F & 0 \\
@@ -150,9 +151,9 @@ where\footnote{There is some ambiguity here. In the notes, $\vb{I}$ is denoted $
 	\begin{pmatrix}
 	\p^* & 0 \\
 	0 & \p
-	\end{pmatrix} = -\mathcal{G}^{-1}
+	\end{pmatrix} = -\mathcal{G}^{-1},
 \end{equation}
-and
+with $A_0$ defined in \eqref{eq:imp_def_a0}, and
 \begin{equation}
 	\mathcal{G}(\partial_\tau, x) = -\ev{\psi\psi^\dagger}.
 \end{equation}
@@ -224,7 +225,119 @@ We see that $\mathcal{G}_1^0$ has a pole at $x = v_Ft$. This is classicall linea
 with a pole at $x = -v_Ft$, classical linear motion towards the left.
 Therefore, Fermi-liquid propagators also have a simple pole-structure with a simple interpretation in real space. 
 
+
 \subsection[Interacting propagator]{Propagators in  the interacting case} % pdf:248 / notes 196
+
+The theory is
+\begin{align}
+\Z &= \int\D\psi^\dagger\D\psi\D\p^*\D\p\e^{\Sa} \\
+\Sa &=-\int_0^L\dx\int_0^\tau\dd\tau \frac{\p^*\p}{g}-\int_0^L\dx\int_0^L\dy\int_0^\beta\dd\tau\,\psi^\dagger(x,\tau)A(x,y,\tau)\psi(y, \tau),
+\end{align}
+\begin{equation*}
+A = \begin{pmatrix}
+D_1 + i\p^* & 0\\
+0 & D_2+i\p
+\end{pmatrix}
+\end{equation*}
+
+\begin{align*}
+D_1 = -&iv_F\partial_x+\partial_\tau-v_Fk_F \\
+D_2 =\quad&iv_F\partial_x+\partial_\tau-v_Fk_F
+\end{align*}
+which is a free fermion system coupled to an external bosonic field $\p$ which fluctuates. Integrating out the fermionic field gives a purely bosonic theory of effective action
+\begin{align}
+\Z &= \int\D\p^*\D\p\e^{\Sa_{\text{eff}}[\p^*,\p]} \\
+\Sa_{\text{eff}} &= \int_{0}^{\beta}\dd\tau\int_{0}^{L}\dx\frac{\p^*\p}{g} + \Tr\ln(D_1+i\p_1) + \Tr\ln(D_2 +i\p_2),
+\end{align}
+where $\p_1 = \p^*, \p_2 = \p$. 
+\begin{align*}
+-\mathcal{G}_1^{-1} &= D_1+i\p_1 \\
+-\mathcal{G}_2^{-1} &= D_2 +i\p_2
+\end{align*}
+The propagators above are matrices with $x, \tau;x',\tau'$-indices. $D_i$ includes non local differential operators. We have Green's functions for free fermions coupled to an external bosonic field
+\begin{align*}
+\mathcal{G}_1 &= \mathcal{G}_1(x, \tau;x', \tau, \p_1) \\\mathcal{G}_2 &= \mathcal{G}_2(x, \tau;x', \tau, \p_2).
+\end{align*}
+
+\begin{align}
+\label{eq:gre_1}
+(D_1+i\p_1)\mathcal{G}_1 &= -\delta(x-x')\delta(\tau-\tau') \\
+\label{eq:gre_2}
+(D_2 +i\p_2)\mathcal{G}_2 &= -\delta(x-x')\delta(\tau-\tau')
+\end{align}
+
+$D_1, D_2$ are 1. order differential operators. Assume now that $x\ne x',\tau\ne\tau'$ such that the right hand side in the equations is zero.
+\[D_i\mathcal{G}_i = -i\p_i\mathcal{G}_i \implies \frac{D_i\mathcal{G}_i}{\mathcal{G}_i} = -i\p_i,\quad i = 1,2\]
+Now integrate
+\begin{align}
+\int_{x',\tau'}^{x,\tau}\frac{D_i\gre_i}{\gre_i} &= -i\int_{x',\tau'}^{x,\tau}\p_i \\
+\ln\gre_i\bigg{|}_{x',\tau'}^{x,\tau} &= -i\left[f_i(x,\tau,\p_i) - f_i(x',\tau',\p_i)\right]
+\end{align}
+
+
+
+\[\gre_i = A\e^{-i(f_i(x,\tau)-f_i(x',\tau'))}\]
+$\gre_i = \gre_i(x,\tau;x',\tau',\p_i)$. If we now let $\p_i\rightarrow 0 \implies f_i =0$, we must have that $A = \gre_i^0(x-x',\tau-\tau')$. This motivates the following ansatz for the Green's functions in the interacting case:
+\begin{equation}
+\gre_i(x,\tau;x',\tau',\p_i) = \gre_i^0(x-x',\tau-\tau')\e^{-i\left[f_i(x,\tau,\p_i) - f_i(x',\tau',\p_i)\right]}
+\end{equation}
+
+\[D_i\gre_i^0 = -\delta(x-x')\delta(\tau-\tau')\]
+The ansatz for $\gre_i$ is now inserted into \cref{eq:gre_1,eq:gre_2}.
+$D_i = d_i - V_Fk_F, d_i = \pm iv_F\partial_x + \partial_\tau$.
+\begin{align*}
+\gre_i(x,\tau;x'\tau') &=(d_i - v_Fk_F+i\p_i)\gre_i^0\e^{-i(f_i-f_i')}\\ &=\left[(d_i-v_Fk_F)\gre_i^0\right]\e^{-i(f_i-f_i')} + i\p_i\gre_i^0\e^{-i(f_i-f_i')} -id_if_i\gre_i^0\e^{-i(f_i-f_i')} \\
+&= -\delta(x-x')\delta(\tau-\tau')
+\end{align*}
+Now use
+\begin{align*}
+\left[(d_i-v_Fk_F)\gre_i^0\right]\e^{-i(f_i-f_i')} &= -\delta(x-x')\delta(\tau-\tau')\e^{-i(f_i-f_i')}\\&=\delta(x-x')\delta(\tau-\tau');\quad x\ne x',\tau=\tau' \\
+\implies  -id_if_i &= -i\p_i
+\end{align*}
+\begin{align}
+-i(-iv_F\partial_x+\partial_\tau)f_1 &= -i\p_1 \\
+-i(iv_F\partial_x+\partial_\tau)f_2 &= -i\p_2
+\end{align}
+To continue, we fourier transform these equations. Since $\p_i$ are bosonic fields, $f_i$ are aswell, and Fourier-transform with bosonic matsubara frequencies \[\omega_\nu = \frac{2\pi\nu}{\beta}\quad;\nu = 0,\pm1,\dots\].
+\begin{align*}
+f_i(x,\tau) &= \frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}f_i(k,\omega_\nu)\e^{i(kx-\omega_\nu\tau)}\\
+p_i(x,\tau) &= \frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}p_i(k,\omega_\nu)\e^{i(kx-\omega_\nu\tau)}
+\end{align*}
+Inserting these gives
+\begin{align}
+\nonumber
+-i(v_Fk-i\omega_nu)f_i(k,i\omega_\nu) &= -i\p_i(k,i\omega_\nu) \\
+\implies f_1(k,i\omega_\nu) 
+&= -\frac{\p_1(k,i\omega_\nu)}{i\omega_\nu - v_Fk}, \\
+f_2(k,i\omega_\nu) &= -\frac{\p_2(k,i\omega_\nu)}{i\omega_\nu + v_Fk}
+\end{align}
+
+Transforming back to real space, using
+\begin{equation}
+f_i(x,\tau) = -\frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}\frac{\p_i(k,i\omega_\nu)}{i\omega_\nu \mp v_Fk}\e^{i(kx-\omega_\nu\tau)}
+\end{equation}
+with upper ($i=1$) and lower($i=2$). We have now in principle found
+\begin{equation}
+	\gre_i(x,\tau;x',\tau',\p_i) = \gre_i^0(x-x',\tau-\tau')\e^{-i\left[f_i(x,\tau,\p_i)-f_i(x',\tau',\p_i)\right]},
+\end{equation}
+which was the ansatz. But this is \underline{not} the physical electron-propagators for the system! 
+The propagator \(\gre_i\) seperates from the free propagators only by a phase factor, and must be understood as free fermion propagators in a given bosonic background field where the field configuration for the bosons are specified.
+The physical fermion propagator is found by averaging $\gre_i$ over the fields $\p_i$. 
+We thus want to compute
+\begin{equation}
+\ev{\gre_i}_{\p_i} = \frac{\int\D\p^*\D\p\gre_i(x, \tau;x', \tau', \p_i)\e^{\Sa_{\text{eff}}}}{\int\D\p^*\D\p\e^{\Sa_{\text{eff}}}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
 \subsection{The phase factor} % 258 / 203
 \subsection{The bosonic excitation spectrum} % 270 / 212a
 \subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?
