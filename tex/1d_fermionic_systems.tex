@@ -247,6 +247,7 @@ D_2 =\quad&iv_F\partial_x+\partial_\tau-v_Fk_F
 which is a free fermion system coupled to an external bosonic field $\p$ which fluctuates. Integrating out the fermionic field gives a purely bosonic theory of effective action
 \begin{align}
 \Z &= \int\D\p^*\D\p\e^{\Sa_{\text{eff}}[\p^*,\p]} \\
+\label{eq:s_eff}
 \Sa_{\text{eff}} &= \int_{0}^{\beta}\dd\tau\int_{0}^{L}\dx\frac{\p^*\p}{g} + \Tr\ln(D_1+i\p_1) + \Tr\ln(D_2 +i\p_2),
 \end{align}
 where $\p_1 = \p^*, \p_2 = \p$. 
@@ -325,15 +326,53 @@ The propagator \(\gre_i\) seperates from the free propagators only by a phase fa
 The physical fermion propagator is found by averaging $\gre_i$ over the fields $\p_i$. 
 We thus want to compute
 \begin{equation}
-\ev{\gre_i}_{\p_i} = \frac{\int\D\p^*\D\p\gre_i(x, \tau;x', \tau', \p_i)\e^{\Sa_{\text{eff}}}}{\int\D\p^*\D\p\e^{\Sa_{\text{eff}}}}
+\ev{\gre_i}_{\p_i} = \frac{\int\D\p^*\D\p\gre_i(x, \tau;x', \tau', \p_i)\e^{\Sa_{\text{eff}}}}{\int\D\p^*\D\p\e^{\Sa_{\text{eff}}}}.
 \end{equation}
+To get any further with this problem, we must have an explicit expression for $\Sa_{\text{eff}}$ in terms of $\p^*,\p$. We will look more into this, but the followin discussion will be general to begin with. We had \cref{eq:s_eff}
+\begin{equation*}
+\Sa_{\text{eff}} = \int_{0}^{\beta}\dd\tau\int_{0}^{L}\dx\frac{\p^*\p}{g} + \Tr\ln(D_1+i\p_1) + \Tr\ln(D_2 +i\p_2),
+\end{equation*}
+which, for a free system is
+\begin{equation}
+\Sa_0 =\sum_{i=1}^2\Tr\ln(D_i).
+\end{equation}
+This contribution is of no importance when averaging over $\p_i$-configurations, and we therefore substract it.
+Remember:
+\begin{align*}
+	(D_i + i\p_i) &= -\gre_i^{-1}(x,\tau;x',\tau',\p_i) \\
+	(D_i + i\p_i)&^{-1} = -\gre_i(x,\tau;x',\tau',\p_i)
+\end{align*}
 
-
-
-
-
-
-
+\begin{align*}
+\ln(D_i + i\p_i) &= \ln D_i + \ln\left(\frac{D_i+i\p_i}{D_i}\right) \\
+&=\ln D_i +i\p_i\int_0^1\dd\lambda\left(D_i+\i\p_i\lambda\right)^{-1} \\
+&=\ln D_i - i\p_i\int_0^1\dd\lambda\underbrace{\gre_i(x,\tau;x'\tau',\lambda\p_i)}_{\text{matrix}}
+\end{align*}
+$\Tr\ln(D_i+i\p_i)$ means suming over the diagonal elements of $\ln(D_i+i\p_i)$. The first term gives a free-electron contribution, and is known. 
+We now have to calculate the sum of the diagonal-elements in the matrix
+\begin{equation}
+	\p_i(x,\tau)\int_{0}^{1}\dd\lambda\gre_i(x,\tau;x'\tau',\lambda\p_i),
+\end{equation}
+which involves letting $x\rightarrow x', \tau\rightarrow\tau'$ in $\gre_i$ and thereafter integrate over $\lambda$.
+Since $\gre_i^0(x-x',\tau-\tau')$ is divergent in this limit, we must be careful when considering this limit. First look at $\gre_1$:
+\begin{equation}
+\gre_1 = \gre_1^0\e^{-i\left[f_1(x,\tau)-f_1(x',\tau')\right]}.
+\end{equation}
+Set $\tau =\tau'$. Now we can evaluate the limit $x\rightarrow x'$ in two ways; $x'$ can approach $x$ either from above or below \[x'\rightarrow x\pm\eta;\quad \eta = 0^+\]
+We treat the transition as an average of both ways.
+\begin{align}
+\gre_1^0 &= \frac{1}{2\pi}\frac{\e^{ik_F(x-x')}}{i(x-x') \mp ik_F\eta} \\
+&\implies \frac{1}{2\pi}\frac{\e^{\mp ik_F\eta}}{i\mp\eta}\rightarrow \mp\frac{1}{2\pi\eta i}
+\end{align}
+Consider now the phase factor of $\gre_1$;
+\begin{align*}
+f_1(x,\tau) - f_1(x\pm\eta,\tau) &= f_1(x,\tau) - f_1(x,\tau) \mp\eta\pdv{f_1}{x} \\
+&= \mp\eta\pdv{f_1}{x} \\
+\lim\limits_{x\rightarrow x'}\gre_1(x,\tau;x',\tau,\lambda\p_1) &= \frac{1}{2}\left(\frac{-1}{2\pi i}\right)\left[\frac{1}{\eta}\e^{i\eta\pdv{f}{x}} - \frac{1}{\eta}\e^{-i\eta\pdv{f}{x}}\right] \\
+&= \frac{-1}{4\pi i\eta}\left[1+i\eta\pdv{f_1}{x} - \left(1-i\eta\pdv{f_1}{x}\right)\right] \\
+&= -\frac{1}{2\pi}\pdv{f_1(x,\tau,\lambda\p_1)}{x} \\
+\lim\limits_{x\rightarrow x'}\gre_2(x,\tau;x',\tau,\lambda\p_2) &= \frac{1}{2\pi}\pdv{f_1(x,\tau,\lambda\p_2)}{x}
+\end{align*}
 
 
 
