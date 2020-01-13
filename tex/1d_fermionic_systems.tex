@@ -373,6 +373,11 @@ f_1(x,\tau) - f_1(x\pm\eta,\tau) &= f_1(x,\tau) - f_1(x,\tau) \mp\eta\pdv{f_1}{x
 &= -\frac{1}{2\pi}\pdv{f_1(x,\tau,\lambda\p_1)}{x} \\
 \lim\limits_{x\rightarrow x'}\gre_2(x,\tau;x',\tau,\lambda\p_2) &= \frac{1}{2\pi}\pdv{f_1(x,\tau,\lambda\p_2)}{x}
 \end{align*}
+\begin{align*}
+\Sa_{\text{eff}} = \Sa_0 &- \int_0^L\dx\int_0^\beta\dd\tau\frac{\p_1\p_2}{g}\\&-i\int_0^1\dd\lambda\int_0^L\dx\int_0^\beta\dd\tau\left[\p_1\left(\frac{-1}{2\pi}\pdv{f_1(\lambda\p_1)}{x}\right) + \p_2\frac{1}{2\pi}\pdv{f_2(\lambda\p_2)}{x}\right] \\
+=\Sa_0 &- \int_0^L\dx\int_0^\beta\dd\tau\frac{\p_1\p_2}{g}\\
+&+\frac{i}{2\pi}\underbrace{\int_0^1\dd\lambda\,\lambda}_{\flatfrac{1}2}\int_0^L\dx\int_0^\beta\left[\p_1\pdv{f_1(\p_1)}{x} -\p_2\pdv{f_2(\p_2)}{x}\right]
+\end{align*}
 
 
 
