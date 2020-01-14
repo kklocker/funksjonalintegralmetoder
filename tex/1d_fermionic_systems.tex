@@ -300,14 +300,15 @@ Now use
 -i(iv_F\partial_x+\partial_\tau)f_2 &= -i\p_2
 \end{align}
 To continue, we fourier transform these equations. Since $\p_i$ are bosonic fields, $f_i$ are aswell, and Fourier-transform with bosonic matsubara frequencies \[\omega_\nu = \frac{2\pi\nu}{\beta}\quad;\nu = 0,\pm1,\dots\].
-\begin{align*}
+\begin{align}
 f_i(x,\tau) &= \frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}f_i(k,\omega_\nu)\e^{i(kx-\omega_\nu\tau)}\\
-p_i(x,\tau) &= \frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}p_i(k,\omega_\nu)\e^{i(kx-\omega_\nu\tau)}
-\end{align*}
+\label{eq:fourier_transformed_1d_fields}
+\p_i(x,\tau) &= \frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}\p_i(k,\omega_\nu)\e^{i(kx-\omega_\nu\tau)}
+\end{align}
 Inserting these gives
 \begin{align}
 \nonumber
--i(v_Fk-i\omega_nu)f_i(k,i\omega_\nu) &= -i\p_i(k,i\omega_\nu) \\
+-i(v_Fk-i\omega_\nu)f_i(k,i\omega_\nu) &= -i\p_i(k,i\omega_\nu) \\
 \implies f_1(k,i\omega_\nu) 
 &= -\frac{\p_1(k,i\omega_\nu)}{i\omega_\nu - v_Fk}, \\
 f_2(k,i\omega_\nu) &= -\frac{\p_2(k,i\omega_\nu)}{i\omega_\nu + v_Fk}
@@ -315,6 +316,7 @@ f_2(k,i\omega_\nu) &= -\frac{\p_2(k,i\omega_\nu)}{i\omega_\nu + v_Fk}
 
 Transforming back to real space, using
 \begin{equation}
+\label{eq:fourier_transformed_field_2}
 f_i(x,\tau) = -\frac{1}{\beta}\int\frac{\dd k}{2\pi}\sum_{\omega_\nu}\frac{\p_i(k,i\omega_\nu)}{i\omega_\nu \mp v_Fk}\e^{i(kx-\omega_\nu\tau)}
 \end{equation}
 with upper ($i=1$) and lower($i=2$). We have now in principle found
@@ -326,6 +328,7 @@ The propagator \(\gre_i\) seperates from the free propagators only by a phase fa
 The physical fermion propagator is found by averaging $\gre_i$ over the fields $\p_i$. 
 We thus want to compute
 \begin{equation}
+\label{eq:averaged_greens}
 \ev{\gre_i}_{\p_i} = \frac{\int\D\p^*\D\p\gre_i(x, \tau;x', \tau', \p_i)\e^{\Sa_{\text{eff}}}}{\int\D\p^*\D\p\e^{\Sa_{\text{eff}}}}.
 \end{equation}
 To get any further with this problem, we must have an explicit expression for $\Sa_{\text{eff}}$ in terms of $\p^*,\p$. We will look more into this, but the followin discussion will be general to begin with. We had \cref{eq:s_eff}
@@ -364,7 +367,10 @@ We treat the transition as an average of both ways.
 \gre_1^0 &= \frac{1}{2\pi}\frac{\e^{ik_F(x-x')}}{i(x-x') \mp ik_F\eta} \\
 &\implies \frac{1}{2\pi}\frac{\e^{\mp ik_F\eta}}{i\mp\eta}\rightarrow \mp\frac{1}{2\pi\eta i}
 \end{align}
+%\subsection{The phase factor} % 258 / 203
 Consider now the phase factor of $\gre_1$;
+
+
 \begin{align*}
 f_1(x,\tau) - f_1(x\pm\eta,\tau) &= f_1(x,\tau) - f_1(x,\tau) \mp\eta\pdv{f_1}{x} \\
 &= \mp\eta\pdv{f_1}{x} \\
@@ -376,13 +382,76 @@ f_1(x,\tau) - f_1(x\pm\eta,\tau) &= f_1(x,\tau) - f_1(x,\tau) \mp\eta\pdv{f_1}{x
 \begin{align*}
 \Sa_{\text{eff}} = \Sa_0 &- \int_0^L\dx\int_0^\beta\dd\tau\frac{\p_1\p_2}{g}\\&-i\int_0^1\dd\lambda\int_0^L\dx\int_0^\beta\dd\tau\left[\p_1\left(\frac{-1}{2\pi}\pdv{f_1(\lambda\p_1)}{x}\right) + \p_2\frac{1}{2\pi}\pdv{f_2(\lambda\p_2)}{x}\right] \\
 =\Sa_0 &- \int_0^L\dx\int_0^\beta\dd\tau\frac{\p_1\p_2}{g}\\
-&+\frac{i}{2\pi}\underbrace{\int_0^1\dd\lambda\,\lambda}_{\flatfrac{1}2}\int_0^L\dx\int_0^\beta\left[\p_1\pdv{f_1(\p_1)}{x} -\p_2\pdv{f_2(\p_2)}{x}\right]
+&+\frac{i}{2\pi}\underbrace{\int_0^1\dd\lambda\,\lambda}_{\flatfrac{1}2}\int_0^L\dx\int_0^\beta\left[\p_1\pdv{f_1(\p_1)}{x} -\p_2\pdv{f_2(\p_2)}{x}\right],
+\end{align*}
+where we used that \(f_i(x, \tau, \lambda\p_io) = \lambda f_i(x, \tau, \p_i)\) to extract and integrate out $\lambda$.
+But \(f_i\sim\p_i\) implies that \( \Sa_{\text{eff}}(\p^*,\p)\) is quadratic in the $\p$-fields. Thus, we have an exact effective action as a free boson theory!
+It is worth noticing how this remarkable result was achieved; It originates from the form \[\gre_i=\gre_i^0\e^{-i(f_i-f_i')}\]
+Naturally, we can write an ansatz like this for the Green's function for an arbitrary, if only the $f_i$-fields are properly chosen. In our case, where the spectrum is \textit{linearized}, the differential equation for $f_i$ is especially simple, such that $f_i \sim\p_i$. Because of this, $\Sa_{\text{eff}}$ becomes quadratic in $\p_i$. More generally, $f_i$ would become complicated functions of $\p_i$, and the resulting boson-theory would be complicated and interacting. 
+
+In the following we will exclude \(\Sa_{0}\) from \(\Sa_{\text{eff}}\) as it does not contribute to the averaging over the $\p_i$-fields. The effective action is
+\begin{equation}
+\label{eq:1d_effective_action}
+\Sa_{\text{eff}} = -\int_0^L\dx\int_0^\beta\dd{\tau}\left[\frac{\p_1\p_2}{g} - \frac{i}{4\pi}\left(\p_1\pdv{f_1}{x}-\p_2\pdv{f_2}{x}\right)\right].
+\end{equation}
+
+Recall the fourier transformed fields in \cref{eq:fourier_transformed_1d_fields,eq:fourier_transformed_field_2}, and insert them  in the first term of \cref{eq:1d_effective_action}. We then get
+\begin{align*}
+-\int\dx\int\dd\tau\frac{\p_1\p_2}{g} &= -\frac{1}{g}\int\dx\int\dd{\tau}\frac{1}{\beta}\sum_{\omega_{\nu_1}}\int\frac{\dd{k_1}}{2\pi}\frac{1}{\beta}\sum_{\omega_{\nu_2}}\int\frac{\dd{k_2}}{2\pi} \\
+&\quad\times \e^{i(k_1+k_2)x - i(\omega_{\nu_1}+\omega_{\nu_2}\tau)}\p_1(k_1,\omega_{\nu_1})\p_2(k_2, \omega_{\nu_2})\\
+&= -\frac{1}{\beta g}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi}\p_1(k,\omega_\nu)\p_2(-k,-\omega_\nu),
+\end{align*}
+where the integration over $x, \tau$ has given $\delta$-functions in $k,\omega_\nu$.
+Now take the second term, the term with $p_1$, insert the Fourier transformed forms, and get
+\begin{align*}
+\frac{i}{4\pi}\int\dx\int\dd{\tau}\p_1\pdv{f_1}{x} &= \frac{i}{4\pi}\int\dx\int\dd{\tau}\frac{1}{\beta}\sum_{\omega_{\nu_1}}\int\frac{\dd{k_1}}{2\pi}\p_1(k_1, \omega_{\nu_1})\e^{i(k_1x - \omega_{\nu_1}\tau)} \\&\quad\times \pdv{x}\frac{-1}{\beta} \sum_{\omega_{\nu_2}}\int\frac{\dd{k_2}}{2\pi}\frac{\p_1(k_2, \omega_{\nu_2})}{i\omega_{\nu_2} - v_Fk_2}\e^{i(k_2x - \omega_{\nu_2}\tau)} \\
+&= \frac{i}{4\pi}\int\dx\int\dd{\tau}\frac{1}{\beta}\sum_{\omega_{\nu_1}}\int\frac{\dd{k_1}}{2\pi}\p_1(k_1, \omega_{\nu_1})\e^{i(k_1x - \omega_{\nu_1}\tau)} \\&\quad\times \frac{-1}{\beta} \sum_{\omega_{\nu_2}}\int\frac{\dd{k_2}}{2\pi}\frac{ik_2\p_1(k_2, \omega_{\nu_2})}{i\omega_{\nu_2} - v_Fk_2}\e^{i(k_2x - \omega_{\nu_2}\tau)} \\
+&= -\frac{i^2}{4\pi}\int\frac{\dd{k}}{2\pi}\frac{1}{\beta}\sum_{\omega_\nu}\frac{k}{i\omega_\nu-v_Fk}\p_1(k, \omega_\nu)\p_1(-k,-\omega_\nu) \\
+&= -\frac{1}{\beta}\int\frac{\dd{k}}{2\pi}\sum_{\omega_\nu}A_1(k,\omega_\nu)\p_1(k, \omega_\nu)\p_1(-k,-\omega_\nu), 
+\end{align*}
+where \[A_1(k,\omega_\nu) = -\frac{1}{4\pi}\frac{k}{i\omega_\nu - v_Fk}.\]
+Similarly for the $\p_2$-term;
+\[A_2(k,\omega_\nu) = \frac{1}{4\pi}\frac{k}{i\omega_\nu +v_Fk}.\]
+Combining it all, we have
+\begin{align}
+\begin{split}
+\Sa_{\text{eff}} &= -\frac{1}{\beta}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi}\left[\frac{\p_1(k,\omega_\nu)\p_2(-k,-\omega_\nu)}{g}\right. \\
+&\quad+ A_1\p_1(k,\omega_\nu)\p_1(-k,-\omega_\nu)
++ A_2\p_2(k,\omega_\nu)\p_2(-k,-\omega_\nu)\left.\vphantom{\int}\right],
+\end{split}
+\end{align}
+effective action in quadratic form!
+We are now come so far that we can compute \(\ev{\gre_i(x, \tau;x', \tau', \p_i)}_{\p_i}\)
+Inserting what we know in \cref{eq:averaged_greens}, with \[\gre_1^0 = \frac{1}{2\pi}\frac{\e^{ik_F(x-x')}}{i(x-x')-v_F(\tau-\tau') + \alpha} ; \quad \alpha = 0^+.\]
+$\gre_1^0$ goes outside as a multiplicative factor, since it does not depend on the bosonic fields. 
+\begin{align*}
+-i\left[f_1(x, \tau, \p_1) - f_1(x', \tau', \p_1)\right] &= -i\frac{-1}{\beta}\int\frac{\dd{k}}{2\pi}\sum_{\omega_\nu}\frac{1}{i\omega_\nu-v_Fk}\p_1(k, \omega_\nu) \\
+&\quad\cdot\left[\e^{i(kx-\omega_\nu\tau)} - \e^{i(kx'-\omega_\nu\tau')}\right] \\
+&=\frac{-i}{\beta}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi}\p_1(k, \omega_\nu)\J_1(k, \omega_\nu, x, \tau;x', \tau'),\\
+\J_1&\equiv \frac{-1}{i\omega_\nu-v_Fk} \left[\e^{i(kx-\omega_\nu\tau)} - \e^{i(kx'-\omega_\nu\tau')}\right]
+\end{align*}
+Now define 
+\begin{equation}
+\Z_\p = \int\D\p_1\D\p_2\e^{\Sa_{\text{eff}}}.
+\end{equation}
+The average can be written as
+\begin{align*}
+\ev{\gre_1}_\p = \frac{\gre_1^0}{\Z_\p} \int \D\p_2\D\p_2 &\exp \left\{ -\frac{1}{\beta}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi} \left[\frac{\p_1\p_2}{g}\right.\right.\\
+& \left.\left.+A_1\p_1\p_1+ A_2\p_2\p_2+ \frac{i}{2}\left(\p_1\J_1 + \p_2\J_2\right)\right]\vphantom{-\frac{1}{\beta}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi} \left[\frac{\p_1\p_2}{g}\right. }\right\}.
+\end{align*}
+\underline{The exponent:}
+
+\begin{align*}
+\p_1(k)\left(\vphantom{\frac12}\right.\overbrace{\frac{1}{g}}^{D^{-1}}\left.\vphantom{\frac12}\right)\p_2(-k) &+ A_1\p_1(k)\p_1(-k) \\
+&\quad + A_2\p_2(k)\p_2(-k) + \frac i2\left(\p_1(k)\J_1(k) + \underbrace{\p_1^*(-k)}_{\sim\p_2(-k)}\J_1^*\right) \\
+&= \left(\p_1+\frac{i}{2}D\J_1^*\right)D^{-1}\left(\p_2+\frac{i}{2}D\J_1\right) + \frac{D}{4}|\J_1|^2
 \end{align*}
 
 
 
 
-\subsection{The phase factor} % 258 / 203
+
+
 \subsection{The bosonic excitation spectrum} % 270 / 212a
 \subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?
 \subsection{``Summary''} % 279 / 213
