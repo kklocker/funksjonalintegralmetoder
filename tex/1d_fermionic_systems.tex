@@ -389,6 +389,7 @@ But \(f_i\sim\p_i\) implies that \( \Sa_{\text{eff}}(\p^*,\p)\) is quadratic in 
 It is worth noticing how this remarkable result was achieved; It originates from the form \[\gre_i=\gre_i^0\e^{-i(f_i-f_i')}\]
 Naturally, we can write an ansatz like this for the Green's function for an arbitrary, if only the $f_i$-fields are properly chosen. In our case, where the spectrum is \textit{linearized}, the differential equation for $f_i$ is especially simple, such that $f_i \sim\p_i$. Because of this, $\Sa_{\text{eff}}$ becomes quadratic in $\p_i$. More generally, $f_i$ would become complicated functions of $\p_i$, and the resulting boson-theory would be complicated and interacting. 
 
+\label{sect:1}
 In the following we will exclude \(\Sa_{0}\) from \(\Sa_{\text{eff}}\) as it does not contribute to the averaging over the $\p_i$-fields. The effective action is
 \begin{equation}
 \label{eq:1d_effective_action}
@@ -501,6 +502,36 @@ We can now write down the Green's function by inserting the results in \cref{eq:
 Notice how the propagator returns to a free fermion propagator if the interaction is zero (\(g\rightarrow0\)). 
 The propagator has now gained a singularity that is not only simple poles. No longer a Fermi-fluid!
 The factor \(\left(\frac{\Lambda^2}{x^2+\Lambda^2}\right)\) describes a ``cloud'' of particle-hole excitations that the electron ``carries'' along.
+
+
 \subsection{The bosonic excitation spectrum} % 270 / 212a
+
+
+The action
+\begin{equation}
+	\Sa_{\text{eff}} = -\frac1\beta\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\left(\frac1g\p_1\p_2+A_1\p_1\p_1^*+A_2\p_2\p_2^*\right)
+\end{equation}
+ucan be rewritten, by introducing \(\p = \begin{psmallmatrix}
+\p_1 \\ \p_2 
+\end{psmallmatrix}\), as
+\begin{equation}
+\Sa_{\text{eff}} = -\frac1\beta\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\p^*\begin{pmatrix}
+A_1 & \frac{1}{2g} \\
+\frac{1}{2g} & A_2
+\end{pmatrix}\p.
+\end{equation}
+The free energy is
+\begin{equation}
+-\beta F = -\frac1\beta\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\left(\ln(A_1A_2-\frac{1}{4g^2})\right) - \beta F_0,
+\end{equation}
+where \(F_0\) is the free energy for noninteracting cases (remember ignoring  \(\Sa_0\) in the calculations from \cref{eq:1d_effective_action} and onwards).
+\begin{align*}
+A_1A_2 -\frac{1}{4g^2} &= -\left(\frac{k}{4\pi}\right)^2\frac{1}{(i\omega_\nu)^2-v_F^2k^2} - \frac{1}{4g^2} \\
+&= -\frac{1}{4g^2}\left(1+\frac{4g^2\left(\frac{k^2}{4\pi}\right)^2}{(i\omega_\nu)^2-v_F^2k^2}\right) \\
+&=-\frac{1}{4g^2}\frac{\left[(i\omega_\nu)^2 - v_F^2k^2(1-(2\tilde{g})^2)\right]}{(i\omega_\nu)^2-v_F^2k^2},
+\end{align*}
+where \(\tilde{g} = \flatfrac{g}(4\pi v_F)\). 
+
+
 \subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?
 \subsection{``Summary''} % 279 / 213
