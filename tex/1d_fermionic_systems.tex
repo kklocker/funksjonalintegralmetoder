@@ -472,6 +472,7 @@ D|\J_1|^2 = \frac{2g\left(1-\cos\left[k(x-x')-\omega_\nu(\tau-\tau')\right]\righ
 \end{equation}
 Inserting this into \cref{eq:Q}, we get
 \begin{equation}
+\label{eq:Q_1}
 Q(x, \tau) = \frac{g}{2\beta}\sum_{\omega_\nu}\int\frac{\dd{k}}{2\pi}\frac{\left[1-\cos\left(kx-\omega_\nu\tau\right)\right]}{\omega_\nu^2+(v_Fk)^2(1+2\tilde{g})}
 \end{equation}
 Set \(\tau = 0\) and do the frequency summation
@@ -530,7 +531,54 @@ A_1A_2 -\frac{1}{4g^2} &= -\left(\frac{k}{4\pi}\right)^2\frac{1}{(i\omega_\nu)^2
 &= -\frac{1}{4g^2}\left(1+\frac{4g^2\left(\frac{k^2}{4\pi}\right)^2}{(i\omega_\nu)^2-v_F^2k^2}\right) \\
 &=-\frac{1}{4g^2}\frac{\left[(i\omega_\nu)^2 - v_F^2k^2(1-(2\tilde{g})^2)\right]}{(i\omega_\nu)^2-v_F^2k^2},
 \end{align*}
-where \(\tilde{g} = \flatfrac{g}(4\pi v_F)\). 
+where \(\tilde{g} = \flatfrac{g}(4\pi v_F)\) as earlier. Introducing \(u^2 \equiv v_F^2(1-(2\tilde{g})^2)\), and dropping \(\ln(\frac{1}{4g^2})\) from the free energy (as it is an irrelevant constant), we can write
+\begin{equation}
+-\beta F = -\beta F_0 -\frac{1}{\beta}\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\left\{\left[\ln((i\omega_\nu)^2-u^2k^2)\right] - \left[\ln((i\omega_\nu)^2-v_F^2k^2)\right]\right\}.
+\end{equation}
+We will now see that the free energy for the non-interacting case cancels $F_0$! Doing the summation over the bosonic matsubara frequencies, as we have done before, we have
+\begin{align*}
+-\beta F = \int\frac{\dd k}{2\pi}\ln\left(\frac{-1}{4g^2}\right) &+ \underbrace{\int\frac{\dd k}{2\pi} \left[\ln\left(\overbrace{1+\e^{-\beta v_Fk}}^{\text{Right-moving}}\right)+ \ln\left(\overbrace{1+\e^{\beta v_Fk}}^{\text{Left-moving}}\right)\right]}_{\text{Free fermion-part}}\\
+&+ \int\frac{\dd k}{2\pi}\left[\ln\left(1-\e^{-\beta uk}\right) + \ln\left(1-\e^{\beta uk}\right)\right] \\
+&+ \underbrace{\int\frac{\dd k}{2\pi}\left[\ln\left(1-\e^{-\beta v_Fk}\right) + \ln\left(1-\e^{\beta v_Fk}\right)\right]}_{\text{Free boson part}}
+\end{align*}
+Now consider the $T\rightarrow 0$ limit, since the issue of Fermi-liquid vs non-Fermi-liquid \underline{is} a $T =0$-issue.
+\begin{align*}
+-\beta F &= \int_{-\infty}^0\frac{\dd k}{2\pi}\ln\left(\frac{-1}{4g^2}\right)  \\
+&+ \int_{-\infty}^0\frac{\dd k}{2\pi}\left(-\beta v_Fk\right) &+ \int_{0}^\infty\frac{\dd k}{2\pi}\beta v_Fk \\
+&+ \int_{-\infty}^0\frac{\dd k}{2\pi}\left[\ln(-1) -\beta uk\right]
+&+\int_{0}^\infty\frac{\dd k}{2\pi}\left[\ln(-1) +\beta uk\right] \\
+&-\int_{-\infty}^0\frac{\dd k}{2\pi}\left[\ln(-1) + (-\beta v_Fk)\right]
+&-\int_0^\infty \frac{\dd k}{2\pi}\left[\ln(-1) + \beta v_Fk\right] \\
+&= const -\beta\int_{-\infty}^\infty\frac{\dd k}{2\pi}uk 
+\end{align*}
+\(E_0 = \sum_k u\cdot k\), so we have a Boson system with excitation spectrum \(\omega = uk\), with 
+\begin{equation}
+u =v_F\left(1-(2\tilde{g})\right)^{\frac12}.
+\end{equation}
+The ``speed of sound'' for the bosons are thus renormalized in comparison to the fermi-velocities \(v_F\) for the non-interacting fermions. These bosons are collective excitations built from fermions, and is anolgous to phonons (``sound waves'' in a lattice).
+
+Now look at the Greens function for \(\tau \ne\tau'\)\footnote{So far we have considered \(\tau=0\).}. Going back to \eqref{eq:Q_1}, 
+\begin{align*}
+Q(x, \tau) &= \frac{g}{2\beta}\sum_{\omega_\nu}\int_{-\infty}^\infty\frac{\dd{k}}{2\pi}\frac{\left[1-\cos\left(kx-\omega_\nu\tau\right)\right]}{\omega_\nu^2+u^2k^2} \\
+&= -\frac{g}{2\beta}\sum_{\omega_\nu}\int_{-\infty}^\infty\frac{1}{2uk}\frac{\dd{k}}{2\pi}\left[1-\cos\left(kx-\omega_\nu\tau\right)\right]% \\ &\quad 
+\cdot \left(\frac{1}{i\omega_\nu -uk} - \frac{1}{i\omega_\nu+uk}\right) \\
+&= -\frac{g}{4\pi u}\int_{-\infty}^\infty\dd k\frac{\e^{-\Lambda |k|}}{k}\left\{-n_B(uk)\left[1-\cos\left(kx+iuk\tau\right)\right] +n_B(-uk)\left[1-\cos\left(kx-iuk\tau\right)\right] \right\},
+\end{align*}
+where the function $n_B$ is (at $T=0$), in terms of Heaviside step-functions as
+\begin{align}
+\begin{split}
+n_B(uk) = -\theta(-k)\\
+n_B(-uk) = -\theta(k)
+\end{split}
+\end{align}
+
+
+
+
+
+
+
+
 
 
 \subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?

@@ -1,52 +1,51 @@
-\section{Broken continuous symmetries and Goldstone-modes}
+\section[Broken symmetries]{Broken continuous symmetries and Goldstone-modes}
 
-Both of the previous examples, the BCS- and Hubbard-model, have shown that a system where the Hamiltonian is invariant under a continuous symmetry group ($U(1)$ in both cases), the ground state, which the system chooses, doesn't need to respect the symmetry. This are examples of broken symmetries, and because the system "brakes it on its own", we say that the systems have spontaneously broken (continuous) symmetries. In the following, we will examine an important consequence of these broken symmetries. Note that this does not apply to discrete symmetries, like e.g. Ising-model.  
+Both of the previous examples, the BCS- and Hubbard-model, have shown that a system where the Hamiltonian is invariant under a continuous symmetry group ($U(1)$ in both cases), the ground state, which the system chooses, doesn't need to respect the symmetry. This are examples of broken symmetries, and because the system ``breakes it on its own'', we say that the systems have spontaneously broken (continuous) symmetries. In the following, we will examine an important consequence of these broken symmetries. Note that this does not apply to discrete symmetries, like e.g. Ising-model.  
 
 BCS-model: 
 
 \begin{equation*}
-    f^{MF}(\ad, a) = f(\abs{a}^2) \quad \expval{\ad} \neq 0 \neq \expval{a}.
+    f^{\text{MF}}(\ad, a) = f(\abs{a}^2) \quad \expval{\ad} \neq 0 \neq \expval{a}.
 \end{equation*}
 
 $U = \infty$ Hubbard model: 
 
 \begin{equation*}
-    f^{MF}(\bd, d) = f(\abs{b}^2) 
+    f^{\text{MF}}(\bd, d) = f(\abs{b}^2) 
 \end{equation*}
 
 \begin{equation*}
     \abs{\Delta} = \abs{a}, \abs{b}. 
 \end{equation*}
 
+In \cref{fig:free_broken1} we see that there is two global minima of $f^{\text{MF}}$ for non-zero $\Delta$'s. These are both stable. 
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.4\textwidth}    
+		\input{tex/img/mf_free_energy_1}
+		\caption{$|\Delta| \ne 0$}
+		\label{fig:free_broken1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\input{tex/img/mf_free_energy_2}
+		\caption{$|\Delta| = 0$}
+		\label{fig:free_broken_2}	
+	\end{subfigure}
+	\label{fig:free_broken}
+\end{figure}
+
 \begin{equation*}
-    \abs{\Delta} \neq 0:
+    \pdv{f^{\text{MF}}(\Delta^2)}{\Delta} = 2\Delta f^{'}(\Delta^2) 
 \end{equation*}
 
-\begin{tikzpicture}
-      \draw[->] (-4,0) -- (4,0) node[right] {$b, a$};
-      \draw[->] (0,-4) -- (0,4) node[above] {$f^{MF}$};
-      \draw[blue] plot[samples=200,domain=-2:2] function {- x**2 + 0.3*x**4 + 1};
-\end{tikzpicture}
-
-Here we see that there is two global minima of $f^{MF}$ for non-zero $\Delta$'s. These are both stable. 
-
 \begin{equation*}
-    \pdv{f^{MF}(\Delta^2)}{\Delta} = 2\Delta f^{'}(\Delta^2) 
+     \abs{\Delta} = 0
 \end{equation*}
 
-\begin{equation*}
-     \abs{\Delta} = 0:
-\end{equation*}
+In \cref{fig:free_broken_2} we see that $f^{\text{MF}}$ has one global minima at $\Delta = 0$. This minima is also stable. 
 
-\begin{tikzpicture}
-      \draw[->] (-4,0) -- (4,0) node[right] {$b, a$};
-      \draw[->] (0,-4) -- (0,4) node[above] {$f^{MF}$};
-      \draw[blue] plot[samples=200,domain=-2:2] function {0.7*x**2 + 0.5};
-\end{tikzpicture}
-
-Here we see that $f^{MF}$ has one global minima at $\Delta = 0$. This minima is also stable. 
-
-We have seen that generally $\expval{a}$ and $\expval{b}$ are complex order parameters. We can therefore treat $f^{MF}$ as a function of a complex variable, while it is independent of the phase of the complex number. In the case of $\abs{\Delta} = 0$, the phase is ill-defined at $f^{MF}_{min}$. In the case of $\abs{\Delta} \neq 0$, the situation is a little bit different. Then we can rotate the corresponding graph around the y-axis ($f^{MF}$), and we obtain the following kind of graph
+We have seen that generally $\expval{a}$ and $\expval{b}$ are complex order parameters. We can therefore treat $f^{\text{MF}}$ as a function of a complex variable, while it is independent of the phase of the complex number. In the case of $\abs{\Delta} = 0$, the phase is ill-defined at $f^{\text{MF}}_{min}$. In the case of $\abs{\Delta} \neq 0$, the situation is a little bit different. Then we can rotate the corresponding graph around the y-axis ($f^{\text{MF}}$), and we obtain the following kind of graph
 
 % \begin{figure}
 %     \centering
@@ -67,15 +66,15 @@ We have seen that generally $\expval{a}$ and $\expval{b}$ are complex order para
 We see that the minima of the free energy is infinetly degenerate, because it is independent of the phase $\varphi$: 
 
 \begin{align*}
-    f^{MF}(\Delta, \Delta^*) = f^{MF}(\abs{\Delta}, \varphi) = f^{MF}(\abs{\Delta}) \\
+    f^{\text{MF}}(\Delta, \Delta^*) = f^{\text{MF}}(\abs{\Delta}, \varphi) = f^{\text{MF}}(\abs{\Delta}) \\
     \Delta = \abs{\Delta}\e^{i\varphi}. 
 \end{align*}
 
-This means that phase fluctuations cost no energy, but fluctuations in the radial $\abs{\Delta}$ direction does. \
-
-$\abs{\Delta}$-amplitude fluctuations: Longitudinal fluctuations. 
-
-$\varphi$-fluctuations: Transverse fluctuations. 
+This means that phase fluctuations cost no energy, but fluctuations in the radial $\abs{\Delta}$ direction does.
+\begin{itemize}
+	\item $\abs{\Delta}$-amplitude fluctuations: Longitudinal fluctuations.
+	\item $\varphi$-fluctuations: Transverse fluctuations. 
+\end{itemize}
 
 We say that the longitudinal fluctuations are "massive" and the traversal fluctuations are "massless". The massless fluctuations correspond to Goldstone-modes, which has a finite interaction range. We have seen that a broken symmetry ($\Delta \neq 0$) means that there exist Goldstone-modes. 
 
@@ -83,8 +82,8 @@ In our case, the order parameter where comples, which means that it has two real
 
 The existence of the Goldstone-modes makes it apparently problematic to define a fluctuation-calculation around the stationary point, since the Goldstone-modes corresponds to (at least one) zero eigenvalue of the fluctuation propagators. 
 \begin{align*}
-    S = S^{MF} + \Tr \ln D^{-1} \\ 
-    Z = \e^{S^{MF}}\frac{1}{\det D^{-1}} \\ 
+    S = S^{\text{MF}} + \Tr \ln D^{-1} \\ 
+    Z = \e^{S^{\text{MF}}}\frac{1}{\det D^{-1}} \\ 
     D^{-1} = \prod_i \lambda_i \quad \quad \exists j : \lambda_j = 0 
 \end{align*}
 
@@ -97,17 +96,17 @@ We will look at Gaussian fluctuations around a spontaneously broken continuous s
     \fdv{S}{\p} = 0 \quad \quad  \p = \p_0
 \end{align*}
 
-where $\p$ is a function of $x = (\Vec{x_0}, \tau)$. $\p_0$ contains a parameter $\theta$ which describe the symmetry-transformation of the symmetry that is spontaneously broken. It can e.g. be the parameter describing the ground state degeneracy ("circular minimum") in the rotated graph of $f^{Mf}$ above. We expand to gaussian order in $S$:
+where $\p$ is a function of $x = (\Vec{x_0}, \tau)$. $\p_0$ contains a parameter $\theta$ which describe the symmetry-transformation of the symmetry that is spontaneously broken. It can e.g. be the parameter describing the ground state degeneracy ("circular minimum") in the rotated graph of $f^{\text{MF}}$ above. We expand to gaussian order in $S$:
 
 \begin{align*}
-    Z = \e^{S^{MF}}\int \D \p \e^{-\frac{1}{2}\sum_{x,y} (\p(x) - \p_0(x)) A (\p(y) - \p_0(y))} \\
+    Z = \e^{S^{\text{MF}}}\int \D \p \e^{-\frac{1}{2}\sum_{x,y} (\p(x) - \p_0(x)) A (\p(y) - \p_0(y))} \\
     A = \fdv{^2S}{\p_0(x) \delta \p_0(y)}
 \end{align*}
 
 Naively, this will be something like 
 
 \begin{align*}
-    Z = \e^{S^{MF}} \frac{1}{\sqrt{\det A}}
+    Z = \e^{S^{\text{MF}}} \frac{1}{\sqrt{\det A}}
 \end{align*}
 
 but because of the Goldstone-modes, there is an apparent divergence in the fluctuations due to the zero eigenvalue. It seems like any attempt at doing mean-field theory when the symmetry is broken is doomed to fail. Nevertheless, we know that e.g. the mean-field theory of BCS-theory is a very good approximation without any divergences. There must be a reason for why this is the case.  
@@ -179,14 +178,14 @@ We wish to split the functional integral into two contributions, one over Goldst
 The point here is: the delta function $\delta (f)$ only contributes when $f = 0$. \\ 
 
 \begin{align*}
-    Z = \e^{S_{MF}}\int \D \psi \e^{-\frac{1}{2}\sum_{x,y} \psi(x) A \psi(y)}
+    Z = \e^{S_{\text{MF}}}\int \D \psi \e^{-\frac{1}{2}\sum_{x,y} \psi(x) A \psi(y)}
 \end{align*}
 
 General fluctuations vector \\ 
 
 \begin{align*}
     \psi = \phi(x) - \phi_{0}(x,\theta) = 1
-    Z = Z = \e^{S_{MF}}\int \D \psi \int \dd \theta \dv{f}{\theta} \delta(f) \e^{-\frac{1}{2}\sum_{x,y} \psi(x) A \psi(y)}
+    Z = Z = \e^{S_{\text{MF}}}\int \D \psi \int \dd \theta \dv{f}{\theta} \delta(f) \e^{-\frac{1}{2}\sum_{x,y} \psi(x) A \psi(y)}
 \end{align*}
 
 Look at the two extra factors in the integral: 
@@ -200,7 +199,7 @@ Look at the two extra factors in the integral:
 where the $\alpha$-integration projects out the Goldstone-mode contribution to the fluctuations. This procedure is very similar to Abrikosov's trick. \\ 
 
 \begin{align*}
-    Z = Z_{MF} \int \D \psi \dd \theta \frac{\dd \alpha}{2\pi} \int \dd x \left[ -\pdv{^2\phi_0}{\theta^2} \psi + \left(\pdv{\phi_0}{\theta}\right)^2 \right] \e^{S} \\ 
+    Z = Z_{\text{MF}} \int \D \psi \dd \theta \frac{\dd \alpha}{2\pi} \int \dd x \left[ -\pdv{^2\phi_0}{\theta^2} \psi + \left(\pdv{\phi_0}{\theta}\right)^2 \right] \e^{S} \\ 
     S = -\frac{1}{2}\sum_{x,y} \psi(x) A(x,y) \psi(y) + i\alpha \sum_x \pdv{\phi_0(x,\theta)}{\theta}\psi(x). 
 \end{align*}
 
@@ -214,7 +213,7 @@ The first term in the $x$-integral is zero, since it is linear in the $\psi$-fie
 The partition then becomes 
 
 \begin{align*}
-    Z = Z_{MF} \frac{1}{\sqrt{\det A}} \int \dd \theta \frac{\dd \alpha}{2\pi} \int \dd x \left[\left(\pdv{\phi_0}{\theta}\right)^2 \right] \e^{-\frac{\alpha^2}{2}\sum_{x,y} \pdv{\phi_0(x)}{\theta}A^{-1}\pdv{\phi_0(y)}{\theta}}.
+    Z = Z_{\text{MF}} \frac{1}{\sqrt{\det A}} \int \dd \theta \frac{\dd \alpha}{2\pi} \int \dd x \left[\left(\pdv{\phi_0}{\theta}\right)^2 \right] \e^{-\frac{\alpha^2}{2}\sum_{x,y} \pdv{\phi_0(x)}{\theta}A^{-1}\pdv{\phi_0(y)}{\theta}}.
 \end{align*}
 
 Now the $\alpha$ integration is Gaussian! We proceed looking at the exponent: 
@@ -245,10 +244,10 @@ were we have identified $g(\theta)$, which is equal to the factor in the $x$-int
 Recall that the $\alpha$-integration projects out the goldstone mode ($f = 1$). We have integrated out the effect of the Goldstone mode and obtained an effective theory given by $Z$. 
 
 \begin{align*}
-    Z = Z_{MF}\int \frac{\dd \theta}{\sqrt{2\pi}} g(\theta) \sqrt{\frac{\ep}{g(\theta)}} \frac{1}{\sqrt{\det A}} \\
-    = Z_{MF}\int \frac{\dd \theta}{\sqrt{2\pi}} \sqrt{
+    Z = Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} g(\theta) \sqrt{\frac{\ep}{g(\theta)}} \frac{1}{\sqrt{\det A}} \\
+    = Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} \sqrt{
     g(\theta)} \sqrt{\frac{\ep}{\ep\det A_\perp}} \\ 
-    = Z_{MF} \frac{1}{\sqrt{\det A_\perp}} \left\{ \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \right\} = Z_{MF} \frac{1}{\sqrt{\det A_\perp}} Z_{GM}
+    = Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} \left\{ \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \right\} = Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} Z_{GM}
 \end{align*}
 
 which becomes finite in the limit $\ep \to 0$. The factor $Z_{GM}$ contains all effects of the Goldstone-mode and $\det A_\perp \neq 0$, which corresponds to the trace of massive fluctuations of the theory. We expect that the dominant fluctuations are the transverse fluctuations, since they don't alter the expectation value of the fields $a,b$. \\ 
@@ -256,13 +255,13 @@ which becomes finite in the limit $\ep \to 0$. The factor $Z_{GM}$ contains all 
 If we had done a similar analysis in the case of complex fields
 
 \begin{align*}
-    Z = Z_{MF} \int \D \p^* \D \p \e^{-\sum_{x,y} \p^*(x) A(x,y) \p (y)}
+    Z = Z_{\text{MF}} \int \D \p^* \D \p \e^{-\sum_{x,y} \p^*(x) A(x,y) \p (y)}
 \end{align*}
 
 we would have ended up with 
 
 \begin{align*}
-    Z = Z_{MF} \frac{1}{\det A_\perp} \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \\ g(\theta) = \int \dd x \abs{\pdv{\p_0(x)}{\theta}}^2 
+    Z = Z_{\text{MF}} \frac{1}{\det A_\perp} \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \\ g(\theta) = \int \dd x \abs{\pdv{\p_0(x)}{\theta}}^2 
 \end{align*}
 
 \subsection{Goldstone mode contributions to fluctuations in the BCS-model}
@@ -281,7 +280,7 @@ where $N$ is the volume of the system.
 
 \begin{align*}
     \int_{0}^{2\pi} \dd \theta \sqrt{\frac{g(\theta)}{2\pi}} = \sqrt{2\pi}\sqrt{\beta N} \abs{a} = \sqrt{2\pi \beta N} \abs{a} \\ 
-    S = S_{MF} - \Tr \ln (D^{-1}_\perp ) + \ln(\sqrt{2\pi \beta N}\abs{a}). 
+    S = S_{\text{MF}} - \Tr \ln (D^{-1}_\perp ) + \ln(\sqrt{2\pi \beta N}\abs{a}). 
 \end{align*}
 
 If we neglect the contribution from $D$, we can easily calculate the corrected amplitude $\abs{a}$. Note that this is a phase-fluctuation giving contributions to the amplitude fluctuations (explain!). Note also that the Goldstone mode contribution to the fluctuations doesn't contain any information about $A$, only information about the eigenvectors with eigenvalue zero. This is because the information disappears in the expression 
@@ -290,7 +289,7 @@ If we neglect the contribution from $D$, we can easily calculate the corrected a
     \sum_{x,y} \pdv{\p_0(x)}{\theta}A(x,y) \pdv{\p_0(y)}{\theta} = 0. 
 \end{align*}
 
-\section{An introduction to Fermi liquid theory}
+\section[Fermi Liquid theory]{An introduction to Fermi liquid theory}
 
 A free electron gas has the following Hamiltonian 
 
