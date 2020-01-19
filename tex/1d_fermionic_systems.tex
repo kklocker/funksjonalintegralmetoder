@@ -553,7 +553,7 @@ Now consider the $T\rightarrow 0$ limit, since the issue of Fermi-liquid vs non-
 \end{align*}
 \(E_0 = \sum_k u\cdot k\), so we have a Boson system with excitation spectrum \(\omega = uk\), with 
 \begin{equation}
-u =v_F\left(1-(2\tilde{g})\right)^{\frac12}.
+u =v_F\left(1-(2\tilde{g})^2\right)^{\frac12}.
 \end{equation}
 The ``speed of sound'' for the bosons are thus renormalized in comparison to the fermi-velocities \(v_F\) for the non-interacting fermions. These bosons are collective excitations built from fermions, and is anolgous to phonons (``sound waves'' in a lattice).
 
@@ -568,18 +568,51 @@ where the function $n_B$ is (at $T=0$), in terms of Heaviside step-functions as
 \begin{align}
 \begin{split}
 n_B(uk) = -\theta(-k)\\
-n_B(-uk) = -\theta(k)
+n_B(-uk) = -\theta(k),
 \end{split}
 \end{align}
+and \(u^2=v_F^2(1+2\tilde{g})\).
+Introducing \(x_\pm\equiv x\pm ik\tau\), and recognizing the quantity \(\flatfrac{g}(4\pi u)\) as\footnote{In the lecture notes, it is some uncertainty regarding the definition of \(\nu\), but this seems to do the trick.}
+\begin{equation*}
+\frac{g}{4\pi u} = \frac{g}{4\pi v_F(1-(2\tilde{g})^2)^{\frac{1}{2}}} =\frac{\tilde{g}}{\sqrt{1+2\tilde{g}}}  = \nu,
+\end{equation*}
+we can calculate \(Q\) to be
+\begin{align*}
+	Q(x, \tau) &=\frac{g}{4\pi u}\left\{\int_0^\infty\dd {k}\frac{\e^{-\Lambda k}}{k}\left[1-\cos(kx_+)\right] \right. \\
+	&\qquad\quad + \left.\int_0^\infty \dd{k}\frac{\e^{-\Lambda k}}{k}\left[1-\cos(kx_-)\right]
+	\right\} \\
+	&= 2\nu\frac12\frac12\ln\left(\left(\frac{x_+^2+\Lambda^2}{\Lambda^2}\right)\left(\frac{x_-^2+\Lambda^2}{\Lambda^2}\right)\right) \\
+	&=\ln\left(\frac{\left[(x_+^2+\Lambda^2)(x_-^2+\Lambda^2)\right]^{\frac12}}{\Lambda^2}\right)^\nu.
+\end{align*}
+The explicit form of the total Greens' function then becomes, by inserting into the definition of \cref{eq:gre_almost_final}, as
 
-
-
-
-
-
-
-
-
+\begin{equation}
+\gre_1(x, \tau) = \gre_1^0(x, \tau)\cdot\left(\frac{\Lambda^2}{\left[(x_+^2+\Lambda^2)(x_-^2+\Lambda^2)\right]^{\frac12}}\right)^\nu
+\end{equation}
+Notice how completely wrong a mean-field theory for the bosonic action would have been in this case.
 
 \subsection{Impulse distribution} % 277 / 212f  Kanskje ta side 212a - 212g i samme subsection?
+We will now briefly study the distribution in momentum-space, by considering
+\begin{equation*}
+n_k = \mathcal{F}[\psi^\dagger(x)\psi(x)] = 1-\mathcal{F}[\gre(x)].
+\end{equation*}
+\[\gre(x) = \frac{\e^{ik_Fx}}{2\pi}\frac{i}{x-i\alpha}\left(\frac{\Lambda^2}{x^2+\Lambda^2}\right)^{2\nu}\]
+
+\begin{align*}
+\int_{-\infty}^\infty\dx\e^{-ikx}\gre(x) &= \frac{1}{2\pi}\int_{-\infty}^\infty\dx\frac{i}{x-i\alpha}\left(\frac{\Lambda^2}{x^2+\Lambda^2}\right)^{2\nu}\e^{-i(k-k_F)x} \\
+&= \frac{1}{\pi}\int_0^\infty\dx\frac{1}{x}\left(\frac{\Lambda^2}{x^2+\Lambda^2}\right)^{2\nu}\sin((k-k_F)x)\\
+&= \frac{\sign(k-k_F)}{\pi}\underbrace{\int_0^\infty\dx\frac1x\left(\frac{1}{1+x^2}\right)^{2\nu}\sin(|k-k_F|\Lambda x)}_{(\Lambda|k-k_F|)a_1 + (\Lambda|k-k_F|)^{4\nu}a_2},
+\end{align*}
+where \(a_1 = a_1(\nu, \Lambda|k-k_F|)\) and correspondingly for \(a_2\) are smooth functions. \footnote{This section should perhaps be expanded upon. There is a reference in the notes, but it is not easy to find; ``G.R. 3.773.1''}
+\begin{equation}
+n_k = 1-\sign(k-k_F)(\Lambda|k-k_F|)^{4\nu}
+\end{equation}
+\begin{figure}
+	\centering
+	\input{tex/img/occupation_1d}
+	\caption{The impulse distribution, or occupation number in momentum-space}
+	\label{fig:occupation_k}
+\end{figure}
+Illustrating this result in \cref{fig:occupation_k}, we see that the discontinuity at Fermi-level is gone! Also from this it is clear that we are not dealing with a Fermi-fluid.
+
 \subsection{``Summary''} % 279 / 213

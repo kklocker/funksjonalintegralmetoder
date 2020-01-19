@@ -1,0 +1,26 @@
+\begin{tikzpicture}%[scale = 0.75]
+\begin{axis}[
+	%ticks = none,
+	ytick = {1},
+	yticklabels = {,,},
+	xtick = {0},
+	xticklabels = {$k_F$},
+	xlabel = $k$,
+	ylabel = $n_k$,
+	x label style={at={(axis description cs:1,0.1)}, anchor = west},
+	y label style={at={(axis description cs:0.15,1)},rotate=-90,anchor=south},
+	ymax = 2,	
+	axis lines = left]
+
+
+\draw[thick,dashed, red] (axis cs:-5,1) --  (axis cs:0,1);
+\draw[thick,dashed, red] (axis cs:0,1) --  (axis cs:0,0);
+
+\addplot[thick,samples=100,black, domain =-5:5] {(1/((exp((2*x)))+1))};
+%\addplot[thick,samples=100,black, domain =0:5] {(1/((exp((x)))+1)) - 0.4};
+%\draw[very thick, black] (axis cs:0,0.5) -- node[anchor= west]{\large $z_k$}  (axis cs:0,0.1);
+
+
+
+\end{axis}
+\end{tikzpicture}
