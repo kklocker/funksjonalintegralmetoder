@@ -615,7 +615,7 @@ n_k = 1-\sign(k-k_F)(\Lambda|k-k_F|)^{4\nu}
 \end{figure}
 Illustrating this result in \cref{fig:occupation_k}, we see that the discontinuity at Fermi-level is gone! Also from this it is clear that we are not dealing with a Fermi-fluid.
 
-\subsection{Summary} % 279 / 213
+\subsection[Summary]{Summary of spinless 1d interacting systems} % 279 / 213
 
 In one-dimensional systems we do \underline{not}, unlike the three-dimensional, that mean field theories will work. 
 \begin{itemize}
@@ -631,4 +631,104 @@ In mean field theory, the fermions are renormalized, free, and noninteracting el
 We have seen that the effective action is a free boson theory. The system \underline{does} have well defined one-particle boson-excitations, but it does not have fermionic quasiparticles! An interacting fermion system is exactly replaced by a free boson system. 
 \textbf{A system of interacting fermions with gapless bosonic excitations as its low-energy excitations, is called a Luttinger liquid.}
 The low-energy excitations (the $\p$'s) for such a system is called Tomonaga-Luttinger bosons. If we had included spin in the system, and considered forward scattering, we would have obtained \(\Sa_{\text{eff}} = \Sa_{\text{eff}}^\rho + \Sa_{\text{eff}}^\sigma\), where \(\Sa_{\text{eff}}^\rho\) describes the Tomonaga-uttinger bosons with charge, but no spin, and \(\Sa_{\text{eff}}^\sigma\) describes Tomonaga-Luttinger bosons with spin, but no charge. There is no coupling between \(\Sa_{\text{eff}}^\rho\) and \(\Sa_{\text{eff}}^\sigma\): We have spin and charge as dynamical independent degrees of freedom (spin-charge-separation)\cite{lee1988functional}.
-The Tomonaga-Luttinger (TL) bosons are examples of solitons in physics. These are the low energy excitations in interacting one-dimensional fermionic systems. The \textbf{charge transport} in such systems happens via \textbf{charge-solitons}, and \textbf{not} electrons. This has been shown in detail for the spinless case.We will now consider what modifications that arise if spin is included in the problem.
+The Tomonaga-Luttinger (TL) bosons are examples of solitons in physics. These are the low energy excitations in interacting one-dimensional fermionic systems. The \textbf{charge transport} in such systems happens via \textbf{charge-solitons}, and \textbf{not} electrons. This has been shown in detail for the spinless case.
+
+\subsection{Spin-charge separation of fermions} % 284/ 217 Section eller subsection?
+
+We will now consider what modifications that arise if spin is included in the problem.
+\begin{align*}
+\Ha_0 &= \int_0^L\dx\sum_\sigma\left\{\psi_{1\sigma}^\dagger\left(-iv_F\partial_x -v_Fk_F\right)\right.\psi_{1\sigma} \\ 
+&\qquad\qquad\left.+\psi_{2\sigma}^\dagger\left(iv_F\partial_x -v_Fk_F\right)\psi_{2\sigma}\right\} \\
+\Ha_I &= g\int_0^L\dx\left(\rho_{1\uparrow} +\rho_{2\downarrow} \right)\left(\rho_{2\uparrow}+\rho_{2\downarrow}\right)\\
+\e^{-g\rho_1\rho_2}&=\int\D\p^*\D\p\e^{-\left(\frac1g\p^*\p + i\p_1\p^*+i\rho_2\p\right)}\\
+\Sa &= -\int_0^L\dx\int_0^\beta\dd{\tau}\frac{\p^*\p}{g} \\ 
+&\quad -\int_0^L\int_0^\beta\sum_\sigma\psi_\sigma^\dagger \begin{pmatrix}
+D_i+i\p^* & 0\\
+0& D_2+i\p
+\end{pmatrix}\psi_\sigma
+\end{align*}
+This is the exact same result as before. The spin-summations only gives a factor 2 in \(\Tr\ln(\quad)\). Assume now that the interaction is spin-dependent:
+\[V = g\rho_1\rho_2 \rightarrow V= g_{||}(\rho_{1\uparrow}\rho_{2\uparrow}+\rho_{1\downarrow}\rho_{2\downarrow}) + g_\perp(\rho_{1\uparrow}\rho_{2\downarrow}+\rho_{1\downarrow}\rho_{2\uparrow})\]
+Define \(\rho_i = \equiv \rho_{i\uparrow}+\rho_{i\downarrow}\) as a charge density, and \(\sigma_i\equiv\rho_{i\uparrow}-\rho_{i\downarrow}\) as a spin density such that \[V = g_\rho\rho_1\rho_2 +g_\sigma\sigma_1\sigma_2\]
+where
+\begin{align}
+\begin{split}
+\label{eq:interaction_strength}
+\left.\begin{array}{@{}l}
+g_{||} = g_\rho + g_\sigma \\[2ex]
+g_\perp = g_\rho-g_\sigma
+\end{array}\right\} &\quad
+\begin{array}{@{}l}
+g_\rho = \frac12\left(g_{||}+g_\perp\right) \\[2ex]
+g_\sigma=\frac12 (g_{||}-g_\perp)
+\end{array}
+\end{split}
+\end{align}
+
+Now perform a H-S-decoupling in the charge sector
+\begin{equation}
+\e^{-g_\nu\nu_1\nu_2} = \int\D\p_\nu^* \D\p_\nu\e^{-\left(\frac{\p_\nu^* \p_\nu}{g_\nu}+i\p_\nu^* \nu_1+i\p_\nu\nu_2\right)}
+\end{equation}
+with \(\nu_i = \rho_i \text{ or } \sigma_i\). Do this by intoducing a spin-boson and a charge boson \(\p_\sigma, \p_\rho\).
+\begin{align*}
+\Z &= \int\D\psi^\dagger\D\psi\D\p_\rho^*\D\p_\rho\D\p_\sigma^*\D\p_\sigma\e^\Sa \\
+\Sa &=  -\int_0^L\dx\int_0^\beta\sum_{\nu=\sigma, \rho}\frac{\p_\nu^*\p_\nu}{g_\nu} \\
+&\qquad -\int_0^L\dx\int_0^\beta\dd{\tau}\sum_\sigma 
+\psi_{\sigma}^\dagger
+\begin{pmatrix}
+D_1+i\p_{\rho 1}+i\sigma\p_{\sigma 1} & 0\\
+0 & D_2+i\p_{\rho 2} +i\sigma\p_{\sigma 2}
+\end{pmatrix} \psi_\sigma
+\end{align*}
+Now integrate out the fermions 
+\begin{align*}
+\Sa_{\text{eff}} &= -\int_0^L\dx\int_0^\beta\sum_\nu\frac{\p_\nu^*\p_\nu}{g_\nu} \\
+&\quad +\sum_\sigma\Tr\ln 
+\begin{pmatrix}
+D_1+i\p_{\rho 1}+i\sigma\p_{\sigma 1} & 0\\
+0 & D_2+i\p_{\rho 2} +i\sigma\p_{\sigma 2}
+\end{pmatrix}
+\end{align*}
+We treat this the exact same way as before
+\begin{align}
+\gre_i &=\gre_i^0\e^{-\left[f_{i\rho}+\sigma f_{i\sigma}-f_{i\rho}'-\sigma f_{i\sigma}'\right]} \\
+f_{i\sigma,\rho } &= -\frac1\beta\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\frac{\p_{i\sigma,\rho}}{i\omega_\nu-v_Fk}\e^{i(kx-\omega_\nu\tau)}
+\end{align}
+This means we can take the limit \(x'\rightarrow x, \tau'\rightarrow\tau\) in \(\Tr\ln\) exactly like in the spinless case. After temporary disregarding (substracting) \(\Sa_0\), we get
+\begin{align*}
+\Sa_{\text{eff}} &= -\int_0^L\dx\int_0^\beta\dd{\tau}\sum_\nu\frac{\p_\nu^*\p_\nu}{g_\nu} \\
+&\qquad +\sum_\sigma\frac{i}{4\pi}\int_0^L\dx\int_0^\beta\dd{\tau}\left\{\left(\p_{1\rho}+\sigma\p_{1\sigma}\right)\left(\pdv{f_{1\rho}}{x}+\sigma\pdv{f_{1\sigma}}{x}\right)\right. \\ 
+& \hspace{12em} -\left.\left(\p_{2\rho}+\sigma\p_{2\sigma}\right)\left(\pdv{f_{2\sigma}}{x}+\sigma\pdv{f_{2\rho}}{x}\right)\right\} \\
+&= -\int_0^L\dx\int_0^\beta\dd{\tau}\sum_\nu\left\{\frac{\p_\nu^*\p_\nu}{g_\nu} - \frac{i}{4\pi}\left(\p_{1\nu}\pdv{f_{1\nu}}{x}-\p_{2\nu}\pdv{f_{2\nu}}{x}\right)\right\}
+\end{align*}
+Now do a fourier transform as we did in the treatment of the spinless system
+\begin{align*}
+\Sa_{\text{eff}} &= -\frac1\beta\sum_{\omega_\nu}\int\frac{\dd k}{2\pi}\left\{D_\rho^{-1}\p_\rho(k,\omega_\nu)\p_\rho(-k,-\omega_\nu)\right. \\
+&\hspace{7em}+ \left.D_\sigma^{-1}\p_\sigma(k,\omega_\nu)\p_\sigma(-k,-\omega_\nu)\right\} \\
+D_\nu^{-1} &= \frac{1}{g_\nu}-\frac{k}{4\pi}\left(\frac{1}{i\omega_\nu-v_Fk} - \frac{1}{i\omega_\nu +v_Fk}\right) \\
+&=\frac{1}{g_\nu}\frac{(i\omega_\nu)^2-a_\nu^2v_F^2k^2}{(i\omega_\nu)^2-v_F^2k^2},
+\end{align*}
+where the quantities \(a_\nu^2 = (2\tilde{g}_\nu)^2, \tilde{g}_\nu =\flatfrac{g_\nu}{(4\pi v_F)}\) have been introduced. The remainding calculations of free energy is exactly the same as the spinless case. With \(F = F_\sigma+F_\rho\), we obtain
+\begin{equation}
+F_\nu = -\frac{2}{\beta}\int_0^\infty\frac{\dd k}{2\pi}\ln\left(1-\e^{-\beta u_\nu k}\right),
+\end{equation}
+\(u_\nu = v_F\sqrt{1-(2\tilde{g}_\nu)^2}\). \(u_\rho, u_\sigma\) is the ``speed of sound'' for the charge- and spin-bosons, correspondingly. Now, going back to the definition of \(g_\nu\) in \cref{eq:interaction_strength}, we see that \(g_\rho >g_\sigma \implies u_\rho < u_\sigma\)
+So for \(u_\rho\ne u_\sigma\), we have \underline{spin-charge separation}. \(\p_\rho(x, \tau), \p_\sigma(x, \tau)\) represents local variations in charge- and spin-density in the system, correspondingly. These density waves can propagate, with the propagator $-D_\nu(k, i\omega_\nu)$ with different velocities (``speed of sound'') \(u_\nu\).  The charge-``sound wave'' propagates with a different velocity than the spin-``sound wave'' $\implies$ spin-charge-separation. The process is visualized in \cref{fig:charge_spin_wave}.
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.45\textwidth}
+		\input{tex/img/spin_charge_sep1}
+		\subcaption{$\tau = 0$}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\input{tex/img/spin_charge_sep2}
+		\subcaption{$\tau>0$}
+	\end{subfigure}	
+	\caption{The charge- and spin-``sound waves'' as they separate.}
+	\label{fig:charge_spin_wave}
+\end{figure}
+
+Now all systems are realized in three dimensions, so what relevance has calculations done in one-dimensional systems?
+It has long been known that many organic crystals (molecular crystals) have essentially one-dimensional electron structure. This is due to the crystal being made up of weakly connected chains where the probability of an electron hopping from one chain to another is far less than for jumping along the chain. In such a case, a one-dimensional model can (maybe) be adequate. Examples of such systems are Polyacetylene, Bechgaard salts, Organic fluorides. A complicating factor in these systems are that they are very disordered; they have many impurities.
+Examples of well controlled systems with very little disorder, that have essentially one-dimensional charge transport, are artificially manufactured quantum-wires. These are manufactured by photolithography of two-dimensional electron structures, for example semiconductor heterostructures.
+As of now\footnote{This paragraph should mbe rewritten, as quite a few advancements have been made in the subject since the creation of the lecture notes.}, the quantum wires that are made, are neither long enough, nor do they contain enough electrons for this continuum-description discussed here to be valid. If, however, long enough systems of this type is experimentally available, the theory should work excellently. Naturally, we might have to include more general interactions in the problem, for example back scattering, which can lead to metal/insulator transitions and other critical phenomena of great interest in fundamental physics.

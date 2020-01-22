@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+\begin{axis}[
+	ticks = none,
+	height=4cm,
+	width=\textwidth,
+	%ytick = {1},
+	%yticklabels = {,,},
+	%xtick = {0},
+	%xticklabels = {$k_F$},
+	xlabel = $x$,
+	%ylabel = $n_k$,
+	x label style={at={(axis description cs:1,0.1)}, anchor = west},
+	y label style={at={(axis description cs:0.15,0.5)},rotate=-90,anchor=south},
+	ymax = 0.5,	
+	axis lines = middle]
+
+	\addplot[samples=100, thick, dashed, red] {gauss(0,1)};
+	\addlegendentry{$\p_\rho$};
+	\addplot[samples=100, blue] {gauss(0,1)};
+	\addlegendentry{$\p_\sigma$};
+\end{axis}
+\end{tikzpicture}

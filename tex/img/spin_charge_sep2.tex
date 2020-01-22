@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{axis}[
+	ticks = none,
+	height=4cm,
+	width=\textwidth,
+	%ytick = {1},
+	%yticklabels = {,,},
+	%xtick = {0},
+	%xticklabels = {$k_F$},
+	xlabel = $x$,
+	%ylabel = $n_k$,
+	x label style={at={(axis description cs:1,0.1)}, anchor = west},
+	y label style={at={(axis description cs:0.15,0.5)},rotate=-90,anchor=south},
+	ymax = 0.5,	
+	axis y line=left,
+	axis x line=middle,
+	legend style={at={(0,0.2)},anchor=west}]
+	
+	\node[anchor=west] at (axis cs:2,0.3) {$\rightarrow u_\sigma$};
+	\node[anchor=west] at (axis cs:-2,0.3) {$\rightarrow u_\rho$};
+	\addplot[samples=100, thick, dashed, red] {gauss(-2,1)};
+	%\addlegendentry{$\p_\rho$};
+	\addplot[samples=100, blue] {gauss(2,1)};
+		
+\end{axis}
+\end{tikzpicture}
