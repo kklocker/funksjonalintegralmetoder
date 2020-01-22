@@ -100,7 +100,7 @@ Therefore, we want to study the theory of
 \end{split}
 \end{align}
 
-For simplicity, we will in the continuation consider spinless fermions. A spin treatment will be given later. 
+For simplicity, we will in the continuation consider spinless fermions. A spinful treatment will be given later. 
 
 \begin{equation}
 \Ha = v_F \int\dx\psi^\dagger A_0\psi+ \int \dx\dy \rho_{1}(x)v(x-y)\rho_{2}(y).
@@ -615,4 +615,20 @@ n_k = 1-\sign(k-k_F)(\Lambda|k-k_F|)^{4\nu}
 \end{figure}
 Illustrating this result in \cref{fig:occupation_k}, we see that the discontinuity at Fermi-level is gone! Also from this it is clear that we are not dealing with a Fermi-fluid.
 
-\subsection{``Summary''} % 279 / 213
+\subsection{Summary} % 279 / 213
+
+In one-dimensional systems we do \underline{not}, unlike the three-dimensional, that mean field theories will work. 
+\begin{itemize}
+	\item \textbf{D=3}: We expect that both thermal fluctuations and quantum fluctuations are unimportant, except near critical temperatures.
+	\item \textbf{D=2}: Quantum fluctuations are unimportant. Thermal fluctuations are always important, $T>0$ for systems with a continous symmetry (Mermin-Wagner theorem).
+	\item \textbf{D=1}: Both thermal and quantum fluctuations are always important.
+\end{itemize}
+Fluctuations gets increasingly important when lowering the spatial dimension. In our one-dimensional case we have seen how important these fluctuations can be; if we would have used a mean field approach for calculating the effective action $\Sa_{\text{eff}}$, we would have found Fermi-liquid Green's functions for the electrons! \textbf{It is the boson-fluctuations that are responsible for the destruction of the Fermi liquids in this case!}
+The more conventional view in one dimension, is that forward scattering is \underline{singular} (because the electrons cannot avoid each other), and that this destroys the one-particle picture.
+
+These viewpoints can be united in the following manner:
+In mean field theory, the fermions are renormalized, free, and noninteracting electrons. The bosonic fields was introduced in the H-S-decoupling of the interaction term in the Hamiltonian. The boson fluctuations thus represent the residual interaction between electrons, and this interaction is in our case of forward scattering type. When these fluctuations are integrated out, the resulting fermion propagators are qualitatively different from before. We end up with propagators that do not any longer contain simple poles as singularities. The quasiparticle picture is destroyed by the string fluctuations originating in forward scattering.
+We have seen that the effective action is a free boson theory. The system \underline{does} have well defined one-particle boson-excitations, but it does not have fermionic quasiparticles! An interacting fermion system is exactly replaced by a free boson system. 
+\textbf{A system of interacting fermions with gapless bosonic excitations as its low-energy excitations, is called a Luttinger liquid.}
+The low-energy excitations (the $\p$'s) for such a system is called Tomonaga-Luttinger bosons. If we had included spin in the system, and considered forward scattering, we would have obtained \(\Sa_{\text{eff}} = \Sa_{\text{eff}}^\rho + \Sa_{\text{eff}}^\sigma\), where \(\Sa_{\text{eff}}^\rho\) describes the Tomonaga-uttinger bosons with charge, but no spin, and \(\Sa_{\text{eff}}^\sigma\) describes Tomonaga-Luttinger bosons with spin, but no charge. There is no coupling between \(\Sa_{\text{eff}}^\rho\) and \(\Sa_{\text{eff}}^\sigma\): We have spin and charge as dynamical independent degrees of freedom (spin-charge-separation)\cite{lee1988functional}.
+The Tomonaga-Luttinger (TL) bosons are examples of solitons in physics. These are the low energy excitations in interacting one-dimensional fermionic systems. The \textbf{charge transport} in such systems happens via \textbf{charge-solitons}, and \textbf{not} electrons. This has been shown in detail for the spinless case.We will now consider what modifications that arise if spin is included in the problem.

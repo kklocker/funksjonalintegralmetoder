@@ -1,25 +1,32 @@
 \begin{tikzpicture}
     \begin{axis}[
-        xmin = 0.4, xmax = 1.7,
-        ymin = -0.2, ymax = 1,
+        xmin = 0, xmax = 2,
+        ymin = 0,% ymax = 1,
         axis lines = center,
         axis on top =true,
-        domain = 0.6:1.7,
-        restrict y to domain=0:1,
+        domain = 0.1:1.6,
+        %restrict y to domain=0:1,
         ylabel = $\rho(T)$,
+        y label style={anchor=east},
         xlabel = $T$,
+        xtick ={1},
+        xticklabels={$T_K$},
+        ytick style={draw=none},
+        yticklabels={,,},
         samples = 100,
-        ticks = none
+        %ticks = none
         ]
         
-        \addplot[mark = none, draw = red!50!white, ultra thick]{0.07 * (6*ln(1/(x-0.25)) + (x-0.5)^2 +  1/3 * x^5) + 0.1};
+        \addplot[mark = none, draw = red!50!white, ultra thick]{1 -5*ln(x) + x^5};
         
+        %\addplot[mark = none, draw = red!50!white, dashed]{1 -5*ln(x)};
+        %\addplot[mark = none, draw = red!50!white, dashed]{x^5};
         
-    	\draw [thick] (axis cs:1.25,0)-- (axis cs:1.25,0.21);
+    	%\draw [thick] (axis cs:1.25,0)-- (axis cs:1.25,0.21);
     
-        \node at (axis cs:0.8,0.47) {\footnotesize $\sim\ln T$};
-        \node at (axis cs:1.55,0.17) {\footnotesize $\sim T^3 + T^2$};
-       	\node[anchor = north] at (axis cs:1.25, 0) {$T_K = $ Kondo temperature};
+        \node at (axis cs:0.6,5.5) {\footnotesize $\sim\ln T$};
+        \node at (axis cs:1.25,6) {\footnotesize $T^5\sim $};
+       	%\node[anchor = south] at (axis cs:1, 0) {$T_K = $ Kondo temperature};
         %\draw[->] (axis cs:3, 0.35) --(axis cs:4, 0.35) ;
     \end{axis}
 \end{tikzpicture}
