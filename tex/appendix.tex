@@ -1,1 +1,123 @@
 \section{Appendix}
+\subsection[Hubbard model to Ising spin.]{Transforming the Hubbard-model into an Ising-spin model}
+\cite{von1992quantum} The Hirsch-algorithm, $SU(2)$-noninvariant.
+\begin{equation}
+\Ha = \sum_{i,i,\sigma}t_{ij}c_{i\sigma}^\dagger c_{j\sigma} + U\sum_in_{i\uparrow}n_{i\downarrow} \qquad ; \underline{U>0}
+\end{equation}
+
+\begin{align*}
+n_{i\uparrow} = 0,1 &\implies n_{i\uparrow}^2 = 0,1 \\
+n_{i\downarrow} = 0,1 &\implies n_{i\downarrow}^2 = 0,1 \\
+n_{i\uparrow}-n_{i\downarrow} = 0,\pm 1&\implies (n_{i\uparrow}-n_{i\downarrow})^2 = 0,1
+\end{align*}
+\begin{align*}
+\Z &= \int\D c^\dagger\D c\,\e^\Sa \\
+\Sa &= -\sum_{i,j,\sigma}\int_0^\beta\dd\tau\, c_{i\sigma}^\dagger\left(\partial_\tau\delta_{ij}+t_{ij}\right)c_{j\sigma}^\dagger \\
+& \quad - U\sum_i\int_0^\beta\dd\tau\, n_{i\uparrow}n_{i\downarrow}\\
+&= \Sa_0 + \Sa_I \\
+\Z &= \int\D c^\dagger\D c\,\e^{\Sa_0+\Sa_I}
+\end{align*}
+Now do a Hubbard-Stratonovich transform of \(\e^{\Sa_I}\) (Discretize the \(\tau\)-integral and perform the H-S transformation)
+Note: The decoupling of the Hubbard model could be done in a more general way, as two parameters \(\alpha, \xi\). Could this be used to avoid the fermion sign problem? E.L. suggests this. H.J.Schulz has an \(SU(2)\)-invariant formulations of decoupling the Hubbard term (see \cite{weng1991path, schulz1990effective}) The point is that ww can do this decoupling in arbitrary dimensions, since the Hubbard term is \underline{local}. \(d = 3, T=0\implies\) 4-dimensional classical problem! Then, the Hubbard model is solveable on mean field level. 
+\begin{align*}
+\e^{\Sa_I} &= \e^{-\sum_i\int_0^\beta\dd \tau Un_{i\uparrow}n_{i\downarrow}}\\
+&= \prod_i\prod_\tau\e^{-\dd\tau Un_{i\uparrow}n_{i\downarrow}} \\
+-2\dd\tau Un_{i\uparrow}n_{i\downarrow} &= \dd\tau U(n_{i\uparrow}-n_{i\downarrow})^2 - \dd\tau U(n_{i\uparrow}^2+n_{i\downarrow}^2) \\[2ex]
+\implies \e^{\dd\tau U(n_{i\uparrow}-n_{i\downarrow})^2} &= \underbrace{\e^{\frac{\dd\tau}{2}U(n_{i\uparrow}^2+n_{i\downarrow}^2)}}_{=\e^{\frac{\dd\tau}{2}U(n_{i\uparrow}+n_{i\downarrow})}}\e^{\frac{\dd\tau}{2}U(n_{i\uparrow}-n_{i\downarrow})^2}
+\end{align*}
+Now we \underline{claim}:
+\begin{equation*}
+\e^{\frac{U}{2}(n_{i\uparrow}-n_{i\downarrow})^2} = \frac12\sum_{S_i(\tau)=\pm 1}\e^{\lambda S_i(\tau)(n_{i\uparrow}-n_{i\downarrow})},
+\end{equation*}
+and consider the three possible cases for \((n_{i\uparrow}-n_{i\downarrow})\)
+\begin{itemize}
+\item \((n_{i\uparrow}-n_{i\downarrow}) = 0\): \begin{equation*}
+1 = \frac{1}{2}\left(\e^{\lambda(S_i = 1)\cdot 0} + \e^{\lambda(S_i=-1)\cdot 0}\right) = 1
+\end{equation*}
+\item \((n_{i\uparrow}-n_{i\downarrow}) = 1\): 
+\begin{equation*}
+\e^{\frac{U}{2}} = \frac12\left(\e^\lambda + \e^{-\lambda}\right) = \cosh\lambda
+\end{equation*}
+\item \((n_{i\uparrow}-n_{i\downarrow}) = -1\): 
+\begin{equation*}
+\e^{\frac{U}{2}} = \frac12\left(\e^{-\lambda}+\e^\lambda \right) = \cosh\lambda
+\end{equation*}
+\end{itemize}
+\begin{equation}
+\e^{\frac{U}{2}} = \cosh\lambda \implies\lambda=\cosh[-1](\e^{\frac{U}{2}}).
+\end{equation}
+
+\begin{align*}
+\e^{-Un_{i\uparrow}n_{i\downarrow}} &=\e^{-\frac U2(n_{i\uparrow}+n_{i\downarrow})}
+\e^{\frac U2(n_{i\uparrow}-n_{i\downarrow})^2} \\
+&= \e^{-\frac U2(n_{i\uparrow}+n_{i\downarrow})}\frac12\sum_{S_i=\pm 1}\e^{\lambda S_i(n_{i\uparrow}-n_{i\downarrow})}\\
+&=\frac12\sum_{S_i=\pm 1}\e^{-c_{i\uparrow}^\dagger\left(\frac U2 - \lambda S_i\right)c_{i\uparrow}}
+\e^{-c_{i\downarrow}^\dagger\left(\frac U2 + \lambda S_i\right)c_{i\downarrow}}\\
+&= \frac12\sum_{S_i=\pm1}\prod_\sigma\e^{-c_{i\sigma}^\dagger\left(\frac U2-\lambda\sigma S_i\right)c_{i\sigma}}
+\end{align*}
+We can now calculate \(\e^{\Sa_I}\), 
+\begin{align*}
+\e^{\Sa_I} &= \e^{-\sum_i\int_0^\beta\dd\tau Un_{i\uparrow}-n_{i\downarrow}} \\
+&= \frac12\sum_{\{S_i = \pm1\}}\e^{-\sum_i\int_0^\beta\lambda S_i(n_{i\uparrow}n_{i\downarrow})}\e^{-\sum_i\int_0^\beta\frac{\dd\tau}{2}U(n_{i\uparrow}+n_{i\downarrow})}\\
+&= \frac12\sum_{\{S_i\}}\e^{-\sum_{i,\sigma}\int_0^\beta\dd\tau c_{i\sigma}^\dagger\left(\frac U2-\sigma\lambda S_i(\tau)\right)c_{i\sigma}}.
+\end{align*}
+Consequently, the partition becomes
+\begin{equation}
+\Z = \sum_{\{S_i=\pm1\}}\int\D c^\dagger\D c\,\exp\left\{-\sum_{i,j,\sigma}\int_0^\beta\dd\tau\,c_{i\sigma}^\dagger\left[\left(\partial_{\tau}+\frac U2-\lambda\sigma S_i\right)\delta_{ij}+t_{ij}\right]c_{j\sigma}\right\},
+\end{equation}
+and we can now perform the fermion integral exactly, such that the partition function becomes
+\begin{align}
+\Z &= \sum_{\{S_i = \pm1\}}\e^{\Tr\ln A(\{S_i(\tau)\})}\\
+A &= \left(\partial_{\tau}+\frac U2-\lambda\sigma S_i\right)\delta_{ij}+t_{ij}\\
+\lambda &= \cosh[-1](\e^{\frac U2}),
+\end{align}
+where the summation is over Ising-variables!
+\begin{equation}
+\Tr\ln A = \sum_{i,j,\sigma}\int_0^\beta\dd\tau\,\ln\left[\left(\partial_{\tau}+\frac U2-\lambda\sigma S_i\right)\delta_{ij}+t_{ij}\right].
+\end{equation}
+\(S_i(\tau)\) are classical ``spin'' (Ising-spin) variables. These ``spins'' lives on a $d+1$-dimensional lattice, given that the original Hubbard-model is defined on a $d$-dimensional lattice. 
+
+The \underline{quantum mechanical} Hubbard model is as a result transformed into a \underline{classical spin model} in one extra dimension
+Notice that since all spin variables \(S_i(\tau)\) is contained \underline{inside} the \(\ln\)-factor, we get \underline{multi-spin} interaction, unlike the usual Ising-model, where only spin-pairs interact.
+
+The two-dimensional Hubbard modell thus corresponds to a complicated three-dimensional (classical) Ising spin model. At \(T>0\), the Hubbard model corresponds to a spin model of Ising type defined in a slab-geometry. 
+This rewriting of the model is often used to do quantum-Monte-Carlo-simulations of the Hubbard model.
+
+We can thus write 
+\begin{equation}
+\Z = \Tr(\e^{-\beta \Ha}),
+\end{equation}
+where we sum over classical variables. The expression for an expectation value is
+\begin{equation}
+\ev{O} = \frac{\Tr(\hat{O}\e^{-\beta\Ha})}{\Tr(\e^{-\beta\Ha})},
+\end{equation}
+where, in this case, \(\Ha\) is defined by
+\begin{align}
+\begin{split}\Ha &= -\frac1\beta\sum_{i,j,\sigma}\int_0^\beta\dd\tau\,\ln\left[\left(\partial_{\tau}+\frac U2-\lambda\sigma S_i\right)\delta_{ij}+t_{ij}\right] \\&= -\frac1\beta \Tr\ln A.
+\end{split}
+\end{align}
+Recall:
+\begin{itemize}
+\item \textbf{Free bosons:}
+\begin{align*}
+\Z &= (\det A)^{-1} \\
+&= \int\D a^\dagger\D a\,\e^{-\sum_{ij}a_i^\dagger A_{ij}a_j}
+\end{align*}
+\item \textbf{Free fermions:}
+\begin{align*}
+\Z &= \det A \\
+&= \int\D c^\dagger\D c\,\e^{-\sum_{ij}c_i^\dagger A_{ij}c_j}
+\end{align*}
+\end{itemize}
+This illustrates an important point; for bosons $A$ is positive definite. This need \underline{not} be the case for fermions!
+
+For bosons, \(\det(A)>0\implies\Tr\ln A\) real (\(=\Ha\)). Monte-Carlo-move: \(S_i(\tau)\rightarrow -S_i(\tau) \implies \Ha\rightarrow \Ha + \Delta\Ha\). If \(\Delta\Ha>0\): Axcept try. If not, pick a random number \(p\in [0,1)\) and axcept the move if \(p<\e^{-\beta\Delta\Ha}\), reject otherwise.
+
+For fermions, this algorithm is more complicated, because \(\det A\) is not necessarily positively definite. This means that \(\Tr\ln A\) might be \underline{imaginary}. Consequently, \(\Delta \Ha\) can be imaginary, and \(\e^{-\beta\Delta\Ha}\) can be negative. A negative \(\e^{-\beta\Delta\Ha}\) can not be interpreted as a transition probability, as we want, and as we have in both the classical and bosonic case. 
+
+\begin{align*}
+\ev{O} &= \frac{\Tr(\hat{O}\,\e^{-\beta\Ha})}{\Tr(\e^{-\beta\Ha})} \\
+&= \frac{\Tr(\hat{O}\,\sign (\e^{-\beta\Ha})|\e^{-\beta\Ha}|)}{\Tr(\sign (\e^{-\beta\Ha})|\e^{-\beta\Ha}|)} \\
+&\equiv \frac{\ev{\hat{O}\,\sign}}{\ev{\sign}},
+\end{align*}
+where \(\sign = \sign(\e^{-\beta\Ha})\). We have now defined the mean value with respect to the probability distribution \(|\e^{-\beta\Ha}|>0\). If \(\ev{\sign}\) gets very small, the expectation value that is calculated becomes very uncertain. This problem is called the ``fermion-sign''-problem, and has its origins in how one defines (in terms of operators) an transition amplitude from one state to another. 

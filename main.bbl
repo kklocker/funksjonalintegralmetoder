@@ -6,4 +6,20 @@ DKK Lee and Y~Chen.
 \newblock {\em Journal of Physics A: Mathematical and General}, 21(22):4155,
   1988.
 
+\bibitem{von1992quantum}
+Wolfgang von~der Linden.
+\newblock A quantum monte carlo approach to many-body physics.
+\newblock {\em Physics Reports}, 220(2-3):53--162, 1992.
+
+\bibitem{weng1991path}
+ZY~Weng, CS~Ting, and TK~Lee.
+\newblock Path-integral approach to the hubbard model.
+\newblock {\em Physical Review B}, 43(4):3790, 1991.
+
+\bibitem{schulz1990effective}
+HJ~Schulz.
+\newblock Effective action for strongly correlated fermions from functional
+  integrals.
+\newblock {\em Physical review letters}, 65(19):2462, 1990.
+
 \end{thebibliography}
