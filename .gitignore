@@ -10,3 +10,5 @@
 *.gnuplot
 *.fdb_latexmk
 *.fls
+*.bbl
+*.blg
