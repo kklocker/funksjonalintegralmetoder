@@ -1,0 +1,27 @@
+J.-S. Caux and J. v. Wesel, Amsterdam University
+Statistical Physics and Condensed Matter Theory 1
+https://jscaux.org/teaching/2017-18_SPCMT1
+Lots of exercises. Course seems to be based on Altland and Simons.
+See also other courses by this guy?
+
+Ben Simons, Camebridge
+http://www.tcm.phy.cam.ac.uk/~bds10/tp3.html
+Comprehensive course on Condensed Matter Field Theory.
+Includes 5 exercise sheets.
+
+
+Piers Coleman, Rutgers University
+Strongly Correlated Electrons: electrons at the brink of Magnetism
+https://www.physics.rutgers.edu/~coleman/682A/
+Three exercise sheets with relevant problems and one final exam.
+
+Punk, LMU
+TVI/TMP-TA3 Many Body Physics
+https://www.physik.uni-muenchen.de/lehre/vorlesungen/sose_18/TVI_TMP-TA3/exercises/index.html
+10 exercise sheets on Many-Body-Physics. Some seem relevant. 
+
+
+Ehud Altman, Weizman
+Introduction to quantum condensed matter physics
+https://www.weizmann.ac.il/condmat/altman/CM1Spring2012.html
+2012 version has 7 problem sheets. 
