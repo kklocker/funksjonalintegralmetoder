@@ -244,10 +244,11 @@ were we have identified $g(\theta)$, which is equal to the factor in the $x$-int
 Recall that the $\alpha$-integration projects out the goldstone mode ($f = 1$). We have integrated out the effect of the Goldstone mode and obtained an effective theory given by $Z$. 
 
 \begin{align*}
-    Z = Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} g(\theta) \sqrt{\frac{\ep}{g(\theta)}} \frac{1}{\sqrt{\det A}} \\
-    = Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} \sqrt{
+    Z &= Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} g(\theta) \sqrt{\frac{\ep}{g(\theta)}} \frac{1}{\sqrt{\det A}} \\
+    &= Z_{\text{MF}}\int \frac{\dd \theta}{\sqrt{2\pi}} \sqrt{
     g(\theta)} \sqrt{\frac{\ep}{\ep\det A_\perp}} \\ 
-    = Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} \left\{ \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \right\} = Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} Z_{GM}
+    &= Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} \left\{ \int \frac{\dd \theta}{\sqrt{2\pi}}\sqrt{g(\theta)} \right\} \\
+    &= Z_{\text{MF}} \frac{1}{\sqrt{\det A_\perp}} Z_{GM}
 \end{align*}
 
 which becomes finite in the limit $\ep \to 0$. The factor $Z_{GM}$ contains all effects of the Goldstone-mode and $\det A_\perp \neq 0$, which corresponds to the trace of massive fluctuations of the theory. We expect that the dominant fluctuations are the transverse fluctuations, since they don't alter the expectation value of the fields $a,b$. \\ 
@@ -300,10 +301,10 @@ A free electron gas has the following Hamiltonian
 with $T = 0$ single-particle propagator 
 
 \begin{align*}
-    G_0(k,\omega) = F[G_0(x,t)] \\
-    G_0(x,t) = -i \expval{T(\psi_\sigma(x,t) \psi^{\dagger}_\sigma(0,0))} \\ 
-    G_0(k,\omega) = \frac{\Theta(\ep_k - \ep_F)}{\omega - \ep_k + i\delta} + \frac{\Theta(\ep_F - \ep_k)}{\omega - \ep_k - i\delta} = \frac{1}{\omega - \ep_k +i\delta_k} \\ 
-    \delta_k = \delta \sign(\ep_k - \ep_F)  \quad \delta = 0^+.
+    G_0(k,\omega) &= F[G_0(x,t)] \\
+    G_0(x,t) &= -i \expval{T(\psi_\sigma(x,t) \psi^{\dagger}_\sigma(0,0))} \\ 
+    G_0(k,\omega) &= \frac{\Theta(\ep_k - \ep_F)}{\omega - \ep_k + i\delta} + \frac{\Theta(\ep_F - \ep_k)}{\omega - \ep_k - i\delta} = \frac{1}{\omega - \ep_k +i\delta_k} \\ 
+    \delta_k &= \delta \sign(\ep_k - \ep_F)  \quad \delta = 0^+.
 \end{align*}
 
 $G(k,\omega)$ has a singular pole which gives the excitation spectrum of the system. The fact that the pole is singular means that the single-particle excitations, described by the operators $\cd_{k\sigma}, c_{k\sigma}$, are well-defined with lifetime $\tau_k = \frac{1}{2\delta_k} \to \infty$, i.e. long-lived exitations. If we include interactions between the Fermions, we can write the following exact expression for the full single-particle propagator (Dyson equation):

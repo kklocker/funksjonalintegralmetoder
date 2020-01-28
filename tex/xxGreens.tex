@@ -59,20 +59,20 @@ In the functional integral formalism, we define the expectation value of an oper
 
     
 \begin{align*}
-    \expval{A} = \frac{1}{Z} \Tr \left( e^{-\beta H} A \right) \\
-    = \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^S. \\ 
-    S = - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* \pdv{\varphi_\lambda}{\tau} + H(\{\varphi_\lambda^*, \varphi_\lambda\})\right] = S_0 + S_I. \\
-    S_0 = - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda\right] \\ 
-    S_I = - \sum_\lambda \int_{0}^{\beta} \dd \tau H_I(\{\varphi_\lambda^*, \varphi_\lambda\}).
+    \expval{A} &= \frac{1}{Z} \Tr \left( e^{-\beta H} A \right) \\
+    &= \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^S. \\ 
+    S &= - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* \pdv{\varphi_\lambda}{\tau} + H(\{\varphi_\lambda^*, \varphi_\lambda\})\right] = S_0 + S_I. \\
+    S_0 &= - \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda\right] \\ 
+    S_I &= - \sum_\lambda \int_{0}^{\beta} \dd \tau H_I(\{\varphi_\lambda^*, \varphi_\lambda\}).
 \end{align*}
 
 where we have explicitly written the expressions for the interacting and non-interacting part of the exponent $S$. Further, we write 
 
 \begin{align*}
-    Z_0 = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_0} \\ 
-    \expval{A}_0 = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^{S_0} \\ 
-    Z = \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_I}\e^{S_0} = Z_0 \expval{\e^{S_I}}_0 \\ 
-    \expval{A} = \frac{1}{Z_0 \expval{e^{S_I}}_0} \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\left( A\e^{S_I} \right)\e^{S_0} = \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0}
+    Z_0 &= \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_0} \\ 
+    \expval{A}_0 &= \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]A(\{\varphi_\lambda^*, \varphi_\lambda\})\e^{S_0} \\ 
+    Z &= \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S_I}\e^{S_0} = Z_0 \expval{\e^{S_I}}_0 \\ 
+    \expval{A} &= \frac{1}{Z_0 \expval{e^{S_I}}_0} \int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\left( A\e^{S_I} \right)\e^{S_0} = \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0}
 \end{align*}
 
 In the last expression, the denominator cancels all non-connected diagrams in perturbation theory, to all orders in $S_I$. $\expval{\e^{S_I}}_0$ represents all vacuum-fluctuations, or rather the fluctuations the system exhibits without the precence of $A$. In $\expval{A}$, we are interested in finding the systems response to the operator $A$. The vacuum fluctuations are not of interested in this case, and the factor $\expval{\e^{S_I}}_0$ in the denominator makes sure that they don't contribute to $\expval{A}$. \\ 
@@ -80,15 +80,15 @@ In the last expression, the denominator cancels all non-connected diagrams in pe
 Now we define a generating functional for Green's functions: 
 
 \begin{align*}
-    W\left(\{\varphi_\lambda^*, \varphi_\lambda\}\right) = \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S + F} \\ 
-    F = \sum_\lambda \int_{0}^{\beta} \dd \tau \left( J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right)
+    W\left(\{\varphi_\lambda^*, \varphi_\lambda\}\right) &= \frac{1}{Z}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S + F} \\ 
+    F &= \sum_\lambda \int_{0}^{\beta} \dd \tau \left( J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right)
 \end{align*}
 
 where the sources $J_\lambda(\tau)$ are c-numbers in the case of bosonic fields, and Grassmann-numbers in the case of fermionic fields. In the latter case, the order of the fields and sources is important. 
 
 \begin{align*}
-    \expval{W}= \frac{\expval{\e^F\e^{S_I}}_0}{\expval{\e^{S_I}}_0} \\ 
-    \expval{A} = \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0} = \frac{1}{\expval{\e^{S_I}}_0} A\left( \fdv{}{J_\lambda }, \fdv{}{J_\lambda ^*} \right) \eval{\expval{\e^{S_I} \e^F}}_{J = 0}
+    \expval{W}&= \frac{\expval{\e^F\e^{S_I}}_0}{\expval{\e^{S_I}}_0} \\ 
+    \expval{A} &= \frac{\expval{A\e^{S_I}}_0}{\expval{\e^{S_I}}_0} = \frac{1}{\expval{\e^{S_I}}_0} A\left( \fdv{}{J_\lambda }, \fdv{}{J_\lambda ^*} \right) \eval{\expval{\e^{S_I} \e^F}}_{J = 0}
 \end{align*}
 
 where after putting the sources to zero, the expression becomes identical to the one defined above.
@@ -98,8 +98,8 @@ where after putting the sources to zero, the expression becomes identical to the
 Now the functional integral becomes Gaussian, and we have looked at these kind of integrals before in detail. 
 
 \begin{align*}
-    \expval{\e^F}_0 = \frac{1}{Z_0}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S} \\ 
-    S = \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda + J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right].
+    \expval{\e^F}_0 &= \frac{1}{Z_0}\int_{\varphi_\lambda(0) = \xi \varphi_\lambda(\beta)} \D [\varphi^*] \D[\varphi]\e^{S} \\ 
+    S &= \sum_\lambda \int_{0}^{\beta} \dd \tau \left[ \varphi_\lambda ^* ( \partial_\tau + \varepsilon) \varphi_\lambda + J_\lambda ^*(\tau)\varphi_\lambda(\tau) + J_\lambda (\tau)\varphi_\lambda ^*(\tau) \right].
 \end{align*}
 
 This has the same form as 
@@ -118,14 +118,14 @@ where again $\xi = +1$ corresponds to bosons, and $\xi = -1$ corresponds to ferm
 We can use this result to calculate free-particle Green's functions at $T > 0$. 
 
 \begin{align*}
-    G(k, \sigma, \tau) = -\ev{T_\tau \left( c_{k\sigma}(\tau)c^{\dagger}_{k\sigma}(0)\right)}{\psi} \xrightarrow{} - \expval{T_\tau \left(\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)\right)}_0 \\ 
-    = -\left[ \theta(\tau) \expval{\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)}_0  - \theta(-\tau)\expval{\varphi^{*}_{k\sigma}(0) \varphi_{k\sigma}(\tau)}_0\right]
+    G(k, \sigma, \tau) &= -\ev{T_\tau \left( c_{k\sigma}(\tau)c^{\dagger}_{k\sigma}(0)\right)}{\psi} \xrightarrow{} - \expval{T_\tau \left(\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)\right)}_0 \\ 
+    &= -\left[ \theta(\tau) \expval{\varphi_{k\sigma}(\tau) \varphi^{*}_{k\sigma}(0)}_0  - \theta(-\tau)\expval{\varphi^{*}_{k\sigma}(0) \varphi_{k\sigma}(\tau)}_0\right]
 \end{align*}
 
 where we have explicitly gone from second quantized form to functional integral form, by introducing the coherent eigenstates. Now consider the case $\tau_1 > \tau_2$ and define $\lambda_1 = k_1, \sigma_1$ and $\lambda_2 = k_2, \sigma_2$. 
 
 \begin{align*}
-    - \expval{\varphi_{\lambda_1}(\tau_1) \varphi^{*}_{\lambda_2}(\tau_2)} = - \fdv{}{J_{\lambda_1}^*(\tau_1)} \fdv{}{J_{\lambda_2}(\tau_2)} \eval{\expval{\e^F}}_{J = 0} \\ = (\partial_\tau + \varepsilon)^{-1}_{\tau_1, \tau_2} \delta_{\lambda_1, \lambda_2} = G_{0}(\lambda_1, \lambda_2, \tau_1, \tau_2) 
+    - \expval{\varphi_{\lambda_1}(\tau_1) \varphi^{*}_{\lambda_2}(\tau_2)} &= - \fdv{}{J_{\lambda_1}^*(\tau_1)} \fdv{}{J_{\lambda_2}(\tau_2)} \eval{\expval{\e^F}}_{J = 0} \\ &= (\partial_\tau + \varepsilon)^{-1}_{\tau_1, \tau_2} \delta_{\lambda_1, \lambda_2} = G_{0}(\lambda_1, \lambda_2, \tau_1, \tau_2) 
 \end{align*}
 
 where the resulting Green's function should be interpreted as a matrix with indicies $\tau_1, \tau_2$. This is the continuous/infinitesimal edition of an operator tanking the system from imaginary time $\tau_1$ to $\tau_2$ (Trotter slice). This matrix is therefore non-diagonal, and inverting it is therefore non-trivial. Now for the case of $\tau_2 > \tau_1$: 
@@ -137,11 +137,11 @@ where the resulting Green's function should be interpreted as a matrix with indi
 we therefore see that we don't have to use time ordering explicitly, due to the definition of our statistical average. Now set $\lambda_1 = \lambda_2 = \lambda$ and $\tau = \tau_1 - \tau_2$. Then we get the equation for the Green's function: 
 
 \begin{align*}
-    (\partial_\tau + \varepsilon)G_0(\lambda, \tau) = \delta(\tau) \\ 
-    \int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau}(\partial_\tau + \varepsilon)G_0(\lambda, \tau) = 1 \\ 
-    \frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau} (\partial_\tau + \varepsilon) \sum_{\omega_m} \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
-    \sum_{\omega_m} \frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i(\omega_n - \omega_m)\tau} (-i\omega_m + \varepsilon) \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
-    G_0(\lambda, i\omega_n) = \frac{-1}{i\omega_n - \varepsilon} \quad \quad D_0(q, i\omega_\nu) = \frac{-1}{i\omega_\nu - \omega_q}
+    &(\partial_\tau + \varepsilon)G_0(\lambda, \tau) = \delta(\tau) \\ 
+    &\int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau}(\partial_\tau + \varepsilon)\Gre(\lambda, \tau) = 1 \\ 
+    &\frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i\omega_n \tau} (\partial_\tau + \varepsilon) \sum_{\omega_m} \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
+    &\sum_{\omega_m} \frac{1}{\beta}\int_{0}^{\beta} \dd \tau \e^{i(\omega_n - \omega_m)\tau} (-i\omega_m + \varepsilon) \e^{-i\omega_m \tau}G_0(\lambda, i\omega_m) = 1 \\ 
+    &G_0(\lambda, i\omega_n) = \frac{-1}{i\omega_n - \varepsilon} \quad \quad D_0(q, i\omega_\nu) = \frac{-1}{i\omega_\nu - \omega_q}
 \end{align*}
 
 for fermions and bosons, respectively. 
@@ -166,7 +166,7 @@ Say that you want to look at the leading order correction to a free boson-propag
 The frequency summation is easy: 
 
 \begin{align*}
-    \frac{1}{\beta} \sum_{\omega_n} \frac{1}{i\omega_n - \varepsilon_k}\frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \\ = \frac{1}{i\omega_\nu + \varepsilon_k - \varepsilon_{k+q}} \frac{1}{\beta}\sum_{\omega_n}\left(\frac{1}{i\omega_n - \varepsilon_k} - \frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \right)
+    \frac{1}{\beta} &\sum_{\omega_n} \frac{1}{i\omega_n - \varepsilon_k}\frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \\ = \frac{1}{i\omega_\nu + \varepsilon_k - \varepsilon_{k+q}} \frac{1}{\beta}&\sum_{\omega_n}\left(\frac{1}{i\omega_n - \varepsilon_k} - \frac{1}{i\omega_n + i\omega_\nu - \varepsilon_{k+q}} \right)
 \end{align*}
 
 
@@ -254,8 +254,8 @@ where we have inserted the results from
 where we have introduced fermion spinor notation $\varphi = \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix}$ and performed a partial integration in $S_I$, resulting in a sign change in the lower right cell of the matrix. 
 
 \begin{align*}
-    Z = \int \D a^{\dagger} \D a \e^{S_{eff}} \\ 
-    S_{eff}(\ad, a) = -\sum_\lambda \int_{0}^{\beta} \dd \tau \ad_\lambda(\tau) V^{-1} a_\lambda(\tau) + \frac{1}{2}\Tr \ln G^{-1} 
+    Z &= \int \D a^{\dagger} \D a \e^{S_{\text{eff}}} \\ 
+    S_{\text{eff}}(\ad, a) &= -\sum_\lambda \int_{0}^{\beta} \dd \tau \ad_\lambda(\tau) V^{-1} a_\lambda(\tau) + \frac{1}{2}\Tr \ln G^{-1} 
 \end{align*}
 
 Now we have converted our interacting fermion theory into an effective, interacting boson-theory, with effective action $S_eff(\ad, a)$. A priori, this seems like a much more complicated theory compared to the fermion theory we started out with. So what have we accomplished? \\ 

@@ -109,10 +109,10 @@ So for the Fermi distribution in \eqref{eq:fermi_dist}, we get
 
 \begin{align}
 \Res\left[f(i\omega_n)\right] &= \lim_{z\rightarrow i\omega_n}\left[(z-i\omega_n)f(z)\right] \nonumber \\
-&= \lim_{z\rightarrow i\omega_n}\frac{1}{1+\e^{\beta(z-i\omega_n + i\omega_n)}} \nonumber \\
-&= \lim_{z\rightarrow i\omega_n} \frac{1}{1-\e^{\beta(z-i\omega_n)}} \nonumber \\
-&=\lim_{z\rightarrow i\omega_n} \frac{1}{1-1-\beta(z-i\omega_n)+\dots} \nonumber \\
-&=\lim_{z\rightarrow i\omega_n} -\frac{1}{\beta}\frac{1}{z-i\omega_n} \implies \nonumber \\
+&= \lim_{z\rightarrow i\omega_n}\frac{z-i\omega_n}{1+\e^{\beta(z-i\omega_n + i\omega_n)}} \nonumber \\
+&= \lim_{z\rightarrow i\omega_n} \frac{z-i\omega_n}{1-\e^{\beta(z-i\omega_n)}} \nonumber \\
+&=\lim_{z\rightarrow i\omega_n} \frac{z-i\omega_n}{1-1-\beta(z-i\omega_n)+\dots} \nonumber \\
+&=\lim_{z\rightarrow i\omega_n} -\frac{1}{\beta}\frac{z-i\omega_n}{z-i\omega_n} \implies \nonumber \\
 \Res\left[f(i\omega_n)\right] &= -\frac{1}{\beta}
 \end{align}
 
