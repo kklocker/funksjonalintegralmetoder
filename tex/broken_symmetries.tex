@@ -337,16 +337,16 @@ To 0'th order, we get
 This corresponds to a shift of the real pole given by $\ep_k^*$, which is the solution of the self-consisting equation below. Now we include $\s_I$ to first order.
 
 \begin{align*}
-    \omega - (\ep_k + \s_R(k,\omega)) - i\s_I(k,\ep_k^*) = 0 \\
-    \s_R(k, \omega) = \s_R(k, \ep_k^*) + (\omega - \ep_k^*)\eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*} \\ 
-    \omega \to \ep_k^* + ix \\ 
-    \ep_k^* + ix - (\ep_k + \s_R(k,\ep_k^*)) - (\ep_k^* + ix - \ep_k^*)\eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*} -i\s_I = 0 \\ 
-    ix\left(1 - \eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*}\right) = i\s_I \quad \quad 
-    x = \frac{\s_I}{1 - \eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*}} \equiv \frac{\s_I}{1 - \pdv{\s_R}{\omega}} \\ 
-    \omega = \ep_k^* + i \frac{\s_I}{1 - \pdv{\s_R}{\omega}} = \ep_k^* + i\frac{1}{2\tau_k} \\
-    G = \frac{1}{\omega - \ep_k^* - (\omega - \ep_k^*)\pdv{\s_R}{\omega} - i\s_I} \\ 
-    = \frac{1}{\omega(1- \pdv{\s_R}{\omega}) - \ep_k^*(1 - \pdv{\s_R}{\omega}) - i\s_I} \\ 
-    = \frac{Z_k}{\omega - \ep_k^* +i\frac{1}{2\tau_k}}
+    \omega - (\ep_k + \s_R(k,\omega)) &- i\s_I(k,\ep_k^*) = 0 \\
+    \s_R(k, \omega) = \s_R(k, \ep_k^*) &+ (\omega - \ep_k^*)\eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*} \\ 
+    \omega &\to \ep_k^* + ix \\ 
+    \ep_k^* + ix - (\ep_k + \s_R(k,\ep_k^*)) &- (\ep_k^* + ix - \ep_k^*)\eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*} -i\s_I = 0 \\ 
+    ix\left(1 - \eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*}\right) = i\s_I \quad \quad \\
+    x = \frac{\s_I}{1 - \eval{\pdv{\s_R}{\omega}}_{\omega = \ep_k^*}} &\equiv \frac{\s_I}{1 - \pdv{\s_R}{\omega}} \\ 
+    \omega &= \ep_k^* + i \frac{\s_I}{1 - \pdv{\s_R}{\omega}} = \ep_k^* + i\frac{1}{2\tau_k} \\
+    G &= \frac{1}{\omega - \ep_k^* - (\omega - \ep_k^*)\pdv{\s_R}{\omega} - i\s_I} \\ 
+    &= \frac{1}{\omega(1- \pdv{\s_R}{\omega}) - \ep_k^*(1 - \pdv{\s_R}{\omega}) - i\s_I} \\ 
+    &= \frac{Z_k}{\omega - \ep_k^* +i\frac{1}{2\tau_k}}
 \end{align*}
 
 where $Z_k = \frac{1}{1 - \pdv{\s_R}{\omega}}$ is the quasi-particle residue and $\frac{1}{2\tau_k} = \frac{-\s_I}{1 - \pdv{\s_R}{\omega}}$. Remember that \\ 
