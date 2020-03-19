@@ -355,30 +355,29 @@ where $Z_k = \frac{1}{1 - \pdv{\s_R}{\omega}}$ is the quasi-particle residue and
     G_0(k, \omega) = \frac{1}{\omega - \ep_k + i \delta_k}. 
 \end{align*}
 
-From this, one can deduce the effects of interactions.  First of all, we have the relative shift of the spectrum given by the self-consistent equation $\ep_k \to \ep^*_k = \ep_k + \s_R(k, \ep^*_k)$. We also have the lifetime $\tau_k$ of the excitation given by $\delta_k = \frac{1}{2\tau_k}$. In the non-interacting case the lifetime is infinite, but when one turns on interactions, it becomes finite. Lastly, we have that the pole-residue $Z_k$ deviates from the value $Z_k = 1$. Typically, we have \\ 
-
+From this, one can deduce the effects of interactions.  First of all, we have the relative shift of the spectrum given by the self-consistent equation $\ep_k \to \ep^*_k = \ep_k + \s_R(k, \ep^*_k)$. We also have the lifetime $\tau_k$ of the excitation given by $\delta_k = \frac{1}{2\tau_k}$. In the non-interacting case the lifetime is infinite, but when one turns on interactions, it becomes finite. Lastly, we have that the pole-residue $Z_k$ deviates from the value $Z_k = 1$. Typically, we have the self energy on a form like in Figure \ref{fig:self_e}, which means that $\pdv{\s}{\omega} < 0 \implies \frac{1}{1 - \pdv{\s}{\omega}} < 1$. 
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.4\textwidth}    
     \input{tex/img/broken_sym1}
 	\caption{The self energy}
+	\label{fig:self_e}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}{0.4\textwidth}
 	\input{tex/img/broken_sym2}
 	\caption{Occupation number}		
 	\end{subfigure}
+	\caption{Self energy and occupation number}
 \end{figure}
 
-where $\pdv{\s}{\omega} < 0 \implies \frac{1}{1 - \pdv{\s}{\omega}} < 1$. 
 
-\begin{figure}
-	\centering
+%\begin{figure}
+%	\centering
 
-\end{figure}
+%\end{figure}
 
-In general, we say that if $Z_k \neq 0$, the system is a Fermi liquid. \\ 
-
+In general, we say that if $Z_k \neq 0$, the system is a Fermi liquid.
 If we start out with non-interacting electron gas, $H_0$, and turn on interactions, there will be a one-to-one correspondence between low-energy excitation's in $H_0$ and the low-energy excitation's in interacting case. By low-energy excitation's we mean around the Fermi-level, where the excitation energy is far less than the Fermi-energy, $\ep_F$. In a typical Fermi-liquid, we have \\ 
 
 \begin{align*}
