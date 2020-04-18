@@ -1,12 +1,10 @@
 ## Ignore these
-*.toc
 *.aux
 *.log
 *.synctex.gz
 *.tks
 *.out
 *.dvi
-*.log
 *.gnuplot
 *.fdb_latexmk
 *.fls
