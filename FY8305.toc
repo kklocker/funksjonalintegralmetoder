@@ -1,54 +1,54 @@
-\contentsline {section}{\numberline {1}Uncertainties/mistakes}{4}{section.1}% 
-\contentsline {section}{\numberline {2}Second quantization}{5}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Many particle basis}{5}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}One-particle operators in second quantization}{6}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Two-particle operators in second quantization}{6}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Statistical mechanics}{7}{subsection.2.4}% 
-\contentsline {section}{\numberline {3}Coherent states}{10}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Coherent states}{10}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Grassmann variables}{11}{subsection.3.2}% 
-\contentsline {section}{\numberline {4}Coherent bosonic states}{14}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Construction}{14}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Properties}{16}{subsection.4.2}% 
-\contentsline {section}{\numberline {5}Coherent states for fermions}{20}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Construction}{20}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Properties}{20}{subsection.5.2}% 
-\contentsline {section}{\numberline {6}Gaussian integrals}{25}{section.6}% 
-\contentsline {section}{\numberline {7}Functional integral formulation of many-particle physics}{28}{section.7}% 
-\contentsline {section}{\numberline {8}Statistical mechanics}{32}{section.8}% 
-\contentsline {section}{\numberline {9}Functional integrals over coherent states}{35}{section.9}% 
-\contentsline {section}{\numberline {10}Examples}{39}{section.10}% 
-\contentsline {subsection}{\numberline {10.1}Free electron gas}{39}{subsection.10.1}% 
-\contentsline {subsection}{\numberline {10.2}Free Boson gas}{44}{subsection.10.2}% 
-\contentsline {section}{\numberline {11}Green's functions, $T > 0$}{48}{section.11}% 
-\contentsline {subsection}{\numberline {11.1}Non-interacting case}{50}{subsection.11.1}% 
-\contentsline {subsection}{\numberline {11.2}Usage of propagators}{51}{subsection.11.2}% 
-\contentsline {section}{\numberline {12}Interaction \& HS-decoupling}{53}{section.12}% 
-\contentsline {subsection}{\numberline {12.1}BCS-theory}{58}{subsection.12.1}% 
-\contentsline {subsection}{\numberline {12.2}Stationary point condition}{62}{subsection.12.2}% 
-\contentsline {section}{\numberline {13}Broken symmetries}{65}{section.13}% 
-\contentsline {subsection}{\numberline {13.1}Goldstone mode contributions to fluctuations in the BCS-model}{71}{subsection.13.1}% 
-\contentsline {section}{\numberline {14}Fermi Liquid theory}{72}{section.14}% 
-\contentsline {section}{\numberline {15}General discussion on broken symmetries}{75}{section.15}% 
-\contentsline {section}{\numberline {16}Mean field Green's function}{77}{section.16}% 
-\contentsline {subsection}{\numberline {16.1}The spectra $E_k$}{78}{subsection.16.1}% 
-\contentsline {subsection}{\numberline {16.2}Fluctuations}{79}{subsection.16.2}% 
-\contentsline {section}{\numberline {17}The Hubbard model $(U = \infty )$}{80}{section.17}% 
-\contentsline {subsection}{\numberline {17.1}Hubbard operators}{80}{subsection.17.1}% 
-\contentsline {subsection}{\numberline {17.2}Reformulating constraint}{82}{subsection.17.2}% 
-\contentsline {subsection}{\numberline {17.3}Mean-field}{85}{subsection.17.3}% 
-\contentsline {section}{\numberline {18}Magnetic impurities}{86}{section.18}% 
-\contentsline {subsection}{\numberline {18.1}$U = 0$}{88}{subsection.18.1}% 
-\contentsline {subsection}{\numberline {18.2}$U = \infty $}{91}{subsection.18.2}% 
-\contentsline {section}{\numberline {19}Anderson lattice-model and Heavy Fermion systems}{100}{section.19}% 
-\contentsline {section}{\numberline {20}Interacting one-dimensional fermionic systems}{108}{section.20}% 
-\contentsline {subsection}{\numberline {20.1}Model}{108}{subsection.20.1}% 
-\contentsline {subsection}{\numberline {20.2}Free propagators}{113}{subsection.20.2}% 
-\contentsline {subsection}{\numberline {20.3}Interacting propagator}{114}{subsection.20.3}% 
-\contentsline {subsection}{\numberline {20.4}The bosonic excitation spectrum}{122}{subsection.20.4}% 
-\contentsline {subsection}{\numberline {20.5}Impulse distribution}{125}{subsection.20.5}% 
-\contentsline {subsection}{\numberline {20.6}Summary}{126}{subsection.20.6}% 
-\contentsline {subsection}{\numberline {20.7}Spin-charge separation of fermions}{127}{subsection.20.7}% 
-\contentsline {section}{\numberline {21}Appendix}{131}{section.21}% 
-\contentsline {subsection}{\numberline {21.1}Hubbard model to Ising spin.}{131}{subsection.21.1}% 
-\contentsline {section}{References}{135}{equation.21.10}% 
+\contentsline {section}{\numberline {1}Uncertainties/mistakes}{4}{section.1}%
+\contentsline {section}{\numberline {2}Second quantization}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Many particle basis}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}One-particle operators in second quantization}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Two-particle operators in second quantization}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Statistical mechanics}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Coherent states}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Coherent states}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Grassmann variables}{11}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Coherent bosonic states}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Construction}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Properties}{16}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Coherent states for fermions}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Construction}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Properties}{20}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Gaussian integrals}{25}{section.6}%
+\contentsline {section}{\numberline {7}Functional integral formulation of many-particle physics}{28}{section.7}%
+\contentsline {section}{\numberline {8}Statistical mechanics}{32}{section.8}%
+\contentsline {section}{\numberline {9}Functional integrals over coherent states}{35}{section.9}%
+\contentsline {section}{\numberline {10}Examples}{39}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Free electron gas}{39}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Free Boson gas}{44}{subsection.10.2}%
+\contentsline {section}{\numberline {11}Green's functions, $T > 0$}{48}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Non-interacting case}{50}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Usage of propagators}{51}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Interaction \& HS-decoupling}{53}{section.12}%
+\contentsline {subsection}{\numberline {12.1}BCS-theory}{58}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Stationary point condition}{62}{subsection.12.2}%
+\contentsline {section}{\numberline {13}Broken symmetries}{65}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Goldstone mode contributions to fluctuations in the BCS-model}{71}{subsection.13.1}%
+\contentsline {section}{\numberline {14}Fermi Liquid theory}{72}{section.14}%
+\contentsline {section}{\numberline {15}General discussion on broken symmetries}{75}{section.15}%
+\contentsline {section}{\numberline {16}Mean field Green's function}{77}{section.16}%
+\contentsline {subsection}{\numberline {16.1}The spectra $E_k$}{78}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}Fluctuations}{79}{subsection.16.2}%
+\contentsline {section}{\numberline {17}The Hubbard model $(U = \infty )$}{80}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Hubbard operators}{80}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Reformulating constraint}{82}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Mean-field}{85}{subsection.17.3}%
+\contentsline {section}{\numberline {18}Magnetic impurities}{86}{section.18}%
+\contentsline {subsection}{\numberline {18.1}$U = 0$}{88}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}$U = \infty $}{91}{subsection.18.2}%
+\contentsline {section}{\numberline {19}Anderson lattice-model and Heavy Fermion systems}{100}{section.19}%
+\contentsline {section}{\numberline {20}Interacting one-dimensional fermionic systems}{108}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Model}{108}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}Free propagators}{113}{subsection.20.2}%
+\contentsline {subsection}{\numberline {20.3}Interacting propagator}{114}{subsection.20.3}%
+\contentsline {subsection}{\numberline {20.4}The bosonic excitation spectrum}{122}{subsection.20.4}%
+\contentsline {subsection}{\numberline {20.5}Impulse distribution}{125}{subsection.20.5}%
+\contentsline {subsection}{\numberline {20.6}Summary}{126}{subsection.20.6}%
+\contentsline {subsection}{\numberline {20.7}Spin-charge separation of fermions}{127}{subsection.20.7}%
+\contentsline {section}{\numberline {21}Appendix}{131}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Hubbard model to Ising spin.}{131}{subsection.21.1}%
+\contentsline {section}{References}{135}{equation.21.10}%
