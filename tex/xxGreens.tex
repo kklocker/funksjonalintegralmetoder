@@ -226,21 +226,21 @@ where $a,\ad$ are bosonic fields and the sources $J, J^*$ are c-numbers. Now we 
 and we get
 
 \begin{equation*}
-    e^{S_I}  = \e^{-\Tr \ln A} \int \D a^{\dagger} \D a \e^{-a^{\dagger}V^{-1}a + \varphi^* \varphi^*a + \varphi \varphi\ad}
+    e^{\varphi^* \varphi^* V \varphi \varphi}  = \e^{-\Tr \ln A} \int \D a^{\dagger} \D a \e^{-a^{\dagger}V^{-1}a + \varphi^* \varphi^*a + \varphi \varphi\ad}
 \end{equation*}
 
-where the first exponent is just a number we can set $=1$, since this only define the zero-point in the free energy. \\ 
+where the first exponent is just a number we can set $=1$, since this only defines the zero-point in the free energy. \\ 
 
-Inserting this substitution for $\e^{S_I}$ into the partition function, we end up with 
+Inserting this substitution for $\e^{S_I}$ into the partition function (where the sum over quantum numbers $\lambda$ is now implicit), we end up with 
 
 \begin{equation*}
-    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{-\varphi^*(\partial_\tau + \varepsilon)\varphi + \varphi^*a\varphi^* + \varphi \ad \varphi - \ad V^{-1}a}. 
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{- \int_0^\beta d\tau \varphi^*(\partial_\tau + \varepsilon)\varphi + \varphi^*a\varphi^* + \varphi \ad \varphi - \ad V^{-1}a}. 
 \end{equation*}
 
 The point here is that now the fermion part ($\varphi$'s) of the theory is Gaussian, which means that we can integrate out the fermion part of the theory exactly! The interacting fermion theory is formally equivalent to a free fermion theory, coupled to some background bosonic fields. \\ 
 
 \begin{equation}
-    Z = \int \D a^{\dagger} \D a \e^{-\ad V^{-1} a} \e^{\frac{1}{2}\Tr \ln G^{-1}}
+    Z = \int \D a^{\dagger} \D a \e^{-\int_0^\beta d\tau \ad V^{-1} a} \e^{\int_0^\beta d\tau \frac{1}{2}\Tr \ln G^{-1}}
 \end{equation}
 
 where we have inserted the results from 
@@ -251,7 +251,7 @@ where we have inserted the results from
   \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix} = -\frac{1}{2}\varphi^* G^{-1}\varphi
 \end{align*}
 
-where we have introduced fermion spinor notation $\varphi = \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix}$ and performed a partial integration in $S_I$, resulting in a sign change in the lower right cell of the matrix. 
+where we have introduced fermion spinor notation $\varphi = \begin{pmatrix} \varphi \\ \varphi^* \end{pmatrix}$ and performed a partial integration in $S_I$ (see section 12.1), resulting in a sign change in the lower right cell of the matrix. 
 
 \begin{align*}
     Z &= \int \D a^{\dagger} \D a \e^{S_{\text{eff}}} \\ 
@@ -280,7 +280,7 @@ Some remarks: \\
 i) The partition function \\
 
 \begin{equation*}
-    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{J^* a + J \ad - \ad V^{-1}a + S_0(\{\varphi^*,\varphi \})}
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{\int_0^\beta d\tau (J^* a + J \ad - \ad V^{-1}a) + S_0(\{\varphi^*,\varphi \})}
 \end{equation*}
 
 can be interpreted as the partition function for a non-interacting fermion system which is coupled to a dynamical boson-field, where $S_{eff}(\ad, a)$ is the free energy to this system for a particular configuration of the external fields $\ad,a$. The total free energy is the sum of the free energies of each of the configurations. \\ 
@@ -309,15 +309,15 @@ Now we HS decouple $S_I$ in the following manner:
 where now $J, J^*$ is pair-fields and $a, \ad$ is their corresponding conjugated fields. Now recall that the trace-exponential, which corresponed to the zero-point energy, was put to zero. Then we get 
 
 \begin{align}
-    \e^{S_I} = \e^{VJ^*J} =  \int \D a^{\dagger} \D a \e^{-a^{\dagger} \frac{1}{V}a + J^*a + J\ad} \\ 
-    \implies \e^{S_{I}} =  \int \D a^{\dagger} \D a \e^{-\sum_x \left[\frac{1}{V} \abs{a(x)}^{2} - \pu^*(x,\tau) \pd^*(x,\tau)a(x) - \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau)\ad \right]} 
+    \e^{S_I} &= \e^{VJ^*J} =  \int \D a^{\dagger} \D a \e^{-a^{\dagger} \frac{1}{V}a + J^*a + J\ad} \\ 
+    \implies \e^{S_{I}} &=  \int \D a^{\dagger} \D a \e^{-\sum_x \int_0^\beta d\tau \left[\frac{1}{V} \abs{a(x)}^{2} - \pu^*(x,\tau) \pd^*(x,\tau)a(x) - \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau)\ad \right]} 
 \end{align}
 
 And we get the partition function 
 
 \begin{align*}
-    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a + A_z} \\ 
-    A_z = S_0 + \sum_x \left[ \ad \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) + a \pu^*(x,\tau) \pd^*(x,\tau) \right]
+    Z = \int \D \left[ \varphi^*\right] \D \left[\varphi\right]\D a^{\dagger} \D a \e^{-\sum_x \int_0^\beta d\tau \frac{1}{V}\ad a + A_z} \\ 
+    A_z = S_0 + \sum_x \int_0^\beta d\tau \left[ \ad \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) + a \pu^*(x,\tau) \pd^*(x,\tau) \right]
 \end{align*}
 
 Now we define the Nambu-formalism, which means writing the conjugate fields $\pu, \pd$ as a 2-component spinor in the following way 
@@ -331,9 +331,9 @@ Now we see that
 \begin{align*}
     \sum_x \left[ \ad \varphi_\downarrow(x,\tau) \varphi_\uparrow(x, \tau) + a \pu^*(x,\tau) \pd^*(x,\tau) \right] \\ 
     = \sum_x \Psi^{\dagger} (x) \begin{pmatrix} 0 & a(x) \\ \ad(x) & 0 \end{pmatrix} \Psi(x) \\ 
-    S_0 = -\sum_{x,y} \left[ \pu^*(x)(\partial_\tau + \varepsilon - \mu)\pu(y) + \pd^*(x)(\partial_\tau +\varepsilon - \mu)\pd(x)\right] \\ 
-    = -\sum_{x,y} \begin{pmatrix}\pu^* & \pd\end{pmatrix} \begin{pmatrix}(\partial_\tau + \varepsilon - \mu)  & 0 \\ 0 & (\partial_\tau -(\varepsilon - \mu)) \end{pmatrix} \begin{pmatrix}\pu \\ \pd^* \end{pmatrix} \\ 
-    = -\sum_{x,y} \Psi^{\dagger}(x) \left[ -G_0 ^{-1}(x,y) \right] \Psi(y) 
+    S_0 = -\sum_{x,y} \int_0^\beta d \tau \left[ \pu^*(x)(\partial_\tau + \varepsilon - \mu)\pu(y) + \pd^*(x)(\partial_\tau +\varepsilon - \mu)\pd(x)\right] \\ 
+    = -\sum_{x,y} \int_0^\beta d \tau \begin{pmatrix}\pu^* & \pd\end{pmatrix} \begin{pmatrix}(\partial_\tau + \varepsilon - \mu)  & 0 \\ 0 & (\partial_\tau -(\varepsilon - \mu)) \end{pmatrix} \begin{pmatrix}\pu \\ \pd^* \end{pmatrix} \\ 
+    = -\sum_{x,y} \int_0^\beta d \tau \Psi^{\dagger}(x) \left[ -G_0 ^{-1}(x,y) \right] \Psi(y) 
 \end{align*}
 
 Combining all expressions, we get 
@@ -347,10 +347,10 @@ Combining all expressions, we get
 Note that here the fermion propagator $G \sim - \expval{\Psi \Psi^{\dagger}}$ is a 2x2-matrix acting in Nambu spinor-space. The partition function now becomes 
 
 \begin{align*}
-    Z = \int \D \left[ \Psi^{\dagger}\right] \D \left[\Psi\right]\D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a -\sum_{x,y} \Psi^{\dagger}(x)\left[ -G ^{-1}(x,y) \right]\Psi(x)} \\ 
-    = \int \D a^{\dagger} \D a \e^{-\sum_x \frac{1}{V}\ad a + \Tr \ln \left(-G ^{-1}\right)} \\ 
+    Z = \int \D \left[ \Psi^{\dagger}\right] \D \left[\Psi\right]\D a^{\dagger} \D a \e^{ - \int_0^\beta d\tau( \sum_x \frac{1}{V}\ad a +\sum_{x,y} \Psi^{\dagger}(x)\left[ -G ^{-1}(x,y) \right]\Psi(x) )} \\ 
+    = \int \D a^{\dagger} \D a \e^{- \int_0^\beta d\tau ( \sum_x \frac{1}{V}\ad a - \Tr \ln \left(-G ^{-1}\right))} \\ 
     = \int \D a^{\dagger} \D a \e^{S_{eff}(\ad, a)} \\ 
-    S_{eff} = -\sum_x \frac{1}{V}\ad a + \Tr \ln \left(-G_0 ^{-1}(x,y) -B(x)\delta_{x,y}\right)
+    S_{eff} = -\int_0^\beta d \tau (\sum_x  \frac{1}{V}\ad a - \Tr \ln \left(-G_0 ^{-1}(x,y) -B(x)\delta_{x,y}\right))
 \end{align*}
 
 This partition function has now been transformed into a pure bosonic problem. Saddle-point approximation to this integral gives mean field theory. Here the trace $\Tr = \sum_{x} \tr$, where $\tr$ is a 2x2-matrix trace. \\ 
@@ -365,18 +365,18 @@ Mean field theory (MFT): $a(x) \to a$ constant. \\
 
 \begin{align*}
     Z = \int \D \varphi^* \D \varphi \e^S \\ 
-    S = S_0 + S_I = -\sum_\lambda \varphi_\lambda^* \pdv{\varphi_\lambda}{\tau} + H\left(\varphi_\lambda^*, \varphi_\lambda \right) \\ 
-    S_0 = \sum_{x,y,\sigma} \varphi_\sigma ^* (x) \left( \partial_\tau + \varepsilon - \mu \right) \varphi_\sigma (y) \\ 
+    S = S_0 + S_I = - \int_0^\beta d \tau \sum_\lambda \varphi_\lambda^* \pdv{\varphi_\lambda}{\tau} + H\left(\varphi_\lambda^*, \varphi_\lambda \right) \\ 
+    S_0 = - \int_0^\beta d \tau \sum_{x,y,\sigma} \varphi_\sigma ^* (x) \left( \partial_\tau + \varepsilon - \mu \right) \varphi_\sigma (y) \\ 
     H_I = -V \sum_x \nuu(x) \nd(x) \quad \quad V > 0 \\ 
-    S_I = V\sum_x \nuu(x) \nd(x) \quad \quad V > 0
+    S_I = V \int_0^\beta d \tau \sum_x \nuu(x) \nd(x) \quad \quad V > 0
 \end{align*}
 
 Attractive interaction for electrons with opposite spin (Retarded). \\ 
 \begin{align*}
-    S_I = V \sum_x \pu^*(x) \pd^* (x) \pd(x) \pu(x) \\ 
-    \e^{S_I} = \int \D\ad \D a \e^{-\sum_x \left( \frac{\ad a}{V} - a \pu^* \pd^* - \ad \pd \pu \right)} \\ 
+    S_I = V \int_0^\beta d \tau \sum_x \pu^*(x) \pd^* (x) \pd(x) \pu(x) \\ 
+    \e^{S_I} = \int \D\ad \D a \e^{- \int_0^\beta d \tau \sum_x \left( \frac{\ad a}{V} - a \pu^* \pd^* - \ad \pd \pu \right)} \\ 
     \varphi = \begin{pmatrix} \pu \\ \pd^* \end{pmatrix} \quad \quad \varphi^\dagger = \begin{pmatrix} \pu^* & \pd \end{pmatrix} \\ 
-    \e^{S_I} = \int \D\ad \D a \e^{-\sum_x \left( \frac{\ad a}{V} + \sum_x \varphi^\dagger (x) B(x) \varphi(x) \right)}
+    \e^{S_I} = \int \D\ad \D a \e^{- \int_0^\beta d \tau \sum_x \left( \frac{\ad a}{V} + \sum_x \varphi^\dagger (x) B(x) \varphi(x) \right)}
 \end{align*}
 
 Where $B(x)$ is the same matrix as in the last section. 
@@ -409,12 +409,12 @@ Look at the last term:
 where we have performed a partial integration, which effectively reduced to changing the derivative and sign since the fields are periodic on $[0, \beta]$. This change of sign is cancelled by the anti-commutation of the fermionic fields. The sign of the last term also changed due to interchange of the fields. Fourier transforming back into real space and combining this with the other part of $S_0$, we get 
 
 \begin{align*}
-    S_0 = -\sum_{x,y} \left[ \pu^*(x)(\partial_\tau + \varepsilon)\pu(y) + \pd(x) (\partial_\tau - \varepsilon)\pd^*(y) \right] \\ 
-    = -\sum_{x,y} \varphi^\dagger (x)\begin{pmatrix}(\partial_\tau + \varepsilon)  & 0 \\ 0 & (\partial_\tau -\varepsilon) \end{pmatrix} \varphi(y)
+    S_0 = -\sum_{x,y} \int_0^\beta d \tau \left[ \pu^*(x)(\partial_\tau + \varepsilon)\pu(y) + \pd(x) (\partial_\tau - \varepsilon)\pd^*(y) \right] \\ 
+    = -\sum_{x,y} \int_0^\beta d \tau \varphi^\dagger (x)\begin{pmatrix}(\partial_\tau + \varepsilon)  & 0 \\ 0 & (\partial_\tau -\varepsilon) \end{pmatrix} \varphi(y),
 \end{align*}
-
+where we have redefined $\varepsilon = \varepsilon-\mu \delta_{x,y}$
 \begin{align*}
-    Z = \int \D \varphi^\dagger \D \varphi \D \ad \D a \e^{-\sum_x \frac{\ad (x) a}{V}} \e^{-\sum_{x,y} \varphi(x)^\dagger G^{-1}(x,y)\varphi(y)} \\ 
+    Z = \int \D \varphi^\dagger \D \varphi \D \ad \D a \e^{-\sum_x \int_0^\beta d \tau \frac{\ad (x) a(x)}{V}} \e^{-\sum_{x,y} \int_0^\beta d \tau \varphi(x)^\dagger G^{-1}(x,y)\varphi(y)} \\ 
     G^{-1}(x,y) = G_0 ^{-1} (x,y) - B(x) \delta_{x,y} \\
     G_0^{-1}(x,y) = \begin{pmatrix}(\partial_\tau + \varepsilon)  & 0 \\ 0 & (\partial_\tau -\varepsilon) \end{pmatrix}
 \end{align*}
@@ -423,7 +423,7 @@ Now perform the $\varphi$ integrations:
 
 \begin{align*}
     \int \D \ad \D a \e^{S_{eff}[a, \ad]} \\ 
-    S_{eff}[a, \ad] = -\sum_x \frac{\ad(x) a(x)}{V} + \Tr \ln [G^{-1} ],
+    S_{eff}[a, \ad] = -\sum_x \int_0^\beta d \tau \frac{\ad(x) a(x)}{V} + \int_0^\beta d \tau \Tr \ln [G^{-1} ],
 \end{align*}
 
 which is an exact result! Now we move on to mean field approximation: $a(x) \to a$. 
@@ -434,7 +434,7 @@ which is an exact result! Now we move on to mean field approximation: $a(x) \to 
 \end{align*}
 
 \begin{align*}
-    \tr \ln G^{-1} = \ln \det{G^{-1}} = \ln((i\omega_n)^2 - \e_k^{2} -\abs{a}^{2}) = \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k) \\ 
+    \tr \ln G^{-1} = \ln \det{G^{-1}} = \ln((i\omega_n)^2 - \varepsilon_k^{2} -\abs{a}^{2}) = \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k) \\ 
     \implies S_{eff}^{MF} = -\frac{N\beta \abs{a}^2}{V} + \sum_k \ln \left[ (1+\e^{-\beta E_k})(1 + \e^{\beta E_k})\right] = -\beta F^{MF} \\ 
     \implies f^{MF} = \frac{F^{MF}}{N} = \frac{\abs{a}^2}{V} +\frac{1}{\beta} \frac{1}{N}\sum_k \ln \left[ (1+\e^{-\beta E_k})(1 + \e^{\beta E_k})\right].
 \end{align*}
@@ -449,8 +449,10 @@ Since $S_{eff}$ is exact, we automatically have a recipe for how we can correct 
 where $E_k = \sqrt{\varepsilon_k ^2 + \abs{a}^2}$ and we compare with 
 
 \begin{align*}
-    G(k) \to -G_F(k) \implies G_F = - \expval{\Phi \varPhi^\dagger}
+    G(k) \to -G_F(k) \implies G_F = - \expval{\Phi \varPhi^\dagger},
 \end{align*}
+
+where $G_F$ denotes the mean field Greens function
 
 \begin{align*}
     \tr \ln \left[-G_f ^{-1} (k) \right] = \ln \det(-G_F {-1} (k)) = \ln(i\omega_n - E_k) + \ln(i\omega_n + E_k)\\ 
